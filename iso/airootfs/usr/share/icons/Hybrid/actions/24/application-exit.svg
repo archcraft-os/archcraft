@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+    <defs id="defs3051">
+        <style type="text/css" id="current-color-scheme">
+        .ColorScheme-NegativeText {
+            color:#da4453;
+        }
+        </style>
+    </defs><g transform="translate(1,1)">
+ <path
+     style="fill:currentColor;fill-opacity:1;stroke:none"
+     class="ColorScheme-NegativeText"
+     d="m3 3v4 12h1 14 1v-1-12-3h-15-1m1 4h14v11h-14v-11m4 4v2h6v-2h-6" />
+</g></svg>

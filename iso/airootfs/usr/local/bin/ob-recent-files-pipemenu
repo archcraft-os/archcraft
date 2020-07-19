@@ -1,0 +1,88 @@
+#!/usr/bin/env bash
+
+# al-recent-files-pipemenu - parse .recently-used.xbel and generate openbox pipe menu
+# Copyright (C) 2010  John Crawley
+# Borrowed with love by the ArchLabs boys.
+
+# Usage: add
+# <menu id="recent" label="Recent Files" execute="/path/to/al-recent-files-pipemenu" />
+# to your .config/openbox/menu.xml, or use with al-places-pipemenu (see comments there)
+
+maximum_entries=15
+
+#######################################################################
+
+# look for recently-used.xbel
+if [ "$XDG_DATA_HOME" ] && [ -r "${XDG_DATA_HOME}/recently-used.xbel" ]; then
+    file_path="${XDG_DATA_HOME}/recently-used.xbel"
+elif [ -r "${HOME}/.local/share/recently-used.xbel" ]; then
+    file_path="${HOME}/.local/share/recently-used.xbel"
+elif [ -r "${HOME}/.recently-used.xbel" ]; then
+    file_path="${HOME}/.recently-used.xbel"
+else
+    echo "$0: cannot find a readable recently-used.xbel file" >&2
+    echo '<openbox_pipe_menu>
+<separator label="No recently-used.xbel file found." />
+</openbox_pipe_menu>'
+    exit 1
+fi
+
+# if argument is --clear, empty .recently-used.xbel
+[[ "$1" == '--clear' ]] && {
+    cat <<':EOF' > "${file_path}"
+<?xml version="1.0" encoding="UTF-8"?>
+<xbel version="1.0"
+      xmlns:bookmark="http://www.freedesktop.org/standards/desktop-bookmarks"
+      xmlns:mime="http://www.freedesktop.org/standards/shared-mime-info"
+>
+</xbel>
+:EOF
+    exit
+}
+
+maximum_entries=$((maximum_entries+2))
+
+pre='    <item label="'
+mid='">
+    <action name="Execute"><command>'
+post='</command></action>
+    </item>'
+
+files=$(tac "${file_path}" | awk -v MAX="$maximum_entries" -v PR="$pre" -v MI="$mid" -v PO="$post" 'BEGIN {
+    RS="</bookmark>";
+    FS="<info>";
+}
+(NR == MAX) {exit}
+!/<bookmark/ {next}
+!/href=[\"'\'']file:\/\// {next}
+# $1 is the command, $2 the file path
+{
+    sub(/^.*exec=\"\&apos\;/,"",$1)
+    sub(/\&apos\;.*$/,"",$1)
+    sub(/ *%./,"",$1)
+    sub(/^.*file:\/\//,"",$2)
+    sub(/[\"'\''].*$/,"",$2)
+    gsub(/%22/,"\\&quot;",$2)
+    gsub(/%3C/,"\\&lt;",$2)
+    gsub(/%3E/,"\\&gt;",$2)
+    name=$2
+    sub(/^.*\//,"",name)
+    gsub(/_/,"__",name)
+    gsub(/\&apos;/,"\\&apos;\\&quot;\\&apos;\\&quot;\\&apos;",$2)
+    print (PR name MI $1 " '"'"'" $2 "'"'"'" PO)
+}')
+
+# use perl to decode urlencoded characters
+files=$(perl -MURI::Escape -e 'print uri_unescape($ARGV[0]);' "$files")
+
+output='<openbox_pipe_menu>
+'"$files"'
+<separator/>
+  <item label="Clear Recent Files">
+    <action name="Execute">
+      <command>&apos;'"$0"'&apos; --clear</command>
+    </action>
+  </item>
+</openbox_pipe_menu>
+'
+printf '%s' "$output"  # printf because echo sometimes eats backslashes

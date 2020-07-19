@@ -1,0 +1,26 @@
+<svg width="32" xmlns="http://www.w3.org/2000/svg" height="32" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <linearGradient id="a" y1="392.36" y2="365.36" gradientUnits="userSpaceOnUse" x2="0" gradientTransform="translate(309.57 152.44)">
+   <stop stop-color="#ffffff" stop-opacity="0"/>
+   <stop offset="1" stop-color="#ffffff" stop-opacity=".2"/>
+  </linearGradient>
+  <linearGradient id="b" y1="17" x1="47" y2="24" gradientUnits="userSpaceOnUse" x2="54" gradientTransform="translate(357.57 507.8)">
+   <stop stop-color="#060606"/>
+   <stop offset="1" stop-opacity="0"/>
+  </linearGradient>
+  <path id="c" d="m389.57 545.8v-28h15l7 7v21h-14z"/>
+ </defs>
+ <g transform="translate(-384.57-515.8)">
+  <g color-rendering="auto" color-interpolation-filters="linearRGB" shape-rendering="auto" image-rendering="auto" text-rendering="auto" color-interpolation="sRGB" color="#000000">
+   <use fill="#1bb2fb" xlink:href="#c"/>
+   <g transform="scale(1-1)">
+    <rect opacity=".5" x="389.57" y="-518.8" width="15" fill="#ffffff" height="1"/>
+    <rect opacity=".25" x="389.57" y="-545.8" width="22" height="1"/>
+   </g>
+   <path opacity=".5" fill="#ffffff" fill-rule="evenodd" d="m411.57 524.8l-7-7v7z"/>
+  </g>
+  <path opacity=".2" fill="url(#b)" fill-rule="evenodd" d="m404.57 524.8l7 7v-7z"/>
+  <path opacity=".75" fill="#ffffff" d="m398.07 527.8c-1.385 0-2.5 1.115-2.5 2.5 0 1.385 1.115 2.5 2.5 2.5 1.385 0 2.5-1.115 2.5-2.5 0-1.385-1.115-2.5-2.5-2.5m0 1c.831 0 1.5.669 1.5 1.5 0 .831-.669 1.5-1.5 1.5-.831 0-1.5-.669-1.5-1.5 0-.831.669-1.5 1.5-1.5m5.5 1c-1.108 0-2 .892-2 2 0 1.108.892 2 2 2 1.108 0 2-.892 2-2 0-1.108-.892-2-2-2m0 1c.554 0 1 .446 1 1 0 .554-.446 1-1 1-.554 0-1-.446-1-1 0-.554.446-1 1-1m-5.5 3c-2.493 0-4.5 2.01-4.5 4.5v1.5h9v-1.5c0-2.493-2.01-4.5-4.5-4.5m0 1c1.939 0 3.5 1.561 3.5 3.5v.5h-7v-.5c0-1.939 1.561-3.5 3.5-3.5m5.5 0c-.555 0-1.067.16-1.512.42.243.237.465.495.656.777.26-.123.547-.197.855-.197 1.108 0 2 .892 2 2h-2.1c.065.323.1.657.1 1h3v-1c0-1.662-1.338-3-3-3"/>
+  <use fill="url(#a)" xlink:href="#c"/>
+ </g>
+</svg>

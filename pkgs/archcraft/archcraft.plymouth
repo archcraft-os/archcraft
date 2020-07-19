@@ -1,0 +1,9 @@
+[Plymouth Theme]
+Name=archcraft
+Description=default archcraft plymouth theme
+Comment=created By Aditya Shakya (@adi1090x)
+ModuleName=script
+
+[script]
+ImageDir=/usr/share/plymouth/themes/archcraft
+ScriptFile=/usr/share/plymouth/themes/archcraft/archcraft.script

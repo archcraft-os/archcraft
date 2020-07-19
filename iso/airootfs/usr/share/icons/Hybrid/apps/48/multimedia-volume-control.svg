@@ -1,0 +1,44 @@
+<svg width="48" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 0 48 48" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <linearGradient id="a" y1="543.8" y2="503.8" x2="0" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#18222a"/>
+   <stop offset="1" stop-color="#566069"/>
+  </linearGradient>
+  <linearGradient id="b" y1="539.8" y2="507.8" gradientUnits="userSpaceOnUse" x2="0">
+   <stop stop-color="#2f3943"/>
+   <stop offset="1" stop-color="#808c9b"/>
+  </linearGradient>
+  <linearGradient id="c" y1="518.8" y2="520.8" gradientUnits="userSpaceOnUse" x2="0" gradientTransform="translate(8-12)">
+   <stop stop-color="#197cf1"/>
+   <stop offset="1" stop-color="#21c9fb"/>
+  </linearGradient>
+  <linearGradient id="d" xlink:href="#c" y1="522.8" y2="527.8" gradientUnits="userSpaceOnUse" x2="0" gradientTransform="translate(8-12)"/>
+  <linearGradient id="e" y1="536.8" y2="510.8" gradientUnits="userSpaceOnUse" x2="0">
+   <stop stop-color="#2f3943"/>
+   <stop offset="1" stop-color="#4d5662"/>
+  </linearGradient>
+  <linearGradient id="f" y1="15" x1="15" y2="36" x2="36" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#292c2f"/>
+   <stop offset="1" stop-opacity="0"/>
+  </linearGradient>
+ </defs>
+ <g transform="translate(-384.57-499.8)">
+  <rect width="40" x="388.57" y="503.8" stroke-opacity=".55" fill="url(#a)" rx="20" height="40" stroke-width="2.8"/>
+  <path fill="#161e25" d="m388.58 523.3c-.004.167-.012.332-.012.5 0 11.08 8.92 20 20 20 11.08 0 20-8.92 20-20 0-.168-.008-.333-.012-.5-.265 10.846-9.08 19.5-19.988 19.5-10.912 0-19.724-8.654-19.988-19.5"/>
+  <path opacity=".2" fill="url(#f)" d="m33.19 14.809l-18.383 18.383 10.742 10.744c9.837-.748 17.636-8.548 18.385-18.385z" transform="translate(384.57 499.8)"/>
+  <g stroke-opacity=".55" stroke-width="2.8">
+   <rect width="32" x="392.57" y="507.8" fill="url(#b)" rx="16" height="32"/>
+   <rect width="26" x="395.57" y="510.8" fill="url(#e)" rx="13" height="26"/>
+  </g>
+  <rect width="2" x="407.57" y="510.8" fill="url(#d)" rx="1" height="5"/>
+  <circle fill="url(#c)" cx="408.57" cy="507.8" r="1"/>
+  <g fill="#26333a">
+   <circle cx="424.57" cy="523.8" r="1"/>
+   <circle cx="392.57" cy="523.8" r="1"/>
+   <circle cx="396.57" cy="512.8" r="1"/>
+   <circle cx="420.57" cy="512.8" r="1"/>
+   <circle cx="396.57" cy="534.8" r="1"/>
+   <circle cx="420.57" cy="534.8" r="1"/>
+  </g>
+ </g>
+</svg>

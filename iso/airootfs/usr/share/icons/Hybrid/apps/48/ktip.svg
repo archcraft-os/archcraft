@@ -1,0 +1,23 @@
+<svg width="48" xmlns="http://www.w3.org/2000/svg" height="48">
+ <defs>
+  <linearGradient id="a" y1="1016.36" x1="13" y2="1040.36" gradientUnits="userSpaceOnUse" x2="36">
+   <stop stop-color="#292c2f"/>
+   <stop offset="1" stop-opacity="0"/>
+  </linearGradient>
+  <linearGradient id="b" y1="44" y2="4" x2="0" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#7cbaf8"/>
+   <stop offset="1" stop-color="#f4fcff"/>
+  </linearGradient>
+  <linearGradient id="c" y1="39" y2="9" x2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1.02857 0 0 1.2-5.314-4.8)">
+   <stop stop-color="#197cf1"/>
+   <stop offset="1" stop-color="#20bcfa"/>
+  </linearGradient>
+ </defs>
+ <g fill-rule="evenodd" transform="translate(0-1004.36)">
+  <g color="#000000" stroke-width="2">
+   <path fill="url(#b)" d="M44 24A20 20 0 1 1 4 24 20 20 0 1 1 44 24" transform="translate(0 1004.36)"/>
+   <path fill="url(#c)" d="m24 6c-9.941 0-18 8.06-18 18 0 9.941 8.06 18 18 18 9.941 0 18-8.06 18-18 0-9.941-8.06-18-18-18m-2 6h4v4h-4zm0 8h4v16h-4v-12z" transform="translate(0 1004.36)"/>
+  </g>
+  <path opacity=".2" fill="url(#a)" d="m26 1020.36h-4l4 4v16h-4l8 8c5.172 0 15 0 15 0v-14l-19-18z"/>
+ </g>
+</svg>

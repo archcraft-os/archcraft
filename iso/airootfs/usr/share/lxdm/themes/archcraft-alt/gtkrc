@@ -1,0 +1,51 @@
+## These settings are applicable only for lxdm-gtk2+  
+style "back"
+{
+	engine "pixmap"
+	{
+		image
+		{
+			function = FLAT_BOX
+			shadow=NONE
+			state = NORMAL
+			file="bg.png"
+			stretch=TRUE
+			detail = "base"
+		}
+	}
+}
+
+style "time"
+{
+	fg[NORMAL]="#ffffff"
+	font_name="Sans 10"
+}
+
+style "prompt"
+{
+	fg[NORMAL]="#ffffff"
+	font_name="Sans Bold 12"
+}
+
+# Normally this won't paint an invisible event box, but we did some hacks in greeter.c.
+style "bottom"
+{
+	font_name="Sans 10"
+	fg[NORMAL] = "#d9d9d9"
+	engine "pixmap"
+	{
+		image
+		{
+			function = FLAT_BOX
+			file="shade.png"
+			stretch=TRUE
+			detail="eventbox"
+		}
+	}
+}
+
+widget "lxdm" style "back"
+widget "lxdm.*.time" style "time"
+widget "*.prompt" style "prompt"
+widget "*.bottom_pane" style "bottom"
+widget_class "GtkWindow.*.GtkEventBox.*.<GtkLabel>" style "bottom"

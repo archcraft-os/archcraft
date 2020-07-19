@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48" height="48" version="1.1">
+ <defs>
+  <linearGradient id="linearGradient4197">
+   <stop style="stop-color:#c6cdd1;stop-opacity:1" offset="0"/>
+   <stop style="stop-color:#e0e5e7;stop-opacity:1" offset="1"/>
+  </linearGradient>
+  <linearGradient id="linearGradient4184">
+   <stop style="stop-color:#000000;stop-opacity:1;" offset="0"/>
+   <stop style="stop-color:#000000;stop-opacity:0;" offset="1"/>
+  </linearGradient>
+  <linearGradient id="linearGradient4167">
+   <stop style="stop-color:#d01c2d;stop-opacity:1" offset="0"/>
+   <stop style="stop-color:#e05e4c;stop-opacity:1" offset="1"/>
+  </linearGradient>
+  <linearGradient gradientUnits="userSpaceOnUse" y2="525.911" x2="395.707" y1="546.927" x1="400.556" id="linearGradient4288-9" xlink:href="#linearGradient4197" gradientTransform="matrix(1.9405564,0,0,1.9418216,-359.25227,-518.38224)"/>
+  <linearGradient xlink:href="#linearGradient4167" id="linearGradient4173" x1="414.727" y1="539.763" x2="399.489" y2="508.239" gradientUnits="userSpaceOnUse"/>
+  <linearGradient xlink:href="#linearGradient4184" id="linearGradient4190" x1="23.547" y1="16.764" x2="37.308" y2="30.525" gradientUnits="userSpaceOnUse"/>
+ </defs>
+ <g transform="translate(-384.57143,-499.798)">
+  <circle cy="523.798" cx="408.571" style="opacity:1;fill:url(#linearGradient4288-9);fill-opacity:1.0;stroke:none;stroke-width:1.93961203;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" r="20"/>
+  <path style="opacity:0.2;fill:url(#linearGradient4190);fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="M 35.054688 9.4707031 L 26.166016 21.091797 L 22.076172 29.007812 L 20.998047 40.675781 L 24.310547 43.988281 A 20 20 0 0 0 44 24 A 20 20 0 0 0 42.792969 17.208984 L 35.054688 9.4707031 z" transform="translate(384.57143,499.798)"/>
+  <path d="m 397.42131,509.306 -4.2424,4.242 12.4,12.401 0,14.742 6,0 0,-14.758 12.385,-12.385 -4.242,-4.242 -11.151,11.151 -11.15,-11.151 z" style="fill:url(#linearGradient4173);fill-opacity:1"/>
+  <path style="opacity:0.15;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.93961203;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" d="M 43.978516 23.417969 A 20 20 0 0 1 24 43 A 20 20 0 0 1 4.0214844 23.582031 A 20 20 0 0 0 4 24 A 20 20 0 0 0 24 44 A 20 20 0 0 0 44 24 A 20 20 0 0 0 43.978516 23.417969 z" transform="translate(384.57143,499.798)"/>
+ </g>
+</svg>

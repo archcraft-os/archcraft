@@ -1,0 +1,10 @@
+<svg height="8" width="8" xmlns="http://www.w3.org/2000/svg">
+    <style
+        type="text/css"
+        id="current-color-scheme">
+        .ColorScheme-Highlight {
+            color:#3daee9;
+        }
+    </style>
+    <path d="M4 .094l1.236 2.505L8 3 6 4.95l.472 2.753L4 6.403l-2.472 1.3L2 4.95 0 3l2.764-.401z" style="fill:currentColor;fill-opacity:1;stroke:none" class="ColorScheme-Highlight"/>
+</svg>

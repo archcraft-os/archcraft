@@ -1,0 +1,61 @@
+/* This file is part of adapta-gtk-theme Copyright (C) 2016-2018 Tista <tista.gma500@gmail.com> This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version. */
+@import url("stylesheet.css");
+.bottom-panel { height: 30px; }
+
+.window-list { font-size: 10pt; spacing: 2px; }
+
+.window-button { padding: 1px; }
+
+.window-button:first-child:ltr { padding-left: 2px; }
+
+.window-button:last-child:rtl { padding-right: 2px; }
+
+.window-button-box { spacing: 4px; }
+
+.window-button > StWidget { -st-natural-width: 18.75em; max-width: 18.75em; padding: 3px 6px 1px; border-radius: 0; color: rgba(207, 216, 220, 0.87); background-color: rgba(19, 25, 28, 0.01); background-gradient-drection: vertical; background-gradient-start: rgba(19, 25, 28, 0.01); background-gradient-end: rgba(19, 25, 28, 0.01); box-shadow: none; text-shadow: none; }
+
+.window-button:hover > StWidget { color: #CFD8DC; background-gradient-drection: vertical; background-gradient-start: rgba(19, 25, 28, 0.01); background-gradient-end: rgba(19, 25, 28, 0.01); box-shadow: inset 0 -2px rgba(207, 216, 220, 0.2); }
+
+.window-button:active > StWidget, .window-button:focus > StWidget { color: #CFD8DC; background-gradient-drection: vertical; background-gradient-start: rgba(19, 25, 28, 0.01); background-gradient-end: rgba(19, 25, 28, 0.01); box-shadow: inset 0 -2px #00BCD4; }
+
+.window-button.focused > StWidget, .window-button.focused:active > StWidget { color: #CFD8DC; box-shadow: inset 0 -2px #00BCD4; }
+
+.window-button.minimized > StWidget { color: rgba(207, 216, 220, 0.54); box-shadow: none; }
+
+.window-button.minimized:hover > StWidget { color: #CFD8DC; box-shadow: inset 0 -2px rgba(207, 216, 220, 0.2); }
+
+.window-button.minimized:active > StWidget { color: #CFD8DC; box-shadow: inset 0 -2px #00BCD4; }
+
+.window-button-icon { width: 24px; height: 24px; }
+
+.window-list-workspace-indicator { padding: 3px; }
+
+.window-list-workspace-indicator > StWidget { border: none; color: rgba(207, 216, 220, 0.87); background-color: rgba(19, 25, 28, 0.01); background-gradient-drection: vertical; background-gradient-start: rgba(19, 25, 28, 0.01); background-gradient-end: rgba(19, 25, 28, 0.01); font-weight: 700; }
+
+.window-list-workspace-indicator:hover { background-gradient-drection: vertical; background-gradient-start: rgba(19, 25, 28, 0.01); background-gradient-end: rgba(19, 25, 28, 0.01); box-shadow: inset 0 -2px rgba(207, 216, 220, 0.2); }
+
+.window-list-workspace-indicator:hover > StWidget { color: #CFD8DC; }
+
+.window-list-workspace-indicator:active, .window-list-workspace-indicator:checked, .window-list-workspace-indicator:focus { background-gradient-drection: vertical; background-gradient-start: rgba(19, 25, 28, 0.01); background-gradient-end: rgba(19, 25, 28, 0.01); box-shadow: inset 0 -2px #00BCD4; }
+
+.window-list-workspace-indicator:active > StWidget, .window-list-workspace-indicator:checked > StWidget, .window-list-workspace-indicator:focus > StWidget { color: #CFD8DC; }
+
+.notification { font-weight: 500; }
+
+#panel.bottom-panel, #panel.bottom-panel.solid { height: 25px; border-top-width: 1px; border-bottom-width: 0; border-color: #13191c; background-color: #13191c; background-gradient-drection: vertical; background-gradient-start: #13191c; background-gradient-end: #13191c; color: #CFD8DC; }
+
+#panel.bottom-panel StLabel, #panel.bottom-panel.solid StLabel { text-shadow: none; }
+
+#panel.bottom-panel StIcon, #panel.bottom-panel.solid StIcon { icon-shadow: none; }
+
+#panel, #panel.solid { height: 25px; border-top-width: 0; border-bottom-width: 1px; border-color: #13191c; background-color: #13191c; background-gradient-drection: vertical; background-gradient-start: #13191c; background-gradient-end: #13191c; }
+
+#panel StLabel, #panel.solid StLabel { text-shadow: none; }
+
+#panel StIcon, #panel.solid StIcon { icon-shadow: none; }
+
+#panel .panel-button, #panel.solid .panel-button { color: #CFD8DC; }
+
+#panel .panel-button:hover, #panel .panel-button:active, #panel .panel-button:focus, #panel .panel-button:checked, #panel.solid .panel-button:hover, #panel.solid .panel-button:active, #panel.solid .panel-button:focus, #panel.solid .panel-button:checked { color: #FFFFFF; }
+
+#panel .panel-button:active, #panel .panel-button:focus, #panel.solid .panel-button:active, #panel.solid .panel-button:focus { background-color: rgba(19, 25, 28, 0.01); background-gradient-drection: vertical; background-gradient-start: rgba(19, 25, 28, 0.01); background-gradient-end: rgba(19, 25, 28, 0.01); }

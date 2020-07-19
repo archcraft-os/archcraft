@@ -1,0 +1,10 @@
+/* This file is part of adapta-gtk-theme Copyright (C) 2016-2018 Tista <tista.gma500@gmail.com> This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version. */
+.Leader { stroke-width: 0.5 !important; stroke: #4DB6AC !important; fill: none !important; }
+
+.Button { stroke-width: 0.25; stroke: #4DB6AC; fill: rgba(77, 182, 172, 0.12); }
+
+.Ring { stroke-width: 0.5 !important; stroke: #4DB6AC !important; fill: none !important; }
+
+.Label { stroke-width: 0.1 !important; stroke: none !important; fill: transparent !important; font-size: 0.1 !important; }
+
+.TouchStrip, .TouchRing { stroke-width: 0.1 !important; stroke: #4DB6AC !important; fill: rgba(77, 182, 172, 0.25) !important; }

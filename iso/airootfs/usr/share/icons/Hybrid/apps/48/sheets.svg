@@ -1,0 +1,87 @@
+<svg width="48" xmlns="http://www.w3.org/2000/svg" height="48" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <linearGradient id="a" y1="25" x1="8" y2="44" x2="27" gradientUnits="userSpaceOnUse">
+   <stop/>
+   <stop offset="1" stop-opacity="0"/>
+  </linearGradient>
+  <linearGradient id="b" y1="44" y2="18" x2="0" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#c6cdd1"/>
+   <stop offset="1" stop-color="#e0e5e7"/>
+  </linearGradient>
+  <linearGradient id="c" y1="20" y2="16" x2="0" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#06a370"/>
+   <stop offset="1" stop-color="#22d1b0"/>
+  </linearGradient>
+  <linearGradient xlink:href="#c" id="d" y1="21" y2="4" x2="0" gradientUnits="userSpaceOnUse"/>
+  <linearGradient xlink:href="#c" id="e" y1="15" y2="4" x2="0" gradientUnits="userSpaceOnUse"/>
+  <linearGradient xlink:href="#c" id="f" y1="16" y2="7" x2="0" gradientUnits="userSpaceOnUse"/>
+  <linearGradient xlink:href="#c" id="g" y1="17" y2="10" x2="0" gradientUnits="userSpaceOnUse"/>
+  <linearGradient id="h" y1="17" y2="8" x2="0" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#c61423"/>
+   <stop offset="1" stop-color="#dc2b41"/>
+  </linearGradient>
+  <linearGradient xlink:href="#h" id="i" y1="17" y2="12" x2="0" gradientUnits="userSpaceOnUse"/>
+  <linearGradient xlink:href="#h" id="j" y1="21" y2="12" x2="0" gradientUnits="userSpaceOnUse"/>
+  <linearGradient id="k" y1="25" y2="10" x2="0" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#f39c12"/>
+   <stop offset="1" stop-color="#f5ab35"/>
+  </linearGradient>
+ </defs>
+ <rect width="40" x="4" y="18" fill="url(#b)" height="26"/>
+ <g stroke-linejoin="bevel" stroke-linecap="round" stroke-width="2">
+  <rect width="4" x="8" y="16" fill="url(#c)" height="9"/>
+  <rect width="4" x="12" y="4" fill="url(#d)" height="21"/>
+  <rect width="4" x="16" y="12" fill="url(#j)" height="13"/>
+  <rect width="4" x="20" y="10" fill="url(#g)" height="15"/>
+  <rect width="4" x="24" y="7" fill="url(#f)" height="18"/>
+  <rect width="4" x="28" y="12" fill="url(#i)" height="13"/>
+  <rect width="4" x="32" y="4" fill="url(#e)" height="21"/>
+  <rect width="4" x="36" y="8" fill="url(#h)" height="17"/>
+  <g fill="#eff0f1">
+   <rect width="4" x="8" y="31" height="3"/>
+   <rect width="4" x="8" y="39" height="3"/>
+   <rect width="4" x="8" y="27" height="3"/>
+   <rect width="4" x="14" y="31" height="3"/>
+   <rect width="4" x="14" y="39" height="3"/>
+   <rect width="4" x="14" y="27" height="3"/>
+   <rect width="12" x="20" y="31" height="3"/>
+   <rect width="12" x="20" y="39" height="3"/>
+   <rect width="12" x="20" y="27" height="3"/>
+   <rect width="6" x="34" y="31" height="3"/>
+   <rect width="6" x="34" y="39" height="3"/>
+   <rect width="6" x="34" y="27" height="3"/>
+   <rect width="4" x="8" y="35" height="3"/>
+   <rect width="4" x="14" y="35" height="3"/>
+   <rect width="12" x="20" y="35" height="3"/>
+   <rect width="6" x="34" y="35" height="3"/>
+  </g>
+  <rect width="1" x="9" y="28" fill="#4d4d4d" height="1"/>
+  <rect width="2" x="9" y="32" fill="#c0392b" height="1"/>
+  <rect width="1" x="9" y="36" fill="#4d4d4d" height="1"/>
+  <rect width="2" x="9" y="40" fill="#258e52" height="1"/>
+  <rect width="1" x="15" y="40" fill="#4d4d4d" height="1"/>
+  <rect width="1" x="15" y="36" fill="#258e52" height="1"/>
+  <rect width="1" x="15" y="32" fill="#c0392b" height="1"/>
+  <g fill="#4d4d4d">
+   <rect width="1" x="15" y="28" height="1"/>
+   <rect width="4" x="21" y="28" height="1"/>
+  </g>
+  <g fill="#258e52">
+   <rect width="2" x="21" y="32" height="1"/>
+   <rect width="2" x="24" y="32" height="1"/>
+   <rect width="3" x="21" y="36" height="1"/>
+  </g>
+  <g fill="#c0392b">
+   <rect width="7" x="21" y="40" height="1"/>
+   <rect width="1" x="29" y="40" height="1"/>
+  </g>
+  <rect width="3" x="35" y="28" fill="#258e52" height="1"/>
+  <rect width="1" x="35" y="32" fill="#4d4d4d" height="1"/>
+  <rect width="2" x="35" y="36" fill="#c0392b" height="1"/>
+  <rect width="3" x="35" y="40" fill="#4d4d4d" height="1"/>
+ </g>
+ <path opacity=".2" fill="url(#a)" fill-rule="evenodd" d="m8 25l19 19h17v-15l-4-4z"/>
+ <rect width="40" x="4" opacity=".1" y="43" fill="#2e3132" height="1"/>
+ <path fill="url(#k)" fill-rule="evenodd" d="m8 25v-3c2 0 2-3 4-3 2 0 1.5 4 4 4 2.5 0 2-4 4-4 2 0 2-4 4-4 2 0 2 4 4 4 2 0 2-2 4-2 2 0 2-5 4-5 2 0 2 7 4 7v6z"/>
+ <rect width="32" x="8" y="24" fill="#2e3132" height="1" fill-opacity=".294"/>
+</svg>

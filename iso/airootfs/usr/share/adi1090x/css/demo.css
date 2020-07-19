@@ -1,0 +1,269 @@
+/*
+===============================================
+--------------- 1. CSS Inits ------------------
+===============================================
+*/
+
+body {
+	background-size: cover;
+	background-attachment: fixed;
+	background-position: center center;	
+	font-family: 'Open Sans', sans-serif;
+}
+
+.page_wrapper {
+    width: 100%;
+    position: relative;
+}
+
+/*
+===============================================
+--------------- 2. PRELOADER ------------------
+===============================================
+*/
+
+
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    z-index: 9999999999;
+}
+.preloader .spinner {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 50%;
+    left: 50%;
+    margin-left: -40px;
+    margin-top: -40px;
+    -webkit-animation: rotatee 2.0s infinite linear;
+    animation: rotatee 2.0s infinite linear;
+}
+.preloader .spinner .dot1,
+.preloader .spinner .dot2 {
+    width: 60%;
+    height: 60%;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    border-radius: 100%;
+    -webkit-animation: bouncee 2s infinite ease-in-out;
+    animation: bouncee 2s infinite ease-in-out;
+}
+.preloader .spinner .dot2 {
+    top: auto;
+    bottom: 0px;
+    -webkit-animation-delay: -1s;
+    animation-delay: -1s;
+}
+@-webkit-keyframes rotatee {
+    100% {
+    -webkit-transform: rotate(360deg);
+}
+}
+@keyframes rotatee {
+    100% {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+}
+}
+@-webkit-keyframes bouncee {
+    0%,
+    100% {
+    -webkit-transform: scale(0);
+}
+50% {
+    -webkit-transform: scale(1);
+}
+}
+@keyframes bouncee {
+    0%,
+    100% {
+    transform: scale(0);
+    -webkit-transform: scale(0);
+}
+50% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+}
+}
+
+/*
+===============================================
+--------------- CSS Demo ------------------
+===============================================
+*/
+h3.h3_title {
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-size: 30px;
+    line-height: 33px;
+    font-weight: normal;
+    margin: 0;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.header-top {
+	background-color: #333333;
+	color: #fff;
+	padding: 24px 0 39px;
+}
+.header-top h2 {
+	font-family: "Oswald", sans-serif;
+	font-size: 30px;
+	line-height: 33px;
+	font-weight: normal;
+	margin: 0;
+	text-align: center;
+}
+.header-bottom {
+	background-color: #fff;
+}
+.logo {
+	padding-top: 25px;
+}
+.btn-pursache {
+	color: #fff;
+	display: block;
+	font-family: "Oswald", sans-serif;
+	font-size: 30px;
+	height: 95px;
+	line-height: 95px;
+	padding: 0 30px;
+	position: relative;
+	z-index: 1;
+	text-decoration: none !important;
+	-webkit-transition: all 0s ease-in-out 0s;
+	-moz-transition: all 0s ease-in-out 0s;
+	-o-transition: all 0s ease-in-out 0s;
+	transition: all 0s ease-in-out 0s;
+}
+.btn-pursache:before {
+	content: "";
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: -1;
+	-webkit-transform: skewX(-15deg);
+	-moz-transform: skewX(-15deg);
+	-ms-transform: skewX(-15deg);
+	-o-transform: skewX(-15deg);
+	transform: skewX(-15deg);
+}
+.btn-pursache:after {
+	background-color: rgba(0, 0, 0, 0.1);
+	content: "";
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 0;
+	z-index: -1;
+	-webkit-transform: skewX(-15deg);
+	-moz-transform: skewX(-15deg);
+	-ms-transform: skewX(-15deg);
+	-o-transform: skewX(-15deg);
+	transform: skewX(-15deg);
+	-webkit-transition: all 350ms cubic-bezier(0.77, 0, 0.175, 1) 0s;
+	-moz-transition: all 350ms cubic-bezier(0.77, 0, 0.175, 1) 0s;
+	-ms-transition: all 350ms cubic-bezier(0.77, 0, 0.175, 1) 0s;
+	-o-transition: all 350ms cubic-bezier(0.77, 0, 0.175, 1) 0s;
+}
+.btn-pursache:hover,
+.btn-pursache:focus {
+  color: #fff;
+}
+.btn-pursache:hover:after,
+.btn-pursache:focus:after {
+  width: 100%;
+}
+.dark-bg {
+	background-image: url(../img/background-image.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-width: 100%;
+    height: 100vh;
+}
+.white-bg {
+	background-color: #ffffff;
+}
+.other-bg {
+	background-color: #f1f3f7;
+}
+
+.section-full {
+	padding: 250px 0!important;
+}
+
+.effect-tabs {
+	text-align: center;
+	margin-bottom: 35px;
+	font-family: "Roboto", sans-serif;
+}
+.effect-tabs h3 {
+	font-family: "Roboto", sans-serif;
+    color: #fff;
+    font-size: 20px;
+    text-transform: capitalize;
+    font-weight: bold;
+}
+.effect-tabs .dropdown-select {
+    position: relative;
+    width: 200px;
+    margin: 0;
+    padding: 6px 20px;
+    height: 40px;
+    line-height: 14px;
+    font-size: 13px;
+    color: #fff;
+    background: #3C3E40;
+    border: 0;
+    border-radius: 0;
+    margin-top: 10px;
+    margin-left: 12px;
+}
+
+.demo-header {
+	text-align: center;
+	padding: 30px;
+}
+.demo-header a {
+	color: #fff;
+	background: #333;
+	text-decoration: none;
+	padding: 10px;
+}
+.demo-header a:hover {
+	color: #fff;
+	background-color: rgba(0,0,0,0.6);
+	text-decoration: none;
+}
+.demo-header a.current-demo {
+    color: #fff;
+    text-decoration: none;
+}
+
+.site-footer {
+  background-color: #222222;
+  border-top: 1px solid #303030;
+  padding: 42px 0;
+  font-family: "Dosis", sans-serif;
+}
+.site-footer .copyright {
+  font-size: 16px;
+  color: #757575;
+}
+.site-footer .copyright span a {
+  color: #f3f3f3;
+}
+
+.site-footer .credit a {
+  color: #f3f3f3;
+}

@@ -1,0 +1,152 @@
+/* This file is part of adapta-gtk-theme Copyright (C) 2016-2018 Tista <tista.gma500@gmail.com> This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version. */
+#workspacestodockTriggerSpacer, #workspacestodockContainerWrapper, #workspacestodockContainer { background-color: rgba(19, 25, 28, 0); }
+
+#workspacestodockDock { padding: 0; }
+
+#workspacestodockDock.top .workspace-thumbnails { margin: 0; border-radius: 2px 2px 0 0; background-color: rgba(19, 25, 28, 0); box-shadow: none; }
+
+#workspacestodockDock.top .workspace-thumbnails .workspace-thumbnail-indicator { padding: 5px; border-width: 0; border-bottom-width: 2px; }
+
+#workspacestodockDock.top.inside .workspace-thumbnails { border-radius: 0; background-color: rgba(19, 25, 28, 0); box-shadow: none; }
+
+#workspacestodockDock.top.inside .workspacestodock-shortcuts-panel { padding: 2px; spacing: 0; border-radius: 0; background-color: rgba(19, 25, 28, 0); box-shadow: none; }
+
+#workspacestodockDock.top.fullheight .workspace-thumbnails, #workspacestodockDock.top.fullheight .workspacestodock-shortcuts-panel { border-radius: 0; }
+
+#workspacestodockDock.top .workspacestodock-shortcuts-panel { padding: 2px; spacing: 0; border-radius: 0; box-shadow: inset 0 -1px 0 rgba(207, 216, 220, 0.2); }
+
+#workspacestodockDock.bottom .workspace-thumbnails { margin: 0; border-radius: 0 0 2px 2px; background-color: rgba(19, 25, 28, 0); box-shadow: none; }
+
+#workspacestodockDock.bottom .workspace-thumbnails .workspace-thumbnail-indicator { padding: 5px; border-width: 0; border-top-width: 2px; }
+
+#workspacestodockDock.bottom.inside .workspace-thumbnails { border-radius: 0; background-color: rgba(19, 25, 28, 0); box-shadow: none; }
+
+#workspacestodockDock.bottom.inside .workspacestodock-shortcuts-panel { padding: 2px; spacing: 0; border-radius: 0; background-color: rgba(19, 25, 28, 0); box-shadow: none; }
+
+#workspacestodockDock.bottom.fullheight .workspace-thumbnails, #workspacestodockDock.bottom.fullheight .workspacestodock-shortcuts-panel { border-radius: 0; }
+
+#workspacestodockDock.bottom .workspacestodock-shortcuts-panel { padding: 2px; spacing: 0; border-radius: 0; box-shadow: inset 0 1px 0 rgba(207, 216, 220, 0.2); }
+
+#workspacestodockDock.left .workspace-thumbnails { margin: 0; border-radius: 0 2px 2px 0; background-color: rgba(19, 25, 28, 0); box-shadow: none; }
+
+#workspacestodockDock.left .workspace-thumbnails .workspace-thumbnail-indicator { padding: 5px; border-width: 0; border-right-width: 2px; }
+
+#workspacestodockDock.left.inside .workspace-thumbnails { border-radius: 0; background-color: rgba(19, 25, 28, 0); box-shadow: none; }
+
+#workspacestodockDock.left.inside .workspacestodock-shortcuts-panel { padding: 2px; spacing: 0; border-radius: 0; background-color: rgba(19, 25, 28, 0); box-shadow: none; }
+
+#workspacestodockDock.left.fullheight .workspace-thumbnails, #workspacestodockDock.left.fullheight .workspacestodock-shortcuts-panel { border-radius: 0; }
+
+#workspacestodockDock.left .workspacestodock-shortcuts-panel { padding: 2px; spacing: 0; border-radius: 0; box-shadow: inset -1px 0 0 rgba(207, 216, 220, 0.2); }
+
+#workspacestodockDock.right .workspace-thumbnails { margin: 0; border-radius: 2px 0 0 2px; background-color: rgba(19, 25, 28, 0); box-shadow: none; }
+
+#workspacestodockDock.right .workspace-thumbnails .workspace-thumbnail-indicator { padding: 5px; border-width: 0; border-left-width: 2px; }
+
+#workspacestodockDock.right.inside .workspace-thumbnails { border-radius: 0; background-color: rgba(19, 25, 28, 0); box-shadow: none; }
+
+#workspacestodockDock.right.inside .workspacestodock-shortcuts-panel { padding: 2px; spacing: 0; border-radius: 0; background-color: rgba(19, 25, 28, 0); box-shadow: none; }
+
+#workspacestodockDock.right.fullheight .workspace-thumbnails, #workspacestodockDock.right.fullheight .workspacestodock-shortcuts-panel { border-radius: 0; }
+
+#workspacestodockDock.right .workspacestodock-shortcuts-panel { padding: 2px; spacing: 0; border-radius: 0; box-shadow: inset 1px 0 0 rgba(207, 216, 220, 0.2); }
+
+.workspacestodock-shortcuts-panel-popupmenu { padding: 2px; spacing: 0; }
+
+#workspacestodockDock .app-well-app .overview-icon { border-radius: 100px; }
+
+#workspacestodockDock .app-well-app:hover .overview-icon { background-color: rgba(207, 216, 220, 0.12); }
+
+#workspacestodockDock .app-well-app:active .overview-icon, #workspacestodockDock .app-well-app:focus .overview-icon, #workspacestodockDock .app-well-app:checked .overview-icon { background-color: #00BCD4; }
+
+#workspacestodockDock .workspacestodock-shortcuts-panel > StButton { background-size: contain; }
+
+.workspacestodock-shortcut-button-icon { padding: 6px; }
+
+.workspacestodock-shortcut-button-symbolic-icon { padding: 8px; }
+
+#workspacestodockDock .popup-separator-menu-item { margin: 2px; }
+
+.workspacestodock-shortcut-panel-separator { -margin-horizontal: 2px; }
+
+.workspacestodock-shortcut-panel-filler { height: 1px; padding: 0; -margin-horizontal: 2px; -gradient-height: 1px; -gradient-start: transparent; -gradient-end: transparent; }
+
+#workspacestodockDock.top .workspacestodock-shortcut-button-windowcount-image-1 { background-image: url("assets/one-top.svg"); }
+
+#workspacestodockDock.top .workspacestodock-shortcut-button-windowcount-image-2 { background-image: url("assets/two-top.svg"); }
+
+#workspacestodockDock.top .workspacestodock-shortcut-button-windowcount-image-3 { background-image: url("assets/three-top.svg"); }
+
+#workspacestodockDock.top .workspacestodock-shortcut-button-windowcount-image-4 { background-image: url("assets/four-top.svg"); }
+
+#workspacestodockDock.bottom .workspacestodock-shortcut-button-windowcount-image-1 { background-image: url("assets/one-bottom.svg"); }
+
+#workspacestodockDock.bottom .workspacestodock-shortcut-button-windowcount-image-2 { background-image: url("assets/two-bottom.svg"); }
+
+#workspacestodockDock.bottom .workspacestodock-shortcut-button-windowcount-image-3 { background-image: url("assets/three-bottom.svg"); }
+
+#workspacestodockDock.bottom .workspacestodock-shortcut-button-windowcount-image-4 { background-image: url("assets/four-bottom.svg"); }
+
+#workspacestodockDock.left .workspacestodock-shortcut-button-windowcount-image-1 { background-image: url("assets/one-left.svg"); }
+
+#workspacestodockDock.left .workspacestodock-shortcut-button-windowcount-image-2 { background-image: url("assets/two-left.svg"); }
+
+#workspacestodockDock.left .workspacestodock-shortcut-button-windowcount-image-3 { background-image: url("assets/three-left.svg"); }
+
+#workspacestodockDock.left .workspacestodock-shortcut-button-windowcount-image-4 { background-image: url("assets/four-left.svg"); }
+
+#workspacestodockDock.right .workspacestodock-shortcut-button-windowcount-image-1 { background-image: url("assets/one-right.svg"); }
+
+#workspacestodockDock.right .workspacestodock-shortcut-button-windowcount-image-2 { background-image: url("assets/two-right.svg"); }
+
+#workspacestodockDock.right .workspacestodock-shortcut-button-windowcount-image-3 { background-image: url("assets/three-right.svg"); }
+
+#workspacestodockDock.right .workspacestodock-shortcut-button-windowcount-image-4 { background-image: url("assets/four-right.svg"); }
+
+.workspacestodock-workspace-caption { color: rgba(207, 216, 220, 0.54); }
+
+.workspacestodock-workspace-caption-container { padding: 0; border-radius: 2px; border: 1px solid rgba(0, 0, 0, 0.13); }
+
+.workspacestodock-workspace-caption-background { border-top: 1px solid rgba(0, 0, 0, 0.13); border-radius: 0 0 2px 2px; background-color: #222d32; }
+
+.workspacestodock-workspace-caption-background-current { color: #CFD8DC; }
+
+.workspacestodock-caption-windowapps { padding: 0; }
+
+.workspacestodock-caption-windowapps-menu { -boxpointer-gap: 12px; }
+
+.workspacestodock-caption-windowapps-menu .window-close { height: 20px; width: 20px; background-size: 24px; }
+
+.workspacestodock-caption-windowapps-menu-label { padding: 0 10px 0 10px; }
+
+.workspacestodock-caption-windowapps-button { padding: 0 4px; }
+
+.workspacestodock-caption-windowapps-button-icon { padding: 2px 2px 0 2px; border: none; border-radius: 0; background-color: transparent; box-shadow: none; }
+
+.workspacestodock-caption-windowapps-button:hover > .workspacestodock-caption-windowapps-button-icon { background-color: rgba(0, 0, 0, 0.01); box-shadow: inset 0 -2px rgba(207, 216, 220, 0.2); }
+
+.workspacestodock-caption-windowapps-button-active > .workspacestodock-caption-windowapps-button-icon, .workspacestodock-caption-windowapps-button-active:hover > .workspacestodock-caption-windowapps-button-icon { background-color: rgba(0, 0, 0, 0.01); box-shadow: inset 0 -2px #00BCD4; }
+
+.workspacestodock-caption-number { height: 20px; min-width: 7px; padding: 0 7px; border-radius: 100px; color: rgba(207, 216, 220, 0.54); background-color: #222d32; font-size: 12px; font-weight: 700; text-align: center; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.28); }
+
+.workspacestodock-caption-number-current { color: #81c4bf; box-shadow: 0 2.5px 4.5px rgba(0, 0, 0, 0.34); }
+
+.workspacestodock-caption-name { height: 20px; min-width: 7px; padding: 0 7px; border-radius: 2px; color: rgba(207, 216, 220, 0.54); background-color: #222d32; font-size: 12px; font-weight: 700; text-align: center; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.28); }
+
+.workspacestodock-caption-name-current { color: #81c4bf; box-shadow: 0 2.5px 4.5px rgba(0, 0, 0, 0.34); }
+
+.workspacestodock-caption-windowcount { min-width: 7px; padding: 0 7px; border: none; color: rgba(207, 216, 220, 0.54); background-color: transparent; font-size: 12px; font-weight: 700; text-align: center; }
+
+.workspacestodock-caption-windowcount-current { color: #CFD8DC; }
+
+.workspacestodock-caption-windowcount-image { width: 20px; height: 16px; }
+
+.workspacestodock-caption-spacer { width: 1px; border: 1px solid transparent; }
+
+.workspacestodock-caption-windowcount-image-1 { background-image: url("assets/h-one.svg"); }
+
+.workspacestodock-caption-windowcount-image-2 { background-image: url("assets/h-two.svg"); }
+
+.workspacestodock-caption-windowcount-image-3 { background-image: url("assets/h-three.svg"); }
+
+.workspacestodock-caption-windowcount-image-4 { background-image: url("assets/h-four.svg"); }

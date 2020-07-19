@@ -1,0 +1,33 @@
+<svg width="48" xmlns="http://www.w3.org/2000/svg" height="48">
+ <defs>
+  <linearGradient id="b" y1="531.8" y2="507.82" x2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1 0 0 1.33561-.003-168.45)">
+   <stop stop-color="#2a2c2f"/>
+   <stop offset="1" stop-color="#424649"/>
+  </linearGradient>
+  <linearGradient id="c" y1="577.8" y2="541.8" gradientUnits="userSpaceOnUse" x2="0" gradientTransform="matrix(1.50001 0 0 1-588.86-533.81)">
+   <stop stop-color="#c6cdd1"/>
+   <stop offset="1" stop-color="#e0e5e7"/>
+  </linearGradient>
+  <linearGradient id="d" y1="532.8" x1="409.57" y2="543.8" x2="420.57" gradientUnits="userSpaceOnUse" gradientTransform="translate(-62.5 53.5)">
+   <stop stop-opacity=".314"/>
+   <stop offset="1" stop-opacity="0"/>
+  </linearGradient>
+  <linearGradient id="e" y1="540.8" y2="522.8" gradientUnits="userSpaceOnUse" x2="0" gradientTransform="translate(-61.5 53.5)">
+   <stop stop-color="#f62020"/>
+   <stop offset="1" stop-color="#f8507b"/>
+  </linearGradient>
+ </defs>
+ <g transform="translate(-384.57-499.8)">
+  <g stroke-linejoin="round" stroke-width="2">
+   <path fill="url(#b)" d="m387.57 508.8h41.999v34h-41.999z"/>
+   <path fill="url(#c)" d="m2 8v36h44v-36zm2 2h40v32h-40z" transform="translate(384.57 499.8)"/>
+  </g>
+  <g transform="translate(61.5-59.5)">
+   <path fill="url(#d)" fill-rule="evenodd" d="m335.07 594.3l8.996 8.996h25v-14.996l-9.998-12z"/>
+   <g stroke-linejoin="bevel">
+    <path fill="url(#e)" d="m335.07 576.3h24v18h-24z"/>
+    <path fill="#ffffff" d="m337.08 577.3v1h20v-1zm-.004 3v10h1c3 0 4-1.998 4-4.984 0-3.01-1-5.02-4-5.02zm7 0v.002h-.002l.002.006v9.992h1v-7.49l2.994 7.492h1v-.002h.002v-10h-1v7.504l-2.955-7.395-.041-.109zm12.998 0c-3 0-5.996 1-5.996 4.969 0 4.03 1.996 5.03 4.996 5.03h1v-5h-1.996v1h.996v3c-3 0-3.996-1-3.996-3.969 0-3.03 1.996-4.03 4.996-4.03zm-18.998 1c3 0 3 3 3 4 0 1 0 4-3 4zm-.996 11v1h20v-1z"/>
+   </g>
+  </g>
+ </g>
+</svg>

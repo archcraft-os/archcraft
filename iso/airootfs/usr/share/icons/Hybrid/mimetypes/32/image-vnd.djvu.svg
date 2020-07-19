@@ -1,0 +1,24 @@
+<svg width="32" xmlns="http://www.w3.org/2000/svg" height="32">
+ <defs>
+  <linearGradient id="a" y1="61" y2="3" x2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(.5 0 0 .48276 384.57 516.35)">
+   <stop stop-color="#f39c12"/>
+   <stop offset="1" stop-color="#f9a11f"/>
+  </linearGradient>
+ </defs>
+ <g transform="translate(-384.57-515.8)">
+  <path fill="url(#a)" d="m389.57 517.8v28h22v-28h-7z"/>
+  <rect width="22" x="389.57" y="544.8" fill="#2e3132" height="1" fill-opacity=".294"/>
+  <rect width="22" x="389.57" y="517.8" fill="#ffffff" height="1" fill-opacity=".412"/>
+  <g fill="#fddda3" color="#4d4d4d" transform="translate(-29.14-8.993)">
+   <path d="m2 3v11h12v-11zm1 1h10v9h-10z" transform="translate(421.71 531.79)"/>
+   <rect width="1" x="433.71" y="533.79" height="1"/>
+   <rect width="1" x="424.71" y="533.79" height="1"/>
+   <rect width="1" x="426.71" y="533.79" height="1"/>
+   <rect width="1" x="431.71" y="533.79" height="1"/>
+   <rect width="8" x="425.71" y="536.79" height="1"/>
+   <rect width="4" x="425.71" y="538.79" height="1"/>
+   <rect width="2" x="431.71" y="542.79" height="1"/>
+   <rect width="6" x="425.71" y="540.79" height="1"/>
+  </g>
+ </g>
+</svg>

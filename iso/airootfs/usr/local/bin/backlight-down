@@ -1,0 +1,9 @@
+#!/bin/bash
+
+style=$(cat $HOME/.config/dunst/sid)
+
+if [[ "$style" == "Light" ]]; then
+	xbacklight -dec 10 && dunstify -u low --replace=69 -i /usr/share/icons/Hybrid_Light/actions/24/whitebalance.svg "Brightness Dec : $(backlight)%"
+else
+	xbacklight -dec 10 && dunstify -u low --replace=69 -i /usr/share/icons/Hybrid/actions/24/whitebalance.svg "Brightness Dec : $(backlight)%"
+fi

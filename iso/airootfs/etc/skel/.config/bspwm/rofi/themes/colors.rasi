@@ -1,0 +1,8 @@
+* {
+background:			#2E3440;
+foreground:			#D8DEE9;
+selected:			#81A1C1;
+urgent:				#BF616A;
+on:					#A3BE8C;
+off:				#BF616A;
+}

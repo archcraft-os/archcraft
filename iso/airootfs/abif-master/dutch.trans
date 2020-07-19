@@ -1,0 +1,372 @@
+##
+## 							
+## Nederlands Vertaalbestand (Architect 2.0)		
+##								
+##
+## Written by Carl Duff (15-Feb-2016)
+##
+##
+
+# Generic
+_UseSpaceBar="Gebruik de [spatietoets] om opties in de lijst te (de)selecteren."
+_AlreadyInst="Reeds geïnstalleerd maar nog niet actief:"
+_All="Alle"
+_Done="Klaar"
+_PlsWaitBody="\nEven geduld aub...\n\n"
+_PassReEntBody="\nHerhaal het wachtwoord"
+_ErrTitle="Fout"
+_PassErrBody="\nDe ingegeven wachtwoorden zijn niet identiek. Probeer opnieuw aub.\n\n"
+
+# Veiligheid en aanpassingen
+_SecMenuTitle="Beveiliging en systemd instellen"
+_SecJournTitle="Verbeter journald logging"
+_SecCoreTitle="Schakel Coredump logging uit"
+_SecKernTitle="Beperk de toegang tot Kernel Logs"
+_Edit="Pas het configuratiebestand aan"
+_Disable="Uitschakelen"
+_SecMenuBody="\nEr zijn enkele handige en beginners-vriendelijke instelmogelijkheden voorzien om de beveiliging van het systeem en de prestaties te verbeteren.\n\nBij het selecteren van een optie krijg je meer details te zien."
+_SecJournBody="\nsystemd-journald verzamelt en slaat kernel logs, systeem logs, audit records op, alsook standaard rapporten en foutmeldingen van services.\n\nStandaard wordt de persistente rapport-grootte gelimiteerd op 10% van de root partitie:  Bij een root-partitie van 500G betekent dit dat maximum 50G aan gegevens kunnen worden opgeslagen in/var/log/journal.  50G zou voldoende moeten zijn. De rapportering kan ook worden uitgeschakeld, maar dat kan het oplossen van problemen met het systeem bemoeilijken.\n\n"
+_SecCoreBody="\nEen core-dump is de registratie van de staat van het computergeheugen wanneer een proces vastloopt.\n\nHandig voor ontwikkelaars, maar niet voor de gemiddelde gebruiker. Core-dumps verkwisten systeembronnen en kunnen ook gevoelige gegevens bevatten zoals wachtwoorden en encryptiesleutels. /n/nStandaard genereert systemd core-dumps voor alle processen in /var/lib/systemd/coredump. Dit gedrag kan worden aangepast door het creëren van een configuratiebestand in de /etc/systemd/coredump.conf.d/ map.\n\n"
+
+# btrfs
+_btrfsSVTitle="btrfs Subvolumes"
+_btrfsSVBody="Aanmaken van btrfs subvolumes?\n\nEen initieel subvolume zal worden aangemaakt en vervolgens aangekoppeld. Onderliggende subvolumes kunnen daarna worden aangemaakt.\n\nJe kunt ook direct verder gaan naar de aankoppelopties.\n"
+_btrfsMSubBody1="Geef de naam van de eerste subvolume dat moet worden aangekoppeld (bijv. ROOT). Aankoppelopties kunnen worden geselecteerd. Eenmaal aangekoppeld, alle subvolumes gecreëerd voor"
+_btrfsMSubBody2="zullen er uit aftakken."
+_btrfsSVErrBody="Blanco's of spaties zijn niet toegestaan. Probeer opnieuw.\n"
+_btrfsSVBody1="Geef de naam van het subvolume in"
+_btrfsSVBody2="om te maken in"
+_btrfsSVBody3="\n\nDit proces zal worden herhaald tot een asterisk (*) als subvolumenaam wordt ingegeven.\n\nAangemaakte subvolumes:"
+_btrfsMntBody="Gebuik [Spatie] om de gewenste aankoppel-opties te (de)selecteren en controleer deze nauwkeurig. Vermijd de selectie van meerdere versies van de zelfde optie, aub."
+_btrfsMntConfBody="Bevestig volgende aankoppelopties:\n\n"
+
+# Autopartitionering
+_AutoPartBody1="Opgelet: ALLE data op"
+_AutoPartBody2="zal worden gewist.\n\nEr wordt eerst een boot partitie van 512MB aangemaakt,  de rest van de ruimte wordt ingenomen door een tweede (root of '/') partitie."
+_AutoPartBody3="Indien je SWAP wenst te gebruiken, selecteer de 'Swap File' optie bij het aankoppelen.\n\nWil je verder gaan?"
+
+#Foutmeldingen. Alle andere worden door BASH gegenereerd.
+_ErrNoMount="\nPartitie(s) moet(en) eerst worden aangekoppeld\n\n"
+_ErrNoBase="\nHet Arch basissysteem moet eerst worden geïnstalleerd.\n\n"
+_ErrNoKernel="\nEr moet ten minste één kernel (linux of linux-lts) worden geselecteer.\n\n"
+
+# Vbox Installaties
+_VBoxInstTitle="VirtualBox Installatie "
+_VBoxInstBody="\nAls, voor welke reden dan ook, de VirtualBox guest modules niet laden voor het geïnstalleerde systeem (vb lage resolutie en scrollbars na de opstart) dan zal deze reeks van commando's dit corrigeren:\n\n$ su\n# depmod -a\n# modprobe -a vboxvideo vboxguest vboxsf\n# reboot"
+
+# Selecteer Configuratiebestanden
+_SeeConfOptTitle="Controle van Configuratiebestanden"
+_SeeConfOptBody="\nSelecteer een hieronder vermeld bestand dat moet worden herzien of gewijzigd.\n"
+_SeeConfErrBody="\nBestand bestaat niet.\n\n"
+
+# Pacman
+_PrepPacKey="Vernieuw de Pacman sleutelbestanden"
+
+# LUKS / DM-Crypt / Versleuteling
+_PrepLUKS="LUKS Versleuteling (optioneel)"
+_LuksMenuBody="\nOpslagmedia en volumes die versleuteld werden met dm_crypt kunnen niet  geopend of gelezen worden zonder deze te deblokkeren met een sleutel of wachtwoord."
+_LuksMenuBody2="\n\nEen aparte niet-versleutelde boot partitie zonder logisch volume management (LVM - tenzij bij gebruik van BIOS Grub) is vereist."
+_LuksMenuBody3="\n\nStandaard wordt de automatische versleuteloptie gebruikt, en dit is aanbevolen voor beginners. Het is ook mogelijk om de code en de sleutelgrootte-parameters manueel in te geven."
+_LuksOpen="Open Versleutelde Partitie"
+_LuksOpenBody="\nGeef een naam aan het versleutelde opslagmedium. Het is niet nodig om het voorvoegsel /dev/mapper/ te vermelden. er werd een voorbeeld voorzien."
+_LuksEncrypt="Automatische LUKS Versleuteling"
+_LuksEncryptAdv="Bepaal de sleutelgrootte en Cypher"
+_LuksEncryptBody="\nSelecteer een partitie om te versleutelen."
+_LuksEncruptSucc="\nKlaar! Geopend en klaar voor LVM (aanbevolen) of rechtstreekse aankoppeling.\n"
+_LuksPartErrBody="\nEr zijn minimum twee partities nodig om te kunnen versleutelen:\n\n1. Root (/) - standaard-of LVM partitie-types.\n\n2. Boot (/boot of /boot/efi) - alleen standaard partitietypes  (behalve LVM waar men BIOS Grub gebruikt).\n"
+_SelLuksRootBody="\nSelecteer de ROOT (/) partitie die moet worden versleuteld. Dit is waar Arch zal worden geïnstalleerd.\n\n"
+_LuksPassBody="\nGeef een wachtwoord in om de partitie te versleutelen. Dit mag niet hetzelfde zijn als het Root-wachtwoord of uw gebruikerswachtwoord.\n"
+_LuksWaitBody="\nAanmaken van een versleutelde Root partitie:"
+_LuksWaitBody2="Gebruikt opslagmedium of volume:"
+_LuksCipherKey="\nZodra de opgegeven vlaggen zijn gewijzigd, zullen ze automatisch worden gebruikt met de opdracht 'cryptsetup q luksFormat/dev/...'\n\nOpmerking: Sleutelbestanden worden niet ondersteund; ze kunnen na de installatie handmatig worden toegevoegd. Geef geen extra vlaggen op, zoals -v (--verbose) of -y (--verify-passphrase).\n"
+
+# Logisch Volume Management
+_PrepLVM="Logisch Volume Management"
+_PrepLVM2="(optioneel)"
+_LvmMenu="\nLogisch Volume Management (LVM) laat ons toe 'virtuele' harde schijven (Volume Groepen) en partities (Logische Volumes) te maken op bestaande schijven en partities. Eerst moet een Volume Groep worden aangemaakt met daarin één of meerdere Logische Volumes.\n\nLVM kan ook worden gebruikt om in een versleutelde partitie meerdere logische volumes aan te maken (zoals root en home)."
+_LvmCreateVG="Aanmaken van VG en LV(s)"
+_LvmDelVG="Verwijder Volume Groepen"
+_LvMDelAll="Verwijder *ALLE* VGs, LVs, PVs"
+_LvmDetBody="\nEen bestaand Logische Volume Management (LVM) gedetecteerd. Activeren. Even geduld aub...\n\n"
+_LvmPartErrBody="\Er zijn geen geschikte partities beschikbaar die gebruikt kunnen worden als Logische Volume Management. Er is minimum één zo'n partitie vereist.\n\nAls LVM al in gebruik is, zal het deactiveren ervan het mogelijk maken om de partitie(s) die bezet waren als Physical Volume(s) opnieuw te gebruiken.\n\n"
+_LvmNameVgBody="\nOm een Volume Groep (VG) aan te maken geef een naam in.\n\nDe VG is de nieuwe 'virtuele harde schijf' die gemaakt kan worden op de hierna te selecteren partitie(s).\n"
+_LvmNameVgErr="\nOngeldige naam ingegeven. The Volume Groepsnaam mag alfa-numeriek zijn, maar mag geen spaties bevatten, starten met een '/', of al in gebruik zijn.\n\n"
+_LvmPvSelBody="\nSelecteer de partitie(s) om te gebruiken als Physical Volume (PV).\n\n"
+_LvmPvConfBody1="\nBevestig het aanmaken van Volume Groep "
+_LvmPvConfBody2="met de volgende partities:\n\n"
+_LvmPvActBody1="\nAanmaak en activering van Volume Groep "
+_LvmPvDoneBody1="\nVolume Groep "
+_LvmPvDoneBody2="werd aangemaakt"
+_LvmLvNumBody1="\nGebruik [spatie] om het aantal logische volumes (LVM) te selecteren die moeten worden aangemaakt"
+_LvmLvNumBody2="\n\nDe laatste (of enige) LV zal automatisch 100% van de overblijvende ruimte innemen in de Volume Groep."
+_LvmLvNameBody1="\nOm een Logisch Volume (LV) aan te maken geef je een naam in.\n\nDit is zoals het geven van een naam/label aan een partitie.\n"
+_LvmLvNameBody2="\nNOTE: Deze LV zal alle overgebleven ruimte van de Volume Groep innemen"
+_LvmLvNameErrBody="\nOngeldige naam. De naam van de Logische Volume (LV) mag  alfa-numeriek zijn, maar mag geen spaties bevatten of voorafgegaan worden door een '/'.\n\n"
+_LvmLvSizeBody1="resterend"
+_LvmLvSizeBody2="\n\nGeef de grootte van Logisch Volume (LV) in, in Megabytes (M) of Gigabytes (G). Bij voorbeeld, 100M maakt een LV van 100 Megabyte . 10G maakt een LV van  10 Gigabyte.\n"
+_LvmLvSizeErrBody="\nEen ongeldige waarde werd ingegeven. Er moet een numerieke waarde worden ingegeven gevolgd door een 'M' (Megabytes) of een 'G' (Gigabytes).\n\nVoorbeelden, 100M, 10G, or 250M. De waarde mag ook niet gelijk of groter zijn dan de restgrootte van de VG.\n\n"
+_LvmCompBody="\nKlaar! Alle Logische Volumes voor de Volume Groep werden aangemaakt.\n\nWil je het nieuwe LVM schema te zien?\n\n"
+_LvmDelQ="\n Bevestig het verwijderen van Volume Groep(en) en Logische Volume(s).\n\nBij het verwijderen van een Volume Groep, zullen alle Logische Volumes binnen deze groep ook worden verwijderd.\n\n"
+_LvmSelVGBody="\nSelecteer de Volume Groep die moet worden verwijderd. Alle Logische Volumes daarin zullen ook vernietigd worden.\n"
+_LvmVGErr="\nGeen Volume Groepen gevonden.\n\n"
+
+# Toon opslagapparaten en partities
+_DevShowOpt="Lijst van Opslagmedia (optioneel)"
+
+# Check Voorwaarden
+_ChkTitle="Controleer opnieuw de voorwaarden"
+_ChkBody="\nControleer opnieuw: werd de installatie uitgevoerd als root? en is er een actieve internetverbinding? Even geduld aub...\n\n"
+_RtFailBody="\nHet installatieprogramma moet worden uitgevoerd als root. Afsluiten.\n\n"
+_ConFailBody="\nGeen internetverbinding. Afsluiten.\n\n"
+_ReqMetTitle="Alle voorwaarden voldaan"
+_ReqMetBody="\nAlle controles ok!\n\n"
+
+
+# Installeer Mirrorlijst
+_MirrorlistTitle="Mirrorlijst"
+_MirrorlistBody="\nDe mirrorlijst bevat server-adressen die worden gebruikt door pacman om pakketten te installeren. Om de snelste servers te vinden, moet u EERST een mirrorlijst per land genereren VOORALEER u RankMirrors laat draaien, anders zal het proces LANG duren.\n\nHet pacman configuratiebestand kan worden bewerkt om multilib en andere repositories in te schakelen. \n\nOPMERKING:. Sluit tekstbestanden met '[Ctrl] + [x] '. Indien  u dit bestand bewerkt, druk dan op [y] om de wijzigingen op te slaan of [n] om ze te annuleren.\n"
+_MirrorbyCountry="Genereer een mirrorlijst gesorteerd volgens Land"
+_MirrorEdit="Pas de Mirrorlijst manueel aan"
+_MirrorRankTitle="Start RankMirrors"
+_MirrorRestTitle="Herstel de originele mirrorlijst"
+_MirrorRankBody="\nZoeken naar de snelste servers op de mirrorlijst."
+_MirrorNoneBody="\nEr werd geen versie van de originele mirrorlijst gevonden.\n\n"
+_MirrorCntryBody="\nEr zal een lijst van mirrors per land worden gegenereerd.\n"
+_MirrorGenQ="Gebruik je de gegenereerde mirrorlijst voor het installatieprogramma?"
+_MirrorPacman="Bewerkt het pacman configuratiebestand"
+_MIrrorPacQ="\nWil je het aangepast pacman configuratiebestand gebruiken voor het geïnstalleerde systeem? Zo ja, zal het bestand gekopieerd worden zodra het basissysteem is geïnstalleerd.\n\n"
+
+# Stel het toetsenbord in (vconsole)
+_VCKeymapTitle="Stel de Virtuele Console in"
+_VCKeymapBody="\nEen virtuele console is een shell prompt in een niet-grafische omgeving. De toetsenbordindeling ervan is onafhankelijk van een desktop suite / terminal."
+
+# stel Xkbmap in (omgeving)
+_XkbmapBody="\nSelecteer de toetsenbordindeling voor Desktop Suite."
+
+# Stel de systeemtaal in
+_localeBody="Landinstellingen bepalen welke talen en hoe tijd en datum enz... worden weergegeven.\n\nHet formaat is taal_LAND (bijvoorbeeld nl_BE is nederlands, België; en_GB is engels, Groot-Brittannië). "
+
+# Stel de tijdzone in
+_TimeZBody="\nAan de hand van de tijdzone wordt uw systeemklok correct ingesteld."
+_TimeSubZBody="\nSelecteer de dichtstbij zijnde stad."
+_TimeZQ="\nStel als tijdzone in"
+
+# Stel de Hardware klok in
+_HwCBody="\nUTC is de universele standaard tijd, en is aangewezen behalve bij een dual-installatie met Windows."
+
+# Genereer FSTAB
+_FstabBody="\nHet FSTAB bestand (File System TABle) bepaalt waar en welke opslagmedia/partities worden aangekoppeld, en hoe ze worden gebruikt.\n\nUUID (Universally Unique IDentifier) is aanbevolen.\n\nIndien er geen labels werden ingesteld bij oudere partities, dan zullen de schijfnamen worden gebruikt als label."
+_FstabErr="\nDe Part UUID optie is enkel voor UEFI/GPT installaties.\n\n"
+_FstabDevName="Naam van het opslagmedium"
+_FstabDevLabel="Label van het opslagmedium"
+_FstabDevUUID="UUID van het opslagmedium"
+_FstabDevPtUUID="UEFI Part UUID"
+
+# Stel Host naam in
+_HostNameBody="\nAan de hand van de Host-Naam wordt een systeem in een netwerk geïdentificeerd.\n\nDe Host-Naam mag enkel uit alfa-numerieke karakters bestaan maar kan ook een streepje (-) bevatten - doch niet in het begin of op het einde - en mag uit maximum 63 karakters bestaan.\n"
+
+# Stel het Root wachtwoord in
+_PassRtBody="\nStel een Root wachtwoord in\n\n"
+_PassRtBody2="\nHerhaal het Root wachtwoord\n\n"
+
+# Aanmaken van een Nieuwe Gebruiker
+_NUsrTitle="Maak een nieuwe gebruiker aan"
+_NUsrBody="\nGeef een gebruikersnaam in. Met KLEINE letters!\n"
+
+# Foute Gebruikersnaam
+_NUsrErrTitle="Foute gebruikersnaam"
+_NUsrErrBody="\nEen foute gebruikersnaam werd ingegeven. Probeer opnieuw aub.\n\n"
+
+# Stel Gebruiker in
+_PassNUsrBody="\nGeef wachtwoord in voor" 
+_NUsrSetBody="\nMaak een Gebruiker aan en stel Groepen in...\n\n"
+
+# Aankoppelen van Partities
+_MntStatusTitle="Aankoppelstatus"
+_MntStatusSucc="\nSuccesvol aangekoppeld!\n\n"
+_MntStatusFail="\nAankoppeling mislukt!\n\n"
+_WarnMount1="\nBELANGRIJK: Partities kunnen worden aangekoppeld zonder ze te formatteren door het selecteren van de "
+_WarnMount2="optie te vinden bovenaan in het systeem menubestand.\n\nVerzeker u ervan dat u de juiste keuzes voor het aankoppelen en het formatteren maakt, er zullen geen waarschuwingen worden gegeven, met uitzondering van de UEFI boot partitie.\n\n "
+
+# Selecteer Opslagmedium (installatie)
+_DevSelTitle="Selecteer Opslagmedium"
+_DevSelBody="\nOpslagmedia (/dev) zijn de beschikbare en beschrijfbare harde schijven en USB-sticks. De eerste is /sda, de tweede /sdb, en zo verder.\n\nWanneer er een USB-stick gebruikt wordt om Architect op te starten zal deze ook op deze lijst voorkomen!"
+
+# Partitionering
+_PartToolTitle="Partities instellen"
+_PartToolBody="\nEen automatische partitioneringsoptie is beschikbaar voor beginners. Anderzijds is cfdisk aanbevolen voor BIOS, parted voor UEFI.\n\nSelecteer in GEEN GEVAL het  UEFI/GPT-only partitioneringstool voor een BIOS/MBR systeem omdat dit serieuze problemen kan veroorzaken, en zelf kan leiden tot een niet opstartbare installatie."
+_PartOptAuto="Automatische Partitionering"
+_PartOptWipe="Opslagmedium veilig wissen (optioneel)"
+_AutoPartWipeBody1="\nOPGELET: ALLE data op"
+_AutoPartWipeBody2="zal worden vernietigd bij gebruik van de opdracht 'wipe -Ifre'. Dit kan een tijdje duren afhankelijk van de grootte van het opslagmedium.\n\nWenst U verder te gaan?\n"
+
+# Partitionering Fout
+_PartErrBody="\nDe installatie van BIOS systemen vereist minimum één partitie (ROOT).\n\nUEFI systemen vereisen een minimum van twee partities (ROOT and UEFI).\n\n"
+
+# Bestand Systeem
+_FSTitle="Kies een bestandsysteem"
+_FSBody="\nExt4 is hier aanbevolen. Niet alle bestandsystemen zijn geschikt voor de Root of Boot-Partities. Elk bestandsysteem heeft verschillende eigenschappen en beperkingen."
+_FSSkip="Sla over / Geen" 
+
+# Selecteer Root
+_SelRootBody="\nSelecteer de ROOT Partitie. Dit is waar Arch zal worden geïnstalleerd."
+
+# Selecteer SWAP
+_SelSwpBody="\nSelecteer de SWAP Partitie. Bij gebruik van SWAP, zal deze even groot ingesteld worden als de hoeveelheid RAM."
+_SelSwpNone="Geen"
+_SelSwpFile="Swapbestand"
+
+# Selecteer UEFI
+_SelUefiBody="\nSelecteer een UEFI Partitie. Dit is een speciale partitie voor het starten van UEFI systemen."
+
+# Formateer UEFI
+_FormUefiBody="De UEFI partitie"
+_FormUefiBody2="werd reeds geformateerd.\n\nHerformateren? Dit zal ALLE data op deze partitie wissen.\n\n"
+
+# UEFI aankoppelpunt
+_MntUefiBody="\nSelecteer een UEFI aankoppelpunt.\n\nsystemd-boot vereist /boot. Grub zal werken met willekeurig aankoppelpunt."
+
+# Extra Partities
+_ExtPartBody="\nSelecteer bijkomende partities in eender welke volgorde, of 'Klaar' om te eindigen."
+
+# Extra Partities
+_ExtPartBody1="\nBepaal een partitie aankoppelpunt. Verzeker je ervan dat de naam begint met een slash (/). Zie voorbeelden:\n\n"
+
+# Extra Partitie benoemen - Fout
+_ExtErrBody="\nPartitie kan niet worden aangekoppeld wegens een probleem met de aankoppelnaam. De naam moet achter een voorwaartse slash komen.\n\n"
+
+# Installeer Basissysteem
+_InstBseTitle="Installeer Basissysteem"
+_InstBseBody="\nStandaard: Aanbevolen voor beginners. Keuze tot twee kernels (linux en linux-lts) en optioneel kunnen de base-devel pakket groep. sudo, btrfs-progs, f2fs-tools ook worden geïnstalleerd.\n\nGevorderden: Keuze tot vier kernels (linux, lts, grsec, zen) en controle over individuele base en base-devel pakketten. Bijkomende configuratie van vgrsec en zen kan nodig zijn voor Virtualbox en NVIDIA.\n\nNOTE: Tenzij er reeds een kernel geïnstalleerd is, moet er tenminste een kernel worden geselecteerd."
+_InstStandBseBody="\nDe base package group zal automatisch worden geïnstalleerd. The base-devel package group is nodig voor de Arch User Repository (AUR).\n\n"
+_InstStandBase="Standaard Installatie"
+_InstAdvBase="Geadvanceerde Installatie"
+_InstAdvBseBody="\nWAARSCHUWING: Dit is enkel voor ervaren gebruikers. Nieuwere gebruikers gebruiken best de 'standaard' installatie optie."
+_InstAdvWait="\nVerzameling pakketbeschrijvingen."
+
+# Installeer BIOS Bootloader
+_InstBiosBtTitle="Installeer BIOS Bootlader"
+_InstBiosBtBody="\nGrub2 is aanbevolen voor beginners. De installatieschijf kan ook worden geselecteerd.\n\nSyslinux is een lichter en eenvoudiger alternatief dat enkel werkt met de ext/btrfs -bestandsystemen."
+_InstSysTitle="Installeer Syslinux"
+_InstSysBody="\nInstalleer syslinux op Master Boot Record (MBR) of op Root (/)?\n\n"
+
+# Installeer UEFI Bootloader
+_InstUefiBtTitle="Installeer UEFI Bootloader"
+_InstUefiBtBody="\nsystemd-boot vereist /boot. Grub werkt met eender welk aankoppelpunt."
+_SetBootDefBody="\nSommige UEFI firmware kan geen bootloader vinden tenzij het is ingesteld als standaard. Dit doe je door het kopiëeren van haar efi stub"
+_SetBootDefBody2="en het te hernoemen naar bootx64.efi.\n\nHet is aanbevolen dit te doen tenzij je reeds een standaard bootloader hebt, of wanneer je van plan bent meerdere bootloaders te gebruiken.\n\nStel de bootloader in als standaard?\n\n"
+
+#Stel efi bestand in voor Grub
+_SetDefDoneBody="werd ingesteld als standaard bootloader.\n\n"
+
+#Beeldkaart Menu
+_GCtitle="Beeldkaart Menu"
+_GCBody="Neem Nouveau voor oudere NVIDIA kaarten. Als je kaart niet in de lijst staat neem 'Onbekend / Generic'.\n"
+_GCUnknOpt="Onbekend / Generic"
+
+# Controle van de NVIDIA Configuratie
+_NvidiaConfTitle="Controle van NVIDIA Configuratie"
+_NvidiaConfBody="\nEen eenvoudig NVIDIA configuratiebestand werd aangemaakt. Kijk het aub eens na vooraleer het te sluiten om verder te gaan.\n"
+
+# Beeldkaart Detectie
+_GCDetTitle="Gedetecteerd"
+_GCDetBody="\nIs dit uw Beeldkaart of virtualisatie software"
+_GCDetBody2="-Selecteer'Ja' om het OPEN-SOURCE stuurprogramma te installeren.\n\n-Selecteer 'Nee' om het Beeldkaart menu te openen, waarin u gesloten NVIDIA stuurprogramma's vindt."
+
+#  Installeer DE Info
+_DEInfoBody="\nmeerdere Desktop Suites kunnen worden geïnstalleerd.\n\nGnome en LXDE komen met een weergave manager.\n\nCinnamon, Gnome en KDE komen met een Netwerk Manager.\n\n"
+
+# Installeer DE Menu
+_InstDETitle="Installeer Desktop Suites"
+_InstDEBody="Desktop Suites en hun verwante pakketten staan bovenaan de lijst."
+
+# Installeer meestgebruikte Pakketten
+_InstComTitle="Installeer meestgebruikte Pakketten"
+_InstComBody="Sommige Desktop Suites hebben bijkomende pakketten nodig om beter te functioneren."
+
+# Weergave Manager
+_DmChTitle="Installeer Weergave Manager"
+_DmChBody="Gdm geef Gnome-shell op als afhankelijkheid. Sddm is aanbevolen voor plasma. Met lightdm komt lightdm-gtk-greeter. Slim is niet langer ondersteund."
+_DmDoneBody="\nWeergave manager werd geïnstalleerd en ingeschakeld.\n\n"
+
+# Network Manager
+_InstNMTitle="Installeer Netwerk Manager"
+_InstNMBody="\nNetwerk Manager is aanbevolen, zeker voor draadloze en PPPoE/DSL verbindingen.\n"
+_InstNMErrBody="\nNetwerk manager werd geïnstalleerd en ingeschakeld.\n\n"
+
+# Welkom
+_WelTitle="Welkom bij"
+_WelBody="\nDit installatieprogramma zal de nieuwste pakketten downloaden van de Arch repositories. Enkel de hoogstnodige configuratie wordt uitgevoerd\n\nMENU OPTIES: Selecteer de gewenste optie door haar nummer in te tikken of door de pijljestoetsen [op]/[neer] te gebruiken. Bevestig door op [enter] te drukken. Schakel tussen de knoppen door de [Tab] toets of de pijltjestoets [links]/[rechts] te gebruiken. Bevestig door op [enter] te drukken. U kunt navigeren in de lange lijsten door de [pg up] en [pg down] toetsen te gebruiken, en/of door op de eerste letter van de gewenste optie te drukken.\n\nCONFIGURATIE & PAKKET OPTIES: Standaard pakketten in checklists worden vooraf geselecteerd. Gebruik de [Spatiebar] om te (de)selecteren"
+
+#Voorbereidings Menu
+_PrepMenuTitle="Voorbereiding  Installatieproces"
+_PrepMenuBody="\nDe console toetsenbord-layout zal worden gebruikt tijdens het installeren en bij het installeren van een Desktop-Suite.\n"
+_PrepKBLayout="Stel Desktop Toetsenbordindeling in"
+_PrepMirror="Configureer Installer Mirrorlijst (optioneel)"
+_PrepPartDisk="Partitioneer Schijf"
+_PrepMntPart="Koppel de Partities aan"
+_Back="Terug"
+
+# Menu: installeren van het Basissysteem
+_InstBsMenuTitle=" Installeer het Basissysteem"
+_InstBseMenuBody="\nDe gewenste pakketten worden gedownload van mirror servers. Het pacstrap script installeert het basissysteem. Indien je pakketten van het AUR of met ABS wenst te gebruiken, is de basis-devel groep ook vereist."
+_InstBse="Installeer het Basissysteem"
+_InstBootldr="Installeer de Bootlader"
+
+# Configureer het basissysteem
+_ConfBseMenuTitle=" Configureer het Basissysteem"
+_ConfBseBody="\nEenvoudige configuratie van het basissysteem."
+_ConfBseFstab="Genereer FSTAB"
+_ConfBseHost="Stel Host-naam in"
+_ConfBseTimeHC="Stel Tijdzone en klok in"
+_ConfBseSysLoc="Stel de Systeemtaal in"
+_MMRunMkinit="Voer Mkinitcpio uit"
+
+# Gebruikersmenu
+_ConfUsrRoot="Stel het Root wachtwoord in"
+_ConfUsrNew="Voeg nieuwe gebruiker(s) toe"
+
+# Graphics Menu
+_InstGrMenuTitle="Installeer Grafische omgeving "
+_InstGrMenuBody="\nVooraleer een Desktop-Suite te installeren, MOETEN eerst de stuurprogramma's voor Beeld, Ingave, en Geluid geinstalleerd worden, met inbegrip van het stuurprogramma van uw grafische kaart."
+_InstGrMenuDS="Installeer Weergave Manager"
+_InstGrMenuDSBody="In aanvulling op Xorg en Wayland opties, zijn stuurprogramma's voor invoerapparaten (xf86-input) ook vermeld."
+_InstGrMenuDD="Installeer Weergave Manager"
+_InstGrMenuGE=" Installeer Desktop-Suites "
+_InstGrMenuDM="Installeer Weergave Manager"
+
+# Netwerk Menu
+_InstNMMenuTitle="Installeer Netwerk mogelijkheden"
+_InstNMMenuBody="\nAanvullende pakketten kunnen nodig zijn om netwerken en draadloze apparaten aan te sturen. Sommige draadloze apparaten kunnen ook extra firmware nodig hebben om te functioneren.\n\n"
+_InstNMMenuPkg="Install Wireless Device Packages"
+_InstNMMenuNM="Installeer Netwerkmanager"
+_InstNMMenuCups="Installeer CUPS / Printer Pakketten"
+_InstNMMenuPkgBody="De belangrijkste wifi pakketten zullen vooraf worden geconsulteerd als een draadloos apparaat werd gedetecteerd. Als je onzeker bent over de extra firmware, kun je alle pakketten installeren."
+_SeeWirelessDev="Toon uw draadloze netwerkapparatuur (optioneel)"
+_WirelessShowTitle=" Draadloos netwerkapparaat "
+_WirelessErrBody="\nNiets gedetecteerd."
+_InstCupsBody="CUPS (Common Unix Printing System) is het op standaarden gebaseerde, open source afdruksysteem, ontwikkeld door Apple Inc. voor OS X en andere Unix-achtige besturingssystemen. Samba maakt het delen van bestanden en printers mogelijk tussen Linux en Windows-systemen."
+_InstCupsQ="\nSchakel org.cups.cupsd.service op geïnstalleerde systeem in?\n\n"
+
+# Installeer Multimedia ondersteuning Menu
+_InstMultMenuTitle=" Installeer Multimedia Ondersteuning"
+_InstMultMenuBody="\nToegankelijkheidspakketten helpen mensen met zicht en / of gehoorstoornissen. De optie aangepast pakketten maakt het mogelijk om zelfgekozen pakketten te installeren.\n"
+_InstMulSnd="Installeer de stuurprogramma's voor Geluid "
+_InstMulSndBody="\nALSA biedt door kernel aangedreven geluidskaartstuurprogramma's. PulseAudio fungeert als een proxy rond ALSA."
+_InstMulCodec="Installeer Codecs"
+_InstMulAcc="Installeer ToegankelijkheidsPakketten"
+_InstAccBody="Selecteer gewenste toegankelijkheidspakketten"
+_InstMulCust="Installeer gewone pakketten"
+
+# Codecs Menu
+_InstMulCodBody="GStreamer is een pipeline-gebaseerd multimedia-raamwerk. De eerste twee opties zijn de huidige en legacy (gstreamer0.10) pakketgroepen. Xine wordt ook vermeld.\n\n"
+
+# Gewenste Pakketten Box
+_InstMulCustBody="\nGeef de pakketnamen op, met tussenspaties, die je wil installeren uit de Arch repositories. Het is niet nodig het pacstrap (of ander) commando te gebruiken. Het is noodzakelijk om de namen van pakketten correct op te geven.\n\nBijvoorbeeld: om Firefox, VLC, en HTop te installeren: firefox vlc htop\n"
+
+# Hoofd Menu
+_MMTitle="Hoofd Menu"
+_MMBody="\nElke stap moet IN VOLGORDE uitgevoerd worden. Eenmaal alles is afgewerkt, selecteer 'Klaar' om zo de installatie correct af te ronden.\n"
+
+# Sluit Installer
+_CloseInstBody="Installatieprogramma Afsluiten?"

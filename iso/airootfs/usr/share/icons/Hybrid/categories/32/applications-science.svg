@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg width="32" version="1.1" xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 0 32 32" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape">
+ <defs id="defs5455">
+  <linearGradient inkscape:collect="always" id="linearGradient4259">
+   <stop style="stop-color:#232629;stop-opacity:0.203922" id="stop4261"/>
+   <stop offset="1" style="stop-color:#232629;stop-opacity:0" id="stop4263"/>
+  </linearGradient>
+  <linearGradient inkscape:collect="always" xlink:href="#linearGradient4152-0" id="linearGradient4283" y1="541.03632" y2="538.60559" x2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1 0 0 1 0.000008 -0.007763)"/>
+  <linearGradient inkscape:collect="always" id="linearGradient4152-0">
+   <stop style="stop-color:#bd8d48" id="stop4154-0"/>
+   <stop offset="1" style="stop-color:#e8b971" id="stop4156-8"/>
+  </linearGradient>
+  <linearGradient inkscape:collect="always" xlink:href="#linearGradient4259" id="linearGradient4179" y1="540.79797" y2="545.23547" x2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1 0 0 1 0.000008 -0.023444)"/>
+  <linearGradient inkscape:collect="always" xlink:href="#linearGradient4410" id="linearGradient4258" y1="12" x1="17" y2="25" x2="30" gradientUnits="userSpaceOnUse"/>
+  <linearGradient inkscape:collect="always" xlink:href="#linearGradient4273" id="linearGradient4277" y1="545.79797" y2="517.79797" x2="0" gradientUnits="userSpaceOnUse"/>
+  <linearGradient inkscape:collect="always" id="linearGradient4410">
+   <stop style="stop-color:#383e51" id="stop4412"/>
+   <stop offset="1" style="stop-color:#655c6f;stop-opacity:0" id="stop4414"/>
+  </linearGradient>
+  <linearGradient inkscape:collect="always" id="linearGradient4303">
+   <stop style="stop-color:#c6cdd1" id="stop4305"/>
+   <stop offset="1" style="stop-color:#e0e5e7" id="stop4307"/>
+  </linearGradient>
+  <linearGradient inkscape:collect="always" xlink:href="#linearGradient4303" id="linearGradient4558" y1="538.79797" y2="522.79797" x2="0" gradientUnits="userSpaceOnUse"/>
+  <linearGradient inkscape:collect="always" xlink:href="#linearGradient4298" id="linearGradient4615" y1="22" y2="15" x2="0" gradientUnits="userSpaceOnUse"/>
+  <linearGradient inkscape:collect="always" id="linearGradient4273">
+   <stop style="stop-color:#343b40" id="stop4275-2"/>
+   <stop offset="1" style="stop-color:#555e63" id="stop4277"/>
+  </linearGradient>
+  <linearGradient inkscape:collect="always" id="linearGradient4298">
+   <stop style="stop-color:#42a603" id="stop4300"/>
+   <stop offset="1" style="stop-color:#78da06" id="stop4302"/>
+  </linearGradient>
+ </defs>
+ <metadata id="metadata5458"/>
+ <g inkscape:label="Capa 1" inkscape:groupmode="layer" id="layer1" transform="matrix(1 0 0 1 -384.57143 -515.798)">
+  <circle cx="400.57138" cy="531.79016" style="fill:url(#linearGradient4277);stroke-width:4" id="path3377" r="13.999958"/>
+  <path style="fill:url(#linearGradient4258);opacity:0.2;fill-rule:evenodd" id="path4239" d="M 17 7 L 17 16 L 23 22 L 23 23 L 28.103516 23 A 13.999958 13.999958 0 0 0 29.859375 17.859375 L 19 7 L 17 7 z " transform="matrix(1 0 0 1 384.57143 515.798)"/>
+  <path inkscape:connector-curvature="0" style="fill:url(#linearGradient4558);fill-rule:evenodd" id="path4241" d="m 393.57144,537.798 0,1 14.00003,0 0,-1 -5.00004,-8 0,-6 1,0 0,-1 -6,0 0,0.99973 1,0 0,6.00027 z"/>
+  <rect id="rect4169" style="shape-rendering:auto;color-interpolation-filters:linearRGB;fill:url(#linearGradient4283);image-rendering:auto;text-rendering:auto;color:#000000;color-rendering:auto;color-interpolation:sRGB" x="386.57144" y="538.79022" width="28" height="2"/>
+  <path inkscape:connector-curvature="0" style="fill:url(#linearGradient4179);fill-rule:evenodd" id="path4171" d="m 389.85269,540.75893 21.40419,0.0156 c 0,0 -3.62157,4.98286 -10.68545,5.01559 -7.23437,-0.3125 -10.71874,-5.03125 -10.71874,-5.03125 z"/>
+  <path inkscape:connector-curvature="0" style="fill:url(#linearGradient4615);fill-rule:evenodd" id="path4243" d="m 14,16 -3.7,6 5.7,0 5.7,0 -3.7,-6 -2,0 z" transform="matrix(1 0 0 1 384.57143 515.798)"/>
+ </g>
+</svg>

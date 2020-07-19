@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="32"
+   version="1.1"
+   height="32"
+   id="svg2"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="android-package-archive.svg">
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1360"
+     inkscape:window-height="708"
+     id="namedview25"
+     showgrid="true"
+     inkscape:object-nodes="true"
+     inkscape:zoom="7.375"
+     inkscape:cx="10.646504"
+     inkscape:cy="15.82148"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid4153" />
+  </sodipodi:namedview>
+  <defs
+     id="defs5455">
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient6251"
+       id="linearGradient5849"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.48,0,0,0.40601922,362.65142,385.60543)"
+       x1="58.166668"
+       y1="394.54437"
+       x2="58.166668"
+       y2="335.43387" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient6251">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="0"
+         id="stop6253" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.2"
+         offset="1"
+         id="stop6255" />
+    </linearGradient>
+  </defs>
+  <metadata
+     id="metadata5458">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Capa 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="matrix(1 0 0 1 -384.57143 -515.798)">
+    <rect
+       y="521.79797"
+       x="388.57144"
+       height="23.999989"
+       width="23.999989"
+       id="rect5837"
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#9bd916;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate" />
+    <rect
+       width="24.000011"
+       x="388.57144"
+       y="544.79797"
+       height="0.99997365"
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:0.25;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect5839" />
+    <rect
+       width="23.999989"
+       x="388.57144"
+       y="521.79797"
+       height="1.0000263"
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:0.5;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect5841" />
+    <path
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:0.75;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke-width:2;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       d="M 20 7 L 20 8 L 21 8 L 21 7 L 20 7 z M 21 8 L 21 9 L 22 9 L 22 8 L 21 8 z M 21 9 L 20 9 L 20 10 L 21 10 L 21 9 z M 21 10 L 21 11 L 22 11 L 22 10 L 21 10 z M 21 11 L 20 11 L 20 12 L 21 12 L 21 11 z M 21 12 L 21 13 L 22 13 L 22 12 L 21 12 z M 21 13 L 20 13 L 20 13.560547 L 20 15 L 22 15 L 22 14 L 21 14 L 21 13 z "
+       transform="translate(384.57143,515.798)"
+       id="path5843" />
+    <path
+       style="fill:#ffffff;fill-opacity:1;opacity:0.75"
+       d="M 6.4980469 15.988281 A 0.50005728 0.50005 0 0 0 6.1503906 16.845703 L 7.4277344 18.123047 A 6.0000788 5.9999914 0 0 0 6 22 L 6 28 L 18 28 L 18 27 L 18 22 A 6.0000788 5.9999914 0 0 0 16.582031 18.125 L 17.861328 16.845703 A 0.50012762 0.50005 0 0 0 17.498047 15.988281 A 0.50012762 0.50005 0 0 0 17.154297 16.138672 L 15.869141 17.423828 A 6.0000788 5.9999914 0 0 0 12 16 A 6.0000788 5.9999914 0 0 0 8.1308594 17.412109 L 6.8574219 16.138672 A 0.50005728 0.50005 0 0 0 6.4980469 15.988281 z M 12 17 A 5.0000728 5 0 0 1 17 22 L 17 23 L 17 27 L 7 27 L 7 23 L 7 22 A 5.0000728 5 0 0 1 12 17 z M 10 19 A 1.0000146 1 0 0 0 9 20 A 1.0000146 1 0 0 0 10 21 A 1.0000146 1 0 0 0 11 20 A 1.0000146 1 0 0 0 10 19 z M 14 19 A 1.0000146 1 0 0 0 13 20 A 1.0000146 1 0 0 0 14 21 A 1.0000146 1 0 0 0 15 20 A 1.0000146 1 0 0 0 14 19 z "
+       transform="translate(384.57143,515.798)"
+       id="rect4173" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:url(#linearGradient5849);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect5847"
+       width="24"
+       height="24"
+       x="388.57144"
+       y="521.79797" />
+  </g>
+</svg>

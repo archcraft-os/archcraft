@@ -1,0 +1,18 @@
+<svg width="32" xmlns="http://www.w3.org/2000/svg" height="32">
+ <defs>
+  <linearGradient id="a" y1="394.54" y2="325.98" gradientUnits="userSpaceOnUse" x2="0" gradientTransform="matrix(.48276 0 0 .40835 384.64 384.68)">
+   <stop stop-color="#ffffff" stop-opacity="0"/>
+   <stop offset="1" stop-color="#ffffff" stop-opacity=".2"/>
+  </linearGradient>
+ </defs>
+ <g color-rendering="auto" color-interpolation-filters="linearRGB" shape-rendering="auto" image-rendering="auto" text-rendering="auto" color-interpolation="sRGB" color="#000000" transform="translate(-384.57-515.8)">
+  <path fill="#db3333" d="m414.57 545.8h-28v-22h28v7z"/>
+  <rect x="386.57" y="544.8" fill-opacity=".294" width="28" fill="#2e3132" height="1"/>
+  <g fill="#ffffff">
+   <rect x="386.57" y="523.8" fill-opacity=".41" width="28" height="1"/>
+   <path opacity=".75" d="m387.57 525.8v2h2v-2zm24 0v2h2v-2zm-24 4v2h2v-2zm24 0v2h2v-2zm-24 4v2h2v-2zm24 0v2h2v-2zm-24 4v2h2v-2zm24 0v2h2v-2zm-24 4v2h2v-2zm24 0v2h2v-2z"/>
+   <path opacity=".75" d="m405.55 527.8v2.821c-2.88.049-3.588 2.796-3.588 2.796h2.172v2.821h-3.368c-2.026 6.111-6.688 5.567-6.688 5.567v-2.821c0 0 2.958.537 4.467-4.849 1.887-6.737 7-6.334 7-6.334"/>
+  </g>
+  <path fill="url(#a)" d="m386.57 523.8v22h28v-22z"/>
+ </g>
+</svg>

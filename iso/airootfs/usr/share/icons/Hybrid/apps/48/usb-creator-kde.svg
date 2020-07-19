@@ -1,0 +1,40 @@
+<svg width="48" xmlns="http://www.w3.org/2000/svg" height="48">
+ <defs>
+  <linearGradient id="a" y1="543.8" y2="515.8" x2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1.125 0 0 1-51.07 0)">
+   <stop stop-color="#1d1e1e"/>
+   <stop offset="1" stop-color="#44484c"/>
+  </linearGradient>
+  <linearGradient id="b" y1="525.8" y2="503.8" x2="0" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#c6cdd1"/>
+   <stop offset="1" stop-color="#e0e5e7"/>
+  </linearGradient>
+  <linearGradient id="c" y1="14" x1="5" y2="36" x2="27" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#383e51"/>
+   <stop offset="1" stop-color="#655c6f" stop-opacity="0"/>
+  </linearGradient>
+  <linearGradient id="d" y1="543.8" y2="515.8" gradientUnits="userSpaceOnUse" x2="0" gradientTransform="matrix(1.16129 0 0 1-65.38 0)">
+   <stop stop-color="#197cf1"/>
+   <stop offset="1" stop-color="#20bcfa"/>
+  </linearGradient>
+ </defs>
+ <g transform="translate(-384.57-499.8)">
+  <g stroke-opacity=".55" stroke-width="2.8">
+   <rect width="31" x="392.57" y="525.8" fill="url(#a)" height="18"/>
+   <rect width="32" x="392.57" y="542.8" fill="#202224" height="1"/>
+   <rect width="26" x="395.57" y="503.8" fill="url(#b)" height="22"/>
+  </g>
+  <path opacity=".2" fill="url(#c)" fill-rule="evenodd" d="m22 11l-7 7 24 24.25v-16.248h-2v-11l-4-4h-7v4z" transform="translate(384.57 499.8)"/>
+  <g stroke-opacity=".55" stroke-width="2.8">
+   <g fill="#202224">
+    <rect width="7" x="399.57" y="510.8" height="7"/>
+    <rect width="7" x="410.57" y="510.8" height="7"/>
+   </g>
+   <g fill="#fdbc4a">
+    <rect width="3" x="401.57" y="510.8" height="7"/>
+    <rect width="3" x="412.57" y="510.8" height="7"/>
+   </g>
+   <rect width="32" x="392.57" y="525.8" fill="url(#d)" height="18"/>
+  </g>
+  <path fill="#085ba7" fill-rule="evenodd" d="M22.5 32A.5 .5 0 0 0 22 32.5 .5 .5 0 0 0 22.5 33 .5 .5 0 0 0 23 32.5 .5 .5 0 0 0 22.5 32M25 32L24 33 25 34 24 35 25 36 27 34zM21.5 34.09961A.5 .5 0 0 0 21 34.599609 .5 .5 0 0 0 21.5 35.09961 .5 .5 0 0 0 22 34.599609 .5 .5 0 0 0 21.5 34.09961M23 36A.999987 .999987 0 0 0 22 37 .999987 .999987 0 0 0 23 38 .999987 .999987 0 0 0 24 37 .999987 .999987 0 0 0 23 36" transform="translate(384.57 499.8)"/>
+ </g>
+</svg>
