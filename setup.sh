@@ -114,32 +114,32 @@ echo
 
 echo -e $Y"[*] Building $PKG1 - "$C
 cd $PKG1 && makepkg -s
-mv *.pkg.tar.xz ../../localrepo/x86_64
+mv *.pkg.tar.zst ../../localrepo/x86_64
 cd ..
 
 echo -e $Y"[*] Building $PKG2 - "$C
 cd $PKG2 && makepkg -s
-mv *.pkg.tar.xz ../../localrepo/x86_64
+mv *.pkg.tar.zst ../../localrepo/x86_64
 cd ..
 
 echo -e $Y"[*] Building $PKG3 - "$C
 cd $PKG3 && makepkg -s
-mv *.pkg.tar.xz ../../localrepo/x86_64
+mv *.pkg.tar.zst ../../localrepo/x86_64
 cd ..
 
 echo -e $Y"[*] Building $PKG4 - "$C
 cd $PKG4 && makepkg -s
-mv *.pkg.tar.xz ../../localrepo/x86_64
+mv *.pkg.tar.zst ../../localrepo/x86_64
 cd ..
 
 echo -e $Y"[*] Building $PKG5 - "$C
 cd $PKG5 && makepkg -s
-mv *.pkg.tar.xz ../../localrepo/x86_64
+mv *.pkg.tar.zst ../../localrepo/x86_64
 cd ..
 
 echo -e $Y"[*] Building $PKG6 - "$C
 cd $PKG6 && makepkg -s
-mv *.pkg.tar.xz ../../localrepo/x86_64
+mv *.pkg.tar.zst ../../localrepo/x86_64
 cd ..
 
 echo -e $Y"[*] Building $PKG7 - "$C
@@ -172,27 +172,27 @@ EOL
 sum2=$(md5sum lxdm-plymouth.service |  awk -F ' ' '{print $1}')
 sed -i -e "s/$sum1/$sum2/g" PKGBUILD
 makepkg -s
-mv *.pkg.tar.xz ../../localrepo/x86_64
+mv *.pkg.tar.zst ../../localrepo/x86_64
 cd ..
 
 echo -e $Y"[*] Building $PKG8 - "$C
 cd $PKG8 && makepkg -s
-mv *.pkg.tar.xz ../../localrepo/x86_64
+mv *.pkg.tar.zst ../../localrepo/x86_64
 cd ..
 
 echo -e $Y"[*] Building $PKG9 - "$C
 cd $PKG9 && makepkg -s
-mv *.pkg.tar.xz ../../localrepo/x86_64
+mv *.pkg.tar.zst ../../localrepo/x86_64
 cd ..
 
 echo -e $Y"[*] Building $PKG10 - "$C
 cd $PKG10 && makepkg -s
-mv *.pkg.tar.xz ../../localrepo/x86_64
+mv *.pkg.tar.zst ../../localrepo/x86_64
 cd ..
 
 echo -e $Y"[*] Building $PKG11 - "$C
 cd $PKG11 && makepkg -s
-mv *.pkg.tar.xz ../../localrepo/x86_64
+mv *.pkg.tar.zst ../../localrepo/x86_64
 cd ..
 
 cd $DIR/localrepo/x86_64
