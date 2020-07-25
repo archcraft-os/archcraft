@@ -43,7 +43,7 @@ PRETTY_NAME="Archcraft"
 ID=arch
 BUILD_ID=rolling
 ANSI_COLOR="38;2;23;147;209"
-HOME_URL="https://www.archcraft.in/"
+HOME_URL="https://archcraft-os.github.io/"
 LOGO=archcraft
 EOL
 
