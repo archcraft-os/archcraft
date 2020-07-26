@@ -1,3 +1,0 @@
-View this installation guide online at
-https://wiki.archlinux.org/index.php/Installation_Guide
-

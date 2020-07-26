@@ -1,6 +1,0 @@
-<svg height="8" width="8" xmlns="http://www.w3.org/2000/svg">
-    <rect fill="#7f8c8d" height="6" ry="1" width="8" y="1"/>
-    <g fill="#fff">
-        <path d="M2 2c-.554 0-1 .446-1 1v2c0 .554.446 1 1 1h1c.554 0 1-.446 1-1V3c0-.554-.446-1-1-1zm0 1h1v2H2zM5 2c-.554 0-1 .446-1 1v2c0 .554.446 1 1 1h1c.554 0 1-.446 1-1V3c0-.554-.446-1-1-1zm0 1h1v2H5z"/>
-    </g>
-</svg>

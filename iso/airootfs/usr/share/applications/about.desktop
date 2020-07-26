@@ -1,7 +1,0 @@
-[Desktop Entry]
-Name=About Developer
-Comment=About Aditya Shakya (@adi1090x)
-Exec=/usr/local/bin/about.sh
-Icon=distributor-logo-archcraft
-Type=Application
-Categories=GTK;System;Settings;
