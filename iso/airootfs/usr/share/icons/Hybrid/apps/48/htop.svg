@@ -1,0 +1,56 @@
+<svg width="48" xmlns="http://www.w3.org/2000/svg" height="48">
+ <defs>
+  <linearGradient id="a" y1="543.8" y2="503.8" x2="0" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#c6cdd1"/>
+   <stop offset="1" stop-color="#e0e5e7"/>
+  </linearGradient>
+  <linearGradient id="b" y1="541.8" y2="509.8" x2="0" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#2a2c2f"/>
+   <stop offset="1" stop-color="#424649"/>
+  </linearGradient>
+  <linearGradient id="c" y1="20" x1="20" y2="36" x2="36" gradientUnits="userSpaceOnUse" gradientTransform="translate(0 2)">
+   <stop stop-color="#292c2f"/>
+   <stop offset="1" stop-opacity="0"/>
+  </linearGradient>
+ </defs>
+ <g transform="translate(-384.57-499.8)">
+  <rect width="40" x="388.57" y="503.8" fill="url(#a)" rx="0" height="40"/>
+  <rect width="40" x="388.57" y="542.8" fill="#99a1a7" height="1"/>
+  <g stroke-width=".1">
+   <rect width="40" x="388.57" y="503.8" fill="#566069" height="5"/>
+   <rect width="3" x="424.57" y="504.8" fill="#eff0f1" rx="1.5" height="3"/>
+   <rect width="40" x="388.57" y="508.8" fill="#3daee9" rx="0" height="1"/>
+   <rect width="38" x="389.57" y="510.8" fill="url(#b)" height="31"/>
+   <rect width="1" x="398.57" y="515.8" fill="#999999" height="8"/>
+   <g fill="#84dd84">
+    <rect width="1" x="400.57" y="515.8" height="8"/>
+    <rect width="1" x="402.57" y="515.8" height="8"/>
+   </g>
+   <g transform="scale(-1 1)">
+    <rect width="1" x="-418.57" y="515.8" fill="#999999" height="8"/>
+    <g fill="#84dd84">
+     <rect width="1" x="-416.57" y="515.8" height="8"/>
+     <rect width="1" x="-414.57" y="515.8" height="8"/>
+    </g>
+   </g>
+   <rect width="1" x="398.57" y="527.8" fill="#999999" height="8"/>
+   <g fill="#84dd84">
+    <rect width="1" x="400.57" y="527.8" height="8"/>
+    <rect width="1" x="402.57" y="527.8" height="8"/>
+   </g>
+   <g transform="scale(-1 1)">
+    <rect width="1" x="-418.57" y="527.8" fill="#999999" height="8"/>
+    <g fill="#84dd84">
+     <rect width="1" x="-416.57" y="527.8" height="8"/>
+     <rect width="1" x="-414.57" y="527.8" height="8"/>
+    </g>
+   </g>
+   <g fill="#84dd84">
+    <rect width="1" x="404.57" y="523.8" height="4"/>
+    <rect width="1" x="408.57" y="523.8" height="4"/>
+    <rect width="1" x="412.57" y="523.8" height="4"/>
+   </g>
+  </g>
+  <path opacity=".2" fill="url(#c)" fill-rule="evenodd" d="m34 16v20h-20l8 8h22v-18z" transform="translate(384.57 499.8)"/>
+ </g>
+</svg>

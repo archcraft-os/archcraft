@@ -1,0 +1,28 @@
+/****************************************
+ * Override default window-list styling *
+ ****************************************/
+
+Window-list and Gnome-Classic extension can not accept any user-side theming.
+So we need to do hacky file moving to override...
+
+1. Verify the proper path of that extension
+
+  In general,
+  `/usr/share/gnome-shell/extensions/window-list@gnome-shell-extensions.gcampax.github.com/`
+  has these 2 stylesheets:
+    `classic.css`
+    `stylesheet.css`
+
+2. Backup those 2 files as something like "xxx.css.org" or "xxx.css.bak".
+
+3. Copy Adapta's files into that place:
+  * custom files are placed at
+    "${prefix}/share/themes/Adapta/gnome-shell/extensions/window-list/classic.css"
+    "${prefix}/share/themes/Adapta/gnome-shell/extensions/window-list/stylesheet.css"
+
+  * copy those 2 files into that place.
+
+4. Restart Gnome-Shell:
+  * Press "Alt + F2" and then type "r" and hit "Enter" key.
+
+Those methods are needed in every time when window-list extension package was updated.

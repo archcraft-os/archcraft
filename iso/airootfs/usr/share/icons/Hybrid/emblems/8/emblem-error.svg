@@ -1,0 +1,11 @@
+<svg viewBox="0 0 8 8" xmlns="http://www.w3.org/2000/svg">
+    <style
+        type="text/css"
+        id="current-color-scheme">
+        .ColorScheme-NegativeText {
+            color:#da4453;
+        }
+    </style>
+    <path style="fill:currentColor;fill-opacity:1;stroke:none" class="ColorScheme-NegativeText" d="M1 0C.446 0 0 .446 0 1v6c0 .554.446 1 1 1h6c.554 0 1-.446 1-1V1c0-.554-.446-1-1-1z"/>
+    <path d="M2 1L1 2l2 2-2 2 1 1 2-2 2 2 1-1-2-2 2-2-1-1-2 2z" fill="#fff"/>
+</svg>

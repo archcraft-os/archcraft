@@ -1,0 +1,24 @@
+<svg width="64" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" height="64" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <linearGradient id="a" y1="17" x1="40" y2="31" x2="54" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#383e51"/>
+   <stop offset="1" stop-color="#655c6f" stop-opacity="0"/>
+  </linearGradient>
+  <linearGradient id="b" y1="61" y2="3" x2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1 0 0-1 0 64)">
+   <stop stop-color="#ffffff" stop-opacity="0"/>
+   <stop offset="1" stop-color="#ffffff" stop-opacity=".2"/>
+  </linearGradient>
+  <path id="c" d="m10 61v-58h30l14 14v44h-14z"/>
+ </defs>
+ <use fill="#4bc94b" xlink:href="#c"/>
+ <g transform="scale(1-1)">
+  <rect width="30" x="10" opacity=".5" y="-4" fill="#ffffff" height="1"/>
+  <rect width="44" x="10" opacity=".5" y="-61" height="1"/>
+ </g>
+ <g fill-rule="evenodd">
+  <path opacity=".5" fill="#ffffff" d="m54 17l-14-14v14z"/>
+  <path opacity=".2" fill="url(#a)" d="m40 17l14 14v-14z"/>
+ </g>
+ <path opacity=".75" fill="#ffffff" d="m35 21c-.554 0-1 .446-1 1v2h-12c-.554 0-1 .446-1 1v17c0 .554.446 1 1 1h17c.554 0 1-.446 1-1v-4h2c.554 0 1-.446 1-1v-15c0-.554-.446-1-1-1h-2zm0 1h7v15h-2v-12c0-.554-.446-1-1-1-1.556-.611-4.061-.985-4-2m-13 3h17v17h-17zm1 2v4h15v-4zm0 6v1h7v-1zm8 0v1h7v-1zm-8 3v1h7v-1zm8 0v1h7v-1zm-8 3v1h7v-1zm8 0v1h7v-1z"/>
+ <use fill="url(#b)" xlink:href="#c"/>
+</svg>

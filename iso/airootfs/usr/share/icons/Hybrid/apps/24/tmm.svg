@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" version="1">
+ <path style="fill:#4f4f4f" d="M 16,15.25 V 1.75 C 16,1.3345 15.666,1 15.25,1 H 1.75 C 1.3345,1 1,1.3345 1,1.75 V 15.25 C 1,15.666 1.3345,16 1.75,16 H 15.25 C 15.666,16 16,15.666 16,15.25 Z"/>
+ <path style="fill:#ffffff" d="M 3,3 V 5 H 5 V 3 Z"/>
+ <path style="fill:#ffffff" d="M 3,6 V 8 H 5 V 6 Z"/>
+ <path style="fill:#ffffff" d="M 3,9 V 11 H 5 V 9 Z"/>
+ <path style="fill:#ffffff" d="M 3,12 V 14 H 5 V 12 Z"/>
+ <rect style="fill:#28a1e1" width="5" height="3" x="6" y="11" rx=".556" ry=".6"/>
+ <path style="fill:#ffffff" d="M 12,3 V 5 H 14 V 3 Z"/>
+ <path style="fill:#ffffff" d="M 12,6 V 8 H 14 V 6 Z"/>
+ <path style="fill:#ffffff" d="M 12,9 V 11 H 14 V 9 Z"/>
+ <path style="fill:#ffffff" d="M 12,12 V 14 H 14 V 12 Z"/>
+ <rect style="fill:#28a1e1" width="5" height="3" x="6" y="7" rx=".556" ry=".6"/>
+ <rect style="fill:#28a1e1" width="5" height="3" x="6" y="3" rx=".556" ry=".6"/>
+</svg>

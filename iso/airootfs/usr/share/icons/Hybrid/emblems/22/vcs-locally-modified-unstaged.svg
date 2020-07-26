@@ -1,0 +1,15 @@
+<svg viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+    <style
+        type="text/css"
+        id="current-color-scheme">
+        .ColorScheme-NeutralText {
+            color:#f67400;
+        }
+        .ColorScheme-Text {
+            color:#eff0f1;
+        }
+    </style>
+    <path d="M11 0A11 11 0 0 0 0 11a11 11 0 0 0 11 11 11 11 0 0 0 11-11A11 11 0 0 0 11 0z" style="fill:currentColor;fill-opacity:1;stroke:none" class="ColorScheme-NeutralText"/>
+    <path d="M11 3L8 7h2v9a1 1 0 0 1-1 1H3.012a10 10 0 0 0 2.008 2H10a2 2 0 0 0 2-2V7h2zM3.121 18.66a11 11 0 0 0 .074.078 11 11 0 0 1-.074-.078z" fill="#fff"/>
+    <path d="M11 0A11 11 0 0 0 0 11a11 11 0 0 0 11 11 11 11 0 0 0 11-11A11 11 0 0 0 11 0zm0 1a10 10 0 0 1 10 10 10 10 0 0 1-10 10A10 10 0 0 1 1 11 10 10 0 0 1 11 1z" style="fill:currentColor;fill-opacity:0.6;stroke:none" class="ColorScheme-Text"/>
+</svg>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="22"
+   version="1.1"
+   height="22"
+   id="svg2"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="application-vnd.ms-powerpoint.addin.macroenabled.12.svg">
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1360"
+     inkscape:window-height="708"
+     id="namedview10"
+     showgrid="true"
+     inkscape:zoom="11.498889"
+     inkscape:cx="22.117086"
+     inkscape:cy="5.5780425"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1-8"
+     inkscape:object-nodes="true">
+    <inkscape:grid
+       type="xygrid"
+       id="grid4145" />
+  </sodipodi:namedview>
+  <defs
+     id="defs3871" />
+  <metadata
+     id="metadata3874">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Capa 1"
+     inkscape:groupmode="layer"
+     style="fill:#f27935"
+     id="layer1-8"
+     transform="matrix(1 0 0 1 0 -1030.3622)">
+    <path
+       style="color:#000000;color-interpolation:sRGB;color-interpolation-filters:linearRGB;fill:#fa752a;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto"
+       d="M 4.3339844 3 C 3.5953178 3 3 3.5953844 3 4.3339844 L 3 17.666016 C 3 18.404616 3.5953178 19 4.3339844 19 L 17.666016 19 C 18.404682 19 19 18.404616 19 17.666016 L 19 4.3339844 C 19 3.5953844 18.404682 3 17.666016 3 L 4.3339844 3 z M 4 4 L 18 4 L 18 18 L 4 18 L 4 4 z M 12 5 L 12 10 L 17 10 A 5 5 0 0 0 12 5 z M 11 6 A 5 5 0 0 0 6 11 A 5 5 0 0 0 11 16 A 5 5 0 0 0 16 11 L 15 11 L 11 11 L 11 7 L 11 6 z M 10 7.1308594 L 10 12 L 11 12 L 14.867188 12 A 4 4 0 0 1 11 15 A 4 4 0 0 1 7 11 A 4 4 0 0 1 10 7.1308594 z "
+       transform="translate(0,1030.3622)"
+       id="path4" />
+  </g>
+</svg>

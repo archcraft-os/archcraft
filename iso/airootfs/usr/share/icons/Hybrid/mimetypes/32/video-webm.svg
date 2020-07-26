@@ -1,0 +1,18 @@
+<svg width="32" xmlns="http://www.w3.org/2000/svg" height="32">
+ <defs>
+  <linearGradient id="a" y1="394.54" y2="325.98" gradientUnits="userSpaceOnUse" x2="0" gradientTransform="matrix(.48276 0 0 .40835 384.64 384.68)">
+   <stop stop-color="#ffffff" stop-opacity="0"/>
+   <stop offset="1" stop-color="#ffffff" stop-opacity=".2"/>
+  </linearGradient>
+ </defs>
+ <g color-rendering="auto" color-interpolation-filters="linearRGB" shape-rendering="auto" image-rendering="auto" text-rendering="auto" color-interpolation="sRGB" color="#000000" transform="translate(-384.57-515.8)">
+  <path fill="#8542c2" d="m414.57 545.8h-28v-22h28v7z"/>
+  <rect opacity=".25" x="386.57" y="544.8" width="28" height="1"/>
+  <g fill="#ffffff">
+   <rect opacity=".5" x="386.57" y="523.8" width="28" height="1"/>
+   <path opacity=".75" d="m400.57143 528.798a6 6 0 0 0 -6 6 6 6 0 0 0 6 6 6 6 0 0 0 6 -6 6 6 0 0 0 -6 -6m0 1a5 5 0 0 1 5 5 5 5 0 0 1 -5 5 5 5 0 0 1 -5 -5 5 5 0 0 1 5 -5m-2 2v6l5-3z"/>
+   <path opacity=".75" d="m387.57 525.8v2h2v-2zm24 0v2h2v-2zm-24 4v2h2v-2zm24 0v2h2v-2zm-24 4v2h2v-2zm24 0v2h2v-2zm-24 4v2h2v-2zm24 0v2h2v-2zm-24 4v2h2v-2zm24 0v2h2v-2z"/>
+  </g>
+  <path fill="url(#a)" d="m386.57 523.8v22h28v-22z"/>
+ </g>
+</svg>

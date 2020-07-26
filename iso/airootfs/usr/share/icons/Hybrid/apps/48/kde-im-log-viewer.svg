@@ -1,0 +1,61 @@
+<svg width="48" xmlns="http://www.w3.org/2000/svg" height="48" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <linearGradient id="a" y1="44" y2="4" gradientUnits="userSpaceOnUse" x2="0" gradientTransform="matrix(-1 0 0 1 432.57 499.8)">
+   <stop stop-color="#197cf1"/>
+   <stop offset="1" stop-color="#20bcfa"/>
+  </linearGradient>
+  <linearGradient id="b" y1="655.51" y2="662.24" x2="0" gradientUnits="userSpaceOnUse" gradientTransform="translate(3.346-3.716)">
+   <stop stop-color="#172525"/>
+   <stop offset="1" stop-color="#172525" stop-opacity="0"/>
+  </linearGradient>
+  <linearGradient xlink:href="#b" id="c" y1="655.51" y2="662.24" x2="0" gradientUnits="userSpaceOnUse" gradientTransform="translate(6.02-6.688)"/>
+  <linearGradient xlink:href="#b" id="d" y1="655.51" y2="662.24" x2="0" gradientUnits="userSpaceOnUse" gradientTransform="translate(10.04-11.147)"/>
+  <linearGradient xlink:href="#b" id="e" y1="655.51" y2="662.24" x2="0" gradientUnits="userSpaceOnUse" gradientTransform="translate(.669-.743)"/>
+ </defs>
+ <g transform="translate(-384.57-499.8)">
+  <path fill="url(#a)" fill-rule="evenodd" d="m428.57 506.8v27h-21l-10 10v-10h-9v-27z"/>
+  <g fill="#fcfcfc">
+   <rect width="2" x="399.57" y="511.8" height="1"/>
+   <rect width="3" x="402.57" y="511.8" height="1"/>
+   <rect width="3" x="408.57" y="511.8" height="1"/>
+   <rect width="6" x="413.57" y="511.8" height="1"/>
+   <rect width="4" x="420.57" y="511.8" height="1"/>
+  </g>
+  <g fill="#7fe9d6">
+   <rect width="4" x="399.57" y="514.8" height="1"/>
+   <rect width="2" x="404.57" y="514.8" height="1"/>
+   <rect width="8" x="408.57" y="514.8" height="1"/>
+  </g>
+  <g fill="#fcfcfc">
+   <rect width="2" x="399.57" y="517.8" height="1"/>
+   <rect width="3" x="402.57" y="517.8" height="1"/>
+   <rect width="4" x="408.57" y="517.8" height="1"/>
+   <rect width="4" x="414.57" y="517.8" height="1"/>
+   <rect width="5" x="419.57" y="517.8" height="1"/>
+   <g transform="scale(-1 1)">
+    <rect width="2" x="-419.57" y="525.8" height="1"/>
+    <rect width="8" x="-416.57" y="525.8" height="1"/>
+    <rect width="7" x="-406.57" y="525.8" height="1"/>
+    <rect width="2" x="-424.57" y="521.8" height="1"/>
+    <rect width="3" x="-421.57" y="521.8" height="1"/>
+    <rect width="9" x="-417.57" y="521.8" height="1"/>
+    <rect width="5" x="-404.57" y="521.8" height="1"/>
+   </g>
+  </g>
+  <g color-rendering="auto" color-interpolation-filters="linearRGB" shape-rendering="auto" image-rendering="auto" fill-rule="evenodd" text-rendering="auto" color-interpolation="sRGB" color="#000000">
+   <rect opacity=".2" x="-51.44" y="644.4" width="3" fill="url(#d)" height="7" transform="rotate(-42)"/>
+   <circle fill="#abdaf9" cx="394.07" cy="512.3" r="1.5"/>
+   <rect opacity=".2" x="-55.46" y="648.86" width="3" fill="url(#c)" height="7" transform="rotate(-42)"/>
+   <circle fill="#abdaf9" cx="394.07" cy="518.3" r="1.5"/>
+   <rect opacity=".2" x="-58.13" y="651.83" width="3" fill="url(#b)" height="7" transform="rotate(-42)"/>
+   <circle fill="#abdaf9" cx="394.07" cy="522.3" r="1.5"/>
+   <rect opacity=".2" x="-60.81" y="654.8" width="3" fill="url(#e)" height="7" transform="rotate(-42)"/>
+   <circle fill="#abdaf9" cx="394.07" cy="526.3" r="1.5"/>
+  </g>
+  <g fill="#7fe9d6">
+   <rect width="5" x="399.57" y="528.8" height="1"/>
+   <rect width="4" x="405.57" y="528.8" height="1"/>
+   <rect width="12" x="410.57" y="528.8" height="1"/>
+  </g>
+ </g>
+</svg>

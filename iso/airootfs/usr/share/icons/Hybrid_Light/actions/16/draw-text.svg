@@ -1,0 +1,8 @@
+<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+    <style type="text/css" id="current-color-scheme">
+        .ColorScheme-Text {
+            color:#232629;
+        }
+    </style>
+    <path d="M3 4h1v8H3zm1 8h8v1H4zm8-8h1v8h-1zM4 3h8v1H4zm8-1h2v2h-2zM2 2h2v2H2zm0 10h2v2H2zm10 0h2v2h-2zM5 5h6v2H5zm2 2h2v4H7z" class="ColorScheme-Text" fill="currentColor"/>
+</svg>

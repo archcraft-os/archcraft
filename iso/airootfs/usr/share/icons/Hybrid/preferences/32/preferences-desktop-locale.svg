@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg width="32" version="1.1" xmlns="http://www.w3.org/2000/svg" height="32" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape">
+ <defs id="defs5455">
+  <linearGradient inkscape:collect="always" xlink:href="#linearGradient4143" id="linearGradient4327" y1="545.79797" y2="517.79797" x2="0" gradientUnits="userSpaceOnUse"/>
+  <linearGradient inkscape:collect="always" id="linearGradient4143">
+   <stop style="stop-color:#197cf1" id="stop4145"/>
+   <stop offset="1" style="stop-color:#20bcfa" id="stop4147"/>
+  </linearGradient>
+  <linearGradient inkscape:collect="always" xlink:href="#linearGradient4290" id="linearGradient4783" y1="545.79797" y2="517.79797" gradientUnits="userSpaceOnUse" x2="0" gradientTransform="matrix(0.42857143 0 0 0.42857143 232.89796 299.88457)"/>
+  <linearGradient inkscape:collect="always" id="linearGradient4227">
+   <stop style="stop-color:#292c2f" id="stop4229"/>
+   <stop offset="1" style="stop-opacity:0" id="stop4231"/>
+  </linearGradient>
+  <linearGradient inkscape:collect="always" xlink:href="#linearGradient4227" id="linearGradient4996" y1="516.69788" x1="401.57144" y2="530.69788" x2="415.57144" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1 0 0 1 -388.57143 -511.798)"/>
+  <linearGradient inkscape:collect="always" id="linearGradient4290">
+   <stop style="stop-color:#7cbaf8" id="stop4292"/>
+   <stop offset="1" style="stop-color:#f4fcff" id="stop4294"/>
+  </linearGradient>
+ </defs>
+ <metadata id="metadata5458"/>
+ <g inkscape:label="Capa 1" inkscape:groupmode="layer" id="layer1" transform="matrix(1 0 0 1 -384.57143 -515.798)">
+  <path inkscape:connector-curvature="0" style="fill:url(#linearGradient4327)" id="rect4304" d="m 414.57143,517.798 0,21 -7,0 0,7 -7,-7 -14,0 0,-21 28,0 z"/>
+  <path style="fill:url(#linearGradient4996);opacity:0.2;fill-rule:evenodd" id="path4905" d="M 26.900391 4.9003906 L 25 15.900391 L 22 15.900391 L 19 15.900391 L 13 15.900391 L 22 24.900391 L 23 25.900391 L 23 23 L 30 23 L 30 8 L 27 5 L 26.900391 4.9003906 z " transform="matrix(1 0 0 1 384.57143 515.798)"/>
+  <path inkscape:connector-curvature="0" style="fill:url(#linearGradient4783)" id="path4781" d="m 411.57143,520.798 0,10.9 -5,0 0,3 -3,-3 -6,0 0,-10.9 z"/>
+ </g>
+</svg>

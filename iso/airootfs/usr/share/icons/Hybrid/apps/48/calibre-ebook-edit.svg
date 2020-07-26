@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48" height="48" version="1.1">
+ <defs>
+  <linearGradient id="linearGradient4191">
+   <stop style="stop-color:#ffa92d;stop-opacity:1" offset="0"/>
+   <stop style="stop-color:#ffdaa5;stop-opacity:1" offset="1"/>
+  </linearGradient>
+  <linearGradient id="0">
+   <stop offset="0" stop-color="#ffffff"/>
+   <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+  </linearGradient>
+  <linearGradient xlink:href="#2" id="1" y1="543.798" x2="0" y2="503.798" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1.1250015,0,0,1,-435.6434,-499.798)"/>
+  <linearGradient id="2">
+   <stop stop-color="#426467"/>
+   <stop offset="1" stop-color="#525b58"/>
+  </linearGradient>
+  <linearGradient xlink:href="#0" id="5" y1="527.798" x2="0" y2="504.798" gradientUnits="userSpaceOnUse" gradientTransform="translate(-384.57143,-499.798)"/>
+  <linearGradient id="6" y1="-.883" x1="-41.26" y2="37.956" x2="-2.994" gradientUnits="userSpaceOnUse" gradientTransform="translate(-1.01,-1.022)">
+   <stop stop-color="#21c9fb"/>
+   <stop offset="1" stop-color="#1a86f2"/>
+  </linearGradient>
+  <linearGradient xlink:href="#6" id="7" x1="45" y1="36" x2="14" y2="12" gradientUnits="userSpaceOnUse"/>
+  <linearGradient xlink:href="#linearGradient4191" id="linearGradient4197" x1="13.813" y1="20.942" x2="13.813" y2="4.102" gradientUnits="userSpaceOnUse" gradientTransform="translate(-2,0)"/>
+  <linearGradient id="b" y1="4" x1="8" y2="18" gradientUnits="userSpaceOnUse" x2="22">
+   <stop stop-color="#292c2f"/>
+   <stop offset="1" stop-opacity="0"/>
+  </linearGradient>
+ </defs>
+ <rect style="fill:url(#1)" rx="0" y="4" x="6" height="40" width="36"/>
+ <rect style="fill:#000000;fill-opacity:1;opacity:0.15" width="36" height="1" x="6" y="43"/>
+ <rect width="2" height="40" x="6" y="4" style="opacity:0.6;fill:#080809"/>
+ <rect style="fill:#8b8f8f" y="42" x="8" height="1" width="34"/>
+ <rect style="fill:#212323;fill-opacity:0.45199998" y="41" x="8" height="1" width="34"/>
+ <path style="fill:url(#linearGradient4197);fill-opacity:1" d="M 8,4 8,21 12,18.69141 16,21 16,4 8,4 Z"/>
+ <path style="opacity:0.15;fill:url(#5)" d="m 9.00001,4 6,0 0,15 -3,-2 -3,2 z"/>
+ <path style="fill:url(#7);fill-rule:evenodd" d="m 41.017578,11.808594 -7.990234,5.80664 0.560547,0.769532 6.740234,-4.896485 c 0.233418,0.300363 0.408713,0.511925 0.585937,0.638672 l -23.240234,16.886719 1.94336,2.677734 25.324218,-18.402344 -1.943359,-2.675781 -0.947266,0.689453 c -0.08076,-0.204866 -0.249163,-0.42928 -0.472656,-0.722656 l -0.560547,-0.771484 z m -23.609375,19.361328 -3.488281,4.425781 5.5,-1.697265 -2.011719,-2.728516 z"/>
+ <path style="opacity:0.2;fill:url(#b);fill-rule:evenodd" d="M 16,4.0000004 16,21 12,18.691 8,21 31,44 42,44 42,30 Z"/>
+</svg>

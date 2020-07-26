@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg width="32" version="1.1" xmlns="http://www.w3.org/2000/svg" height="32" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape">
+ <defs id="defs5455">
+  <linearGradient inkscape:collect="always" id="linearGradient4143">
+   <stop style="stop-color:#faae2a" id="stop4145"/>
+   <stop offset="1" style="stop-color:#ffc35a" id="stop4147"/>
+  </linearGradient>
+  <linearGradient inkscape:collect="always" xlink:href="#linearGradient4143" id="linearGradient4184" y1="-545.29028" y2="-521.02832" x2="0" gradientUnits="userSpaceOnUse"/>
+ </defs>
+ <metadata id="metadata5458"/>
+ <path id="path4131" style="fill:url(#linearGradient4184)" inkscape:flatsided="false" inkscape:label="Capa 1" inkscape:transform-center-y="-3.8695571" inkscape:rounded="0" inkscape:randomized="0" d="m 400.45013,-521.02831 -3.94159,-7.98655 -8.81369,-1.2807 6.37764,-6.21666 -1.50555,-8.77807 7.88319,4.14444 7.8832,-4.14444 -1.50555,8.77807 6.37764,6.21666 -8.81369,1.2807 z" inkscape:groupmode="layer" transform="matrix(1.0975845 0 0 -1.1540686 -423.52786 -599.30241)"/>
+</svg>

@@ -1,0 +1,37 @@
+<svg width="48" xmlns="http://www.w3.org/2000/svg" height="48">
+ <defs>
+  <linearGradient id="b" y1="531.8" y2="507.82" x2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1 0 0 1.33561-.003-168.45)">
+   <stop stop-color="#2a2c2f"/>
+   <stop offset="1" stop-color="#424649"/>
+  </linearGradient>
+  <linearGradient id="c" y1="577.8" y2="541.8" gradientUnits="userSpaceOnUse" x2="0" gradientTransform="matrix(1.50001 0 0 1-588.86-533.81)">
+   <stop stop-color="#c6cdd1"/>
+   <stop offset="1" stop-color="#e0e5e7"/>
+  </linearGradient>
+  <linearGradient id="d" y1="532.8" x1="409.57" y2="543.8" x2="420.57" gradientUnits="userSpaceOnUse" gradientTransform="translate(-.996-6)">
+   <stop stop-opacity=".314"/>
+   <stop offset="1" stop-opacity="0"/>
+  </linearGradient>
+  <linearGradient id="e" y1="531.8" y2="519.8" x2="0" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#006adb"/>
+   <stop offset=".3" stop-color="#00a6f3"/>
+   <stop offset=".5" stop-color="#ad6ccc"/>
+   <stop offset=".625" stop-color="#ec45ff"/>
+   <stop offset="1" stop-color="#982fff"/>
+  </linearGradient>
+ </defs>
+ <g transform="translate(-384.57-499.8)">
+  <g stroke-linejoin="round" stroke-width="2">
+   <path fill="url(#b)" d="m387.57 508.8h41.999v34h-41.999z"/>
+   <path fill="url(#c)" d="m2 8v36h44v-36zm2 2h40v32h-40z" transform="translate(384.57 499.8)"/>
+  </g>
+  <path fill="url(#d)" fill-rule="evenodd" d="m396.57 534.8l8.996 8.996h25v-14.996l-9.998-12z"/>
+  <g stroke-linejoin="bevel">
+   <path fill="url(#e)" d="m396.57 516.8h24v18h-24z"/>
+   <g fill="#eaeaa6">
+    <circle cx="408.57" cy="522.8" r="2"/>
+    <circle cx="408.57" cy="528.8" fill-opacity=".275" r="2"/>
+   </g>
+  </g>
+ </g>
+</svg>

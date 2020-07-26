@@ -1,0 +1,576 @@
+#
+# XFce4
+#
+
+style "xfce-heading" {
+  base[NORMAL] = @bg_color
+}
+
+style "theme-panel" {
+  GtkButton::inner-border = { 0, 0, 0, 0 }
+  xthickness = 2
+  ythickness = 0
+
+  bg[NORMAL] = @panel_bg_color
+  bg[ACTIVE] = @selected_bg_color
+  bg[PRELIGHT] = shade(1.1, @selected_bg_color)
+  bg[SELECTED] = @selected_bg_color
+  fg[NORMAL] = @inverted_fg_color
+  fg[PRELIGHT] = @selected_fg_color
+  fg[ACTIVE] = @selected_fg_color
+  fg[SELECTED] = @selected_fg_color
+  text[NORMAL] = @inverted_fg_color
+  text[PRELIGHT] = @inverted_fg_color
+  text[ACTIVE] = @inverted_fg_color
+  text[SELECTED] = @inverted_fg_color
+
+  font_name = "Bold"
+}
+
+style "panelbar" {
+  fg[NORMAL] = @inverted_fg_color
+  fg[ACTIVE] = @selected_fg_color
+  fg[PRELIGHT] = @selected_fg_color
+  fg[SELECTED] = @selected_fg_color
+  bg[SELECTED] = @selected_bg_color
+
+  font_name = "Bold"
+}
+
+style "panelbuttons" {
+  GtkButton::inner-border = { 0, 0, 0, 0 }
+  xthickness = 2
+  ythickness = 0
+
+  fg[NORMAL] = @inverted_fg_color
+  fg[PRELIGHT] = @selected_fg_color
+  fg[ACTIVE] = @selected_fg_color
+  fg[SELECTED] = @selected_fg_color
+  fg[INSENSITIVE] = mix(0.28, @inverted_fg_color, @panel_bg_color)
+  bg[ACTIVE] = mix(0.12, @inverted_fg_color, @panel_bg_color)
+
+  font_name = "Bold"
+
+  engine "pixmap" {
+    image {
+      function = BOX
+      state    = NORMAL
+      file     = "Others/null.svg"
+      border   = { 0, 0, 0, 2 }
+      stretch  = TRUE
+    }
+    image {
+      function = BOX
+      state    = ACTIVE
+      file     = "Others/top.png"
+      border   = { 0, 0, 0, 2 }
+      stretch  = TRUE
+    }
+    image {
+      function = BOX
+      state    = PRELIGHT
+      file     = "Others/top-hover.png"
+      border   = { 0, 0, 0, 2 }
+      stretch  = TRUE
+    }
+    image {
+      function = BOX
+      state    = INSENSITIVE
+      file     = "Others/null.svg"
+      border   = { 0, 0, 0, 2 }
+      stretch  = TRUE
+    }
+    image {
+      function        = ARROW
+      overlay_file    = "Arrows/up-dark.png"
+      overlay_border  = { 0, 0, 0, 0 }
+      overlay_stretch = FALSE
+      arrow_direction = UP
+    }
+    image {
+      function        = ARROW
+      overlay_file    = "Arrows/down-dark.png"
+      overlay_border  = { 0, 0, 0, 0 }
+      overlay_stretch = FALSE
+      arrow_direction = DOWN
+    }
+    image {
+      function        = ARROW
+      overlay_file    = "Arrows/left-dark.png"
+      overlay_border  = { 0, 0, 0, 0 }
+      overlay_stretch = FALSE
+      arrow_direction = LEFT
+    }
+    image {
+      function        = ARROW
+      overlay_file    = "Arrows/right-dark.png"
+      overlay_border  = { 0, 0, 0, 0 }
+      overlay_stretch = FALSE
+      arrow_direction = RIGHT
+    }
+  }
+}
+
+style "theme-panel-text" {
+  fg[NORMAL] = @inverted_fg_color
+  fg[PRELIGHT] = @selected_fg_color
+  fg[ACTIVE] = @selected_fg_color
+  text[NORMAL] = @inverted_fg_color
+  text[PRELIGHT] = @selected_fg_color
+  text[ACTIVE] = @selected_fg_color
+
+  font_name = "Bold"
+}
+
+style "regular-label" {
+  font_name = "Regular"
+}
+
+style "panel-entry" {
+  fg[NORMAL] = @inverted_fg_color
+  fg[PRELIGHT] = @inverted_fg_color
+  fg[ACTIVE] = @selected_fg_color
+  fg[SELECTED] = @selected_fg_color
+  fg[INSENSITIVE] = mix(0.28, @inverted_fg_color, @panel_bg_color)
+  text[NORMAL] = @inverted_fg_color
+  text[PRELIGHT] = @inverted_fg_color
+  text[ACTIVE] = @selected_fg_color
+  text[SELECTED] = @selected_fg_color
+  text[INSENSITIVE] = mix(0.28, @inverted_fg_color, @panel_bg_color)
+}
+
+style "theme-main-menu-text" = "theme-panel-text" {
+  fg[PRELIGHT] = @selected_fg_color
+  text[PRELIGHT] = @selected_fg_color
+}
+
+style "workspace-switcher" = "theme-panel" {
+  bg[NORMAL] = @fg_color
+  bg[SELECTED] = @selected_bg_color
+}
+
+style "indicator" = "panelbuttons" {
+  xthickness = 2
+  ythickness = 0
+}
+
+style "xfdesktop-icon-view" {
+  XfdesktopIconView::label-alpha = 0
+  XfdesktopIconView::selected-label-alpha = 90
+  XfdesktopIconView::shadow-x-offset = 0
+  xfdesktopIconView::shadow-y-offset = 1
+  XfdesktopIconView::selected-shadow-x-offset = 0
+  XfdesktopIconView::selected-shadow-y-offset = 1
+  XfdesktopIconView::shadow-color = @panel_bg_color
+  XfdesktopIconView::selected-shadow-color = @panel_bg_color
+  XfdesktopIconView::shadow-blur-radius = 2
+  xfdesktopIconView::cell-spacing = 2
+  xfdesktopIconView::cell-padding = 2
+  XfdesktopIconView::cell-text-width-proportion = 1.9
+
+  fg[NORMAL] = @selected_fg_color
+  fg[ACTIVE] = @selected_fg_color
+}
+
+style "xfwm-tabwin" {
+  Xfwm4TabwinWidget::border-width = 0
+  Xfwm4TabwinWidget::border-alpha = 0
+  Xfwm4TabwinWidget::icon-size = 48
+  Xfwm4TabwinWidget::listview-icon-size = 16
+  Xfwm4TabwinWidget::preview-size = 128
+  Xfwm4TabwinWidget::alpha = 0.9
+  Xfwm4TabwinWidget::border-radius = 2
+
+  font_name = "bold"
+
+  bg[NORMAL]   = @inverted_dark_color
+  bg[PRELIGHT] = mix(0.8, @inverted_dark_color, @accent_color)
+  bg[ACTIVE]   = mix(0.8, @inverted_dark_color, @accent_color)
+  bg[SELECTED] = mix(0.8, @inverted_dark_color, @accent_color)
+  fg[NORMAL]   = mix(0.8, @accent_color, @inverted_fg_color)
+  fg[PRELIGHT] = mix(0.6, @accent_color, @inverted_fg_color)
+  fg[ACTIVE]   = mix(0.6, @accent_color, @inverted_fg_color)
+  fg[SELECTED] = mix(0.6, @accent_color, @inverted_fg_color)
+}
+
+style "xfwm-tabwin-button" {
+  xthickness = 0
+  ythickness = 0
+  font_name = "normal"
+
+  fg[NORMAL]   = @inverted_fg_color
+  fg[PRELIGHT] = mix(0.6, @accent_color, @inverted_fg_color)
+  fg[ACTIVE]   = mix(0.6, @accent_color, @inverted_fg_color)
+  fg[SELECTED] = mix(0.6, @accent_color, @inverted_fg_color)
+
+  engine "pixmap" {
+    image {
+      function = BOX
+      state    = NORMAL
+      file     = "Others/null.svg"
+      border   = { 5, 5, 5, 5 }
+      stretch  = TRUE
+    }
+    image {
+      function = BOX
+      state    = PRELIGHT
+      file     = "Buttons/accent-flat-button-hover.png"
+      border   = { 5, 5, 5, 5 }
+      stretch  = TRUE
+    }
+    image {
+      function = BOX
+      state    = ACTIVE
+      file     = "Buttons/accent-flat-button-active.png"
+      border   = { 5, 5, 5, 5 }
+      stretch  = TRUE
+    }
+    image {
+      function = BOX
+      state    = SELECTED
+      file     = "Buttons/accent-flat-button-hover.png"
+      border   = { 5, 5, 5, 5 }
+      stretch  = TRUE
+    }
+  }
+}
+
+style "xfsm-logout" {
+  GtkDialog::content-area-border = 6
+  GtkDialog::content-area-spacing = 6
+  GtkDialog::action-area-spacing = 3
+
+  bg[NORMAL]   = @bg_color
+  bg[SELECTED] = @bg_color # Border around the dialog
+  fg[NORMAL]   = mix(0.87, @fg_color, @bg_color)
+}
+
+style "xfsm-label" {
+  font_name = "12"
+
+  fg[NORMAL]   = mix(0.54, @fg_color, @bg_color)
+}
+
+widget_class "*XfceHeading*"                          style "xfce-heading"
+widget "*tasklist*"                                   style "panelbuttons"
+widget_class "*Xfce*Panel*.GtkToggleButton"           style "panelbuttons"
+widget_class "*Xfce*NetkTasklist*GtkToggleButton"     style "panelbuttons"
+widget_class "*PanelToplevel*Button"                  style "panelbuttons"
+widget_class "*Panel*GtkToggleButton"                 style "panelbuttons"
+widget_class "*Xfce*Panel*Button*"                    style "panelbuttons"
+widget_class "*<XfceArrowButton>"                     style "panelbuttons"
+widget_class "*<XfceActionsPlugin>*"                  style "panelbuttons"
+widget_class "*XfcePanelPlugin.GtkButton"             style "panelbuttons"
+widget_class "*XfcePanelPlugin.GtkToggleButton"       style "panelbuttons"
+widget "*dict*Applet*"                                style "panelbuttons"
+widget_class "*Xfce*NetkTasklist*GtkToggleButton"     style "panelbuttons"
+widget_class "*Tasklist*"                             style:highest "panelbuttons"
+widget_class "*Tasklist*.GtkLabel"                    style:highest "regular-label"
+widget_class "*Mixer*lugin*"                          style:highest "panelbuttons"
+
+class "*Panel*MenuBar*"                               style "panelbar"
+widget_class "*Panel*MenuBar*"                        style "panelbar"
+widget_class "*Panel*MenuBar*Item*"                   style:highest "panelbar"
+
+widget "*PanelWidget*"                                style "theme-panel"
+widget "*PanelApplet*"                                style "theme-panel"
+widget "*fast-user-switch*"                           style "theme-panel"
+widget "*CPUFreq*Applet*"                             style "theme-panel"
+widget "*TopMenu*"                                    style "theme-panel"
+class "PanelApp*"                                     style "theme-panel"
+class "PanelToplevel*"                                style "theme-panel"
+widget_class "*PanelToplevel*"                        style "theme-panel"
+widget_class "*notif*"                                style "theme-panel"
+widget_class "*Notif*"                                style "theme-panel"
+widget_class "*Tray*"                                 style "theme-panel" 
+widget_class "*tray*"                                 style "theme-panel"
+widget_class "*computertemp*"                         style "theme-panel"
+widget_class "*Applet*Tomboy*"                        style "theme-panel"
+widget_class "*Applet*Netstatus*"                     style "theme-panel"
+
+# Fixes for tooltip text in some apps.
+widget_class "*Notif*Beagle*"                         style "theme-panel"
+widget_class "*Notif*Brasero*"                        style "theme-panel"
+
+# XFCE panel theming.
+widget "*Xfce*Panel*"                                 style "theme-panel"
+class "*Xfce*Panel*"                                  style "theme-panel"
+widget "*WnckPager*"                                  style "workspace-switcher"
+
+# Fix gtk-entries in the panel
+widget "*bookmark*GtkEntry"                           style "panel-entry" # fixes smartbookmark-plugin
+
+# Make sure panel text color doesn't change
+widget_class "*Panel*MenuBar*"                        style "theme-main-menu-text"
+widget_class "*Panel*<GtkMenuBar>*"                   style "theme-main-menu-text"
+widget "*.clock-applet-button.*"                      style "theme-panel-text"
+widget "*PanelApplet*"                                style "theme-panel-text"
+
+# Override general panel-style with specific plugin-styles
+widget "*indicator-applet*"                           style "indicator"
+widget "*indicator-button*"                           style "indicator"
+
+# XFDesktop icon grids
+widget_class "*XfdesktopIconView*"                    style "xfdesktop-icon-view"
+
+# XFDesktop app-switcher
+widget "xfwm4-tabwin*"                                style "xfwm-tabwin"
+widget "xfwm4-tabwin*GtkButton*"                      style "xfwm-tabwin-button"
+
+# XFDesktop end-session-dialog
+widget_class "*XfsmLogoutDialog*"                         style "xfsm-logout"
+widget_class "*XfsmLogoutDialog*GtkVBox.GtkVBox.GtkLabel" style "xfsm-label"
+
+
+#
+# Thunar
+#
+
+style "thunar_location_button" = "location_button" {
+  ThunarLocationButtons::spacing = 0
+
+  fg[NORMAL] = mix(0.87, @fg_color, @bg_color)
+  fg[PRELIGHT] = @fg_color
+  fg[ACTIVE] = @fg_color
+  fg[INSENSITIVE] = mix(0.28, @fg_color, @bg_color)
+
+  engine "pixmap" {
+    image {
+      function = BOX
+      state    = NORMAL
+      file     = "Others/null.svg"
+      border   = { 2, 2, 3, 3 }
+      stretch  = TRUE
+    }
+    image {
+      function = BOX
+      state    = PRELIGHT
+      file     = "Buttons/flat-button-hover.png"
+      border   = { 2, 2, 3, 3 }
+      stretch  = TRUE
+    }
+    image {
+      function = BOX
+      state    = ACTIVE
+      file     = "Others/top.png"
+      border   = { 0, 0, 0, 2 }
+      stretch  = TRUE
+    }
+    image {
+      function = BOX
+      state    = INSENSITIVE
+      file     = "Others/null.svg"
+      border   = { 2, 2, 3, 3 }
+      stretch  = TRUE
+    }
+  }
+}
+
+style "thunar_side_pane" {
+  font_name = "Medium"
+
+  base[NORMAL] = @secondary_dark_color
+}
+
+widget_class "*ThunarLocationButtons*" style "thunar_location_button"
+widget_class "*ThunarShortcutsView*"   style "thunar_side_pane"
+widget_class "*ThunarTreeView*"        style "thunar_side_pane"
+
+
+#
+# Eclipse/SWT
+#
+style "eclipse-tooltips" {
+  xthickness = 4
+  ythickness = 4
+}
+
+style "null" {
+  engine "pixmap" {
+    image {
+      function = BOX
+      file     = "Others/null.svg"
+      stretch  = TRUE
+    }
+  }
+}
+
+widget "gtk-tooltips*"     style "eclipse-tooltips"
+widget "*swt-toolbar-flat" style "null"
+
+
+#
+# Openoffice, Libreoffice
+#
+style "libreoffice_entry" {
+  engine "pixmap" {
+    image {
+      function        = FLAT_BOX
+      detail          = "entry_bg"
+      state           = NORMAL
+      overlay_file    = "Others/null.svg"
+      overlay_border  = { 0, 0, 0, 0 }
+      overlay_stretch = TRUE
+    }
+    image {
+      function        = FLAT_BOX
+      detail          = "entry_bg"
+      state           = ACTIVE
+      overlay_file    = "Others/null.svg"
+      overlay_border  = { 0, 0, 0, 0 }
+      overlay_stretch = TRUE
+    }
+    image {
+      function = SHADOW
+      detail   = "entry"
+      state    = NORMAL
+      shadow   = IN
+      file     = "Others/null.svg"
+      border   = { 0, 0, 0, 0 }
+      stretch  = TRUE
+    }
+    image {
+      function = SHADOW
+      detail   = "entry"
+      state    = ACTIVE
+      file     = "Others/null.svg"
+      border   = { 0, 0, 0, 0 }
+      stretch  = TRUE
+    }
+  }
+}
+
+style "menubar_libreoffice" {
+  xthickness = 0
+  ythickness = 0
+
+  bg[NORMAL] = @bg_color
+  fg[NORMAL] = mix(0.8, @fg_color, @selected_fg_color)
+  fg[PRELIGHT] = shade(0.96, @fg_color)
+  fg[SELECTED] = shade(0.96, @fg_color)
+  fg[INSENSITIVE] = mix(0.6, @fg_color, @selected_fg_color)
+  text[NORMAL] = mix(0.8, @fg_color, @selected_fg_color)
+  text[PRELIGHT] = shade(0.96, @fg_color)
+  text[SELECTED] = shade(0.96, @fg_color)
+  text[INSENSITIVE] = mix(0.6, @fg_color, @selected_fg_color)
+
+  engine "pixmap" {
+    image {
+      function    = BOX
+      file        = "Shadows/z-depth-1.svg"
+      border      = { 1, 1, 1, 1 }
+      stretch     = TRUE
+      recolorable = TRUE
+    }
+  }
+}
+
+style "menubar_item_libreoffice" {
+  xthickness = 3
+  ythickness = 6
+
+  bg[PRELIGHT] = @bg_color
+  bg[SELECTED] = @bg_color
+  fg[NORMAL] = mix(0.8, @fg_color, @selected_fg_color)
+  fg[PRELIGHT] = shade(0.96, @fg_color)
+  fg[SELECTED] = shade(0.96, @fg_color)
+  fg[INSENSITIVE] = mix(0.6, @fg_color, @selected_fg_color)
+  text[NORMAL] = mix(0.8, @fg_color, @selected_fg_color)
+  text[PRELIGHT] = shade(0.96, @fg_color)
+  text[SELECTED] = shade(0.96, @fg_color)
+  text[INSENSITIVE] = mix(0.6, @fg_color, @selected_fg_color)
+
+  engine "pixmap" {
+    image {
+      function    = BOX
+      recolorable = TRUE
+      state       = PRELIGHT
+      file        = "Others/top.png"
+      border      = { 0, 0, 0, 2 }
+      stretch     = TRUE
+    }
+  }
+}
+
+style "ooo_stepper_hack" {
+  GtkScrollbar::stepper-size         = 8
+  GtkScrollbar::has-backward-stepper = 1
+  GtkScrollbar::has-forward-stepper  = 1
+}
+
+class "GtkWindow"                                      style "toplevel_hack"
+widget "*libreoffice-toplevel*"                        style "ooo_stepper_hack"
+widget "*libreoffice-toplevel*GtkToolbar"              style "toolbar"
+widget "*libreoffice-toplevel*GtkMenuBar"              style "menubar_libreoffice"
+widget "*libreoffice-toplevel*GtkMenuBar.*GtkMenuItem" style "menubar_item_libreoffice"
+# widget "*libreoffice-toplevel*GtkEntry"              style "libreoffice_entry"
+# widget "*libreoffice-toplevel*GtkSpinButton"         style "libreoffice_entry"
+
+
+#
+# PCManFM
+#
+
+style "fm_side_pane" {
+  font_name = "Medium"
+
+  base[NORMAL] = @secondary_dark_color
+}
+
+style "fm_toolbar" {
+  bg[NORMAL] = @bg_color
+
+  engine "pixmap" {
+    image {
+      function = SHADOW
+      file     = "Shadows/frame.png"
+      border   = { 1, 1, 1, 1 }
+      stretch  = TRUE
+    }
+  }
+}
+
+style "location_button_label" {
+  fg[ACTIVE] = @fg_color
+}
+
+widget_class "*<FmMainWin>*<GtkToolbar>"                          style "fm_toolbar"
+widget_class "*<FmMainWin>*<FmSidePane>*<GtkTreeView>"            style "fm_side_pane"
+widget_class "*<FmMainWin>*<FmPathBar>*<GtkButton>"               style "location_button"
+widget_class "*<FmMainWin>*<FmPathBar>*<GtkButton>*<GtkLabel>"    style "location_button_label"
+
+
+#
+# (He)XChat
+#
+
+style "chat-entry" {
+  xthickness = 3
+  ythickness = 3
+
+  # enforce white backgrounds
+  bg[NORMAL] = @solid_white
+  bg[PRELIGHT] = @solid_white
+  bg[ACTIVE] = @solid_white
+  bg[SELECTED] = @selected_bg_color
+
+  engine "pixmap" {
+    image {
+      function = SHADOW
+      detail   = "entry"
+      file     = "Shadows/frame.png"
+      border   = { 1, 1, 1, 1 }
+      stretch  = TRUE
+    }
+    image {
+      function = FLAT_BOX
+      detail   = "entry_bg"
+      file     = "Others/null.svg"
+      border   = { 0, 0, 0, 0 }
+      stretch  = TRUE
+    }
+  }
+}
+
+widget "*xchat-inputbox" style "chat-entry"
+class "SexySpellEntry"   style:highest "chat-entry"

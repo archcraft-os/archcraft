@@ -1,0 +1,11 @@
+<svg viewBox="0 0 8 8" xmlns="http://www.w3.org/2000/svg">
+    <style
+        type="text/css"
+        id="current-color-scheme">
+        .ColorScheme-NeutralText {
+            color:#f67400;
+        }
+    </style>
+    <path style="fill:currentColor;fill-opacity:1;stroke:none" class="ColorScheme-NeutralText" d="M1 0h6c.554 0 1 .446 1 1v6c0 .554-.446 1-1 1H1c-.554 0-1-.446-1-1V1c0-.554.446-1 1-1z"/>
+    <path d="M7.244.049L5.646 1.646l-.59-.59-1.5 1.5 1.887 1.887 1.5-1.5-.59-.59L7.952.757a.97.97 0 0 0-.707-.707zM2.557 3.557l-1.5 1.5.59.59L.048 7.243a.97.97 0 0 0 .707.707l1.598-1.597.59.59 1.5-1.5z" fill="#fff"/>
+</svg>

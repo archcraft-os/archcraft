@@ -1,0 +1,34 @@
+<svg version="1.1" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <linearGradient id="b" x1="434.57144" x2="384.57144" y1="543.79797" y2="503.798" gradientTransform="matrix(.66666621 0 0 .70000019 128.19065 165.13928)" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#343b40" offset="0"/>
+            <stop stop-color="#555e63" offset="1"/>
+        </linearGradient>
+        <linearGradient id="a" x2="0" y1="43.999973" y2="4" gradientTransform="matrix(.66666621 0 0 .69999959 384.57143 514.998)" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#bd8d48" offset="0"/>
+            <stop stop-color="#e8b971" offset="1"/>
+        </linearGradient>
+        <linearGradient id="c" x1="37.581001" x2="53.580002" y1="17.139999" y2="33.139999" gradientTransform="translate(351.07811,502.96041)" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#383e51" offset="0"/>
+            <stop stop-color="#655c6f" stop-opacity="0" offset="1"/>
+        </linearGradient>
+    </defs>
+    <g transform="translate(-384.57143 -515.798)">
+        <g stroke-width=".666666">
+            <rect x="384.57144" y="517.79803" width="31.999987" height="28" fill="url(#b)"/>
+            <path d="m384.57143 517.798v1.4 26.59998h1.33333 30.66665l3e-5 -2.09998-3e-5 -24.5v-1.4h-1.33334-29.33331zm2.00004 2h27.99996v24h-27.99996z" fill="url(#a)"/>
+            <path d="m386.57147 519.75255v24.04545h27.99996v-24.04545zm0.99996 1.04545h26v22h-26z" color="#000000" fill="#aa7f41" fill-opacity=".498039"/>
+            <rect x="403.57144" y="541.79803" width="3.99996" height=".99999" color="#000000" fill="#007ad9"/>
+        </g>
+        <g fill="#d6d6d6">
+            <rect x="408.57141" y="541.79803" width="3.999988" height="1.00001" color="#000000" stroke-width=".666666"/>
+            <path d="m389.56764 531.798c-4e-3 0-6e-3 0.223-6e-3 0.5s3e-3 0.5 6e-3 0.5h9.98728c4e-3 0 6e-3 -0.223 6e-3 -0.5s-2e-3 -0.5-6e-3 -0.5z" stroke-width=".79056048"/>
+            <text x="391.49927" y="530.59259" font-family="monospace" font-size="21.333334px" letter-spacing="0px" word-spacing="0px" style="line-height:1.25" xml:space="preserve"><tspan x="391.49927" y="530.59259" fill="#d6d6d6" font-family="'Nimbus Sans'" font-size="10.666667px">6</tspan></text>
+            <text x="391.93033" y="541.3819" font-family="'Noto Sans'" font-size="10.666667px" letter-spacing="0px" word-spacing="0px" style="line-height:1.25" xml:space="preserve"><tspan x="391.93033" y="541.3819">3</tspan></text>
+            <path d="m400.57083 530.798c-2e-3 0-2e-3 0.223-2e-3 0.5s8e-4 0.5 2e-3 0.5h3.9952c2e-3 0 2e-3 -0.223 2e-3 -0.5s-7.3e-4 -0.5-2e-3 -0.5z" stroke-width=".50001234"/>
+            <path d="m400.57083 532.798c-2e-3 0-2e-3 0.223-2e-3 0.5s8e-4 0.5 2e-3 0.5h3.9952c2e-3 0 2e-3 -0.223 2e-3 -0.5s-7.3e-4 -0.5-2e-3 -0.5z" stroke-width=".50001234"/>
+            <text x="405.63394" y="535.73547" font-family="'Noto Sans'" font-size="10.666667px" letter-spacing="0px" word-spacing="0px" style="line-height:1.25" xml:space="preserve"><tspan x="405.63394" y="535.73547">2</tspan></text>
+        </g>
+        <path d="m406.8828 534.19274-2.28459-2.41809-0.83942-0.0147-7.90055-6.90819s-0.15447-0.60456-0.36905-0.80906c-0.22194-0.21152-0.54764-0.34479-0.85422-0.34106-0.35915 4e-3 -0.73439 0.17215-0.9907 0.42378-0.36687 0.36017-0.51897 0.90524-0.6326 1.40664-0.11982 0.52873-0.13408 1.12328-0.14916 1.67224-0.0138 0.50295-0.039 0.96054 0.0773 1.44345 0.097 0.40286 0.33946 0.76432 0.591 1.0936 0.33046 0.43259 0.81158 0.72801 1.18197 1.12695 0.58313 0.62807 1.63144 1.98721 1.63144 1.98721l-5.65311-0.0145 3.54814 4.96489-0.67056 0.0423 2.47261 2.92473s-0.45918 0.28733-1.11 0.34122c-0.56438 0.0467-1.80828-0.28572-2.51059-0.4916l-0.018 0.40909 6.30006 7.24573 18.6145-0.0836c0.0128-4.77727 0.01-7.52128 0.0697-12.29816l-6.63928-5.62918s-1.04555-1.29727-1.8307-1.41702c-0.22078-0.0337-0.75634-0.0303-1.03911 0.0586-0.62355 0.19616-1.14857 0.6221-1.14857 0.6221l2.3504 2.37857z" fill="url(#c)" fill-rule="evenodd" opacity=".2"/>
+    </g>
+</svg>

@@ -1,0 +1,120 @@
+## Author : Aditya Shakya (adi1090x)
+## Mail : adi1090x@gmail.com
+## Github : @adi1090x
+## Reddit : @adi1090x
+
+// Screen size
+screen.w = Window.GetWidth();
+screen.h = Window.GetHeight();
+screen.half.w = Window.GetWidth() / 2;
+screen.half.h = Window.GetHeight() / 2;
+
+// Question prompt
+question = null;
+answer = null;
+
+// Message
+message = null;
+
+// Password prompt
+bullets = null;
+prompt = null;
+bullet.image = Image.Text("*", 1, 1, 1);
+
+// Flow
+state.status = "play";
+state.time = 0.0;
+
+//--------------------------------- Refresh (Logo animation) --------------------------
+
+# cycle through all images
+for (i = 0; i < 59; i++)
+  flyingman_image[i] = Image("progress-" + i + ".png");
+flyingman_sprite = Sprite();
+
+for (i = 0; i < 59; i++)
+  shutimg_image[i] = Image("shutdown-" + i + ".png");
+shutimg_sprite = Sprite();
+
+# set image position
+flyingman_sprite.SetX(Window.GetWidth() / 2 - flyingman_image[0].GetWidth() / 2); # Place images in the center
+flyingman_sprite.SetY(Window.GetHeight() / 2 - flyingman_image[0].GetHeight() / 2);
+
+shutimg_sprite.SetX(Window.GetWidth() / 2 - shutimg_image[0].GetWidth() / 2); # Place images in the center
+shutimg_sprite.SetY(Window.GetHeight() / 2 - shutimg_image[0].GetHeight() / 2);
+
+progress = 0;
+
+fun refresh_callback ()
+  {
+    if (Plymouth.GetMode () == "boot" || Plymouth.GetMode () == "resume") {
+    flyingman_sprite.SetImage(flyingman_image[Math.Int(progress / 1) % 59]);
+    progress++;
+    }
+    else if (Plymouth.GetMode () == "shutdown" || Plymouth.GetMode () == "suspend") {
+    shutimg_sprite.SetImage(shutimg_image[Math.Int(progress / 1) % 59]);
+    progress++;
+    }
+  }
+  
+Plymouth.SetRefreshFunction (refresh_callback);
+
+//------------------------------------- Password prompt -------------------------------
+fun DisplayQuestionCallback(prompt, entry) {
+    question = null;
+    answer = null;
+
+    if (entry == "")
+        entry = "<answer>";
+
+    question.image = Image.Text(prompt, 1, 1, 1);
+    question.sprite = Sprite(question.image);
+    question.sprite.SetX(screen.half.w - question.image.GetWidth() / 2);
+    question.sprite.SetY(screen.h - 4 * question.image.GetHeight());
+
+    answer.image = Image.Text(entry, 1, 1, 1);
+    answer.sprite = Sprite(answer.image);
+    answer.sprite.SetX(screen.half.w - answer.image.GetWidth() / 2);
+    answer.sprite.SetY(screen.h - 2 * answer.image.GetHeight());
+}
+Plymouth.SetDisplayQuestionFunction(DisplayQuestionCallback);
+
+//------------------------------------- Password prompt -------------------------------
+fun DisplayPasswordCallback(nil, bulletCount) {
+    state.status = "pause";
+    totalWidth = bulletCount * bullet.image.GetWidth();
+    startPos = screen.half.w - totalWidth / 2;
+
+    prompt.image = Image.Text("Enter Password", 1, 1, 1);
+    prompt.sprite = Sprite(prompt.image);
+    prompt.sprite.SetX(screen.half.w - prompt.image.GetWidth() / 2);
+    prompt.sprite.SetY(screen.h - 4 * prompt.image.GetHeight());
+
+    // Clear all bullets (user might hit backspace)
+    bullets = null;
+    for (i = 0; i < bulletCount; i++) {
+        bullets[i].sprite = Sprite(bullet.image);
+        bullets[i].sprite.SetX(startPos + i * bullet.image.GetWidth());
+        bullets[i].sprite.SetY(screen.h - 2 * bullet.image.GetHeight());
+    }
+}
+Plymouth.SetDisplayPasswordFunction(DisplayPasswordCallback);
+
+//--------------------------- Normal display (unset all text) ----------------------
+fun DisplayNormalCallback() {
+    state.status = "play";
+    bullets = null;
+    prompt = null;
+    message = null;
+    question = null;
+    answer = null;
+}
+Plymouth.SetDisplayNormalFunction(DisplayNormalCallback);
+
+//----------------------------------------- Message --------------------------------
+fun MessageCallback(text) {
+    message.image = Image.Text(text, 1, 1, 1);
+    message.sprite = Sprite(message.image);
+    message.sprite.SetPosition(screen.half.w - message.image.GetWidth() / 2, message.image.GetHeight());
+}
+Plymouth.SetMessageFunction(MessageCallback);

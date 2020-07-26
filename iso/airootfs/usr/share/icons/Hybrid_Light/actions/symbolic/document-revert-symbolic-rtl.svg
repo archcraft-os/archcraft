@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs id="defs3051">
+    <style type="text/css" id="current-color-scheme">
+      .ColorScheme-Text {
+        color:#bebebe;
+      }
+      </style>
+  </defs>
+ <path style="fill:currentColor;fill-opacity:1;stroke:none" 
+     d="m 13,2 0,12 -5,0 -1,0 -3,-3 0,-1 0,-8 9,0 z m -1,1 -7,0 0,7 3,0 0,3 4,0 0,-10 z M 1,7 3,9 1,11 1,7 Z"
+     class="ColorScheme-Text"
+     />
+</svg>

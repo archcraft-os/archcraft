@@ -1,0 +1,9 @@
+<svg version="1.1" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <style type="text/css">.ColorScheme-Text {
+            color:#232629;
+        }</style><g transform="translate(1,1)">
+    <g transform="translate(-325.99219,-534.3622)" class="ColorScheme-Text" fill="currentColor">
+        <path d="m328.99219 537.3622v16h10v-1h-9v-8h3v-0.01l8e-3 0.01 2-2h8.99219v3h1v-6h-6.99238l-2-2-8e-3 0.01v-0.01h-6z"/>
+        <path transform="translate(326,534.3622)" d="m17 12a3 1 0 0 0-3 1v5a3 1 0 0 0 3 1 3 1 0 0 0 3-1v-5a3 1 0 0 0-3-1zm0 1a3 1 0 0 1 2 0.257812v0.486329a3 1 0 0 1-2 0.255859 3 1 0 0 1-2-0.257812v-0.486329a3 1 0 0 1 2-0.255859zm-2 1.744141a3 1 0 0 0 2 0.255859 3 1 0 0 0 2-0.255859v1a3 1 0 0 1-2 0.255859 3 1 0 0 1-2-0.257812zm0 2a3 1 0 0 0 2 0.255859 3 1 0 0 0 2-0.255859v1a3 1 0 0 1-2 0.255859 3 1 0 0 1-2-0.257812z"/>
+    </g>
+</g></svg>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg width="32" version="1.1" xmlns="http://www.w3.org/2000/svg" height="32" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape">
+ <defs id="defs5455">
+  <linearGradient inkscape:collect="always" xlink:href="#linearGradient4303-6" id="linearGradient4643-8" y1="543.79797" y2="502.65509" gradientUnits="userSpaceOnUse" x2="0" gradientTransform="matrix(0.66666726 0 0 0.63518419 128.19014 198.51873)"/>
+  <linearGradient inkscape:collect="always" id="linearGradient4303-6">
+   <stop style="stop-color:#c6cdd1" id="stop4305-7"/>
+   <stop offset="1" style="stop-color:#e0e5e7" id="stop4307-0"/>
+  </linearGradient>
+  <linearGradient inkscape:collect="always" xlink:href="#linearGradient4293" id="linearGradient4183" y1="525.79797" x1="391.57144" y2="540.79797" x2="406.57147" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1 0 0 1 -0.000007 0.000029)"/>
+  <linearGradient inkscape:collect="always" id="linearGradient4293">
+   <stop id="stop4295"/>
+   <stop offset="1" style="stop-opacity:0" id="stop4297"/>
+  </linearGradient>
+ </defs>
+ <metadata id="metadata5458"/>
+ <g inkscape:label="Capa 1" inkscape:groupmode="layer" id="layer1" transform="matrix(1 0 0 1 -384.57143 -515.798)">
+  <rect width="32" x="384.57144" y="517.79797" rx="0" height="28" style="fill:url(#linearGradient4643-8)" id="rect4641-5"/>
+  <path inkscape:connector-curvature="0" style="fill:url(#linearGradient4183);opacity:0.2;fill-rule:evenodd" id="path4167" d="m 385.57142,543.79803 30,-20 1.00001,1 -1e-5,20.99997 -29,3e-5 z"/>
+  <rect width="32.00001" x="384.57141" y="517.79797" height="4" style="fill:#566069" id="rect4647-8"/>
+  <rect width="31.999968" x="384.57141" y="521.79797" height="1" style="fill:#3daee9" id="rect4649-8"/>
+  <rect width="30" x="385.57141" y="523.79797" height="20.00003" style="fill:#ffffff" id="rect4653-5"/>
+  <rect width="2" x="413.57141" y="518.79797" rx="1" height="2" style="fill:#eff0f1" id="rect4661-1"/>
+ </g>
+</svg>

@@ -1,0 +1,28 @@
+<svg width="48" xmlns="http://www.w3.org/2000/svg" height="48">
+ <defs>
+  <linearGradient id="a" y1="543.8" y2="503.8" x2="0" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#9aa799"/>
+   <stop offset="1" stop-color="#dadedb"/>
+  </linearGradient>
+  <linearGradient id="b" y1="34" y2="14" x2="0" gradientUnits="userSpaceOnUse" gradientTransform="translate(379.57 499.8)">
+   <stop stop-color="#b40000"/>
+   <stop offset="1" stop-color="#b40000"/>
+  </linearGradient>
+  <linearGradient id="c" y1="523.8" x1="403.57" y2="536.8" x2="416.57" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#292c2f"/>
+   <stop offset="1" stop-opacity="0"/>
+  </linearGradient>
+  <linearGradient id="d" y1="34" y2="14" gradientUnits="userSpaceOnUse" x2="0" gradientTransform="translate(379.57 499.8)">
+   <stop stop-color="#ec0000"/>
+   <stop offset="1" stop-color="#ff2020"/>
+  </linearGradient>
+ </defs>
+ <g transform="translate(-384.57-499.8)">
+  <rect width="40" x="388.57" y="503.8" fill="url(#a)" rx="0" height="40"/>
+  <rect width="40" x="388.57" y="542.8" fill="#7f8e7e" height="1"/>
+  <path fill="url(#b)" d="m407.16 523.8l10 10 1.414-1.414-8.584-8.586 8.584-8.586-1.414-1.414z"/>
+  <path opacity=".4" fill="url(#c)" fill-rule="evenodd" d="m399.99 533.8l9.586 9.586h19l3.586-14.586-13.586-13.586z"/>
+  <path fill="url(#d)" d="m399.99 513.8l-1.414 1.414 8.584 8.586-8.584 8.586 1.414 1.414 10-10z"/>
+  <path fill="#ffffff" fill-rule="evenodd" fill-opacity=".294" d="m15.414 14l-.414.414 10 9.996.414-.414z" transform="translate(384.57 499.8)"/>
+ </g>
+</svg>

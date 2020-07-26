@@ -1,0 +1,11 @@
+<svg viewBox="0 0 8 8" xmlns="http://www.w3.org/2000/svg">
+    <style
+        type="text/css"
+        id="current-color-scheme">
+        .ColorScheme-Highlight {
+            color:#3daee9;
+        }
+    </style>
+    <path d="M4 0a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4z" style="fill:currentColor;fill-opacity:1;stroke:none" class="ColorScheme-Highlight"/>
+    <path d="M3 1v2H1v2h2v2h2V5h2V3H5V1z" fill="#fff"/>
+</svg>

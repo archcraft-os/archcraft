@@ -1,0 +1,30 @@
+<svg version="1.1" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="c" x2="0" y1="543.8" y2="503.8" gradientTransform="matrix(1.125,0,0,1,-433.64001,-499.79998)" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#c6cdd1" offset="0"/>
+            <stop stop-color="#e0e5e7" offset="1"/>
+        </linearGradient>
+        <linearGradient id="b" x1="398.57" x2="416.57" y1="513.8" y2="531.8" gradientTransform="translate(-392.166,-502.8)" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#292c2f" offset="0"/>
+            <stop stop-opacity="0" offset="1"/>
+        </linearGradient>
+    </defs>
+    <path d="m6 6h33l3 3v33h-36z" fill="url(#c)"/>
+    <rect transform="rotate(-90)" x="-42" y="6" width="1" height="36" fill="#737b81" stroke-opacity=".55" stroke-width="2.6563132"/>
+    <rect transform="rotate(-90)" x="-40" y="38" width="4" height="3" fill="#4c5154" stroke-width=".1"/>
+    <path d="m36 6-24 12 23 24h7v-30z" fill="url(#b)" fill-rule="evenodd" opacity=".2"/>
+    <g transform="translate(2)">
+        <rect x="10" y="6" width="24" height="12" fill="#4c5154"/>
+        <path d="m14 6v12h20v-12zm13 2h4v8h-4z" fill="#eef1f2"/>
+    </g>
+    <rect transform="rotate(-90)" x="-39" y="12" width="13" height="20" fill="#abb9be" stroke-opacity=".55" stroke-width="2.8"/>
+    <g transform="rotate(90,51.500002,-2.499998)" stroke-width=".1">
+        <rect transform="rotate(-90)" x="-36" y="81" width="18" height="11" fill="#fdbc4a"/>
+        <g fill="#fff">
+            <rect transform="rotate(-90)" x="-34" y="87" width="8" height="1"/>
+            <rect transform="rotate(-90)" x="-34" y="89" width="6" height="1"/>
+            <rect transform="rotate(-90)" x="-34" y="85" width="11" height="1"/>
+        </g>
+    </g>
+    <rect x="39" y="37" width="1" height="2" fill="#eef1f2"/>
+</svg>

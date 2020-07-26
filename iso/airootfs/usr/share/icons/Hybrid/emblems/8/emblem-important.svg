@@ -1,0 +1,11 @@
+<svg viewBox="0 0 8 8" xmlns="http://www.w3.org/2000/svg">
+    <style
+        type="text/css"
+        id="current-color-scheme">
+        .ColorScheme-NeutralText {
+            color:#f67400;
+        }
+    </style>
+    <rect style="fill:currentColor;fill-opacity:1;stroke:none" class="ColorScheme-NeutralText" height="8" rx="1" width="8"/>
+    <path d="M3 8h2V6H3zm0-3V1h2v4z" fill="#fff"/>
+</svg>

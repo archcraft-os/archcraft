@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48" version="1.1" height="48" viewBox="0 0 48 48">
+ <defs>
+  <linearGradient id="linearGradient4219">
+   <stop style="stop-color:#000000;stop-opacity:1;" offset="0"/>
+   <stop style="stop-color:#000000;stop-opacity:0;" offset="1"/>
+  </linearGradient>
+  <linearGradient id="linearGradient4153">
+   <stop style="stop-color:#f48b0b;stop-opacity:1" offset="0"/>
+   <stop style="stop-color:#ffba6b;stop-opacity:1" offset="1"/>
+  </linearGradient>
+  <linearGradient xlink:href="#linearGradient4153" id="linearGradient4159" x1="23" y1="43.866" x2="23" y2="5" gradientUnits="userSpaceOnUse" gradientTransform="translate(-1.7558594e-8,-2.481687e-5)"/>
+  <linearGradient xlink:href="#linearGradient4219" id="linearGradient4225" x1="15.233" y1="11.995" x2="39.609" y2="36.37" gradientUnits="userSpaceOnUse"/>
+ </defs>
+ <circle style="fill:url(#linearGradient4159);fill-opacity:1" r="20" cx="24" cy="24"/>
+ <path style="opacity:0.2;fill:url(#linearGradient4225);fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="M 25.984375 11.986328 L 24.748047 13.222656 L 24.839844 14.839844 L 22.005859 12.005859 L 20.896484 13.712891 L 20.197266 18.804688 L 16.6875 16.322266 L 15 18.009766 L 19.664062 22.673828 L 18.613281 30.328125 L 15.017578 31.988281 L 26.888672 43.859375 A 20 20 0 0 0 43.330078 29.332031 L 25.984375 11.986328 z"/>
+ <path style="fill:#ffffff;fill-opacity:1" d="m 20,12 0,4 c -0.491694,0.02 -1.394226,0 -1.865234,0 L 15,16 l 0,2 c 0,0 1.718836,-0.02999 1.691406,0 C 17.611664,17.986 17.90472,18.654087 18,19.099609 L 18,29 c -0.03527,0.281551 -0.0053,0.98 -0.648438,1 C 17.381261,30.026 15,30 15,30 l 0,2 3.253906,0 C 18.80411,31.98 19.468482,32 20,32 l 0,4 2,-0.03711 L 22,32 l 1.96875,0 0.0625,4 2,0 -0.0625,-4 C 32,32 32,29 32,27.498047 32,26 31.365771,24.001911 29,24 c 1.365771,0.0019 2,-2.256505 2,-4 0,-2.256605 -2,-4 -5,-4 l 0,-4 -2,0 0,4 c -0.597247,0 -1.393658,-0.022 -2,0 l 0,-4 z m 2,6 c 2,0 5.000347,3.8e-5 5,2.5 3.47e-4,2.500163 -3,2.5 -5,2.5 z m 0,7 c 4,1.25e-4 6.000416,3.8e-5 6,2.5 4.16e-4,2.500163 -2,2.5 -6,2.5 z"/>
+ <path style="fill:#000000;fill-opacity:1;opacity:0.2" d="M 43.978516 23.417969 A 20 20 0 0 1 24 43 A 20 20 0 0 1 4.0214844 23.582031 A 20 20 0 0 0 4 24 A 20 20 0 0 0 24 44 A 20 20 0 0 0 44 24 A 20 20 0 0 0 43.978516 23.417969 z"/>
+</svg>

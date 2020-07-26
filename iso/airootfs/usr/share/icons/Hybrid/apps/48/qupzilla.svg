@@ -1,0 +1,30 @@
+<svg width="48" xmlns="http://www.w3.org/2000/svg" height="48">
+ <defs>
+  <linearGradient id="a" y1="543.8" x1="428.57" y2="503.8" x2="388.57" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#375a7d"/>
+   <stop offset="1" stop-color="#31bfa6"/>
+  </linearGradient>
+  <linearGradient id="b" y1="12.08" x1="12.521" y2="24.797" x2="22.282" gradientUnits="userSpaceOnUse" gradientTransform="translate(384.57 499.8)">
+   <stop stop-color="#fcfcfc"/>
+   <stop offset="1" stop-color="#eff1f1"/>
+  </linearGradient>
+  <linearGradient id="c" y1="25.538" x1="14.576" y2="44" x2="28.742" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#4ce0c6"/>
+   <stop offset=".3" stop-color="#7fe9d6"/>
+   <stop offset="1" stop-color="#31bfa6"/>
+  </linearGradient>
+  <linearGradient id="d" y1="24" x1="18" y2="37" x2="27.975" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#172525"/>
+   <stop offset="1" stop-color="#172525" stop-opacity="0"/>
+  </linearGradient>
+ </defs>
+ <g fill-rule="evenodd" transform="translate(-384.57-499.8)">
+  <g color-rendering="auto" color-interpolation-filters="linearRGB" shape-rendering="auto" image-rendering="auto" text-rendering="auto" color-interpolation="sRGB" color="#000000">
+   <circle fill="url(#a)" cx="408.57" cy="523.8" r="20"/>
+   <path fill="#375a7d" d="M43.980469 23.476562A20.00001 20.00001 0 0 1 24 43.09961 20.00001 20.00001 0 0 1 4.01953 23.623047 20.00001 20.00001 0 0 0 4 24 20.00001 20.00001 0 0 0 24 44 20.00001 20.00001 0 0 0 44 24 20.00001 20.00001 0 0 0 43.980469 23.476562" transform="translate(384.57 499.8)"/>
+  </g>
+  <path opacity=".4" fill="url(#d)" d="m41 19l-6.813 1.813-17.688-1.188-7.5 9.688-.34 4.074 9.82 9.82a20.00001 20.00001 0 0 0 5.519531 .792969 20.00001 20.00001 0 0 0 20 -20 20.00001 20.00001 0 0 0 -.138672 -2.138672z" transform="translate(384.57 499.8)"/>
+  <path fill="url(#c)" d="m17.887 22.848l-8.887 1.152-.355 9.348c15.401-9.854 25.355 6.03 35.36-.348-8 0-14.673-12.09-24.5-9z" transform="translate(384.57 499.8)"/>
+  <path fill="url(#b)" d="m394.66 512.4c-2.637 3.214-4.08 7.243-4.084 11.4.006 3.314.926 6.562 2.66 9.387 13.944-17.18 21.21-5.01 32.34-14.387-10 2-12.898-10.456-30.916-6.4"/>
+ </g>
+</svg>

@@ -1,0 +1,26 @@
+<svg width="64" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" height="64">
+ <defs>
+  <linearGradient id="a" y1="61" y2="3" x2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1 0 0-1 0 64)">
+   <stop stop-color="#22a7f0"/>
+   <stop offset="1" stop-color="#19b5fe"/>
+  </linearGradient>
+  <linearGradient id="b" y1="61" y2="47" x2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1 0 0-1 0 64)">
+   <stop stop-color="#c8e3fe"/>
+   <stop offset="1" stop-color="#ffffff"/>
+  </linearGradient>
+  <linearGradient id="c" y1="17" x1="40" y2="31" x2="54" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#383e51"/>
+   <stop offset="1" stop-color="#655c6f" stop-opacity="0"/>
+  </linearGradient>
+ </defs>
+ <path fill="url(#a)" d="m10 61v-58h30l14 14v44h-14z"/>
+ <g transform="scale(1-1)">
+  <rect width="30" x="10" y="-4" fill="#ffffff" height="1" fill-opacity=".412"/>
+  <rect width="44" x="10" y="-61" fill="#2e3132" height="1" fill-opacity=".294"/>
+ </g>
+ <g fill-rule="evenodd">
+  <path fill="url(#b)" d="m54 17l-14-14v14z"/>
+  <path opacity=".2" fill="url(#c)" d="m40 17l14 14v-14z"/>
+ </g>
+ <path fill="#ffffff" color-rendering="auto" color-interpolation-filters="linearRGB" shape-rendering="auto" image-rendering="auto" text-rendering="auto" color-interpolation="sRGB" color="#000000" d="m28.5 22c-2.493 0-4.5 2.01-4.5 4.5 0 2.493 2.01 4.5 4.5 4.5 2.493 0 4.5-2.01 4.5-4.5 0-2.493-2.01-4.5-4.5-4.5m0 1c1.939 0 3.5 1.561 3.5 3.5 0 1.939-1.561 3.5-3.5 3.5-1.939 0-3.5-1.561-3.5-3.5 0-1.939 1.561-3.5 3.5-3.5m10.5.1c-1.662 0-3 1.338-3 3 0 1.662 1.338 3 3 3 1.662 0 3-1.338 3-3 0-1.662-1.338-3-3-3m0 1c1.108 0 2 .892 2 2 0 1.108-.892 2-2 2-1.108 0-2-.892-2-2 0-1.108.892-2 2-2m0 6.9c-1.186 0-2.236.521-2.967 1.336a9 9 0 0 1 .703125 .71289c.549-.637 1.352-1.049 2.264-1.049 1.662 0 3 1.338 3 3v4h-3a9 9 0 0 1 -.06055 1h3.061c.353 0 .686.071 1 .182v-5.182c0-2.216-1.784-4-4-4m-10.5 1c-4.155 0-7.5 3.345-7.5 7.5v4.5h15v-4.5c0-4.155-3.345-7.5-7.5-7.5m0 1.102c3.601 0 6.5 2.899 6.5 6.5v3.398h-13v-3.398c0-3.601 2.899-6.5 6.5-6.5"/>
+</svg>

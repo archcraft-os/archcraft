@@ -1,0 +1,15 @@
+<svg height="32" width="32" xmlns="http://www.w3.org/2000/svg">
+    <style type="text/css" id="current-color-scheme">
+        .ColorScheme-Text {
+            color:#eff0f1;
+        }
+        .ColorScheme-PositiveText {
+            color:#27ae60;
+        }
+    </style>
+    <g class="ColorScheme-Text" fill="currentColor">
+        <path d="M3 10v12h25v-3c.554 0 1-.446 1-1v-4c0-.554-.446-1-1-1v-3zm1 1h23v10H4z"/>
+        <path d="M5 12h9l2 8H5z"/>
+    </g>
+    <path d="M16 13a3 3 0 0 0-2.826 2H12v2h1.176A3 3 0 0 0 16 19v-1h2v-1h-2v-2h2v-1h-2z" class="ColorScheme-PositiveText" fill="currentColor"/>
+</svg>

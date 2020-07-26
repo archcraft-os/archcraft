@@ -1,0 +1,17 @@
+sw_volume: 100
+audio_device_state:1:pulse audio
+audio_device_state:1:my_fifo
+state: pause
+current: 0
+time: 0
+random: 0
+repeat: 1
+single: 0
+consume: 0
+crossfade: 0
+mixrampdb: 0.000000
+mixrampdelay: -1.000000
+playlist_begin
+0:alt_J - In Cold Blood.mp3
+1:Walking On Cars - Monster.mp3
+playlist_end

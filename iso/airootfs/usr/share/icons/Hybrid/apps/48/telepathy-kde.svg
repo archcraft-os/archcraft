@@ -1,0 +1,30 @@
+<svg width="48" xmlns="http://www.w3.org/2000/svg" height="48" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <linearGradient id="a" y1="44" y2="4" gradientUnits="userSpaceOnUse" x2="0" gradientTransform="matrix(-1 0 0 1 432.57 499.8)">
+   <stop stop-color="#197cf1"/>
+   <stop offset="1" stop-color="#20bcfa"/>
+  </linearGradient>
+  <linearGradient id="b" y1="515.8" y2="509.8" x2="0" gradientUnits="userSpaceOnUse" gradientTransform="translate(25-6)">
+   <stop stop-color="#c61423"/>
+   <stop offset="1" stop-color="#dc2b41"/>
+  </linearGradient>
+  <linearGradient id="c" y1="503.8" x1="388.57" y2="533.8" x2="418.57" gradientUnits="userSpaceOnUse" gradientTransform="translate(-359.57-505.8)">
+   <stop stop-color="#292c2f"/>
+   <stop offset="1" stop-opacity="0"/>
+  </linearGradient>
+  <linearGradient id="d" y1="9" y2="5" x2="0" gradientUnits="userSpaceOnUse" gradientTransform="translate(384.57 499.8)">
+   <stop stop-color="#f7aeb4"/>
+   <stop offset="1" stop-color="#f8d4d9"/>
+  </linearGradient>
+  <linearGradient xlink:href="#c" id="e" y1="504.87" x1="422.85" y2="510.8" x2="428.78" gradientUnits="userSpaceOnUse" gradientTransform="translate(-384.57-499.8)"/>
+ </defs>
+ <g transform="translate(-384.57-499.8)">
+  <g fill-rule="evenodd">
+   <path fill="url(#a)" d="m425.57 506.8v27h-18l-10 10v-10h-9v-27z"/>
+   <path opacity=".2" fill="url(#c)" d="m41 7l-2 2 2 2z" transform="translate(384.57 499.8)"/>
+  </g>
+  <ellipse fill="url(#b)" cx="425.57" cy="506.8" rx="3" ry="3"/>
+  <path opacity=".2" fill="url(#e)" fill-rule="evenodd" d="m43 7l-1 .33-2 .67-.35.465 1.529 1.529a2.999999 2.999999 0 0 0 2.689453 -2.125z" transform="translate(384.57 499.8)"/>
+  <path fill="url(#d)" d="m425.57 504.8c-.277 0-.5.223-.5.5v.293l-.207-.207c-.196-.196-.511-.196-.707 0-.196.196-.196.511 0 .707l.207.207h-.293c-.277 0-.5.223-.5.5 0 .277.223.5.5.5h.293l-.207.207c-.196.196-.196.511 0 .707.196.196.511.196.707 0l.207-.207v.293c0 .277.223.5.5.5.277 0 .5-.223.5-.5v-.293l.207.207c.196.196.511.196.707 0 .196-.196.196-.511 0-.707l-.207-.207h.293c.277 0 .5-.223.5-.5 0-.277-.223-.5-.5-.5h-.293l.207-.207c.196-.196.196-.511 0-.707-.196-.196-.511-.196-.707 0l-.207.207v-.293c0-.277-.223-.5-.5-.5"/>
+ </g>
+</svg>

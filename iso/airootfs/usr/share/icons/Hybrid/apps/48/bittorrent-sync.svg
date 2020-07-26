@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48" height="48" viewBox="0 0 48 48" version="1.1">
+ <defs>
+  <linearGradient id="linearGradient4176">
+   <stop style="stop-color:#000000;stop-opacity:1;" offset="0"/>
+   <stop style="stop-color:#000000;stop-opacity:0;" offset="1"/>
+  </linearGradient>
+  <linearGradient id="linearGradient4717">
+   <stop style="stop-color:#12375a;stop-opacity:1" offset="0"/>
+   <stop style="stop-color:#537596;stop-opacity:1" offset="1"/>
+  </linearGradient>
+  <linearGradient xlink:href="#linearGradient4717" id="linearGradient4723" x1="24" y1="1048.362" x2="24" y2="1008.362" gradientUnits="userSpaceOnUse" gradientTransform="translate(0,-1004.3622)"/>
+  <linearGradient xlink:href="#linearGradient4176" id="linearGradient4182" x1="16" y1="11" x2="40" y2="35" gradientUnits="userSpaceOnUse"/>
+ </defs>
+ <circle r="20" cy="24" cx="24" style="opacity:1;fill:url(#linearGradient4723);fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"/>
+ <path style="opacity:1;fill:none;stroke:#f4f5f5;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="M 37.5,28 C 37.5,28 35,38 24,38 14,38 10,29 10,25 l 3,2"/>
+ <path style="opacity:0.2;fill:url(#linearGradient4182);fill-opacity:1;stroke:none;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="M 24.398438,9.5566406 17.976562,11.113281 13.228516,14.841797 9.6035156,20.505859 31.585938,42.490234 A 20,20 0 0 0 44,24 20,20 0 0 0 43.953125,22.701172 L 34.451172,13.199219 24.398438,9.5566406 Z"/>
+ <path d="m 10.5,20 c 0,0 2.5,-10 13.5,-10 10,0 14,9 14,13 l -3,-2" style="opacity:1;fill:none;stroke:#f4f5f5;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"/>
+ <path d="M 43.978516,23.417969 A 20,20 0 0 1 24,43 20,20 0 0 1 4.0214844,23.582031 20,20 0 0 0 4,24 20,20 0 0 0 24,44 20,20 0 0 0 44,24 20,20 0 0 0 43.978516,23.417969 Z" style="opacity:0.15;fill:#000000;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"/>
+</svg>
