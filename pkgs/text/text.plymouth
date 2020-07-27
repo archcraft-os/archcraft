@@ -6,6 +6,6 @@ ModuleName=archcraft-text
 [ubuntu-text]
 title=Archcraft OS
 black=0x000000
-white=0x00BBD2
+white=0xFF0000
 brown=0x323F4E
 blue=0x000000
