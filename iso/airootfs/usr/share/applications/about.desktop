@@ -1,5 +1,5 @@
 [Desktop Entry]
-Name=About Developer
+Name=About Creator
 Comment=About Aditya Shakya (@adi1090x)
 Exec=/usr/local/bin/about.sh
 Icon=distributor-logo-archcraft

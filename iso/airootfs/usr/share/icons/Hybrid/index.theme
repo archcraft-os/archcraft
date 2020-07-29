@@ -3,8 +3,6 @@ Name=Hybrid
 Comment=Mixture of Breeze And Luv
 DisplayDepth=32
 
-Inherits=
-
 Example=folder
 
 FollowsColorScheme=true
