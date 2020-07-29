@@ -1,5 +1,5 @@
 <p align="center">
-<a href="https://archcraft-os.github.io"><img src="https://raw.githubusercontent.com/archcraft-os/archcraft/master/iso/airootfs/usr/share/pixmaps/archcraft_circle.png" height="210" width="210" alt="Archcraft"></a>
+<a href="https://archcraft-os.github.io"><img src="https://raw.githubusercontent.com/archcraft-os/archcraft/master/iso/airootfs/usr/share/pixmaps/archcraft_circle.png" height="150" width="150" alt="Archcraft"></a>
 </p>
 
 <p align="center">
@@ -11,7 +11,7 @@
 </p>
 
 <p align="center">
-A Minimalistic Linux Distribution, Focused On Aesthetics & Based On <a href="https://www.archlinux.org">Arch Linux</a>.
+Yet another custom linux distribution, completely dependent on <a href="https://www.archlinux.org">Arch Linux</a>.
 </p>
 
 <p align="center">
