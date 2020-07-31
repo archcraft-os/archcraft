@@ -134,4 +134,8 @@ super + alt + {Left,Right,Up,Down}
 alt + shift + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
+# Hide/Unhide Window
+super + shift + i
+	winmask		
+	
 ##---------- EOF ----------##
