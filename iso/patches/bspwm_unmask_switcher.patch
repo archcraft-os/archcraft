@@ -1,0 +1,93 @@
+--- window-orig.c	2020-07-31 11:07:14.984283395 +0530
++++ window-mod.c	2020-07-31 11:13:54.850640207 +0530
+@@ -54,6 +54,9 @@
+ #include "helper.h"
+ #include "widgets/textbox.h"
+ #include "dialogs/window.h"
++#include <sys/socket.h>
++#include <sys/types.h>
++#include <sys/un.h>
+ 
+ #include "timings.h"
+ 
+@@ -644,6 +647,55 @@
+     g_strfreev ( args );
+     return retv;
+ }
++// Mod by MrZammler
++static inline int bspwm_unmask_window ( xcb_window_t window )
++{
++    int retv = TRUE;
++    int fd;
++    struct sockaddr_un sock_address;
++    char msg[BUFSIZ];
++
++    sock_address.sun_family = AF_UNIX;
++    char *sp;
++
++    if ((fd = socket(AF_UNIX, SOCK_STREAM, 0)) == -1) {
++      return retv;
++    }
++
++    sp = getenv("BSPWM_SOCKET");
++    if (sp != NULL) {
++      snprintf(sock_address.sun_path, sizeof(sock_address.sun_path), "%s", sp);
++    } else {
++      char *host = NULL;
++      int dn = 0, sn = 0;
++      if (xcb_parse_display(NULL, &host, &dn, &sn) != 0) {
++    snprintf(sock_address.sun_path, sizeof(sock_address.sun_path), "/tmp/bspwm%s_%i_%i-socket", host, dn, sn);
++      }
++      free(host);
++    }
++
++    if (connect(fd, (struct sockaddr *) &sock_address, sizeof(sock_address)) == -1) {
++      close(fd);
++      return retv;
++    }
++
++    int msg_len = 0;
++
++    sprintf(msg, "node %d -g hidden=off", window);
++    msg_len = strlen(msg);
++
++    sprintf(msg, "node%c%d%c-g%chidden=off%c", 0,window,0,0,0);
++    msg_len ++;
++
++    if (send(fd, msg, msg_len, 0) == -1) {
++      close(fd);
++      return retv;
++    }
++
++    close(fd);
++    return retv;
++
++}
+ 
+ static ModeMode window_mode_result ( Mode *sw, int mretv, G_GNUC_UNUSED char **input,
+                                      unsigned int selected_line )
+@@ -700,6 +752,8 @@
+                                                     XCB_EWMH_CLIENT_SOURCE_TYPE_OTHER,
+                                                     XCB_CURRENT_TIME, rofi_view_get_window () );
+             xcb_flush ( xcb->connection );
++
++        bspwm_unmask_window ( rmpd->ids->array[selected_line] );
+         }
+     }
+     else if ( ( mretv & ( MENU_ENTRY_DELETE ) ) == MENU_ENTRY_DELETE ) {
+@@ -793,7 +847,7 @@
+     struct arg d    = { pd, c };
+     char       *res = g_regex_replace_eval ( pd->window_regex, config.window_format, -1, 0, 0,
+                                              helper_eval_cb, &d, NULL );
+-    return g_strchomp ( res );
++    return g_strchomp(res);
+ }
+ 
+ static char *_get_display_value ( const Mode *sw, unsigned int selected_line, int *state, G_GNUC_UNUSED GList **list, int get_entry )
+@@ -967,4 +1021,4 @@
+     .free               = NULL
+ };
+ 
+-#endif // WINDOW_MODE
+\ No newline at end of file
++#endif // WINDOW_MODE
