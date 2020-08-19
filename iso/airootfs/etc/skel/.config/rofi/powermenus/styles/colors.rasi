@@ -1,0 +1,10 @@
+/*
+ * Change the colorscheme for every menu simply by editing this file...
+ *
+ * Available Color Schemes
+ *
+ * bluish    berry    default    nordic    nightly    gotham    mask    faded    cocoa
+ *
+ */
+
+@import "default.rasi"

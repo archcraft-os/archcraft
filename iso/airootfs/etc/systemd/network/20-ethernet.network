@@ -1,0 +1,13 @@
+#
+# SPDX-License-Identifier: GPL-3.0-or-later
+
+[Match]
+Name=en*
+Name=eth*
+
+[Network]
+DHCP=yes
+IPv6PrivacyExtensions=yes
+
+[DHCP]
+RouteMetric=512

@@ -1,0 +1,8 @@
+! ------------------------------------------------------------------------------
+! Fonts
+! ------------------------------------------------------------------------------
+
+URxvt.font: xft:Terminus:regular:size=8
+URxvt.boldFont: xft:Terminus:bold:size=8
+URxvt.italicFont: xft:Terminus:italic:size=8
+URxvt.boldItalicfont: xft:Terminus:boldItalic:size=8

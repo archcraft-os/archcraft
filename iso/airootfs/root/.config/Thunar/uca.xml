@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+<action>
+	<icon>open-terminal</icon>
+	<name>Open Terminal Here</name>
+	<unique-id>1581593230771688-1</unique-id>
+	<command>/usr/bin/termite %f</command>
+	<description>Example for a custom action</description>
+	<patterns>*</patterns>
+	<startup-notify/>
+	<directories/>
+</action>
+</actions>

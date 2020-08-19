@@ -1,0 +1,4 @@
+[Desktop]
+## Set Default Session
+Session=openbox
+#Session=bspwm
