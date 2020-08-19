@@ -1,5 +1,5 @@
 <p align="center">
-<a href="https://archcraft-os.github.io"><img src="https://raw.githubusercontent.com/archcraft-os/archcraft/master/iso/airootfs/usr/share/pixmaps/archcraft_circle.png" height="150" width="150" alt="Archcraft"></a>
+<a href="https://archcraft-os.github.io"><img src="https://raw.githubusercontent.com/archcraft-os/archcraft-pkgs/master/archcraft/ac-pixmaps/src/icons/archcraft_circle.png" height="150" width="150" alt="Archcraft"></a>
 </p>
 
 <p align="center">
