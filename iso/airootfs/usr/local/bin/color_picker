@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+
+# Simple color chooser script for this installation
+
+color=$(colorpicker --short --one-shot)
+image=/tmp/$color.png
+
+hex_to_rgb() {
+    # Convert a hex value WITHOUT the hashtag (#)
+    R=$(printf "%d" 0x${1:0:2})
+    G=$(printf "%d" 0x${1:2:2})
+    B=$(printf "%d" 0x${1:4:2})
+}
+
+calculate_text_color(){
+    INTENSITY=$(calc "$R*0.299 + $G*0.587 + $B*0.114")
+    
+    if [ $(echo "$INTENSITY>186" | bc) -eq 1 ]; then
+        text="#000000"
+    else
+        text="#FFFFFF"
+    fi
+}
+
+hex="${color//\#/}"
+hex_to_rgb $hex
+calculate_text_color
+
+# generate color image with code
+convert -size 100x100 xc:"$color" -gravity Center -pointsize 20 -font Iosevka -fill "$text" -annotate +0+0 "$color" $image
+# copy color code to clipboard
+echo $color | tr -d "\n" | xclip -selection clipboard
+# notify about it
+dunstify -u low -i /usr/share/icons/Hybrid/actions/32/color-management.svg "$color, copied to clipboard."
+# display image using an image viewer 
+feh --borderless --geometry=100x100 --title="$color" $image &>/dev/null &

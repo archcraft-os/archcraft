@@ -1,0 +1,47 @@
+#!/bin/bash
+
+DIR="$HOME/.config/bspwm"
+XDIR="$HOME/.Xresources.d"
+
+rofi_command="rofi -theme $DIR/rofi/themes/themes.rasi"
+
+style (){
+	cat "$DIR"/themes/$1 > "$XDIR"/colors
+	feh --bg-scale "$DIR"/wallpapers/$1.jpg
+	bspc wm -r
+}
+
+# Apps
+theme_1=" Nord"
+theme_2=" Gruvbox"
+theme_3=" Dark"
+theme_4=" Cyberpunk"
+theme_5=" Groot"
+theme_6=" Rick"
+
+# Variable passed to rofi
+options="$theme_1\n$theme_2\n$theme_3\n$theme_4\n$theme_5\n$theme_6"
+
+chosen="$(echo -e "$options" | $rofi_command -p "Available themes" -dmenu -selected-row 0)"
+case $chosen in
+    $theme_1)
+        style nord
+        ;;
+    $theme_2)
+        style gruvbox
+        ;;
+    $theme_3)
+        style dark
+        ;;
+    $theme_4)
+        style cyberpunk
+        ;;
+    $theme_5)
+        style groot
+        ;;
+    $theme_6)
+        style rick
+        ;;
+esac
+
+

@@ -1,0 +1,20 @@
+sw_volume: 100
+audio_device_state:1:pulse audio
+audio_device_state:1:my_fifo
+state: pause
+current: 0
+time: 0
+random: 0
+repeat: 1
+single: 0
+consume: 0
+crossfade: 0
+mixrampdb: 0.000000
+mixrampdelay: -1.000000
+playlist_begin
+0:Cartoon - On & On (feat. Daniel Levi) [NCS Release].mp3
+1:Culture Code - Make Me Move (feat. Karra) [NCS Release].mp3
+2:Janji - Heroes Tonight (feat. Johnning) [NCS Release].mp3
+3:N3WPORT - Power (feat. braev) [NCS Release].mp3
+4:NEFFEX - Grateful [Copyright Free].mp3
+playlist_end

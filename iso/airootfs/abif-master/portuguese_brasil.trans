@@ -1,0 +1,372 @@
+##
+## 							
+## Arquivo de tradução português brasileiro (Architect 2.0)		
+##								
+##
+## Escrito por Carl Duff (27-Fev-2016)
+##
+## Tradutores - Fábio Nogueira <fnogueira@gnome.org>
+
+# Genérico
+_UseSpaceBar="Utilize [barra de espaço] para des/marcar as opções listadas."
+_AlreadyInst="Já instalado mas não habilitado:"
+_All="Todos"
+_Done="Pronto"
+_PlsWaitBody="\nPor favor, aguarde...\n\n"
+_PassReEntBody="\nDigite novamente a senha.\n"
+_ErrTitle="Erro"
+_PassErrBody="\nAs senhas digitadas não coincidem. Por favor, tente novamente.\n\n"
+
+# Segurança e Ajustes
+_SecMenuTitle="Segurança e Ajustes de systemd"
+_SecJournTitle="Melhorar o registro de journald"
+_SecCoreTitle="Desabilitar o registro de despejos de memória"
+_SecKernTitle="Restringir o acesso aos registros do kernel"
+_Edit="Editar arquivo de configuração"
+_Disable="Desabilitar"
+_SecMenuBody="\nAlguns ajustes úteis e amigáveis para iniciantes estão disponíveis para melhorar a segurança e perfomance do sistema.\n\nSelecionar uma opção irá fornecer mais detalhes sobre a mesma."
+_SecJournBody="\nO systemd-journald colecta e armazera os registros do kernel, de sistema, de auditoria, saídas padrão e mensagens de erro dos serviços.\n\nPor padrão, o tamanho limite de um arquivo de journaling permanente (não-volátil) é 10% do tamanho da partição root: uma partição root de 500G significa um limite de 50G para os dados armazenados em /var/log/journal. 50M deve ser suficiente. Pode-se também desabilitar o registro, embora possa ser bem mais difícil a resolução de problemas do sistema.\n\n"
+_SecCoreBody="\nUm despejo de memória é uma gravação da memória do computador quando um processo falha.\n\nMuito útil para os desenvolvedores mas não para a maioria dos usuários, os despejos de memóriacore dumps desperdiçam recursos do sistema e podem conter dados confidenciais senhas e chaves de criptografia.\n\nO comportamento padrão do systemd é gerar os despejos para todos os processos em /var/lib/systemd/coredump. Este comportamento pode ser substituído pela criação de um arquivo de configuração no diretório /etc/systemd/coredump.conf.d/.\n\n"
+
+# btrfs
+_btrfsSVTitle="Subvolumes btrfs"
+_btrfsSVBody="Criar subvolumes btrfs?\n\nUm subvolume inicial sera criado e em seguida montado. Outras ramificações do subvolume podem então ser criadas.\n\nCaso contrário, você pode pular diretamente para as opções de montagem.\n"
+_btrfsMSubBody1="Digite o nome do subvolume inicial para montar (ex. ROOT). Opções de montagem podem então ser selecionadas. Uma vez montado, todos os outros subvolumes criado para "
+_btrfsMSubBody2="irá ramificar dele."
+_btrfsSVErrBody="Espaços em brancos não são permitidos. Por favor tente novamente.\n"
+_btrfsSVBody1="Digite o nome do subvolume"
+_btrfsSVBody2="para criar dentro"
+_btrfsSVBody3="\n\nEste processo será repetido até que um asterisco (*) é inserido como o nome do subvolume.\n\nSubvolume Criado:"
+_btrfsMntBody="Use [Espaço] para desmarcar ou selecionar as opções de montagem desejadas e reveja com cuidado. Por favor, não selecione múltiplas versões da mesma opção."
+_btrfsMntConfBody="Confirme as seguintes opções de montagem:\n\n"
+
+# Particionamento automático
+_AutoPartBody1="Atenção: TODOS os dados em"
+_AutoPartBody2="serão destruídos.\n\nUma partição de boot de 512MB será criada primeito, seguida por uma segunda partição (root ou '/') utilizando todo o espaço restante."
+_AutoPartBody3="Se pretende utilizar o SWAP, selecione a opção de 'Arquivo de Swap' durante a montagem.\n\nDesejar continuar?"
+
+# Mensagens de erro. Todos os outros são gerados por BASH.
+_ErrNoMount="\nA(s) partição(ões) deve(m) ser montada(s) primeiro.\n\n"
+_ErrNoBase="\nA base do Arch deve ser instalada primeiro.\n\n"
+_ErrNoKernel="\nPelo menos um kernel (linux ou linux-lts) deve ser selecionado.\n\n"
+
+# Instalações do Vbox
+_VBoxInstTitle="Instalação do VirtualBox "
+_VBoxInstBody="\nSe por qualquer motivo o VirtualBox guest modules não carregar para o sistema instalado (ex. baixa resolução e as barras de rolagem após a inicialização), uma série de comandos irá corrigir isso:\n\n$ su\n# depmod -a\n# modprobe -a vboxvideo vboxguest vboxsf\n# reboot"
+
+# Selecionar arquivos de configuração
+_SeeConfOptTitle="Revisar os arquivos de configuração"
+_SeeConfOptBody="\nSelecione qualquer arquivo listado abaixo para ser revisado ou alterado.\n"
+_SeeConfErrBody="\nO arquivo não existe.\n\n"
+
+# Pacman
+_PrepPacKey="Atualizar chaves do Pacman"
+
+# Criptografia / LUKS / DM-Crypt
+_PrepLUKS="Criptografia LUKS (opcional)"
+_LuksMenuBody="\nDispositivos e volumes criptografados utilizando o dm_crypt não podem ser acessados ou mesmo visualizados sem serem desbloqueados através de uma chave ou senha."
+_LuksMenuBody2="\n\nÉ necessária uma partição de boot separada do restante sem criptografia ou gereciamento de volume lógico (LVM - a não ser utilizando Grub BIOS)."
+_LuksMenuBody3="\n\nA opção automática utiliza as configurações padrão de criptografia, e é recomendado para os iniciantes. Por outro lado, é possível especificar manualmente a criptografia e os parâmetros do tamanho da chave."
+_LuksOpen="Abrir a partição criptografada"
+_LuksOpenBody="\nDefina um nome para o dispositivo de bloco criptografado. Não é necessário acrescentar o prefixo /dev/mapper/. Um exemplo é apresentado."
+_LuksEncrypt="Criptografia LUKS automática"
+_LuksEncryptAdv="Defina o tamanho da chave e criptografia"
+_LuksEncryptBody="\nSelecione uma partição para criptografar."
+_LuksEncruptSucc="\nPronto! Aberto e pronto para o LVM (recomendado) ou montar diretamente.\n"
+_LuksPartErrBody="\nSão necessárias no mínimo duas partições para a criptografia:\n\n1. Root (/) - tipo de partição padrão ou lvm.\n\n2. Boot (/boot ou /boot/efi) - apenas o tipo de partição padrão (exceto LVM onde utiliza Grub BIOS).\n"
+_SelLuksRootBody="\nSelecione a partição ROOT (/) para criptografar. Este é o lugar onde o Arch será instalado..\n\n"
+_LuksPassBody="\nDigite a senha para des/criptografar a partição. Esta não deve ser a mesma da conta Root ou das contas dos usuários.\n"
+_LuksWaitBody="\nCriando partição Root criptografada:"
+_LuksWaitBody2="Dispositivo ou volume utilizado:"
+_LuksCipherKey="\nDepois de ter configurado as flags especifadas, elas serão usadas automaticamente com o comando 'cryptsetup -q luksFormat /dev/...'\n\nNOTA: Os arquivos de chave não são suportados, eles podem ser adicionados manualmente após a instalação. Não especifique quaisquer flags adicionais como -v (--verbose) ou -y (--verify-passphrase)./n"
+
+# Gerenciamento de volume lógico (LVM)
+_PrepLVM="Gereciamento de volume lógico (LVM)"
+_PrepLVM2="(opcional)"
+_LvmMenu="\nO gerenciador de volume lógico (LVM) permite criar discos rígidos (grupos de volume - VG) e partições (volumes lógicos - LV) virtuais a partir de dispositivos e partições existentes. Um VG deve ser criado primeiro, então um ou mais LV dentro do mesmo.\n\nO LVM pode também ser usado com uma partição criptografada para criar vários volumes lógicos (ex.: root e home) dentro dela."
+_LvmCreateVG="Criar VG e LV(s)"
+_LvmDelVG="Apagar Grupos de Volume (VG)"
+_LvMDelAll="Apagar *TUDO* VGs, LVs, PVs"
+_LvmDetBody="\nUma LVM existente foi detectada. Ativando. Por favor, aguarde...\n\n"
+_LvmPartErrBody="\nNão há nenhuma partição disponível para Gerenciamento de Volume Lógico. No mínimo um é necessário.\n\nSe o LVM já está em uso, desativá-lo permitirá que a partição usada para seus volumes físicos, possa ser usada novamente.\n\n"
+_LvmNameVgBody="\nInsira o nome do Grupo de Volume (VG) para criar.\n\nO VG é o novo 'dispositivo virtual / disco rígido' para criar a partir da partição(ções) selecionada(as) em seguida.\n"
+_LvmNameVgErr="\nNome inserido inválido. O nome do Grupo de Volume pode ser alfa numérico, mas não pode conter espaços ou começar com '/', ou já estar em uso.\n\n"
+_LvmPvSelBody="\nSelecionar a(s) partição(ões) a ser(em) usada(s) para o Volume Físico (PV).\n\n"
+_LvmPvConfBody1="\nConfirmar a criação do Grupo de Volume "
+_LvmPvConfBody2="com as seguintes partições:\n\n"
+_LvmPvActBody1="\nCriando e ativando o Grupo de Volume "
+_LvmPvDoneBody1="\nO Grupo de Volume "
+_LvmPvDoneBody2="foi criado"
+_LvmLvNumBody1="\nUtilize a [barra de espaço] para selecionar o número de volumes lógicos (LV) para criá-los"
+_LvmLvNumBody2="\n\nO último (ou único) LV irá automaticamente utilizar 100% do espaço restante no Grupo de Volume (VG)."
+_LvmLvNameBody1="\nInsira o nome do Volume Lógico (LV) para criar.\n\nIsto é como criar o nome '/' do rótulo para uma partição.\n"
+_LvmLvNameBody2="\nNOTA: Este Volume Lógico (LV) irá automaticamente usar todo o espaço restante no Grupo de Volume (Volume Group)"
+_LvmLvNameErrBody="\nNome inserido inválido. O nome do Volume Lógico (LV) pode conter caracteres alfa numéricos, mas não pode conter espaços ou começar com '/'.\n\n"
+_LvmLvSizeBody1="restantes"
+_LvmLvSizeBody2="\n\nInsira o tamanho do Volume Lógico (LV) em Megabytes (M) ou Gigabytes (G). Por exemplo, 100M irá criar 100 Megabyte LV. 10G irá criar 10 Gigabyte LV.\n"
+_LvmLvSizeErrBody="\nValor inválido inserido. Um valor numérico deve ser inserido com 'M' (Megabytes) ou um 'G' (Gigabytes) no fim.\n\nExemplos incluem, 100M, 10G, ou 250M. O valor também não pode ser igual ou maior que o tamanho restante do VG.\n\n"
+_LvmCompBody="\nFeito! Todos os Volumes Lógicos foram criados para o Grupo de Volume.\n\nDeseja ver o novo esquema de LVM?\n\n"
+_LvmDelQ="\nConfirmar exclusão do(s) Grupo(s) de volume (VG) e Volume(s) lógico(s) (LV).\n\nSe apagar um grupo de volume, todos os volumes lógicos serão deletados também.\n\n"
+_LvmSelVGBody="\nSelecione o Grupo de Volume (VG) para apagar. Todos os Volumes Lógicos (LV) dentro do grupo serão apagados também.\n"
+_LvmVGErr="\nNenhum grupos de volume encontrados.\n\n"
+
+# Mostrar dispositivos e partições
+_DevShowOpt="Lista de Dispositivos (opcional)"
+
+# Verificar os requisitos
+_ChkTitle="Verificando novamente os requisitos"
+_ChkBody="\nVerificando se o instalador foi executado como root e se existe uma conexão ativa com a internet. Por favor aguarde...\n\n"
+_RtFailBody="\nO instalador deve ser executado como root. Saindo.\n\n"
+_ConFailBody="\nFalha no teste de conexão com a internet. Saindo.\n\n"
+_ReqMetTitle="Exigências atendidas!"
+_ReqMetBody="\nTodos os testes passaram!\n\n"
+
+
+# Instalador da Lista de espelhos
+_MirrorlistTitle="Lista de espelhos"
+_MirrorlistBody="\nA lista de espelhos contém endereços dos servidores usados pelo pacman para instalar pacotes. Para encontrar os servidores mais rápidos, PRIMEIRO gere uma lista de espelhos por país ANTES de executar o RankMirrors, por outro lado o processo irá demorar um BOM TEMPO.\n\nO arquivo de configuração do pacman pode ser editado para habilitar o multilib e outros repositórios.\n\nNOTA: Feche os arquivos texto com '[CTRL] + [x]'. Se editado, então pressione [y] para salvar ou [n] para descartar as alterações.\n"
+_MirrorbyCountry="Gerar lista de espelhos por País"
+_MirrorEdit="Editar manualmente a lista de espelhos"
+_MirrorRankTitle="Executar o RankMirrors"
+_MirrorRestTitle="Restaurar a lista de espelhos original"
+_MirrorRankBody="\nPesquisando os servidores rápidos da lista de espelho."
+_MirrorNoneBody="\nUma cópia da lista de espelhos original não foi encontrada.\n\n"
+_MirrorCntryBody="\nSerá gerada a lista de espelhos do país selecionado.\n"
+_MirrorGenQ="Usar a lista de espelhos gerada para o instalador?"
+_MirrorPacman="Editar configuração do pacman"
+_MIrrorPacQ="\nUtilizar o arquivo de configuração editado do pacman para o sistema instalado? Se Sim, o arquivo será copiado após a instalação do sistema base.\n\n"
+
+# Definir layout de teclado (vconsole)
+_VCKeymapTitle="Definir console virtual"
+_VCKeymapBody="\nUm console virtual é um prompt do shell em um ambiente não-gráfico. Seu layout de teclado é independente de um ambiente de desktop / terminal."
+
+# Definir Xkbmap (ambiente)
+_XkbmapBody="\nSelecionar layout de teclado do ambiente de desktop."
+
+# Definir Local
+_localeBody="A localização (locale) determina o idioma a ser exibido, os formatos de data e hora, etc...\n\nO formato é idioma_PAÍS (ex.: en_US é inglês, Estados Unidos; pt_BR é português, Brasil)."
+
+# Definir fuso horário
+_TimeZBody="\nO fuso horário é usado para definir corretamente o relógio do sistema."
+_TimeSubZBody="\nSelecione a cidade mais próxima de você."
+_TimeZQ="\nDefinir fuso horário como"
+
+# Definir relógio de Hardware
+_HwCBody="\nUTC é o padrão de tempo universal e é recomendado a menos que tenha dual-boot com o Windows."
+
+# Gerar FSTAB
+_FstabBody="\nO arquivo FSTAB (File System Table) define o que dispositivos de armazenamento e partições são para ser montado, e como eles devem ser usados.\n\nUUID (Universally Unique IDentifier) é recomendado.\n\nIf sem rótulos foram criados para as partições anteriormente, nomes de dispositivos serão utilizados para a opção rótulo."
+_FstabErr="\nA opção Partição UUID é apenas para instalações UEFI/GPT.\n\n"
+_FstabDevName="Nome do dispositivo"
+_FstabDevLabel="Rótulo do dispositivo"
+_FstabDevUUID="UUID do dispositivo"
+_FstabDevPtUUID="UUID de Part UEFI"
+
+# Definir Hostname
+_HostNameBody="\nO hostname é usado para identificar o sistema em uma rede.\n\nE é restrito aos caracteres alfa numéricos, pode conter um hífen (-) - mas não no inicio ou no fim - e não deve ser maior que 63 caracteres.\n"
+
+# Definir Senha Root
+_PassRtBody="\nDigite a senha Root \n\n"
+_PassRtBody2="\nRe-digite a senha Root \n\n"
+
+# Criar Novo Usuário
+_NUsrTitle="Criar novo usuário"
+_NUsrBody="\nDigite o nome do usuário. As letras DEVEM ser minúsculas .\n"
+
+# Erro Nome de Usuário
+_NUsrErrTitle="Erro no nome do usuário"
+_NUsrErrBody="\nUm nome de usuário incorreto foi inserido. Por favor, tente novamente..\n\n"
+
+# Definir usuário
+_PassNUsrBody="\nInsira a senha para" 
+_NUsrSetBody="\nCriando usuários e definindo grupos...\n\n"
+
+# Montando (Partições)
+_MntStatusTitle="Estado da montagem"
+_MntStatusSucc="\nMontagem bem-sucedida!\n\n"
+_MntStatusFail="\nA montagem falhou!\n\n"
+_WarnMount1="\nIMPORTANTE: As partições podem ser montadas sem formatá-las, selecionando"
+_WarnMount2="listada no inicio do menu do sistemas de arquivos.\n\nCertifique-se de escolher corretamente as configurações de montagem e formatação, nenhuma mensagem será exibida, com exceção da partição de boot UEFI.\n\n"
+
+# Selecionar dispositivo (instalação)
+_DevSelTitle="Selecionar dispositivo"
+_DevSelBody="\nDispositivos (/dev/) estão disponíveis no disco-rígido e pendrive USB para serem instalados. O primeiro é /sda, o segundo é /sdb, e assim por adiante.\n\nQuando se utiliza uma pendrive USB para inicializar o Architect, tenha cuidado porque o mesmo também será listado!"
+
+# Ferramenta de particionamento
+_PartToolTitle="Ferramenta de particionamento"
+_PartToolBody="\nUm particionamento automático é uma opção disponível para iniciantes. Por outro lado, o cfdisk é recomendado para BIOS, e o parted para UEFI.\n\nNÃO selecione uma ferramenta de particionamento apenas para UEFI/GPT para o sistema BIOS/MBR pois isto pode causar problemas sérios, incluindo uma instalação não inicializável."
+_PartOptAuto="Particionamento automático"
+_PartOptWipe="Apagar dispositivo de forma segura (opcional)"
+_AutoPartWipeBody1="\nATENÇÃO: TODOS os dados em"
+_AutoPartWipeBody2="serão destruídos usando o comando 'wipe -Ifre'. Este processo pode demorar um pouco, dependendo do tamanho do dispositivo.\n\nDeseja continuar?\n"
+
+# Erro de particionamento
+_PartErrBody="\nSistemas BIOS requerem pelo menos uma partição (ROOT).\n\nSistemas UEFI requerem o minímo de duas partições para a instalação (ROOT e UEFI).\n\n"
+
+# Sistema de Arquivos
+_FSTitle="Escolha o sistema de arquivo"
+_FSBody="\nExt4 é recomendado. Nem todos os sistemas de arquivos são viáveis para partições Root ou Boot. Todas tem diferentes funcionalidades e limitações."
+_FSSkip="Pular / Nenhum" 
+
+# Selecionar Root
+_SelRootBody="\nSelecione a partição ROOT. Este é o lugar onde Arch será instalado."
+
+# Selecionar SWAP
+_SelSwpBody="\nSelecione a partição SWAP. Se você utiliza um arquivo Swap, ele será criado do mesmo tamanho da sua memória RAM."
+_SelSwpNone="nenhum"
+_SelSwpFile="Arquivo SWAP"
+
+# Selecionar UEFI
+_SelUefiBody="\nSelecione a partição UEFI. Esta é a partição especial para iniciar sistemas UEFI."
+
+# Formatar UEFI
+_FormUefiBody="A partição UEFI"
+_FormUefiBody2="já foi formatado.\n\nReformatar? Isso apagará todos os dados da partição.\n\n"
+
+# Ponto de montagem UEFI
+_MntUefiBody="\nSelecione o ponto de montagem UEFI.\n\nO systemd-boot requer /boot.O Grub irá funcionar com qualquer ponto de montagem."
+
+# Partições Extras
+_ExtPartBody="\nSelecionar partições adicionais em qualquer ordem, ou 'Feito' para finalizar."
+
+# Partições Extras
+_ExtPartBody1="\nEspecifique o ponto de montagem da partição. Certifique-se que o nome comece com uma barra (/). Exemplos:\n\n"
+
+# Erro de Nome em Partição Extra
+_ExtErrBody="\nA partição não pode ser montada devido a um problema com o nome do ponto de montagem. Um nome deve ser dado depois da barra.\n\n"
+
+# Instalar Base
+_InstBseTitle="Instalar Base"
+_InstBseBody="\nPadrão: Recomendado para iniciantes. Escolha até dois kernels (linux e linux-lts) e opcionalmente o grupo de pacotes base-devel. O sudo, btrfs-progs, f2fs-tools também serão instalados.\n\nAvançada: Escolha até quatro kernels (linux, lts, grsec, zen) e controle individualmente os pacotes base e base-devel. O Virtualbox e a NVIDIA podem precisar de configuração adicional com o grsec e zen.\n\nNOTA: Ao menos que já instalado, um kernel deve ser selecionado."
+_InstStandBseBody="\nO grupo de pacote base será instalado automaticamente. The base package group will be installed automatically. O grupo de pacote base-devel é necessário para utilizar o AUR (Arch User Repository).\n\n"
+_InstStandBase="Instalação padrão"
+_InstAdvBase="Instalação avançada"
+_InstAdvBseBody="\nATENÇÃO: Isto é apenas para usuários experientes. Usuários novatos devem utilizar a opção de instalação 'padrão'."
+_InstAdvWait="\nReunindo descrições dos pacotes."
+
+# Instalar o carregador de boot BIOS"
+_InstBiosBtTitle="Instalar o carregador de boot BIOS"
+_InstBiosBtBody="\nGrub2 é recomendado para iniciantes. O dispositivo de instalação também pode ser selecionado.\n\nSyslinux é uma alternativa mais leve e simples, que só funcionará com sistemas de arquivos ext/btrfs."
+_InstSysTitle="Instalar o Syslinux"
+_InstSysBody="\nInstalar o syslinux no Master Boot Record (MBR) ou no Root (/)?\n\n"
+
+# Instalar o carregador de boot UEFI
+_InstUefiBtTitle="Instalar o carregador de boot UEFI"
+_InstUefiBtBody="\nO systemd-boot requer /boot. O Grub irá trabalhar com qualquer ponto de montagem."
+_SetBootDefBody="\nAlguns firmware UEFI pode não detectar o carregador de boot a menos que seja definido como padrão, copiando o seu stub efi para"
+_SetBootDefBody2="e renomeá-lo para bootx64.efi.\n\nRecomenda-se fazer isto, a menos que já está usando um carregador de boot padrão, ou se quiser usar vários carregadores de boot.\n\nDefinir o carregador de boot como padrão?\n\n"
+
+# Arquivo efi definido para o Grub
+_SetDefDoneBody="foi definido como o carregador de boot padrão.\n\n"
+
+#  Menu Placa de vídeo
+_GCtitle="Menu placa de vídeo"
+_GCBody="Escolha Nouveau para placas NVIDIA antigas. Se a sua placa não está listada, escolha 'Desconhecida / Genérica'.\n"
+_GCUnknOpt="Desconhecida / Genérica"
+
+# Verifique a configuração NVIDIA 
+_NvidiaConfTitle="Verifique a configuração NVIDIA"
+_NvidiaConfBody="\n Foi criado um arquivo básico de configuração NVIDIA. Por favor, verifique isso antes de fechar e continuar. \n"
+
+# Detecção da placa de vídeo
+_GCDetTitle="Detectada"
+_GCDetBody="\nÉ a sua placa de vídeo ou programa de virtualização"
+_GCDetBody2="-Selecionar 'Sim' para instalar o driver OPEN-SOURCE.\n\n-Selecionar 'Não' para abrir o menu de placa de vídeo, que incluem drivers proprietários NVIDIA."
+
+# Informação de instalação dos ambientes de desktop
+_DEInfoBody="\nVários ambientes podem ser instalados.\n\nGnome e LXDE vem com um gerenciador de exibição.\n\nCinnamon, Gnome e KDE vem com um Gerenciador de rede.\n\n"
+
+# Menu de instalação dos ambientes de desktop
+_InstDETitle="Instalar os ambientes de desktop"
+_InstDEBody="Ambientes de desktop são listados primeiro, e podem ter múltiplas opções de download."
+
+# Instalar pacotes comuns
+_InstComTitle="Instalar os pacotes comuns"
+_InstComBody="Alguns ambientes exigem pacotes adicionais para um melhor desempenho."
+
+# Gerenciador de exibição
+_DmChTitle="Instalar o gerenciador de exibição"
+_DmChBody="O gdm lista o Gnome-shell como uma dependência. O sddm é recomendado para o plasma. O lightdm incluirá o lightdm-gtk-greeter. O slim não é mais mantido."
+_DmDoneBody="\nO gerenciador de exibição foi instalado e habilitado.\n\n"
+
+# Gerenciador de rede
+_InstNMTitle="Instalar o gerenciador de rede"
+_InstNMBody="\nO Gerenciador de rede é recomendado, especialmente para conexões sem fio e DSL/PPPoE.\n"
+_InstNMErrBody="\nO gerenciador de conexões de rede foi instalado e habilitado.\n\n"
+
+# Bem-vindo(a)
+_WelTitle="Bem-vindo(a) ao"
+_WelBody="\nEste instalador baixa os últimos pacotes dos repositórios Arch. Apenas a configuração mínina necessária é executada.\n\nOPÇÕES DO MENU: Selecione pressionando o número da opção ou usando as teclas de seta pra cima e para baixo antes de pressionar [Enter] para confirmar. Alterne entre os botões usando o [Tab] ou as teclas de seta para esquerda ou direita antes de pressionar o [Enter] para confirmar. Listas longas podem ser navegadas usando as teclas [Pg Up] e [Pg Dn] e/ou pressionando a primeira letra da opção desejada.\n\nCONFIGURAÇÃO & OPÇÕES DE PACOTES: Pacotes padrão na lista de verificação serão pré-marcados. Utlize a [barra de espaço] para des/selecionar." 
+
+# Menu de preparação
+_PrepMenuTitle="Preparar a instalação"
+_PrepMenuBody="\nO layout de teclado do console será usado tanto para o instalador e o sistema instalado.\n"
+_PrepKBLayout="Definir o Layout de teclado do Sistema"
+_PrepMirror="Configurar a lista de espelhos do instalador"
+_PrepPartDisk="Particionar Disco"
+_PrepMntPart="Montar Partições"
+_Back="Voltar"
+
+# Instalar Base Menu
+_InstBsMenuTitle="Instalar a Base"
+_InstBseMenuBody="\nOs pacotes a serem instalados devem ser baixados de servidores de espelhos. O script pacstrap instala o sistema base. Para compilar pacotes do AUR ou com ABS, é necessário o grupo de pacotes base-devel."
+_InstBse="Instalar pacotes Base"
+_InstBootldr="Instalar o carregador do sistema "
+
+# Configurar Menu Base
+_ConfBseMenuTitle="Configurar Base"
+_ConfBseBody="\nConfiguração básica da base."
+_ConfBseFstab="Gerar FSTAB"
+_ConfBseHost="Definir nome da máquina"
+_ConfBseTimeHC="Definir fuso horário e Relógio"
+_ConfBseSysLoc="Definir a localização do sistema"
+_MMRunMkinit="Executar mkinitcpio"
+
+#Menu Usuário
+_ConfUsrRoot="Definir senha ROOT"
+_ConfUsrNew="Adicionar novo Usuário"
+
+# Menu Gráficos
+_InstGrMenuTitle="Instalar interface gráfica"
+_InstGrMenuBody="\nAntes de instalar um ambiente de desktop, DEVEM ser instalados primeiro os drivers gráficos, de entrada e controladores de som. Isto incluirá a instalação de drivers da placa de vídeo."
+_InstGrMenuDS="Instalar servidor de exibição"
+_InstGrMenuDSBody="Além das opções xorg e wayland, drivers para dispositivos de entrada (xf86-input-*) são fornecidos."
+_InstGrMenuDD="Instalar driver de vídeo"
+_InstGrMenuGE="Instalar ambientes gráficos"
+_InstGrMenuDM="Instalar o gerenciador de exibição"
+
+# Menu Rede
+_InstNMMenuTitle="Instalar os recursos de rede"
+_InstNMMenuBody="\nPodem ser necessários pacotes suplementares para a rede e dispositivos sem fios. Alguns dispositivos sem fios também podem exigir firmware adicionais para funcionar.\n\n"
+_InstNMMenuPkg="Instalar os pacotes do dispositivo sem fios"
+_InstNMMenuNM="Instalar o gerenciador de conexão de rede"
+_InstNMMenuCups="Instalar os pacotes de Impressora / CUPS"
+_InstNMMenuPkgBody="Pacotes Wifi são pré-marcados se um dispositivo sem fios for detectado. Se não tiver certeza do firmware adicional, todos os pacotes podem ser instalados."
+_SeeWirelessDev="dispositivo de exibição sem fio (opcional)"
+_WirelessShowTitle="Dispositivo sem fios"
+_WirelessErrBody="\nNenhum detectado.\n"
+_InstCupsBody="CUPS (Common Unix Printing System) é um sistema de impressão de código aberto desenvolvido pela Apple Inc. para o OS X e outros sistemas operacionais baseados no UNIX. O Samba permite compartilhar arquivos e impressora entre sistemas Linux e Windows."
+_InstCupsQ="\nHabilitar o org.cups.cupsd.service no sistema instalado?\n\n"
+
+# Menu de instalação do suporte multimídia
+_InstMultMenuTitle="Instalar o suporte multimídia"
+_InstMultMenuBody="\nOs pacotes de acessibilidade ajudam aqueles com deficiência visual e/ou auditiva. A opção de Pacotes personalizados permite que sejam instalados pacotes definidos pelo usuário.\n"
+_InstMulSnd="Instalar driver(s) de som"
+_InstMulSndBody="\nO ALSA fornece drivers da placa de som administrados pelo kernel. O PulseAudio funciona como um proxy para o ALSA."
+_InstMulCodec="Instalar codecs"
+_InstMulAcc="Instalar pacotes de acessibilidade"
+_InstMulAccBody="\nSelecione os pacotes de acessibilidade desejados.\n\n"
+_InstMulCust="Instalar pacotes personalizados"
+
+# Menu Codecs
+_InstMulCodBody="O GStreamer é um framework multimídia baseado em canais. As duas primeiras opções são os pacotes de grupo atual e o legado (gstreamer0.10). Xine é listado também.\n\n"
+
+# Caixa de pacotes personalizados
+_InstMulCustBody="\nDigite os nomes dos pacotes a serem instalados dos repositórios Arch, separados por espaços. Não é necessário especificar o comando pacstrap ou outro qualquer . É necessário especificar corretamente o nome dos pacotes!\n\nPor exemplo, para instalar o Firefox, VLC, e HTop: firefox vlc htop\n"
+
+# Menu principal
+_MMTitle="Menu principal"
+_MMBody="\nCada passo deve ser seguido NA ORDEM. Uma vez completado, selecione 'Pronto' para finalizar corretamente a instalação.\n"
+
+# Fechar o instalador
+_CloseInstBody="Fechar o instalador?"

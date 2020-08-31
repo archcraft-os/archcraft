@@ -1,0 +1,141 @@
+##---------- Keybindings for bspwm ----------##
+
+# Terminal (termite)
+super + Return
+	bspterm
+
+# Floating terminal
+super + shift + Return
+	bspterm -f
+
+##---------- Rofi Launcher & Menus ----------##
+
+# Rofi App Launcher
+alt + F1
+	sh ~/.config/bspwm/rofi/bin/launcher
+
+# Rofi Network Menu
+super + n
+	nmd
+
+# Rofi Menus
+super + {w,m,x,r}
+	sh ~/.config/bspwm/rofi/bin/{windows,mpd,powermenu,asroot}
+
+ctrl + alt + {s,n,t}
+	sh ~/.config/bspwm/rofi/bin/{screenshot,network,themes}
+
+##---------- Applications ----------##
+
+# Launch Apps
+super + shift + {f,w,e}
+	{pcmanfm,midori,geany}
+
+##---------- System ----------##
+
+# Take a screenshot
+Print
+	scrot 'Screenshot_%Y-%m-%d-%S_$wx$h.png' -e 'mv $f $$(xdg-user-dir PICTURES) ; viewnior $$(xdg-user-dir PICTURES)/$f'
+	
+# Take a screenshot in 5 second
+alt + Print	
+	scrot -d 5 'Screenshot_%Y-%m-%d-%S_$wx$h.png' -e 'mv $f $$(xdg-user-dir PICTURES) ; viewnior $$(xdg-user-dir PICTURES)/$f'
+
+# Brighness control
+XF86MonBrightness{Up,Down}
+	backlight{-up,-down}
+	
+# Volume control
+XF86Audio{RaiseVolume,LowerVolume}
+	volume{-up,-down}
+
+XF86AudioMute
+	amixer set Master toggle
+	
+# Music control
+XF86Audio{Next,Prev,Play,Stop}
+	mpc {next,prev,toggle,stop}
+
+##---------- Bspwm ----------##
+
+# Lockscreen
+ctrl + alt + l
+    betterlockscreen -l
+
+# Reload Keybindings
+super + Escape
+	pkill -USR1 -x sxhkd
+
+# Quit/Restart bspwm
+ctrl + alt + {q,r}
+	bspc {quit,wm -r}
+
+# Close App
+super + c
+	bspc node -c
+
+# kill
+ctrl + alt + Escape
+    xkill
+
+# Fullscreen or Monocle
+super + f
+	bspc desktop -l next
+	
+# Split horizontal, vertical or cancel
+super + {h,v,q}
+	bspc node -p {east,south,cancel}
+
+# Preselect the ratio
+super + ctrl + {1-9}
+	bspc node -o 0.{1-9}
+
+# Toggle beetwen floating & tiled
+super + space
+    bspc node -t "~"{floating,tiled}
+
+# Pseudo Tiled & tiled mode
+super + {p,t}
+    bspc node -t {pseudo_tiled,tiled}
+
+# Set the node flags
+super + ctrl + {m,x,y,z}
+	bspc node -g {marked,locked,sticky,private}
+
+# Send the window to another edge of the screen
+super + {_,shift + }{Left,Down,Up,Right}
+	bspc node -{f,s} {west,south,north,east}
+
+# Change focus to next window, including floating window
+alt + {_,shift + }Tab
+	bspc node -f {next.local,prev.local}
+
+# Switch workspace
+ctrl + alt + {Left,Right}
+	bspc desktop -f {prev.local,next.local}
+
+# Switch to last opened workspace
+super + {Tab,grave}
+	bspc {node,desktop} -f last
+
+# Send focused window to another workspace
+super + {_,shift + }{1-8}
+	bspc {desktop -f,node -d} '^{1-8}'
+
+# Expanding windows
+super + control + {Left,Right,Up,Down}
+	bspc node -z {left -20 0,right 20 0,top 0 -20,bottom 0 20}
+	
+## Shrinking windows
+super + alt + {Left,Right,Up,Down}
+	bspc node -z {left 20 0,right -20 0,top 0 20,bottom 0 -20}
+	
+## Move floating windows
+alt + shift + {Left,Down,Up,Right}
+	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+# Hide/Unhide Window
+super + shift + i
+	winmask		
+
+##---------- EOF ----------##

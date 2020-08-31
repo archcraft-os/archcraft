@@ -1,0 +1,363 @@
+#!/usr/bin/env bash
+
+## Canvas-OB - Pipemenu To Generate Wallpapers.
+
+## Variables
+DIR="$HOME/Pictures/Canvas"
+SIZE="1366x768"
+PSIZE="430x290"
+NAME="Canvas_$(date +%Y-%m-%d_%I-%M-%S).png"
+
+# Lib
+if ! . "/usr/lib/archlabs/common/al-include.cfg" 2>/dev/null; then
+    echo $"Error: Failed to source /usr/lib/archlabs/common/al-include.cfg" >&2 ; exit 1
+fi
+
+## Wordsplit in ZSH
+set -o shwordsplit 2>/dev/null
+
+## Preq
+preq() {
+    dependencies=(convert feh colorpicker)
+    for dependency in "${dependencies[@]}"; do
+        type -p "$dependency" &>/dev/null || {
+            yad --title='Error' --info --text="ERROR: Could not find '${dependency}', is it installed?" --button=Exit:1
+            exit 1
+        }
+    done
+
+	if [[ ! -d "$DIR" ]]; then
+		mkdir -p "$DIR"   
+	fi
+}
+
+## Set wallpaper in kde
+setkde() {
+qdbus org.kde.plasmashell /PlasmaShell org.kde.PlasmaShell.evaluateScript "
+    var allDesktops = desktops();
+    print (allDesktops);
+    for (i=0;i<allDesktops.length;i++) {
+        d = allDesktops[i];
+        d.wallpaperPlugin = 'org.kde.image';
+        d.currentConfigGroup = Array('Wallpaper',
+                                    'org.kde.image',
+                                    'General');
+        d.writeConfig('Image', 'file://"$DIR/$NAME"')
+    }"
+}
+
+## For XFCE
+if [[ "$OSTYPE" == "linux"* ]]; then
+	SCREEN="$(xrandr --listactivemonitors | awk -F ' ' 'END {print $1}' | tr -d \:)"
+    MONITOR="$(xrandr --listactivemonitors | awk -F ' ' 'END {print $2}' | tr -d \*+)"
+fi
+
+## Choose wallpaper setter
+case "$OSTYPE" in
+	linux*)
+			if [ -n "$SWAYSOCK" ]; then
+				SETTER="eval ogurictl output '*' --image";
+			elif [[ "$DESKTOP_SESSION" =~ ^(MATE|Mate|mate)$ ]]; then 
+				SETTER="gsettings set org.mate.background picture-filename";
+			elif [[ "$DESKTOP_SESSION" =~ ^(Xfce Session|xfce session|XFCE|xfce|Xubuntu|xubuntu)$ ]]; then 
+				SETTER="xfconf-query --channel xfce4-desktop --property /backdrop/screen$SCREEN/monitor$MONITOR/workspace0/last-image --set";
+			elif [[ "$DESKTOP_SESSION" =~ ^(LXDE|Lxde|lxde)$ ]]; then 
+				SETTER="pcmanfm --set-wallpaper";
+            elif [[ "$DESKTOP_SESSION" =~ ^(/usr/share/xsessions/plasma|NEON|Neon|neon|PLASMA|Plasma|plasma|KDE|Kde|kde)$ ]]; then 
+				SETTER=setkde;
+			elif [[ "$DESKTOP_SESSION" =~ ^(PANTHEON|Pantheon|pantheon|GNOME|Gnome|gnome|Gnome-xorg|gnome-xorg|UBUNTU|Ubuntu|ubuntu|DEEPIN|Deepin|deepin|POP|Pop|pop)$ ]]; then 
+				SETTER="gsettings set org.gnome.desktop.background picture-uri";
+			else 
+				SETTER="feh --bg-scale"; 
+			fi
+			;;
+esac
+
+## Wallpaper Setter
+
+set_bg() {
+	yad --title='Set As Wallpaper' --geometry="$PSIZE" --picture --size=fit --filename="$DIR/$NAME" \
+	--button=No:1 \
+	--button="Yes":2 \
+
+	ANS=$?
+
+	[[ $ANS -eq 1 ]] && exit 0
+
+	if [[ $ANS -eq 2 ]]; then
+		$SETTER "$DIR/$NAME" && exit 0
+	fi
+}
+
+## Pick the colors
+color_picker() {
+	if [[ "$SOLID" == "true" ]]; then
+		COLOR=$(yad --title='Pick A Color' --color --mode=hex --button=Cancel:1 --button=Select:0)
+	elif [[ "$GRADIENT" == "true" ]] || [[ "$RGRADIENT" == "true" ]] || [[ "$TGRADIENT" == "true" ]]; then
+		color1=$(yad --title='Pick First Color' --color --mode=hex --button=Cancel:1 --button=Select:0)
+		color2=$(yad --title='Pick Second Color' --color --mode=hex --button=Cancel:1 --button=Select:0)
+		COLOR="$color1-$color2"
+	elif [[ "$BGRADIENT" == "true" ]]; then
+		color1=$(yad --title='Pick First Color' --color --mode=hex --button=Cancel:1 --button=Select:0)
+		color2=$(yad --title='Pick Second Color' --color --mode=hex --button=Cancel:1 --button=Select:0)
+		color3=$(yad --title='Pick Third Color' --color --mode=hex --button=Cancel:1 --button=Select:0)
+		color4=$(yad --title='Pick Fourth Color' --color --mode=hex --button=Cancel:1 --button=Select:0)
+	fi
+}
+
+## Generate a solid color wallpaper
+solid() {
+	if [[ "$RANDOMIZE" == "true" ]]; then
+		get_random_color
+		COLOR="$RCOLOR"
+	else
+		color_picker
+	fi
+	if [[ "$COLOR" ]]; then
+		convert -size "$SIZE" canvas:"$COLOR" "$DIR/$NAME"
+		set_bg
+	else
+		exit 0
+	fi
+}
+
+## Generate a linear gradient wallpaper
+linear_gradient() {
+	if [[ "$RANDOMIZE" == "true" ]]; then
+		get_random_color
+		COLOR="$RCOLOR"
+		
+		get_random_number "360"
+		ANGLE="$RNUM"
+	else
+		color_picker
+		ANGLE=$(yad --geometry=250x85 --title='Rotation Angle' --button=Ok:0 --entry --entry-text='45' --numeric)
+	fi
+	convert -size "$SIZE" -define gradient:angle="$ANGLE" gradient:"$COLOR" "$DIR/$NAME"
+	set_bg
+}
+
+## Generate a radial gradient wallpaper
+radial_gradient() {
+	if [[ "$RANDOMIZE" == "true" ]]; then
+		get_random_color
+		COLOR1="$RCOLOR"
+		get_random_color
+		COLOR="$COLOR1-$RCOLOR"
+		
+		get_random_number "360"
+		ANGLE="$RNUM"
+
+		getRandomShape
+		SHAPE="$RSHAPE"
+	else
+		color_picker
+		SHAPE=$(yad --title='Choose Shape' --width=180 --height=145 --button=Ok:0 --list --no-headers --column=Shape diagonal ellipse maximum minimum | tr -d '|')
+		ANGLE=$(yad --geometry=250x85 --title='Rotation Angle' --button=Ok:0 --entry --entry-text='45' --numeric)
+	fi
+	convert -size "$SIZE" -define gradient:extent="$SHAPE" -define gradient:angle="$ANGLE" radial-gradient:"$COLOR" "$DIR/$NAME"
+	set_bg
+}
+
+## Generate a twisted gradient wallpaper
+twisted_gradient() {
+	if [[ "$RANDOMIZE" == "true" ]]; then
+		get_random_color
+		COLOR1="$RCOLOR"
+		get_random_color
+		COLOR="$COLOR1-$RCOLOR"
+		
+		get_random_number "500"
+		TWIST="$RNUM"
+	else
+		color_picker
+		TWIST=$(yad --geometry=250x85 --title='Twisting Amount' --button=Ok:0 --entry --entry-text='200' --numeric)
+	fi
+	convert -size "$SIZE" gradient:"$COLOR" -swirl "$TWIST" "$DIR/$NAME"
+	set_bg
+}
+
+## Generate a 4 point gradient wallpaper
+bilinear_gradient() {
+	if [[ "$RANDOMIZE" == "true" ]]; then
+		get_random_color
+		color1="$RCOLOR"
+		get_random_color
+		color2="$RCOLOR"
+		get_random_color
+		color3="$RCOLOR"
+		get_random_color
+		color4="$RCOLOR"
+		
+		get_random_number "2"
+		if [[ "$RNUM" == "1" ]]; then
+			ANS="Smooth"
+		else
+			ANS="Regular"
+		fi
+	else
+		color_picker
+		ANS=$(yad --title='Choose Style' --width=190 --height=100 --button=Ok:0 --list --no-headers --column=Style Smooth Regular | tr -d '|')
+	fi
+	if [[ $ANS == "Smooth" ]] || [[ $ANS == "smooth" ]]; then
+		yad --title='Generating' --width=200 --height=60 --text='Processing, Please Wait...' --button=Ok:0 --timeout=2
+		convert \( xc:"$color1" xc:"$color2" +append \) \( xc:"$color3" xc:"$color4" +append \) -append -size "$SIZE" xc: +swap  -fx 'v.p{i/(w-1),j/(h-1)}' "$DIR/$NAME"
+	else
+		convert \( xc:"$color1" xc:"$color2" +append \) \( xc:"$color3" xc:"$color4" +append \) -append -filter triangle -resize "$SIZE"\! "$DIR/$NAME"
+	fi
+	set_bg
+}
+
+## Generate a plasma wallpaper
+plasma() {
+	if [[ "$RANDOMIZE" == "true" ]]; then
+		get_random_number "3"
+
+		if [[ "$RNUM" == "1" ]]; then
+			ANS="Random"
+		elif [[ "$RNUM" == "2" ]]; then
+			ANS="Twisted"
+			get_random_number "500"
+			TWIST="$RNUM"
+		else
+			ANS="Colors"
+			get_random_color
+			COLOR="$RCOLOR"
+		fi
+	else
+		ANS=$(yad --title='Choose Style' --width=190 --height=150 --button=Ok:0 --list --no-headers --column=Style Random Twisted 'Custom colors' | tr -d '|')
+	fi
+	if [[ $ANS == "Random" ]] || [[ $ANS == "random" ]]; then
+		convert -size "$SIZE" plasma: "$DIR/$NAME"
+	elif [[ $ANS == "Twisted" ]] || [[ $ANS == "twisted" ]]; then
+		if [[ "$RANDOMIZE" != "true" ]]; then
+			TWIST=$(yad --geometry=250x85 --title='Twisting Amount' --button=Ok:0 --entry --entry-text='200' --numeric)
+		fi
+		convert -size "$SIZE" plasma:fractal -swirl "$TWIST" "$DIR/$NAME"
+	else
+		if [[ "$RANDOMIZE" != "true" ]]; then
+			color1=$(yad --title='Pick First Color' --color --mode=hex --button=Cancel:1 --button=Select:0)
+			color2=$(yad --title='Pick Second Color' --color --mode=hex --button=Cancel:1 --button=Select:0)
+			COLOR="$color1-$color2"
+		fi
+		convert -size "$SIZE" plasma:"$COLOR" "$DIR/$NAME"
+	fi
+	set_bg
+}
+
+## Generate a random, multi-colored blured/gradient wallpaper
+blured_noise() {
+	if [[ "$RANDOMIZE" == "true" ]]; then
+		get_random_number "30"
+		BLUR="$RNUM"
+	else
+		BLUR=$(yad --geometry=250x85 --title='Blur Amount' --button=Ok:0 --entry --entry-text='12' --numeric)
+	fi
+	convert -size "100x56" xc: +noise Random "/tmp/noise.png"
+	convert "/tmp/noise.png" -virtual-pixel tile -blur 0x"$BLUR" -auto-level -resize "$SIZE" "$DIR/$NAME"	
+	set_bg
+}
+
+## Generate random number lower than giver parameter
+get_random_number() {
+	RNUM=$(( ($RANDOM % $1) + 1 ))
+}
+
+## Generate random color
+get_random_color() {
+	RCOLOR="#"
+	for i in 1 2 3 4 5 6
+	do
+		get_random_number "16"
+		case $RNUM in
+			"1") NEXTDIGIT="1";;
+			"2") NEXTDIGIT="2";;
+			"3") NEXTDIGIT="3";;
+			"4") NEXTDIGIT="4";;
+			"5") NEXTDIGIT="5";;
+			"6") NEXTDIGIT="6";;
+			"7") NEXTDIGIT="7";;
+			"8") NEXTDIGIT="8";;
+			"9") NEXTDIGIT="9";;
+			"10") NEXTDIGIT="A";;
+			"11") NEXTDIGIT="B";;
+			"12") NEXTDIGIT="C";;
+			"13") NEXTDIGIT="D";;
+			"14") NEXTDIGIT="E";;
+			"15") NEXTDIGIT="F";;
+			"16") NEXTDIGIT="0";;
+		esac
+		RCOLOR="$RCOLOR$NEXTDIGIT"
+	done
+}
+
+## Generate random shape option
+getRandomShape() {
+	get_random_number "4"
+	case $RNUM in
+		"1") RSHAPE="diagonal";;
+		"2") RSHAPE="ellipse";;
+		"3") RSHAPE="maximum";;
+		"4") RSHAPE="minimum";;
+	esac
+}
+
+## Generate random wallpaper
+randomize() {
+	get_random_number "7"
+	case $RNUM in
+		"1") solid;;
+		"2") linear_gradient;;
+		"3") radial_gradient;;
+		"4") twisted_gradient;;
+		"5") bilinear_gradient;;
+		"6") plasma;;
+		"7") blured_noise;;
+	esac
+}
+
+## Main Execution
+
+if [[ "$1" == "--random" ]]; then
+	preq
+    RANDOMIZE="true"
+	randomize
+elif [[ "$1" == "--blur" ]]; then
+	preq
+	blured_noise
+elif [[ "$1" == "--solid" ]]; then
+	preq
+	SOLID="true"
+	solid
+elif [[ "$1" == "--plasma" ]]; then
+	preq
+	plasma
+elif [[ "$1" == "--lgradient" ]]; then
+	preq
+	GRADIENT="true"
+	linear_gradient
+elif [[ "$1" == "--rgradient" ]]; then
+	preq
+	RGRADIENT="true"
+	radial_gradient
+elif [[ "$1" == "--tgradient" ]]; then
+	preq
+	TGRADIENT="true"
+	twisted_gradient
+elif [[ "$1" == "--bgradient" ]]; then
+	preq
+	BGRADIENT="true"
+	bilinear_gradient
+else
+    menuStart
+        menuItem 'Random' "$0 --random"
+        menuItem 'Blurred' "$0 --blur"
+        menuItem 'Solid' "$0 --solid"
+        menuItem 'Plasma' "$0 --plasma"
+        menuItem 'Linear Gradient' "$0 --lgradient"
+        menuItem 'Radial Gradient' "$0 --rgradient"
+        menuItem 'Twisted Gradient' "$0 --tgradient"
+        menuItem 'Bilinear Gradient' "$0 --bgradient"
+    menuEnd
+    exit 0
+fi

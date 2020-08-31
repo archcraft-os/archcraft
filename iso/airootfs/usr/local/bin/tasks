@@ -1,0 +1,74 @@
+#!/usr/bin/env bash
+
+# Simple script to create colorful short sticky notes.
+# Dep - rofi, imagemagick
+
+## colors
+red="#EC7875"
+pink="#EC407A"
+purple="#BA68C8"
+blue="#42A5F5"
+cyan="#4DD0E1"
+teal="#00B19F"
+green="#61C766"
+lime="#B9C244"
+amber="#FBC02D"
+orange="#E57C46"
+brown="#AC8476"
+indigo="#6C77BB"
+bluegray="#6D8895"
+
+## select random color 
+NUMBER=$(( $RANDOM % 13 ))
+COLOURS=($red $pink $purple $blue $cyan $teal $green $lime $amber $orange $brown $indigo $bluegray)
+color=${COLOURS[$NUMBER]}
+
+## generate temp filename
+RNDNAME=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1)
+image=/tmp/$RNDNAME.png
+
+## convert a hex value WITHOUT the hashtag (#)
+hex_to_rgb() {
+    R=$(printf "%d" 0x${1:0:2})
+    G=$(printf "%d" 0x${1:2:2})
+    B=$(printf "%d" 0x${1:4:2})
+}
+
+## set text color based on bg color
+calculate_text_color() {
+    INTENSITY=$(calc "$R*0.299 + $G*0.587 + $B*0.114")
+    
+    if [ $(echo "$INTENSITY>186" | bc) -eq 1 ]; then
+        text="#000000"
+    else
+        text="#FFFFFF"
+    fi
+}
+
+## ask for task
+DIR="$HOME/.config/rofi/dialogs"
+
+asktask() {
+rofi -dmenu\
+     -i\
+     -no-fixed-num-lines\
+     -p "Do What? "\
+    -theme "$DIR"/askpass.rasi
+}
+
+task=$(asktask)
+size=${#task} 
+width=$((size*10))
+
+hex="${color//\#/}"
+hex_to_rgb $hex
+calculate_text_color
+
+if [[ "$task" ]]; then
+	# generate color image with code
+	convert -size "$width"x50 xc:"$color" -gravity Center -pointsize 15 -font Iosevka -fill "$text" -annotate +0+0 "$task" $image
+	# display image using an image viewer 
+	feh --borderless --title="$color" $image &>/dev/null &
+else
+	exit;
+fi

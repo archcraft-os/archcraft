@@ -1,0 +1,40 @@
+#!/bin/bash
+
+DIR="$HOME/.config/bspwm"
+
+rofi_command="rofi -theme $DIR/rofi/themes/asroot.rasi"
+
+# Apps
+terminal=" Termite"
+files=" Pcmanfm"
+editor=" Geany"
+clifm=" Ranger"
+lpad=" Leafpad"
+vim=" Vim"
+
+# Variable passed to rofi
+options="$terminal\n$files\n$editor\n$clifm\n$lpad\n$vim"
+
+chosen="$(echo -e "$options" | $rofi_command -p "Run as root(#)" -dmenu -selected-row 0)"
+case $chosen in
+    $terminal)
+        apps_as_root 'termite --class termite-float -c /root/.config/bspwm/termite/config'
+        ;;
+    $files)
+        apps_as_root 'dbus-run-session pcmanfm'
+        ;;
+    $editor)
+        apps_as_root geany
+        ;;
+    $clifm)
+        apps_as_root 'termite --class termite-float -c /root/.config/bspwm/termite/config -e ranger'
+        ;;
+    $lpad)
+        apps_as_root leafpad
+        ;;
+    $vim)
+        apps_as_root 'termite --class termite-float -c /root/.config/bspwm/termite/config -e vim'
+        ;;
+esac
+
+

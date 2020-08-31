@@ -1,0 +1,42 @@
+! ------------------------------------------------------------------------------
+! URxvt configs
+! ------------------------------------------------------------------------------
+
+! font spacing
+URxvt*letterSpace:		1
+URxvt.lineSpace:		1
+
+! general settings
+URxvt*saveline:			15000
+URxvt*termName:			rxvt-256color
+URxvt*iso14755:			false
+URxvt*urgentOnBell:		true
+
+! appearance
+URxvt*depth:			24
+URxvt*scrollBar:		false
+URxvt*scrollBar_right:	false
+URxvt*internalBorder:	16
+URxvt*externalBorder:	0
+URxvt.geometry:			85x25
+
+! scroll one line
+URxvt.keysym.Shift-Up:		command:\033]720;1\007
+URxvt.keysym.Shift-Down:	command:\033]721;1\007
+
+! control arrow
+URxvt.keysym.Control-Up:	\033[1;5A
+URxvt.keysym.Control-Down:	\033[1;5B
+URxvt.keysym.Control-Right:	\033[1;5C
+URxvt.keysym.Control-Left:	\033[1;5D
+
+! ------------------------------------------------------------------------------
+! Xft Font Configuration
+! ------------------------------------------------------------------------------
+
+Xft.autohint: 0
+Xft.lcdfilter: lcddefault
+Xft.hintstyle: hintslight
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb

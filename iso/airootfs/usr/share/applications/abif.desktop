@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Install Archcraft
+Comment=Archcraft Installer (abif)
+Exec=/usr/local/bin/apps_as_root.sh "termite -t Archcraft_Installer -c /abif-master/termite -e /abif-master/abif"
+Icon=distributor-logo-archcraft
+Type=Application
+Categories=System;Settings;

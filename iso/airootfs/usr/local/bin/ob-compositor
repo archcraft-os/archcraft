@@ -1,0 +1,126 @@
+#!/usr/bin/env bash
+
+# al-compositor: an Openbox Pipe Menu for use with compton compositor
+# Copyright (C) 2012 Philip Newborough <corenominal@corenominal.org>
+# Copyright (C) 2013 Aleks-Daniel Jakimenko
+# Copyright (C) 2015 John Crawley <john@bunsenlabs.org>
+
+# User's config dir
+dir="$HOME/.config/"
+
+readonly EXECXCOMP='compton -b'
+readonly RESTART_ATTEMPTS=20
+readonly HELP='
+al-compositor an openbox pipe menu for use with compton
+It should normally be called from an openbox menu.
+
+Options (passed from the menu):
+    -h --help   show this message
+    --start     start the compositor and restart tint2, if running
+    --restart   restart the compositor, if running
+    --stop      stop the compositor
+    --edit      open the compton config file in a text editor
+    --watch     restart compton when the config is modified (useful for debugging)
+
+If al-compositor is called with no options (the usual method),
+it will output an xml openbox pipemenu for handling compositing.
+
+See ~/.config/compton.conf and "man compton" for configuration options.'
+
+for i in "$@"; do
+    case "$i" in
+        -h|--help) echo "$HELP" ; exit 0
+    esac
+done
+
+if ! . "/usr/lib/archlabs/common/al-include.cfg" 2>/dev/null; then
+    echo $"Error: Failed to source /usr/lib/archlabs/common/al-include.cfg" >&2 ; exit 1
+fi
+
+declareDependencies compton
+
+forcekill_compton() {
+    killall -q compton
+    for ((i=0; i<RESTART_ATTEMPTS; i++)); do
+        [[ $(pidof compton) ]] || break
+        killall -q -S KILL compton
+        sleep 0.25
+    done
+}
+
+
+if [[ $1 = '--edit' ]]; then # Edit compton settings
+    if ! [ -e "$HOME/.config/compton.conf" ]; then
+        cp '/etc/skel/.config/compton.conf' "$HOME/.config/compton.conf"
+    fi
+    if hash exo-open &>/dev/null; then
+        exo-open "$HOME/.config/compton.conf"
+    else
+        termite -e "$EDITOR $HOME/.config/compton.conf"
+    fi
+elif [[ $1 = '--start' ]]; then
+    if ! [[ $(pidof compton) ]]; then
+        $EXECXCOMP
+    else
+        echo "$0 --start: compton already running" && exit 1
+    fi
+
+elif [[ $1 = '--stop' ]]; then
+    forcekill_compton
+
+elif [[ $1 = '--restart' ]]; then
+    if [[ $(pidof compton) ]]; then
+        forcekill_compton
+        "$0" --start
+    else # nothing to restart
+        echo "$0 --restart: compton is not running" && exit 1
+    fi
+
+elif [[ $1 = '--watch' ]]; then
+    while inotifywait -e close_write "$HOME/.config/compton.conf"; do
+        "$0" --restart
+    done
+
+elif [[ $1 = '--enableblur' ]]; then
+    sed -i -e 's/blur-background = .*/blur-background = true;/g' $dir/compton.conf
+    sed -i -e 's/blur-background-frame = .*/blur-background-frame = true;/g' $dir/compton.conf
+    "$0" --restart
+
+elif [[ $1 = '--disableblur' ]]; then
+    sed -i -e 's/blur-background = .*/blur-background = false;/g' $dir/compton.conf
+    sed -i -e 's/blur-background-frame = .*/blur-background-frame = false;/g' $dir/compton.conf
+    "$0" --restart
+
+elif [[ $1 = '--blurstr' ]]; then
+	bstr=$(yad --title='Blur Strength' --button=Cancle:1 --button=Okay:0  --scale --value=5 --min-value=1 --max-value=20)
+	if [[ "$bstr" ]]; then
+		sed -i -e "s/blur-strength = .*/blur-strength = $bstr;/g" $dir/compton.conf
+		"$0" --restart
+	else
+		exit 0
+	fi
+
+else
+    menuStart
+    if ! [[ $(pidof compton) ]]; then
+        menuItem 'Enable Compositing' "$0 --start"
+    else
+		if [[ $(cat $dir/compton.conf | grep -i 'blur-background = false;') ]]; then
+			menuItem 'Enable Blur Effect' "$0 --enableblur"
+		else
+			menuItem 'Set Blur Strength' "$0 --blurstr"
+			menuItem 'Disable Blur Effect' "$0 --disableblur"
+		fi
+        menuSeparator
+        menuItem 'Restart Compositing' "$0 --restart"
+        menuItem 'Disable Compositing' "$0 --stop"
+        menuSeparator
+    fi
+    if [[ -e /usr/bin/paranoid.py ]]; then
+        menuItem 'compton Settings GUI' "paranoid.py"
+    fi
+    menuItem 'Edit compton Config' "$0 --edit"
+    menuEnd
+fi
+
+exit 0

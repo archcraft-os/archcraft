@@ -1,0 +1,144 @@
+configuration {
+    show-icons:                     false;
+	icon-theme: 					"Hybrid";
+    display-drun: 					":";
+    drun-display-format:            "{name}";
+    threads:                        0;
+    scroll-method:                  0;
+    disable-history:                false;
+    fullscreen:                     false;
+	hide-scrollbar: 				true;
+	sidebar-mode: 					false;
+    location:                       5;
+    anchor:                         5;
+}
+
+@import "font.rasi"
+@import "colors.rasi"
+
+window {
+    transparency:                   "real";
+    background-color:               @BG;
+    text-color:                     @FG;
+    border:		 	                0px;
+    border-color:                   @SEL;
+    border-radius:                  0px;
+    width:                          20%;
+    x-offset:                       -1%;
+    y-offset:                       -7%;
+}
+
+prompt {
+    enabled: 						true;
+	padding: 						4px 4px 6px 6px;
+	background-color: 				@BGA;
+	text-color: 					@FG;
+}
+
+textbox-prompt-colon {
+	expand: 						false;
+	str: 							"";
+    background-color:               @BGA;
+    text-color:                     @FG;
+    padding:                        6px 0px 0px 8px;
+	font:							"feather 10";
+}
+
+inputbar {
+	children: 						[ textbox-prompt-colon, prompt ];
+    background-color:               @BGA;
+    text-color:                     @FG;
+    expand:                         false;
+    border:                  		0px 0px 1px 0px;
+    border-radius:                  0px;
+    border-color:                  	@BDR;
+    margin:                         0px 0px 0px 0px;
+    padding:                        4px 0px 0px 0px;
+    position:                       center;
+}
+
+
+entry {
+    background-color:               @BGA;
+    text-color:                     @FG;
+    placeholder-color:              @FG;
+    expand:                         true;
+    horizontal-align:               0;
+    placeholder:                    "Search";
+    blink:                          true;
+    padding:                        4px 0px 0px 0px;
+}
+
+case-indicator {
+    background-color:               @BG;
+    text-color:                     @FG;
+    spacing:                        0;
+}
+
+
+listview {
+    background-color:               @BG;
+    columns:                        1;
+    lines:							4;
+    spacing:                        4px;
+    cycle:                          true;
+    dynamic:                        true;
+    layout:                         vertical;
+}
+
+mainbox {
+    background-color:               @BG;
+    children:                       [ inputbar, listview ];
+    spacing:                       	6px;
+    padding:                        6px 6px 6px 6px;
+}
+
+element {
+    background-color:               @BG;
+    text-color:                     @FG;
+    orientation:                    horizontal;
+    border-radius:                  0px;
+    padding:                        6px 6px 6px 6px;
+}
+
+element-icon {
+    size:                           24px;
+    border:                         0px;
+}
+
+element-text {
+    expand:                         true;
+    horizontal-align:               0;
+    vertical-align:                 0;
+    margin:                         2px 0px 2px 2px;
+}
+
+element selected {
+    background-color:               @SEL;
+    text-color:                     @BG;
+    border:                  		0px;
+    border-radius:                  0px;
+    border-color:                  	@BDR;
+}
+
+element.active,
+element.selected.urgent {
+  background-color: @ON;
+  text-color: @BG;
+  border-color: @ON;
+}
+
+element.selected.urgent {
+  border-color: @BDR;
+}
+
+element.urgent,
+element.selected.active {
+  background-color: @OFF;
+  text-color: @BG;
+  border-color: @OFF;
+}
+
+element.selected.active {
+  border-color: @BDR;
+}

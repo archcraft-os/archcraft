@@ -1,0 +1,56 @@
+[global]
+monitor = 0
+follow = mouse
+geometry = "280x50-10+44"
+indicate_hidden = yes
+shrink = no
+separator_height = 4
+separator_color = auto
+padding = 20
+horizontal_padding = 20
+frame_width = 0
+sort = no
+idle_threshold = 120
+font = Iosevka Custom 9
+line_height = 4
+markup = full
+format = %s\n%b
+alignment = left
+show_age_threshold = 60
+word_wrap = yes
+ignore_newline = no
+stack_duplicates = false
+hide_duplicate_count = yes
+show_indicators = no
+icon_position = left
+max_icon_size = 48
+sticky_history = yes
+history_length = 20
+browser = x-www-browser -new-tab
+always_run_script = true
+title = Dunst
+class = Dunst
+
+[shortcuts]
+close = ctrl+shift+space
+close_all = ctrl+shift+space
+history = ctrl+grave
+context = ctrl+shift+period
+
+[urgency_low]
+timeout = 3
+background = "#212B30"
+foreground = "#C4C7C5"
+frame_color = "#4DD0E1"
+
+[urgency_normal]
+timeout = 5
+background = "#212B30"
+foreground = "#C4C7C5"
+frame_color = "#4DD0E1"
+
+[urgency_critical]
+timeout = 0
+background = "#212B30"
+foreground = "#EC407A"
+frame_color = "#EC407A"

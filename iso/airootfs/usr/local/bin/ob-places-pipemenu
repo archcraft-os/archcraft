@@ -1,0 +1,155 @@
+#!/usr/bin/env bash
+
+# al-places-pipemenu - an openbox places pipe menu
+# Copyright (C) 2010~2016  John Crawley <john@bunsenlabs.org>
+# Copyright (C) 2017~2018  Nathaniel Maia <natemaia10@gmail.com>
+
+# <menu id="places" label="Places" execute="/path/to/al-places-pipemenu ~/" />
+# or, if you want the "recent files" menu incorporated at the top, use:
+# <menu id="places" label="Places" execute="/path/to/al-places-pipemenu --recent ~/" />
+# make sure you have al-recent-files-pipemenu, and enter its path below.
+
+readonly terminal=termite
+readonly text_editor=geany
+readonly open_folder_cmd=thunar
+readonly default_open_cmd=exo-open
+readonly recent_script=/usr/bin/al-recent-files-pipemenu
+
+open_file() {
+    if hash "$default_open_cmd" &>/dev/null; then
+        exec "$default_open_cmd" "$1"
+    elif hash $text_editor &>/dev/null; then
+        exec "$text_editor" "$1"
+    elif hash $terminal &>/dev/null; then
+        ($terminal -e "$EDITOR $1") &>/dev/null &
+    else
+        echo "$0 : failed to open $2" ; exit 1
+    fi
+}
+
+readonly shown_dotfiles=".config .local .vim .vimrc .Xresources .Xmodmap .bashrc .zshrc .xinitrc .gtkrc-2.0.mine .xprofile .xsessionrc"
+readonly HELP='
+al-places-pipemenu an Openbox Pipe Menu for showing a directory tree
+It should normally be called from an openbox menu.
+
+Usage:
+    al-places-pipemenu [options] [directory tree root]
+
+Options:
+    -h,--help           show this message
+    --recent            incorporate a "recent files" submenu
+    --open <filepath>   open a file with configured default application
+                        (in this case the script will not output a menu)
+
+    If a directory tree root is not specified, $HOME will be used.
+
+Configuration:
+    /usr/bin/al-places-pipemenu may be edited directly for system-wide changes,
+    or copied to ~/bin and edited there for per-user changes.
+
+Editable variables and functions, at the top of the file:
+    recent_script       path to a script outputting an openbox pipemenu
+    open_folder_cmd     command to open folders - any file manager
+    default_open_cmd    default command to open files
+    text_editor         command to open text files
+    open_file()         open files, using commands above, or alternatives
+    shown_dotfiles      list of dotfiles to display (they are hidden by default)
+
+    By default, this script will display directories separately, before files.
+    To change this behaviour, see NOTE1, NOTE2 and NOTE3 near end of file.
+'
+
+
+case $1 in
+    -h|--help) echo "$HELP" ; exit 0 ;;
+    --open) open_file "$2" ;;
+    --recent)
+        shift
+        output='<openbox_pipe_menu>'
+        if [[ -x $recent_script ]]; then
+            output="$output
+  <separator label=\"Recently opened...\"/>
+  <menu execute=\"$recent_script\" id=\"recent\" label=\"files\"/>"
+        else
+            echo "$0 : cannot find executable script $recent_script" >&2
+        fi
+        ;;
+    *) output='<openbox_pipe_menu>'
+esac
+
+path=${1:-$HOME}
+path=${path%/}
+
+[[ -d $path ]] || { echo "$0 : $path is not a directory" >&2 ; exit 1 ; }
+
+# only escape if string needs it
+case $path in
+    *\&*|*\<*|*\>*|*\"*|*\'*) pathe=$(sed "s/\&/\&amp;/g;s/</\&lt;/g;s/>/\&gt;/g;s/\"/\&quot;/g;s/'/\&apos;/g;" <<<"$path") ;;
+    *)                        pathe=$path
+esac
+case $pathe in
+    *\&apos\;*) pathe_apos=$(sed 's/\&apos;/\&apos;\&quot;\&apos;\&quot;\&apos;/g;' <<<"$pathe") ;;
+    *)          pathe_apos=$pathe
+esac
+
+output="$output
+  <separator label=\"$pathe\"/>
+  <item label=\"Browse here...\">
+    <action name=\"Execute\">
+      <command>&apos;$open_folder_cmd&apos; &apos;$pathe_apos&apos;</command>
+    </action>
+  </item>
+  <separator/>"
+
+[[ "$path" == "$HOME" ]] && extra_entries="$shown_dotfiles"
+
+for i in $path/* $extra_entries; do
+
+    [[ ! -e $i ]] && continue
+    shortname=${i##*/}
+
+    case $shortname in
+        *\&*|*\<*|*\>*|*\"*|*\'*) shortnamee=$(sed "s/\&/\&amp;/g;s/</\&lt;/g;s/>/\&gt;/g;s/\"/\&quot;/g;s/'/\&apos;/g;" <<<"$shortname") ;;
+        *)                        shortnamee=$shortname
+    esac
+    case $shortnamee in
+        *\&apos\;*) shortnamee_apos=$(sed 's/\&apos;/\&apos;\&quot;\&apos;\&quot;\&apos;/g;' <<<"$shortnamee") ;;
+        *)          shortnamee_apos=$shortnamee
+    esac
+    case $shortnamee in
+        *_*) shortnamee_label=$(sed 's/_/__/g;' <<<"$shortnamee") ;;
+        *)   shortnamee_label=$shortnamee
+    esac
+
+    # NOTE1: If you want directories and files listed together
+    # change directories_menu="$directories_menu to: files_menu="$files_menu
+    if [[ -d $i ]]; then
+        directories_menu="$directories_menu
+  <menu id=\"$pathe_apos/$shortnamee_apos\" label=\"$shortnamee_label\" execute=\"&apos;$0&apos; &apos;$pathe_apos/$shortnamee_apos&apos;\"/>"
+    else
+        files_menu="$files_menu
+  <item label=\"$shortnamee_label\">
+    <action name=\"Execute\">
+      <command>&apos;$0&apos; --open &apos;${pathe_apos}/${shortnamee_apos}&apos;</command>
+    </action>
+  </item>"
+    fi
+done
+
+# NOTE2: uncomment these 2 lines if you want "Directories" label
+# output="$output
+# <separator label=\"Directories\"/>"
+[ -n "$directories_menu" ] && { output="${output}${directories_menu}"; }
+
+# NOTE3: uncomment these 2 lines if you want "Files" label
+# output="$output
+# <separator label=\"Files\"/>"
+[ -n "$files_menu" ] && { output="${output}${files_menu}"; }
+
+output="${output}
+</openbox_pipe_menu>
+"
+
+printf '%s' "$output"
+
+exit 0

@@ -1,0 +1,2 @@
+#!/bin/sh
+feh --no-fehbg --bg-scale "$HOME/.config/bspwm/wallpapers/nord.jpg"

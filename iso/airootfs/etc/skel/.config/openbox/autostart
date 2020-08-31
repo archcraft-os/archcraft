@@ -1,0 +1,36 @@
+## Restore Wallpaper
+nitrogen --restore
+
+## xfce4-settings daemon
+xfsettingsd &
+
+## Start Compositing Manager
+exec compton -b &
+
+## Launch Polybar
+sh ~/.config/polybar/launch.sh
+
+## Launch Plank
+exec plank &
+
+## Start Music Player Daemon
+exec mpd &
+
+## Notification Daemon
+exec dunst &
+
+## Thunar Daemon
+exec thunar --daemon &
+
+## Enable Super Keys For Menu
+ksuperkey -e 'Super_L=Alt_L|F1' &
+ksuperkey -e 'Super_R=Alt_L|F1' &
+
+## Enable power management
+xfce4-power-manager &
+
+## Getting Started
+gs_run_once.sh
+
+## Issue Tracker (Don't Remove IT)
+issue_tracker.sh
