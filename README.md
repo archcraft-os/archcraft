@@ -5,7 +5,7 @@
 <p align="center">
 <a href="https://www.buymeacoffee.com/adi1090x"><img width="32px" src="https://raw.githubusercontent.com/adi1090x/files/master/other/1.png" alt="Buy Me A Coffee"></a>
 <a href="https://ko-fi.com/adi1090x"><img width="32px" src="https://raw.githubusercontent.com/adi1090x/files/master/other/2.png" alt="Support me on ko-fi"></a>
-<a href="https://www.paypal.me/adi1090x"><img width="32px" src="https://raw.githubusercontent.com/adi1090x/files/master/other/3.png" alt="Support me on Paypal"></a>
+<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=U3VK2SSVQWAPN"><img width="32px" src="https://raw.githubusercontent.com/adi1090x/files/master/other/3.png" alt="Support me on Paypal"></a>
 <a href="https://www.patreon.com/adi1090x"><img width="32px" src="https://raw.githubusercontent.com/adi1090x/files/master/other/4.png" alt="Support me on Patreon"></a>
 </p>
 
@@ -67,12 +67,12 @@ Yet another minimal linux distribution, based on <a href="https://www.archlinux.
 
 ### Get The ISO
 
-**>> Download -** You can either download already generated ISO file, or...
+**1. Download -** You can either download already generated ISO file, or...
 <p align="center">
   <a href="https://sourceforge.net/projects/archcraft/files/latest/download" target="_blank"><img alt="undefined" src="https://img.shields.io/badge/Sourceforge-Download-orange?style=for-the-badge&logo=sourceforge"></a>
 </p>
   
-**>> Build ISO -** If you're already using archlinux & want to build the iso, maybe with your config then...
+**2. Build ISO -** If you're already using archlinux & want to build the iso, maybe with your config then...
 
 ***Check list***
 - [ ] **archiso** version : `47.1-1`
