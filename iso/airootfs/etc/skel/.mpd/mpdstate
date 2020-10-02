@@ -5,7 +5,7 @@ state: pause
 current: 0
 time: 0
 random: 0
-repeat: 1
+repeat: 0
 single: 0
 consume: 0
 crossfade: 0

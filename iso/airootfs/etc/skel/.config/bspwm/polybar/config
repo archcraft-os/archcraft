@@ -403,8 +403,8 @@ format-disconnected-prefix = "睊 "
 format-disconnected-prefix-font = 2
 format-disconnected-prefix-foreground = ${color.RED}
 
-label-connected = "%{A1:networkmanager_dmenu &:}%essid%%{A}"
-label-disconnected = "%{A1:networkmanager_dmenu &:}Disconnected%{A}"
+label-connected = "%{A1:nmd &:}%essid%%{A}"
+label-disconnected = "%{A1:nmd &:}Disconnected%{A}"
 
 ramp-signal-0 = 直
 ramp-signal-1 = 直
