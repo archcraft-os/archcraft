@@ -1,0 +1,10 @@
+[theme]
+padding = 25
+foreground = #c4c4c7c7c5c5
+height = 0.9
+textboxbg = #262630303535
+width = 0.5
+background = #21212b2b3030
+border = #4d4dd0d0e1e1
+name = archcraft
+

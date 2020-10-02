@@ -138,4 +138,5 @@ dd bs=4M if=/path/to/archcraft.iso of=/dev/sdX status=progress oflag=sync
 + After installing Archcraft, run `sudo pacman -Syy` to sync pacman database.
 + **Important -** I've tested Archcraft on two laptops, with intel pantium & i3 CPUs. Obviously ISO have intel-video drivers, if you have `nvidia` or something, edit **packages.x86_64** and uncomment the driver package according to your GPU, or WM/DE might freeze on startup (Blank/Gray screen after login).
 + If polybar is not showing some icons properly, run `~/.config/polybar/fix_modules.sh` to fix **Battery** & **Network** Modules.
-+ By default, touchpad is disabled. To enable it, press `Window` or `Alt + F1` key to open launcher, type *Mouse* & open **Mouse and Touchpad**. Then go to `Touchpad` & check **Tap to click**.
++ If grub is not showing other installed OSs, please run `sudo grub-mkconfig -o /boot/grub/grub.cfg` to regenerate grub config file on first boot into Archcraft OS.
++ Update the lockscreen according to your screen resolution with `betterlockscreen -u /usr/share/backgrounds/wal_10.jpg` if it's messed up.

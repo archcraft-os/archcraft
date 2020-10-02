@@ -19,7 +19,7 @@ check_jsoncpp() {
 	vfile="$HOME/.cache/jsoncpp_version"
 	prev_ver="$(cat $vfile)"
 	if [[ "$checkjson" != "$prev_ver" ]]; then
-		dunstify -u critical -i /usr/share/icons/Hybrid/emblems/22/vcs-conflicting.svg "Jsoncpp Updated!" "Please recompile polybar or just install it from AUR."
+		dunstify -u critical -i /usr/share/icons/Hybrid/emblems/22/vcs-conflicting.svg "Jsoncpp Updated!" "Please recompile polybar or just install it from AUR (if not working)."
 		echo "$checkjson" > "$vfile"
 	fi
 }

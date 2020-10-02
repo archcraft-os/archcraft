@@ -64,7 +64,7 @@ dim-value = 1.0
 wm-name = bspwm
 locale = 
 
-tray-position = none
+tray-position = right
 tray-detached = false
 tray-maxsize = 16
 tray-transparent = false
@@ -73,6 +73,8 @@ tray-offset-x = 0
 tray-offset-y = 0
 tray-padding = 0
 tray-scale = 1.0
+
+wm-restack = bspwm
 
 enable-ipc = true
 

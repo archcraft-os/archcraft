@@ -210,7 +210,7 @@ main() {
 			FIRST_RUN=false
 
 			# Display the album art using sxiv
-			dunstify -u low -I "$COVER" "$(mpc current)" && exit
+			dunstify -u low --replace=169 -I "$COVER" "$(mpc current)" && exit
 			#sxiv -g "$SIZE$POSITION" -b "$COVER" -N "Kunst" &
 			
 			# Save the process ID so that we can kill
