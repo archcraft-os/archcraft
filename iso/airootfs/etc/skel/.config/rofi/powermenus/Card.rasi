@@ -17,7 +17,7 @@ window {
     text-color:                     @foreground;
     border-radius:                  0px;
     height:                         29%;
-    width:                          46%;
+    width:                          49.5%;
     location:                       center;
     x-offset:                       0;
     y-offset:                       0;
@@ -35,7 +35,7 @@ textbox-prompt-colon {
 	str: 							"System |";
 	background-color: 				@background-alt;
 	text-color: 					@foreground;
-    padding:                        4px 0px 4px 0px;
+    padding:                        4px 0px 4px 25px;
 }
 
 inputbar {
@@ -90,7 +90,7 @@ element {
     text-color:                     @foreground;
     orientation:                    horizontal;
     border-radius:                  0px;
-    padding:                        0px 0px 0px -5px;
+    padding:                        5px 5px 30px 0px;
 }
 
 element-icon {

@@ -44,7 +44,6 @@ window {
     border:                  		0px;
     border-radius:                  0px 0px 25px 25px;
     border-color:                  	@border;
-    height:                         42%;
     width:                          100%;
     location:                       north;
     anchor:                         north;
@@ -65,7 +64,7 @@ inputbar {
     background-color:               @background-ib;
     text-color:                     @foreground;
     expand:                         false;
-    border:                  		0px 0px 1.8% 0px;
+    border:                  		0px 0px 2px 0px;
     border-radius:                  30px;
     border-color:                  	@border;
     margin:                         10px 35% 0% 35%;
@@ -94,6 +93,7 @@ case-indicator {
 listview {
     background-color:               @background;
     columns:                        10;
+    lines:							2;
     spacing:                        4px;
     cycle:                          false;
     dynamic:                        true;
@@ -104,7 +104,7 @@ mainbox {
     background-color:               @background;
     children:                       [ inputbar, listview ];
     spacing:                       	10px;
-    padding:                        5px 5px 5px 5px;
+    padding:                        5px 5px 10px 5px;
 }
 
 element {

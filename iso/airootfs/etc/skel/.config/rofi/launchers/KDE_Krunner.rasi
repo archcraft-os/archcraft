@@ -75,7 +75,7 @@ inputbar {
     border-radius:                  2px;
     border-color:                  	@border;
     margin:                         0px 0px 0px 0px;
-    padding:                        5px 5px 5px 5px;
+    padding:                        5px 5px 3px 5px;
     position:                       center;
 }
 

@@ -90,7 +90,7 @@ element {
     text-color:                     @foreground;
     orientation:                    vertical;
     border-radius:                  0px;
-    padding:                        0px 0px 0px -5px;
+    padding:                        0px 0px 28px -5px;
 }
 
 element-icon {

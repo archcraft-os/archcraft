@@ -35,7 +35,7 @@ textbox-prompt-colon {
 	str: 							"System |";
 	background-color: 				@background-alt;
 	text-color: 					@foreground;
-    padding:                        4px 0px 4px 60px;
+    padding:                        4px 0px 4px 80px;
 }
 
 inputbar {
@@ -91,7 +91,7 @@ element {
     orientation:                    horizontal;
     border:                  		0px;
     border-radius:                  100%;
-    padding:                        0px 0px 0px -5px;
+    padding:                        60px 60px 125px 60px;
 }
 
 element-icon {
@@ -104,7 +104,6 @@ element-text {
     expand:                         true;
     horizontal-align:               0.5;
     vertical-align:                 0.5;
-    margin:                         50px 60px 60px 65px;
 }
 
 element normal.urgent,

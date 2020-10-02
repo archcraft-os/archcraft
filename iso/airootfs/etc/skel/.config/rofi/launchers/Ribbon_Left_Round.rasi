@@ -42,7 +42,7 @@ inputbar {
     background-color:               @background;
     text-color:                     @foreground;
     expand:                         false;
-	border:							0% 0% 0.7% 0.2%;
+	border:							0% 0% 0.3% 0.2%;
 	border-color:					@border-alt;
     border-radius:                  1.5% 0% 1.5% 1%;
     margin:                         0.5% 0% 0% 0%;

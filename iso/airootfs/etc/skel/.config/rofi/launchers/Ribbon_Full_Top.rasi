@@ -42,7 +42,7 @@ inputbar {
     background-color:               @background;
     text-color:                     @foreground;
     expand:                         false;
-	border:							0% 0% 0.7% 0%;
+	border:							0% 0% 0.3% 0%;
 	border-color:					@border-alt;
     border-radius:                  0% 0% 0% 0%;
     margin:                         0.5% 55% 0% 0%;
@@ -84,8 +84,8 @@ mainbox {
     border-radius:                  0% 0% 0% 0%;
 	border-color:					@border-alt;
     children:                       [ inputbar, listview ];
-    spacing:                       	2%;
-    padding:                        8% 8% 8% 8%;
+    spacing:                       	5%;
+    padding:                        18% 8% 8% 8%;
 }
 
 element {
@@ -93,7 +93,7 @@ element {
     text-color:                     @foreground;
     orientation:                    vertical;
     border-radius:                  0%;
-    padding:                        1% 0% 1% 0%;
+    padding:                        2% 0% 2% 0%;
 }
 
 element-icon {
