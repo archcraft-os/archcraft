@@ -108,7 +108,7 @@ xorg-xkill
 xorg-xrandr
 xorg-xrdb
 
-##-------- Toupad and Mouse --------##
+##-------- Touchpad and Mouse --------##
 xorg-xinput
 xf86-input-libinput
 #xf86-input-synaptics
