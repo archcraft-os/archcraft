@@ -107,6 +107,7 @@ xorg-xfd
 xorg-xkill
 xorg-xrandr
 xorg-xrdb
+xorg-xset
 
 ##-------- Toupad and Mouse --------##
 xorg-xinput
