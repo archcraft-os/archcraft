@@ -23,9 +23,9 @@ window {
     border:		 	                0px;
     border-color:                   @SEL;
     border-radius:                  0px;
-    width:                          25%;
-    x-offset:                       1%;
-    y-offset:                       -7%;
+    width:                          350px;
+    x-offset:                       15px;
+    y-offset:                       -53px;
 }
 
 prompt {

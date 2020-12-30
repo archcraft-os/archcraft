@@ -1,6 +1,18 @@
-#!/bin/bash
+#!/usr/bin/bash
 
-BNESS="$(xbacklight -get)"
-LIGHT=${BNESS%.*}
+# Examples
+# Intel : intel_backlight
+# AMD : amdgpu_bl0
+
+CARD=`ls /sys/class/backlight | head -n 1`
+
+if [[ "$CARD" == *"intel_"* ]]; then
+	BNESS=`xbacklight -get`
+	LIGHT=${BNESS%.*}
+else
+	BNESS=`blight -d $CARD get brightness`
+	PERC="$(($BNESS*100/255))"
+	LIGHT=${PERC%.*}
+fi
 
 echo "$LIGHT"

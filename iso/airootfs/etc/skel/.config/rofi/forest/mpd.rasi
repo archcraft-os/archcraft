@@ -21,9 +21,9 @@ window {
     background-color:               @BG;
     text-color:                     @FG;
     border-radius:                  0px;
-    width:                          15%;
-    x-offset:                       -0.8%;
-    y-offset:                       5%;
+    width:                          250px;
+    x-offset:                       -15;
+    y-offset:                       43;
 }
 
 prompt {

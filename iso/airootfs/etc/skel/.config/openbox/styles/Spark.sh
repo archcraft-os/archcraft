@@ -85,7 +85,7 @@ sed -i -e 's/editor_font=.*/editor_font=Iosevka Custom 10/g' "$geany_path"/geany
 xfconf-query -c xsettings -p /Net/ThemeName -s "spark"
 xfconf-query -c xsettings -p /Net/IconThemeName -s "Hybrid_Light"
 xfconf-query -c xsettings -p /Gtk/CursorThemeName -s "Hybrid_Light"
-xfconf-query -c xsettings -p /Gtk/FontName -s "Noto Sans 8"
+xfconf-query -c xsettings -p /Gtk/FontName -s "Noto Sans 9"
 
 # openbox ---------------------------------
 obconfig () {
@@ -94,7 +94,7 @@ obconfig () {
 	theme="spark"
 	layout="LIMC"
 	font="Noto Sans"
-	fontsize="8"
+	fontsize="9"
 
 	# Theme
 	xmlstarlet ed -L -N a="$namespace" -u '/a:openbox_config/a:theme/a:name' -v "$theme" "$config"

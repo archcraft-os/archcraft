@@ -19,7 +19,7 @@ window {
     background-color:               @BG;
     text-color:                     @FG;
     border-radius:                  0px;
-    width:                          30%;
+    width:                          400px;
     location:                       center;
     anchor:                         center;
     x-offset:                       0;

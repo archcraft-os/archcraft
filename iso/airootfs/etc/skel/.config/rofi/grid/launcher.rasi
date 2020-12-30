@@ -21,7 +21,7 @@ window {
     border:		 	                1px;
     border-color:                   @SEL;
     border-radius:                  0px;
-    width:                          40%;
+    width:                          600px;
     location:                       center;
     anchor:                         center;
     x-offset:                       0;

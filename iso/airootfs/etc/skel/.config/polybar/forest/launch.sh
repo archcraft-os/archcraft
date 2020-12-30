@@ -7,4 +7,4 @@ killall -q polybar
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 # Launch the bar
-polybar main -c "$HOME"/.config/polybar/forest/config.ini &
+polybar -q main -c "$HOME"/.config/polybar/forest/config.ini &

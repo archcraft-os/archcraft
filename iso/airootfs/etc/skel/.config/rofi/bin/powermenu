@@ -41,7 +41,7 @@ rofi -dmenu\
 }
 
 # Variable passed to rofi
-MSG="Options : yes/no/y/n"
+MSG="Options : yes / no / y / n"
 options="$lock\n$suspend\n$logout\n$reboot\n$shutdown"
 
 chosen="$(echo -e "$options" | $rofi_command -p "UP - $uptime" -dmenu -selected-row 0)"
@@ -53,7 +53,7 @@ case $chosen in
 		elif [[ $ans == "no" ]] || [[ $ans == "NO" ]] || [[ $ans == "n" ]]; then
         exit
         else
-        rofi -theme "$ddir/confirm.rasi" -e "$MSG"
+        rofi -theme "$ddir/askpass.rasi" -e "$MSG"
         fi
         ;;
     $reboot)
@@ -63,7 +63,7 @@ case $chosen in
 		elif [[ $ans == "no" ]] || [[ $ans == "NO" ]] || [[ $ans == "n" ]]; then
         exit
         else
-        rofi -theme "$ddir/confirm.rasi" -e "$MSG"
+        rofi -theme "$ddir/askpass.rasi" -e "$MSG"
         fi
         ;;
     $lock)
@@ -78,7 +78,7 @@ case $chosen in
 		elif [[ $ans == "no" ]] || [[ $ans == "NO" ]] || [[ $ans == "n" ]]; then
         exit
         else
-        rofi -theme "$ddir/confirm.rasi" -e "$MSG"
+        rofi -theme "$ddir/askpass.rasi" -e "$MSG"
         fi
         ;;
     $logout)
@@ -88,7 +88,7 @@ case $chosen in
 		elif [[ $ans == "no" ]] || [[ $ans == "NO" ]] || [[ $ans == "n" ]]; then
         exit
         else
-        rofi -theme "$ddir/confirm.rasi" -e "$MSG"
+        rofi -theme "$ddir/askpass.rasi" -e "$MSG"
         fi
         ;;
 esac
