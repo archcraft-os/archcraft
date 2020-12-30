@@ -1,11 +1,14 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Available Styles
-# >> Styles Below Only Works With "rofi-git(AUR)", Tested On Version: 1.5.4-76-gca067234
-# full     full_circle     full_rounded     full_alt
-# card     card_circle     column     column_circle
-# row     row_alt     row_circle
-# single     single_circle     single_full     single_full_circle     single_rounded     single_text
+# >> Created and tested on : rofi 1.6.0-1
+#
+# column_circle     column_square     column_rounded     column_alt
+# card_circle     card_square     card_rounded     card_alt
+# dock_circle     dock_square     dock_rounded     dock_alt
+# drop_circle     drop_square     drop_rounded     drop_alt
+# full_circle     full_square     full_rounded     full_alt
+# row_circle      row_square      row_rounded      row_alt
 
 ## Default
 DIR="default"

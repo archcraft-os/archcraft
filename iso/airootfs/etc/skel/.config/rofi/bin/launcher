@@ -1,12 +1,15 @@
 #!/usr/bin/env bash
 
 # Available Styles
-# >> Styles Below Only Works With "rofi-git(AUR)", Tested On Version: 1.5.4-76-gca067234
+# >> Created and tested on : rofi 1.6.0-1
 #
-# Appdrawer | Appfolder | Blurry_Full | Blurry | Column | Gnome_Do | KDE_Krunner | KDE_Simplemenu | Launchpad | Screen | Slingshot
+# blurry	blurry_full		kde_simplemenu		kde_krunner		launchpad
+# gnome_do	slingshot		appdrawer			appdrawer_alt	appfolder
+# column	row				row_center			screen			row_dock		row_dropdown
 #
-# Ribbon_Bottom | Ribbon_Bottom_Round | Ribbon_Full_Bottom | Ribbon_Full_Left | Ribbon_Full_Right | Ribbon_Full_Top | Ribbon_Left 
-# Ribbon_Left_Round | Ribbon_Right | Ribbon_Right_Round | Ribbon_Top | Ribbon_Top_Round | Row_Bottom | Row_Center | Row_Dock | Row_Dropdown
+# ribbon_top		ribbon_top_round		ribbon_bottom	 	ribbon_bottom_round
+# ribbon_left		ribbon_left_round		ribbon_right		ribbon_right_round
+# full_bottom		full_top				full_left			full_right
 
 ## Default
 DIR="default"

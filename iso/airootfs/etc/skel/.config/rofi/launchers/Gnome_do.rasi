@@ -8,7 +8,7 @@
  */
 
 configuration {
-	font:							"Noto Sans 10";
+	font:							"FantasqueSansMono Nerd Font 12";
     show-icons:                     true;
 	icon-theme: 					"Papirus";
     display-drun: 					"";
@@ -19,23 +19,56 @@ configuration {
 	sidebar-mode: 					false;
 }
 
-/* -- Light-- */
+/* -- Classical -- */
 * {
-    background:                     #F5F5F5FF;
+    background:                     #27639AFF;
     background-alt:              	#00000000;
-    background-bar:                 #D7D7D7FF;
-    foreground:                     #000000A6;
-    accent:			            	#80808066;
+    background-bar:                 #f2f2f240;
+    foreground:                     #f2f2f2EE;
+    accent:			            	#3DAEE966;
 }
+
+/* -- Transparent -- */
+/*
+* {
+    background:                     #00000000;
+    background-alt:              	#00000000;
+    background-bar:                 #f2f2f215;
+    foreground:                     #f2f2f2EE;
+    accent:			            	#3DAEE966;
+}
+*/
+
+/* -- Light -- */
+/*
+* {
+    background:                     #e5e5e5ff;
+    background-alt:              	#00000000;
+    background-bar:                 #20202040;
+    foreground:                     #404040EE;
+    accent:			            	#3DAEE966;
+}
+*/
 
 /* -- Dark -- */
 /*
 * {
-    background:                     #3E4148FF;
-    background-alt:                 #00000000;
-    background-bar:                 #363A3FFF;
-    foreground:                     #F5F5F5FF;
-    accent:			            	#00000066;
+    background:                     #252525ff;
+    background-alt:              	#00000000;
+    background-bar:                 #10101040;
+    foreground:                     #e5e5e5EE;
+    accent:			            	#3DAEE966;
+}
+*/
+
+/* -- Black -- */
+/*
+* {
+    background:                     #000000ff;
+    background-alt:              	#00000000;
+    background-bar:                 #101010ff;
+    foreground:                     #e5e5e5EE;
+    accent:			            	#3DAEE966;
 }
 */
 
@@ -45,19 +78,19 @@ window {
     text-color:                     @foreground;
 	border:							0px;
 	border-color:					@border;
-    border-radius:                  4px;
-	width:							32%;
-    location:                       northwest;
-    x-offset:                       10px;
-    y-offset:                       50px;
+    border-radius:                  25px;
+	width:							26%;
+    location:                       center;
+    x-offset:                       0;
+    y-offset:                       0;
 }
 
 prompt {
-    enabled: 						true;
-	padding: 						0.30% 0.5% 0% 0%;
+    enabled: 						false;
+	padding: 						0%;
 	background-color: 				@background-alt;
 	text-color: 					@foreground;
-	font:							"FantasqueSansMono Nerd Font 10";
+	font:							"FantasqueSansMono Nerd Font 12";
 }
 
 entry {
@@ -65,9 +98,9 @@ entry {
     text-color:                     @foreground;
     placeholder-color:              @foreground;
     expand:                         true;
-    horizontal-align:               0;
-    placeholder:                    "Search Applications";
-    padding:                        -0.15% 0% 0% 0%;
+    horizontal-align:               0.5;
+    placeholder:                    "  Search";
+    padding:                        0% 0% 0% 0%;
     blink:                          true;
 }
 
@@ -76,17 +109,17 @@ inputbar {
     background-color:               @background;
     text-color:                     @foreground;
     expand:                         false;
-	border:							0.1%;
-    border-radius:                  4px;
+	border:							0% 0% 0% 0%;
+    border-radius:                  0px;
 	border-color:					@accent;
     margin:                         0% 0% 0% 0%;
-    padding:                        0.50%;
+    padding:                        0%;
 }
 
 listview {
     background-color:               @background-alt;
-    columns:                        5;
-    lines:                          3;
+    columns:                        2;
+    lines:                          1;
     spacing:                        0%;
     cycle:                          false;
     dynamic:                        true;
@@ -99,8 +132,8 @@ mainbox {
     border-radius:                  0% 0% 0% 0%;
 	border-color:					@accent;
     children:                       [ inputbar, listview ];
-    spacing:                       	1%;
-    padding:                        1.25% 0.65% 1.25% 0.65%;
+    spacing:                       	2%;
+    padding:                        2% 1% 2% 1%;
 }
 
 element {
@@ -108,11 +141,11 @@ element {
     text-color:                     @foreground;
     orientation:                    vertical;
     border-radius:                  0%;
-    padding:                        2% 0% 2% 0%;
+    padding:                        2.5% 0% 2.5% 0%;
 }
 
 element-icon {
-    size:                           64px;
+    size:                           128px;
     border:                         0px;
 }
 
@@ -126,7 +159,7 @@ element-text {
 element selected {
     background-color:               @background-bar;
     text-color:                     @foreground;
-	border:							0.1%;
-    border-radius:                  4px;
+	border:							0% 0% 0% 0%;
+    border-radius:                  15px;
     border-color:                  	@accent;
 }

@@ -19,23 +19,34 @@ configuration {
 	sidebar-mode: 					false;
 }
 
-/* -- Light-- */
+/* -- Breeze Light-- */
 * {
-    background:                     #F5F5F5FF;
+    background:                     #EFF0F1FF;
     background-alt:              	#00000000;
-    background-bar:                 #D7D7D7FF;
+    background-bar:                 #93CEE999;
     foreground:                     #000000A6;
-    accent:			            	#80808066;
+    accent:			            	#3DAEE9FF;
 }
 
-/* -- Dark -- */
+/* -- Breeze Dark-- */
 /*
 * {
-    background:                     #3E4148FF;
-    background-alt:                 #00000000;
-    background-bar:                 #363A3FFF;
-    foreground:                     #F5F5F5FF;
-    accent:			            	#00000066;
+    background:                     #31363bff;
+    background-alt:              	#00000000;
+    background-bar:                 #3daee966;
+    foreground:                     #f5f5f5e6;
+    accent:			            	#1d99f3ff;
+}
+*/
+
+/* -- Black-- */
+/*
+* {
+    background:                     #000000ff;
+    background-alt:              	#00000000;
+    background-bar:                 #3daee966;
+    foreground:                     #f5f5f5b3;
+    accent:			            	#1d99f3ff;
 }
 */
 
@@ -45,16 +56,16 @@ window {
     text-color:                     @foreground;
 	border:							0px;
 	border-color:					@border;
-    border-radius:                  4px;
-	width:							32%;
-    location:                       northwest;
-    x-offset:                       10px;
-    y-offset:                       50px;
+    border-radius:                  0px;
+	width:							38%;
+    location:                       north;
+    x-offset:                       0;
+    y-offset:                       0;
 }
 
 prompt {
     enabled: 						true;
-	padding: 						0.30% 0.5% 0% 0%;
+	padding: 						0.30% 0.75% 0% -0.5%;
 	background-color: 				@background-alt;
 	text-color: 					@foreground;
 	font:							"FantasqueSansMono Nerd Font 10";
@@ -66,7 +77,7 @@ entry {
     placeholder-color:              @foreground;
     expand:                         true;
     horizontal-align:               0;
-    placeholder:                    "Search Applications";
+    placeholder:                    "Search";
     padding:                        -0.15% 0% 0% 0%;
     blink:                          true;
 }
@@ -80,14 +91,14 @@ inputbar {
     border-radius:                  4px;
 	border-color:					@accent;
     margin:                         0% 0% 0% 0%;
-    padding:                        0.50%;
+    padding:                        1%;
 }
 
 listview {
     background-color:               @background-alt;
-    columns:                        5;
-    lines:                          3;
-    spacing:                        0%;
+    columns:                        1;
+    lines:                          7;
+    spacing:                        0.5%;
     cycle:                          false;
     dynamic:                        true;
     layout:                         vertical;
@@ -100,27 +111,27 @@ mainbox {
 	border-color:					@accent;
     children:                       [ inputbar, listview ];
     spacing:                       	1%;
-    padding:                        1.25% 0.65% 1.25% 0.65%;
+    padding:                        1% 0.5% 1% 0.5%;
 }
 
 element {
     background-color:               @background-alt;
     text-color:                     @foreground;
-    orientation:                    vertical;
+    orientation:                    horizontal;
     border-radius:                  0%;
-    padding:                        2% 0% 2% 0%;
+    padding:                        0.5%;
 }
 
 element-icon {
-    size:                           64px;
+    size:                           32px;
     border:                         0px;
 }
 
 element-text {
     expand:                         true;
-    horizontal-align:               0.5;
+    horizontal-align:               0;
     vertical-align:                 0.5;
-    margin:                         0.5% 0.5% -0.5% 0.5%;
+    margin:                         0% 0% 0% 0.25%;
 }
 
 element selected {

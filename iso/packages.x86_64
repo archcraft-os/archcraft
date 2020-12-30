@@ -109,7 +109,7 @@ xorg-xrandr
 xorg-xrdb
 xorg-xset
 
-##-------- Toupad and Mouse --------##
+##-------- Touchpad and Mouse --------##
 xorg-xinput
 xf86-input-libinput
 #xf86-input-synaptics

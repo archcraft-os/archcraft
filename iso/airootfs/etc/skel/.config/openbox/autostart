@@ -5,7 +5,7 @@ nitrogen --restore
 xfsettingsd &
 
 ## Start Compositing Manager
-exec compton -b &
+exec compton &
 
 ## Launch Polybar
 sh ~/.config/polybar/launch.sh
@@ -28,6 +28,9 @@ ksuperkey -e 'Super_R=Alt_L|F1' &
 
 ## Enable power management
 xfce4-power-manager &
+
+## Adjust backlight (AMD)
+#blight -d amdgpu_bl0 set 20%
 
 ## Getting Started
 gs_run_once.sh

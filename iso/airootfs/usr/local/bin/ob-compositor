@@ -8,7 +8,7 @@
 # User's config dir
 dir="$HOME/.config/"
 
-readonly EXECXCOMP='compton -b'
+readonly EXECXCOMP='compton'
 readonly RESTART_ATTEMPTS=20
 readonly HELP='
 al-compositor an openbox pipe menu for use with compton
@@ -82,11 +82,13 @@ elif [[ $1 = '--watch' ]]; then
     done
 
 elif [[ $1 = '--enableblur' ]]; then
+    sed -i -e 's/backend = .*/backend = "glx";/g' $dir/compton.conf
     sed -i -e 's/blur-background = .*/blur-background = true;/g' $dir/compton.conf
     sed -i -e 's/blur-background-frame = .*/blur-background-frame = true;/g' $dir/compton.conf
     "$0" --restart
 
 elif [[ $1 = '--disableblur' ]]; then
+    sed -i -e 's/backend = .*/backend = "xrender";/g' $dir/compton.conf
     sed -i -e 's/blur-background = .*/blur-background = false;/g' $dir/compton.conf
     sed -i -e 's/blur-background-frame = .*/blur-background-frame = false;/g' $dir/compton.conf
     "$0" --restart
