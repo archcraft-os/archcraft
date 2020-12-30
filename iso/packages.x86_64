@@ -201,7 +201,7 @@ pv
 ranger
 scrot
 termite
-terminus-font-otb
+terminus-font
 thunar
 thunar-archive-plugin
 thunar-media-tags-plugin
@@ -241,9 +241,11 @@ ac-wallpapers
 
 ##-------- AUR Packages --------##
 betterlockscreen
+blight
 colorpicker
 compton-tryone-git
 grub-silent
+i3lock-color
 ksuperkey
 networkmanager-dmenu-git
 obmenu-generator
