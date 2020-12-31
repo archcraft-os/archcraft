@@ -43,14 +43,19 @@ EOL
 
 ## Hide Unnecessary Apps
 adir="/usr/share/applications"
-sed -i '$s/$/\nNoDisplay=true/' $adir/avahi-discover.desktop $adir/bssh.desktop $adir/bvnc.desktop $adir/compton.desktop $adir/echomixer.desktop \
-$adir/envy24control.desktop $adir/exo-mail-reader.desktop \
-$adir/exo-preferred-applications.desktop $adir/feh.desktop $adir/gparted.desktop \
-$adir/hdajackretask.desktop $adir/hdspconf.desktop $adir/hdspmixer.desktop $adir/hwmixvolume.desktop $adir/lftp.desktop \
-$adir/libfm-pref-apps.desktop $adir/lxshortcut.desktop $adir/lstopo.desktop $adir/mimeinfo.cache \
-$adir/networkmanager_dmenu.desktop $adir/nm-connection-editor.desktop $adir/pcmanfm-desktop-pref.desktop \
-$adir/qv4l2.desktop $adir/qvidcap.desktop $adir/stoken-gui.desktop $adir/stoken-gui-small.desktop $adir/thunar-bulk-rename.desktop \
-$adir/thunar-settings.desktop $adir/thunar-volman-settings.desktop $adir/yad-icon-browser.desktop
+apps=(avahi-discover.desktop bssh.desktop bvnc.desktop compton.desktop echomixer.desktop \
+envy24control.desktop exo-mail-reader.desktop exo-preferred-applications.desktop feh.desktop gparted.desktop \
+hdajackretask.desktop hdspconf.desktop hdspmixer.desktop hwmixvolume.desktop lftp.desktop \
+libfm-pref-apps.desktop lxshortcut.desktop lstopo.desktop mimeinfo.cache \
+networkmanager_dmenu.desktop nm-connection-editor.desktop pcmanfm-desktop-pref.desktop \
+qv4l2.desktop qvidcap.desktop stoken-gui.desktop stoken-gui-small.desktop thunar-bulk-rename.desktop \
+thunar-settings.desktop thunar-volman-settings.desktop yad-icon-browser.desktop)
+
+for app in "${apps[@]}"; do
+	if [[ -f "$adir/$app" ]]; then
+		sed -i '$s/$/\nNoDisplay=true/' "$adir/$app"
+	fi
+done
 
 ## Other Stuff
 cp /usr/bin/networkmanager_dmenu /usr/local/bin/nmd && sed -i 's/config.ini/nmd.ini/g' /usr/local/bin/nmd

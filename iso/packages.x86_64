@@ -193,6 +193,7 @@ pcmanfm
 pkg-config
 plank
 polkit
+powertop
 pulseaudio
 pulseaudio-alsa
 pulseaudio-equalizer-ladspa
