@@ -59,8 +59,8 @@ prerequisite() {
 		(type -p mkarchiso &> /dev/null) && { echo; echo "${ORANGE}[*] ${GREEN}Dependencies are succesfully installed!"; } || { echo; echo "${BLUE}[!] ${RED}Error Occured, failed to install dependencies."; echo; reset_color; exit 1; }
 	fi
 	{ echo; echo ${ORANGE}"[*] ${BLUE}Modifying /usr/bin/mkarchiso - ${CYAN}"; echo; }
-	sudo cp /usr/bin/mkarchiso{,.bak} && sudo sed -i -e 's/-c -G -M/-i -c -G -M/g' /usr/bin/mkarchiso
-	sudo sed -i -e 's/archiso-x86_64/archcraftiso-x86_64/g' /usr/bin/mkarchiso
+	sudo cp -f /usr/bin/mkarchiso /usr/bin/mkarchcraftiso && sudo sed -i -e 's/-c -G -M/-i -c -G -M/g' /usr/bin/mkarchcraftiso
+	sudo sed -i -e 's/archiso-x86_64/archcraftiso-x86_64/g' /usr/bin/mkarchcraftiso
 	{ echo; echo -e ${ORANGE}"[*] ${GREEN}Succesfully Modified."; echo; }
 }
 
@@ -116,7 +116,7 @@ set_extra () {
 	if [[ $answer = "Y" ]] || [[ $answer = "y" ]]; then
 		{ echo ${ORANGE}"[*] ${BLUE}Alright, Setting up edex-ui... ${CYAN}"; echo; }
 		cd $DIR/iso/airootfs && mkdir opt && cd opt
-		wget -q https://github.com/GitSquared/edex-ui/releases/download/v2.2.2/eDEX-UI.Linux.x86_64.AppImage
+		wget -q https://github.com/GitSquared/edex-ui/releases/download/v2.2.7/eDEX-UI.Linux.x86_64.AppImage
 		if [[ -f $DIR/iso/airootfs/opt/eDEX-UI.Linux.x86_64.AppImage ]]; then
 			chmod 755 eDEX-UI.Linux.x86_64.AppImage
 			cat > $DIR/iso/airootfs/usr/share/applications/eDEX-UI.desktop <<- _EOF_
@@ -140,7 +140,7 @@ set_extra () {
 ## Changing ownership to root to avoid false permissions error
 set_mod () {
 	echo ${ORANGE}"[*] ${BLUE}Setting up correct permissions..."
-	sudo chown -R root:root $DIR/iso/
+	sudo sed -i -e 's/--no-preserve=ownership,mode/--no-preserve=ownership/g' /usr/bin/mkarchcraftiso
 	{ echo; echo ${ORANGE}"[*] ${GREEN}Setup Completed, follow the next step to build the ISO."; echo; }
 }
 
