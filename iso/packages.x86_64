@@ -256,7 +256,7 @@ obmenu-generator
 perl-linux-desktopfiles
 plymouth
 polybar
-pyroom
+#pyroom
 timeshift
 toilet
 tty-clock
