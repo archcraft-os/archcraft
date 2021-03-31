@@ -200,6 +200,7 @@ pulseaudio-equalizer-ladspa
 pavucontrol
 pv
 ranger
+rofi
 scrot
 termite
 terminus-font
@@ -243,8 +244,10 @@ ac-wallpapers
 ##-------- AUR Packages --------##
 betterlockscreen
 blight
+cava
 colorpicker
 compton-tryone-git
+downgrade
 grub-silent
 i3lock-color
 ksuperkey
@@ -253,11 +256,9 @@ obmenu-generator
 perl-linux-desktopfiles
 plymouth
 polybar
-rofi-git
-yay
-cava
-downgrade
 pyroom
+timeshift
 toilet
 tty-clock
 unimatrix-git
+yay
