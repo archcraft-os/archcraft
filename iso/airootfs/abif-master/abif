@@ -1462,10 +1462,12 @@ install_root(){
 	 rsync -a --progress ${BYPASS} ${MOUNTPOINT}/ 2>>/tmp/.errlog
 	 umount -l ${BYPASS}
   else
-     AIROOTIMG="/run/archiso/sfs/airootfs/"
+     #AIROOTIMG="/run/archiso/sfs/airootfs/"
+     AIROOTIMG="/run/archiso/airootfs/"
 
 	 # set the counter for pv data
-     counter=$(find /run/archiso/sfs/airootfs/ | wc -l)
+     #counter=$(find /run/archiso/sfs/airootfs/ | wc -l)
+     counter=$(find /run/archiso/airootfs/ | wc -l)
 
 	 # give rsync a progress bar as we install using pv and dialog
      rsync -av --no-i-r ${AIROOTIMG} ${MOUNTPOINT}/ 2>/tmp/.errlog | \
