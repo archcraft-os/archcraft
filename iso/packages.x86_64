@@ -79,6 +79,7 @@ rp-pppoe
 rsync
 rxvt-unicode-terminfo
 sdparm
+shadowsocks # a useful network proxy tool, neccessary for users in chinese mainland.
 sg3_utils
 smartmontools
 sudo
@@ -92,6 +93,7 @@ usb_modeswitch
 usbutils
 vim
 vpnc
+v2ray # a useful network proxy tool, neccessary for users in chinese mainland.
 wireless-regdb
 wireless_tools
 wpa_supplicant
