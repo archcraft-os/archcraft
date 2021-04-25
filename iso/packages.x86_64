@@ -61,6 +61,7 @@ ndisc6
 nfs-utils
 nilfs-utils
 nmap
+noto-fonts-cjk #this font package is big, should be optional to user
 ntfs-3g
 nvme-cli
 ntp
