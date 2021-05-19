@@ -75,7 +75,7 @@ Yet another minimal linux distribution, based on <a href="https://www.archlinux.
 **2. Build ISO -** If you're already using archlinux & want to build the iso, maybe with your config then...
 
 ***Check list***
-- [ ] **archiso** version : `47.1-1`
+- [ ] **archiso** version : `51-1`
 - [ ] At least 10GB of free space
 - [ ] Arch Linux 64-bit only
 - [ ] Clear pacman cache; ```sudo pacman -Scc```
@@ -118,7 +118,7 @@ menuentry "Archcraft OS Amd_x86_x64" --class archcraft {
     set pqr="/dev/disk/by-uuid/$abc"
     loopback loop $isofile
     linux  (loop)/arch/boot/x86_64/vmlinuz-linux img_dev=$pqr img_loop=$isofile driver=$dri quiet splash vt.global_cursor_default=0 loglevel=2 rd.systemd.show_status=false rd.udev.log-priority=3 sysrq_always_enabled=1 cow_spacesize=2G
-    initrd  (loop)/arch/boot/intel-ucode.img (loop)/arch/boot/amd-ucode.img (loop)/arch/boot/x86_64/archiso.img
+    initrd  (loop)/arch/boot/intel-ucode.img (loop)/arch/boot/amd-ucode.img (loop)/arch/boot/x86_64/initramfs-linux.img
 }
 ```
 <br />
@@ -136,7 +136,7 @@ dd bs=4M if=/path/to/archcraft.iso of=/dev/sdX status=progress oflag=sync
 
 + Default `username` and `password` is **liveuser**.
 + After installing Archcraft, run `sudo pacman -Syy` to sync pacman database.
-+ **Important -** I've tested Archcraft on two laptops, with intel pantium & i3 CPUs. Obviously ISO have intel-video drivers, if you have `nvidia` or something, edit **packages.x86_64** and uncomment the driver package according to your GPU, or WM/DE might freeze on startup (Blank/Gray screen after login).
++ **Important -** I've tested Archcraft on two laptops, with Intel Pentium & Core i3 CPUs. Obviously ISO have intel-video drivers, if you have `nvidia` or something, edit **packages.x86_64** and uncomment the driver package according to your GPU, or WM/DE might freeze on startup (Blank/Gray screen after login).
 + If polybar is not showing some icons properly, run `~/.config/polybar/fix_modules.sh` to fix **Battery** & **Network** Modules.
 + If grub is not showing other installed OSs, please run `sudo grub-mkconfig -o /boot/grub/grub.cfg` to regenerate grub config file on first boot into Archcraft OS.
 + Update the lockscreen according to your screen resolution with `betterlockscreen -u /usr/share/backgrounds/wal_10.jpg` if it's messed up.
