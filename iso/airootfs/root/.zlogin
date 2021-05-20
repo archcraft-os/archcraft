@@ -1,1 +1,0 @@
-~/.automated_script.sh
