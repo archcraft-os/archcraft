@@ -1,0 +1,11 @@
+root:x:0:root
+adm:x:4:liveuser
+wheel:x:10:liveuser
+network:x:18:liveuser
+storage:x:21:liveuser
+power:x:23:liveuser
+audio:x:15:liveuser
+video:x:16:liveuser
+scanner:x:20:liveuser
+optical:x:22:liveuser
+users:x:985:

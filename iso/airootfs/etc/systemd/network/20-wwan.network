@@ -1,0 +1,15 @@
+#
+# SPDX-License-Identifier: GPL-3.0-or-later
+
+[Match]
+Type=wwan
+
+[Network]
+DHCP=yes
+IPv6PrivacyExtensions=yes
+
+[DHCPv4]
+RouteMetric=2048
+
+[DHCPv6]
+RouteMetric=2048
