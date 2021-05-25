@@ -169,9 +169,15 @@ inetutils
 midori
 networkmanager
 networkmanager-openvpn
+bluez
+bluez-utils
 nethogs
 nm-connection-editor
 wget
+
+## Printers -----
+cups
+gutenprint
 
 ## Sound -----
 alsa-plugins
@@ -251,6 +257,11 @@ jq
 gparted
 gvfs
 gvfs-mtp
+gvfs-afc
+gvfs-gphoto2
+gvfs-smb
+gvfs-google
+sshfs
 udisks2
 gtk-engine-murrine
 pv
@@ -290,10 +301,6 @@ linux-headers
 open-vm-tools
 xf86-input-vmmouse
 xf86-video-vmware
-
-##-------- Printers -----------------##
-cups
-gutenprint
 
 ##-------- grub ---------------------##
 os-prober

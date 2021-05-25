@@ -1,5 +1,3 @@
-# Development Version : Do Not Build it.
-
 <p align="center">
 <a href="https://archcraft-os.github.io"><img src="https://raw.githubusercontent.com/archcraft-os/archcraft-misc-pkgs/main/archcraft-pixmaps/src/icons/archcraft.png" height="150" width="150" alt="Archcraft"></a>
 </p>
