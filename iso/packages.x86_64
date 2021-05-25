@@ -255,10 +255,13 @@ udisks2
 gtk-engine-murrine
 pv
 xmlstarlet
+xsettingsd
 yad
 xclip
 
 ## Utilities -----
+fortune-mod
+meld
 lxappearance
 nitrogen
 plank
