@@ -37,6 +37,7 @@ Yet another minimal linux distribution, based on <a href="https://www.archlinux.
 
 - [Things To Do After Installing Archcraft OS](https://archcraft-os.github.io/blog/post_install.html)
 - [Build Archcraft ISO With Its Source](https://archcraft-os.github.io/blog/build.html)
+- [Install Archcraft With Calamares (With Encryption)](https://archcraft-os.github.io/blog/calamares.html)
 - [Install Archcraft On UEFI System (With Encryption)](https://archcraft-os.github.io/blog/uefi.html)
 - [Install Archcraft On BIOS System (With Encryption)](https://archcraft-os.github.io/blog/bios.html)
 - [Create A Bootable USB With Archcraft](https://archcraft-os.github.io/blog/usb.html)
