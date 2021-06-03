@@ -2,4 +2,4 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-exec midori -a 'https://archcraft-os.github.io/install.html'
+exec midori -a 'https://archcraft.io/install'
