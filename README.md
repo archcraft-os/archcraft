@@ -1,5 +1,5 @@
 <p align="center">
-<a href="https://archcraft-os.github.io"><img src="https://raw.githubusercontent.com/archcraft-os/archcraft-misc-pkgs/main/archcraft-pixmaps/src/icons/archcraft.png" height="150" width="150" alt="Archcraft"></a>
+<a href="https://archcraft.io"><img src="https://raw.githubusercontent.com/archcraft-os/archcraft-misc-pkgs/main/archcraft-pixmaps/src/icons/archcraft.png" height="150" width="150" alt="Archcraft"></a>
 </p>
 
 <p align="center">
@@ -22,11 +22,11 @@ Yet another minimal linux distribution, based on <a href="https://www.archlinux.
 </p>
 
 <p align="center">
-<a href="https://archcraft-os.github.io">Homepage</a> | 
-<a href="https://archcraft-os.github.io/install.html">Installation</a> | 
-<a href="https://archcraft-os.github.io/features.html">Features</a> | 
-<a href="https://archcraft-os.github.io/gallery.html">Screenshots</a> | 
-<a href="https://archcraft-os.github.io/blog.html">Wiki</a>
+<a href="https://archcraft.io">Homepage</a> | 
+<a href="https://archcraft.io/install">Installation</a> | 
+<a href="https://archcraft.io/features">Features</a> | 
+<a href="https://archcraft.io/gallery">Screenshots</a> | 
+<a href="https://archcraft.io/blog">Wiki</a>
 </p>
 
 ![gif](https://raw.githubusercontent.com/archcraft-os/archcraft-os.github.io/master/img/main.gif) <br />
@@ -35,13 +35,13 @@ Yet another minimal linux distribution, based on <a href="https://www.archlinux.
 
 ### Latest Blog Posts
 
-- [Things To Do After Installing Archcraft OS](https://archcraft-os.github.io/blog/post_install.html)
-- [Build Archcraft ISO With Its Source](https://archcraft-os.github.io/blog/build.html)
-- [Install Archcraft With Calamares (With Encryption)](https://archcraft-os.github.io/blog/calamares.html)
-- [Install Archcraft On UEFI System (With Encryption)](https://archcraft-os.github.io/blog/uefi.html)
-- [Install Archcraft On BIOS System (With Encryption)](https://archcraft-os.github.io/blog/bios.html)
-- [Create A Bootable USB With Archcraft](https://archcraft-os.github.io/blog/usb.html)
-- [Boot Archcraft ISO With GRUB2 Bootloader](https://archcraft-os.github.io/blog/grub.html)
+- [Things To Do After Installing Archcraft OS](https://archcraft.io/blog/post_install)
+- [Build Archcraft ISO With Its Source](https://archcraft.io/blog/build)
+- [Install Archcraft With Calamares (With Encryption)](https://archcraft.io/blog/calamares)
+- [Install Archcraft On UEFI System (With Encryption)](https://archcraft.io/blog/uefi)
+- [Install Archcraft On BIOS System (With Encryption)](https://archcraft.io/blog/bios)
+- [Create A Bootable USB With Archcraft](https://archcraft.io/blog/usb)
+- [Boot Archcraft ISO With GRUB2 Bootloader](https://archcraft.io/blog/grub)
 
 ### Get The ISO
 
