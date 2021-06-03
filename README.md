@@ -11,9 +11,9 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/Maintained%3F-Yes-green?style=flat-square">
+  <img src="https://img.shields.io/sourceforge/dt/archcraft.svg?color=teal&style=flat-square">
   <img src="https://img.shields.io/github/license/archcraft-os/archcraft?style=flat-square">
   <img src="https://img.shields.io/github/stars/archcraft-os/archcraft?style=flat-square">
-  <img src="https://img.shields.io/github/forks/archcraft-os/archcraft?color=teal&style=flat-square">
   <img src="https://img.shields.io/github/issues/archcraft-os/archcraft?color=violet&style=flat-square">
 </p>
 
@@ -47,7 +47,7 @@ Yet another minimal linux distribution, based on <a href="https://www.archlinux.
 
 **1. Download -** You can either download already generated ISO file, or...
 <p align="center">
-  <a href="https://sourceforge.net/projects/archcraft/files/latest/download" target="_blank"><img alt="undefined" src="https://img.shields.io/badge/Sourceforge-Download-orange?style=for-the-badge&logo=sourceforge"></a>
+  <a href="https://sourceforge.net/projects/archcraft/files/latest/download" target="_blank"><img alt="undefined" src="https://a.fsdn.com/con/app/sf-download-button"></a>
 </p>
   
 **2. Build ISO -** If you're already using archlinux & want to build the iso, maybe with your config then...
