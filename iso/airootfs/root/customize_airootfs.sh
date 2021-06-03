@@ -23,6 +23,11 @@ EOL
 
 ## -------------------------------------------------------------- ##
 
+## Make empty database
+touch /var/lib/pacman/sync/{core.db,extra.db,community.db,multilib.db,archcraft.db}
+
+## -------------------------------------------------------------- ##
+
 ## Copy Few Configs Into Root Dir
 rdir="/root/.config"
 sdir="/etc/skel"
