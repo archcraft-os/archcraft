@@ -18,7 +18,7 @@ Include = /etc/pacman.d/mirrorlist
 ## Archcraft Repository
 [archcraft]
 SigLevel = Optional TrustAll
-Server = https://archcraft-os.github.io/archcraft-pkgs/\$arch
+Server = https://archcraft.io/archcraft-pkgs/\$arch
 EOL
 
 ## -------------------------------------------------------------- ##
