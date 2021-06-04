@@ -58,9 +58,8 @@ sed -i -e 's#Comment=.*#Comment=Archcraft System Installer#g' "$calamares"
 
 ## -------------------------------------------------------------- ##
 
-## Modify Timeshift Desktop File
-
-sed -i -e 's#Exec=timeshift-launcher#Exec=apps_as_root.sh timeshift-gtk#g' /usr/share/applications/timeshift-gtk.desktop
+## Remove thunar wallpaper plugin
+rm -rf /usr/lib/thunarx-3/thunar-wallpaper-plugin.so
 
 ## -------------------------------------------------------------- ##
 
