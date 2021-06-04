@@ -272,6 +272,7 @@ yad
 xclip
 
 ## Utilities -----
+baobab
 fortune-mod
 meld
 lxappearance
@@ -351,4 +352,5 @@ timeshift
 toilet
 tty-clock
 unimatrix-git
+xfce-polkit
 yay
