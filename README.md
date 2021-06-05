@@ -53,7 +53,7 @@ Yet another minimal linux distribution, based on <a href="https://www.archlinux.
 **2. Build ISO -** If you're already using archlinux & want to build the iso, maybe with your config then...
 
 ***Check list***
-- [ ] **archiso** version : `54-1`
+- [ ] **archiso** version : `55-1`
 - [ ] At least 10GB of free space
 - [ ] Arch Linux 64-bit only
 - [ ] Clear pacman cache; ```sudo pacman -Scc```
