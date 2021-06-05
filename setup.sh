@@ -128,7 +128,7 @@ set_omz () {
 
 ## Changing ownership to root to avoid false permissions error
 final_msg () {
-	echo -e ${ORANGE}"[*] ${GREEN}Setup Completed, Change to 'iso' directory and Run './mkarchcraftiso -v' as root to build the ISO.\n"
+	echo -e ${ORANGE}"[*] ${GREEN}Setup Completed, Change to 'iso' directory and Run './mkarchcraftiso -v .' as root to build the ISO.\n"
 }
 
 ## Main
