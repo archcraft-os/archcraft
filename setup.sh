@@ -58,8 +58,9 @@ prerequisite() {
 		sudo pacman -Sy archiso --noconfirm
 		(type -p mkarchiso &> /dev/null) && { echo; echo "${ORANGE}[*] ${GREEN}Dependencies are succesfully installed!"; } || { echo; echo "${BLUE}[!] ${RED}Error Occured, failed to install dependencies."; echo; reset_color; exit 1; }
 	fi
-	{ echo; echo ${ORANGE}"[*] ${BLUE}Creating /usr/bin/mkarchcraftiso - ${CYAN}"; echo; }
-	sudo cp -f /usr/bin/mkarchiso /usr/bin/mkarchcraftiso && sudo sed -i -e 's/-c -G -M/-i -c -G -M/g' /usr/bin/mkarchcraftiso
+	{ echo; echo ${ORANGE}"[*] ${BLUE}Creating /usr/bin/mkarchcraftiso - ${CYAN}"; echo; }	
+	cp -f /usr/bin/mkarchiso "$DIR"/iso/mkarchcraftiso && sed -i -e 's/-c -G -M/-i -c -G -M/g' "$DIR"/iso/mkarchcraftiso
+	sed -i -e 's|\[\[ -d \"${pacstrap_dir}/var/lib/pacman/sync\"|#\[\[ -d \"${pacstrap_dir}/var/lib/pacman/sync\"|g' "$DIR"/iso/mkarchcraftiso
 	{ echo; echo -e ${ORANGE}"[*] ${GREEN}'mkarchcraftiso' created succesfully."; echo; }
 }
 
@@ -115,7 +116,7 @@ set_omz () {
 set_mod () {
 	echo ${ORANGE}"[*] ${BLUE}Setting up correct permissions..."
 	sudo sed -i -e 's/--no-preserve=ownership,mode/--no-preserve=ownership/g' /usr/bin/mkarchcraftiso
-	{ echo; echo ${ORANGE}"[*] ${GREEN}Setup Completed, Change to 'iso' directory and Run './build.sh -v' as root to build the ISO."; echo; }
+	{ echo; echo ${ORANGE}"[*] ${GREEN}Setup Completed, Change to 'iso' directory and Run './mkarchcraftiso -v' as root to build the ISO."; echo; }
 }
 
 ## Main

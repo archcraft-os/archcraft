@@ -1,0 +1,1 @@
+liveuser  ALL=(ALL) NOPASSWD: /usr/bin/sed
