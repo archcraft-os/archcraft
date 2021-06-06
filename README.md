@@ -70,16 +70,16 @@ chmod +x setup.sh
 ./setup.sh
 ```
 
-+ Now, Change to the **iso** directory & run `build.sh` as **root**.
++ Now, Change to the **iso** directory & run `mkarchcraftiso` as **root**.
 ```bash
 cd iso
 sudo su
-./build.sh -v
+./mkarchcraftiso -v .
 ```
 
 + If everything goes well, you'll have the ISO in **iso/out** directory. <br />
 
-> If you want to Rebuild the ISO, remove ***work*** & ***out*** dirs inside `iso` directory first. then run `./build.sh -v` as **root**. You don't need to run `setup.sh` again, it's a one time process only. 
+> If you want to Rebuild the ISO, remove ***work*** & ***out*** dirs inside `iso` directory first. then run `./mkarchcraftiso -v .` as **root**. You don't need to run `setup.sh` again, it's a one time process only. 
 
 ### Boot The ISO
 
