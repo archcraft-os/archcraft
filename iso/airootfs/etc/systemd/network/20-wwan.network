@@ -2,7 +2,7 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 [Match]
-Type=wwan
+Name=ww*
 
 [Network]
 DHCP=yes

@@ -51,22 +51,37 @@ trap exit_on_signal_SIGTERM SIGTERM
 
 ## Prerequisite
 prerequisite() {
-	{ echo; echo ${ORANGE}"[*] ${BLUE}Installing Dependencies... ${CYAN}"; echo; }
+	echo -e ${ORANGE}"\n[*] ${BLUE}Installing Dependencies... ${CYAN}\n"
 	if [[ -f /usr/bin/mkarchiso ]]; then
-		{ echo ${ORANGE}"[*] ${GREEN}Dependencies are already Installed!"; }
+		echo ${ORANGE}"[*] ${GREEN}Dependencies are already Installed!"
 	else
 		sudo pacman -Sy archiso --noconfirm
-		(type -p mkarchiso &> /dev/null) && { echo; echo "${ORANGE}[*] ${GREEN}Dependencies are succesfully installed!"; } || { echo; echo "${BLUE}[!] ${RED}Error Occured, failed to install dependencies."; echo; reset_color; exit 1; }
+		(type -p mkarchiso &> /dev/null) && echo -e "${ORANGE}\n[*] ${GREEN}Dependencies are succesfully installed!" \
+		|| { echo -e "${BLUE}\n[!] ${RED}Error Occured, failed to install dependencies.\n"; reset_color; exit 1; }
 	fi
-	{ echo; echo ${ORANGE}"[*] ${BLUE}Creating /usr/bin/mkarchcraftiso - ${CYAN}"; echo; }
-	sudo cp -f /usr/bin/mkarchiso /usr/bin/mkarchcraftiso && sudo sed -i -e 's/-c -G -M/-i -c -G -M/g' /usr/bin/mkarchcraftiso
-	{ echo; echo -e ${ORANGE}"[*] ${GREEN}'mkarchcraftiso' created succesfully."; echo; }
+	echo -e ${ORANGE}"\n[*] ${BLUE}Creating 'mkarchcraftiso' ... ${CYAN}"	
+
+	# copy mkarchiso
+	cp -f /usr/bin/mkarchiso "$DIR"/iso/mkarchcraftiso && chmod +x "$DIR"/iso/mkarchcraftiso
+	sed -i -e 's/-c -G -M/-i -c -G -M/g' "$DIR"/iso/mkarchcraftiso
+
+	# do not delete package database
+	sed -i -e 's|\[\[ -d \"${pacstrap_dir}/var/lib/pacman/sync\"|#\[\[ -d \"${pacstrap_dir}/var/lib/pacman/sync\"|g' "$DIR"/iso/mkarchcraftiso
+
+	# preserve mode
+	sed -i -e 's/--no-preserve=ownership,mode/--no-preserve=ownership/g' "$DIR"/iso/mkarchcraftiso
+	
+	if [[ -f "$DIR"/iso/mkarchcraftiso ]]; then
+		echo -e ${ORANGE}"\n[*] ${GREEN}'mkarchcraftiso' created succesfully.\n"
+	else
+		echo -e ${ORANGE}"\n[*] ${RED}Failed to create 'mkarchcraftiso'.\n"
+	fi
 }
 
 ## Setup extra stuff
 set_omz () {
 	# Setup OMZ
-	{ echo ${ORANGE}"[*] ${BLUE}Setting Up Oh-My-Zsh - ${CYAN}"; echo; }
+	echo -e ${ORANGE}"[*] ${BLUE}Setting Up Oh-My-Zsh - ${CYAN}\n"
 	cd $DIR/iso/airootfs/etc/skel && git clone https://github.com/robbyrussell/oh-my-zsh.git --depth 1 .oh-my-zsh
 	cp $DIR/iso/airootfs/etc/skel/.oh-my-zsh/templates/zshrc.zsh-template $DIR/iso/airootfs/etc/skel/.zshrc
 	sed -i -e 's/ZSH_THEME=.*/ZSH_THEME="archcraft"/g' $DIR/iso/airootfs/etc/skel/.zshrc
@@ -108,19 +123,17 @@ set_omz () {
 		alias gc='git commit -m'
 		alias gp='git push origin master'
 	_EOF_
-	{ echo; echo ${ORANGE}"[*] ${GREEN}Done. OMZ added successfully."; echo; }
+	echo -e ${ORANGE}"\n[*] ${GREEN}Done. OMZ added successfully.\n"
 }
 
 ## Changing ownership to root to avoid false permissions error
-set_mod () {
-	echo ${ORANGE}"[*] ${BLUE}Setting up correct permissions..."
-	sudo sed -i -e 's/--no-preserve=ownership,mode/--no-preserve=ownership/g' /usr/bin/mkarchcraftiso
-	{ echo; echo ${ORANGE}"[*] ${GREEN}Setup Completed, Change to 'iso' directory and Run './build.sh -v' as root to build the ISO."; echo; }
+final_msg () {
+	echo -e ${ORANGE}"[*] ${GREEN}Setup Completed, Change to 'iso' directory and Run './mkarchcraftiso -v .' as root to build the ISO.\n"
 }
 
 ## Main
 banner
 prerequisite
 set_omz
-set_mod
+final_msg
 exit 0

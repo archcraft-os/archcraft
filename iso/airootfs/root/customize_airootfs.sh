@@ -9,22 +9,47 @@ set -e -u
 
 ## -------------------------------------------------------------- ##
 
+## Enable Parallel Downloads
+sed -i -e 's|#ParallelDownloads.*|ParallelDownloads = 6|g' /etc/pacman.conf
+sed -i -e '/#\[testing\]/Q' /etc/pacman.conf
+
 ## Append archcraft repository to pacman.conf
 cat >> "/etc/pacman.conf" <<- EOL
+	## Archcraft Repository
+	[archcraft]
+	SigLevel = Optional TrustAll
+	Server = https://archcraft.io/archcraft-pkgs/\$arch
 
-[multilib]
-Include = /etc/pacman.d/mirrorlist
+	#[testing]
+	#Include = /etc/pacman.d/mirrorlist
 
-## Archcraft Repository
-[archcraft]
-SigLevel = Optional TrustAll
-Server = https://archcraft.io/archcraft-pkgs/\$arch
+	[core]
+	Include = /etc/pacman.d/mirrorlist
+
+	[extra]
+	Include = /etc/pacman.d/mirrorlist
+
+	#[community-testing]
+	#Include = /etc/pacman.d/mirrorlist
+
+	[community]
+	Include = /etc/pacman.d/mirrorlist
+
+	# If you want to run 32 bit applications on your x86_64 system,
+	# enable the multilib repositories as required here.
+
+	#[multilib-testing]
+	#Include = /etc/pacman.d/mirrorlist
+
+	[multilib]
+	Include = /etc/pacman.d/mirrorlist
+
+	# An example of a custom package repository.  See the pacman manpage for
+	# tips on creating your own repositories.
+	#[custom]
+	#SigLevel = Optional TrustAll
+	#Server = file:///home/custompkgs
 EOL
-
-## -------------------------------------------------------------- ##
-
-## Make empty database
-touch /var/lib/pacman/sync/{core.db,extra.db,community.db,multilib.db,archcraft.db}
 
 ## -------------------------------------------------------------- ##
 

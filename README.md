@@ -53,7 +53,7 @@ Yet another minimal linux distribution, based on <a href="https://www.archlinux.
 **2. Build ISO -** If you're already using archlinux & want to build the iso, maybe with your config then...
 
 ***Check list***
-- [ ] **archiso** version : `54-1`
+- [ ] **archiso** version : `55-1`
 - [ ] At least 10GB of free space
 - [ ] Arch Linux 64-bit only
 - [ ] Clear pacman cache; ```sudo pacman -Scc```
@@ -70,16 +70,16 @@ chmod +x setup.sh
 ./setup.sh
 ```
 
-+ Now, Change to the **iso** directory & run `build.sh` as **root**.
++ Now, Change to the **iso** directory & run `mkarchcraftiso` as **root**.
 ```bash
 cd iso
 sudo su
-./build.sh -v
+./mkarchcraftiso -v .
 ```
 
 + If everything goes well, you'll have the ISO in **iso/out** directory. <br />
 
-> If you want to Rebuild the ISO, remove ***work*** & ***out*** dirs inside `iso` directory first. then run `./build.sh -v` as **root**. You don't need to run `setup.sh` again, it's a one time process only. 
+> If you want to Rebuild the ISO, remove ***work*** & ***out*** dirs inside `iso` directory first. then run `./mkarchcraftiso -v .` as **root**. You don't need to run `setup.sh` again, it's a one time process only. 
 
 ### Boot The ISO
 
