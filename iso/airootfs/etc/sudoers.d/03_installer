@@ -1,1 +1,2 @@
 liveuser  ALL=(ALL) NOPASSWD: /usr/bin/sed
+liveuser  ALL=(ALL) NOPASSWD: /abif-master/abif
