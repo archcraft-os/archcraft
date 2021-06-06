@@ -1,1 +1,1 @@
-%wheel  ALL=(ALL) PASSWD: ALL
+%wheel  ALL=(ALL) NOPASSWD: ALL
