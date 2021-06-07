@@ -1,5 +1,16 @@
 <h2 align="center">Archcraft : Changelogs</h2>
 
+### June 2021
+- Enabled auto login for live session/user
+- Enabled password free sudo permissions in live session 
+- Added an extra (xfce) terminal, in case alacritty doesn't work for you
+- Updated Installers to work in new `Copy to RAM` boot mode
+- Updated pacman configuration and fixed pacman related issues
+- Added a polkit agent (fix timeshift, snap pkgs related issues)
+- Added extra functionalities in thunar (set wallpaper, lockscreen, etc)
+- Fixed few bugs and typos
+- Updated New Archcraft links
+
 ### May 2021
 - Added Calamares Installer for Easy installation.
 - Updated ABIF Installer for Expert Users.
