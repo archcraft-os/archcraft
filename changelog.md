@@ -11,6 +11,8 @@
 - Fixed few bugs and typos
 - Updated New Archcraft links
 
+#
+
 ### May 2021
 - Added Calamares Installer for Easy installation.
 - Updated ABIF Installer for Expert Users.
@@ -28,14 +30,14 @@
 - Added new gtk themes, icon packs and cursor themes.
 - Updated the source code to the latest archiso.
 
----
+#
 
 ### April 2021
 - Fixed blackscreen issue after login.
 - Fixed few bugs and improved few stuff.
 - Etc...
 
----
+#
 
 ### January 2021
 - Fixed locking on closing laptop lid.
@@ -45,7 +47,7 @@
 - Fixed compositor issues.
 - Added New Launchers and powermenus.
 
----
+#
 
 ### October 2020
 - Fixed powermenu issue, duplicate mpd notification
@@ -55,7 +57,7 @@
 - Added a distraction free text editor
 - More Nvidia GPU support (GeForce 630-900, 10-20, Quadro/Tesla/Tegra K-series, NVE0, NV110, etc)
 
----
+#
 
 ### September 2020
 - Added a startup guide to help you begin with Archcraft OS.
