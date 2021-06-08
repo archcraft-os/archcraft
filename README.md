@@ -11,8 +11,8 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/Maintained%3F-Yes-green?style=flat-square">
-  <img src="https://img.shields.io/sourceforge/dt/archcraft.svg?color=teal&style=flat-square">
-  <img src="https://img.shields.io/github/license/archcraft-os/archcraft?style=flat-square">
+  <img src="https://img.shields.io/github/downloads/archcraft-os/releases/total?label=downloads&logo=github&color=blue&style=flat-square">
+  <img src="https://img.shields.io/sourceforge/dt/archcraft.svg?label=downloads&logo=sourceforge&color=teal&style=flat-square">
   <img src="https://img.shields.io/github/stars/archcraft-os/archcraft?style=flat-square">
   <img src="https://img.shields.io/github/issues/archcraft-os/archcraft?color=violet&style=flat-square">
 </p>
@@ -45,9 +45,11 @@ Yet another minimal linux distribution, based on <a href="https://www.archlinux.
 
 ### Get The ISO
 
-**1. Download -** You can either download already generated ISO file, or...
+**1. Download -** You can download latest release of `ISO` (see [`releases`](https://github.com/archcraft-os/releases)), Available options are...
 <p align="center">
-  <a href="https://sourceforge.net/projects/archcraft/files/latest/download" target="_blank"><img alt="undefined" src="https://a.fsdn.com/con/app/sf-download-button"></a>
+  <a href="https://github.com/archcraft-os/releases/releases/download/v21.06/archcraft-2021.06.06-x86_64.iso" target="_blank"><img alt="undefined" src="https://img.shields.io/badge/Download-Github-blue?style=for-the-badge&logo=github"></a>&nbsp;&nbsp;
+  <a href="https://sourceforge.net/projects/archcraft/files/latest/download" target="_blank"><img alt="undefined" src="https://img.shields.io/badge/Download-Sourceforge-orange?style=for-the-badge&logo=sourceforge"></a>&nbsp;&nbsp;
+  <a href="https://github.com/archcraft-os/releases/releases/download/v21.06/archcraft-2021.06.06-x86_64.iso.torrent" target="_blank"><img alt="undefined" src="https://img.shields.io/badge/Download-Torrent-magenta?style=for-the-badge&logo=discogs"></a>
 </p>
   
 **2. Build ISO -** If you're already using archlinux & want to build the iso, maybe with your config then...
