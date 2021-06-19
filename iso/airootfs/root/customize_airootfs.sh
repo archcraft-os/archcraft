@@ -72,17 +72,6 @@ done
 
 ## -------------------------------------------------------------- ##
 
-## Modify Calamares Desktop File
-calamares='/usr/share/applications/calamares.desktop'
-
-sed -i -e 's#Exec=sh.*#Exec=sh -c "/etc/calamares/launch.sh"#g' "$calamares"
-sed -i -e 's#Name=.*#Name=Install Archcraft#g' "$calamares"
-sed -i -e 's#GenericName=.*#GenericName=System Installer#g' "$calamares"
-sed -i -e 's#Icon=.*#Icon=archcraft#g' "$calamares"
-sed -i -e 's#Comment=.*#Comment=Archcraft System Installer#g' "$calamares"
-
-## -------------------------------------------------------------- ##
-
 ## Remove thunar wallpaper plugin
 rm -rf /usr/lib/thunarx-3/thunar-wallpaper-plugin.so
 
