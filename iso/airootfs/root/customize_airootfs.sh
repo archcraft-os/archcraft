@@ -98,4 +98,4 @@ done
 ## Other Stuff
 cp /usr/bin/networkmanager_dmenu /usr/local/bin/nmd && sed -i 's/config.ini/nmd.ini/g' /usr/local/bin/nmd
 rm -rf /usr/share/xsessions/openbox-kde.desktop /usr/share/applications/xfce4-about.desktop
-rm -rf /usr/share/pixmaps/archlinux.png /usr/share/pixmaps/archlinux.svg
+rm -rf /usr/share/pixmaps/{archlinux-logo.png,archlinux-logo.svg}
