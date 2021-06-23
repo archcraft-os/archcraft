@@ -9,6 +9,26 @@ set -e -u
 
 ## -------------------------------------------------------------- ##
 
+## Fix Initrd Generation in Installed System
+cat > "/etc/mkinitcpio.d/linux.preset" <<- _EOF_
+	# mkinitcpio preset file for the 'linux' package
+
+	ALL_kver="/boot/vmlinuz-linux"
+	ALL_config="/etc/mkinitcpio.conf"
+
+	PRESETS=('default' 'fallback')
+
+	#default_config="/etc/mkinitcpio.conf"
+	default_image="/boot/initramfs-linux.img"
+	#default_options=""
+
+	#fallback_config="/etc/mkinitcpio.conf"
+	fallback_image="/boot/initramfs-linux-fallback.img"
+	fallback_options="-S autodetect"    
+_EOF_
+
+## -------------------------------------------------------------- ##
+
 ## Enable Parallel Downloads
 sed -i -e 's|#ParallelDownloads.*|ParallelDownloads = 6|g' /etc/pacman.conf
 sed -i -e '/#\[testing\]/Q' /etc/pacman.conf
