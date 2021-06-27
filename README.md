@@ -26,7 +26,8 @@ Yet another minimal linux distribution, based on <a href="https://www.archlinux.
 <a href="https://archcraft.io/install">Installation</a> | 
 <a href="https://archcraft.io/features">Features</a> | 
 <a href="https://archcraft.io/gallery">Screenshots</a> | 
-<a href="https://archcraft.io/blog">Wiki</a>
+<a href="https://archcraft.io/blog">Blog</a> | 
+<a href="https://archcraft.io/wiki">Wiki</a>
 </p>
 
 ![gif](https://raw.githubusercontent.com/archcraft-os/archcraft-os.github.io/master/img/main.gif) <br />
