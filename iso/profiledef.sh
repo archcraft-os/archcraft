@@ -4,7 +4,7 @@
 iso_name="archcraft"
 iso_label="archcraft_$(date +%Y%m)"
 iso_publisher="Aditya Shakya <http://www.github.com/adi1090x>"
-iso_application="Yet another minimal linux distribution, based on Arch Linux."
+iso_application="Yet another minimal Linux distribution, based on Arch Linux."
 iso_version="$(date +%Y.%m.%d)"
 install_dir="arch"
 buildmodes=('iso')
