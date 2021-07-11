@@ -18,7 +18,7 @@
 </p>
 
 <p align="center">
-Yet another minimal linux distribution, based on <a href="https://www.archlinux.org">Arch Linux</a>.
+Yet another minimal Linux distribution, based on <a href="https://www.archlinux.org">Arch Linux</a>.
 </p>
 
 <p align="center">
@@ -46,7 +46,7 @@ Yet another minimal linux distribution, based on <a href="https://www.archlinux.
 
 ### Get The ISO
 
-**1. Download -** You can download latest release of `ISO` (see [`releases`](https://github.com/archcraft-os/releases)), Available options are...
+**1. Download -** You can download the latest release of `ISO` (see [`releases`](https://github.com/archcraft-os/releases)), Available options are...
 <p align="center">
   <a href="https://github.com/archcraft-os/releases/releases/download/v21.06/archcraft-2021.06.06-x86_64.iso" target="_blank"><img alt="undefined" src="https://img.shields.io/badge/Download-Github-blue?style=for-the-badge&logo=github"></a>&nbsp;&nbsp;
   <a href="https://sourceforge.net/projects/archcraft/files/latest/download" target="_blank"><img alt="undefined" src="https://img.shields.io/badge/Download-Sourceforge-orange?style=for-the-badge&logo=sourceforge"></a>&nbsp;&nbsp;
@@ -55,13 +55,13 @@ Yet another minimal linux distribution, based on <a href="https://www.archlinux.
   
 **2. Build ISO -** If you're already using archlinux & want to build the iso, maybe with your config then...
 
-***Check list***
-- [ ] **archiso** version : `55-1`
+***Checklist***
+- [ ] **archiso** version: `55-1`
 - [ ] At least 10GB of free space
 - [ ] Arch Linux 64-bit only
 - [ ] Clear pacman cache; ```sudo pacman -Scc```
 
-+ Open terminal and clone the **archcraft** repository.
++ Open a terminal and clone the **archcraft** repository.
 ```bash
 git clone --depth=1 https://github.com/archcraft-os/archcraft.git
 ```
@@ -82,7 +82,7 @@ sudo su
 
 + If everything goes well, you'll have the ISO in **iso/out** directory. <br />
 
-> If you want to Rebuild the ISO, remove ***work*** & ***out*** dirs inside `iso` directory first. then run `./mkarchcraftiso -v .` as **root**. You don't need to run `setup.sh` again, it's a one time process only. 
+> If you want to Rebuild the ISO, remove ***work*** & ***out*** dirs inside `iso` directory first. then run `./mkarchcraftiso -v .` as **root**. You don't need to run `setup.sh` again, it's a one-time process only. 
 
 ### Boot The ISO
 
@@ -109,7 +109,8 @@ dd bs=4M if=/path/to/archcraft.iso of=/dev/sdX status=progress oflag=sync
 ```
 <br />
 
-**3. Using Etcher -** If you use *Windows*, or maybe linux but afraid of ***dd***, then you can use [Etcher](https://www.balena.io/etcher/) to make a bootable USB/SDcard.
+**3. Using Etcher -** In case you are afraid of ***dd***, then you can use [Etcher](https://www.balena.io/etcher/) to make a bootable USB/SDcard.
+This supports Windows, Linux, Mac and has a beautiful UI.
 
 ### FYI
 
@@ -117,4 +118,4 @@ dd bs=4M if=/path/to/archcraft.iso of=/dev/sdX status=progress oflag=sync
 + After installing Archcraft, run `sudo pacman -Syy` to sync pacman database.
 + If polybar is not showing some icons properly, run `~/.config/polybar/fix_modules.sh` to fix **Battery** & **Network** Modules.
 + You need to enable **os-prober** for Archcraft to detect other installed OS. Edit `/etc/default/grub` file and uncomment `#GRUB_DISABLE_OS_PROBER=false`, then run `sudo grub-mkconfig -o /boot/grub/grub.cfg` to regenerate grub config file.
-+ Update the lockscreen according to your screen resolution with `betterlockscreen -u /usr/share/backgrounds/wal_10.jpg` if it's messed up.
++ Update the lock screen according to your screen resolution with `betterlockscreen -u /usr/share/backgrounds/wal_10.jpg` if it's messed up.
