@@ -1,5 +1,0 @@
-#!/bin/sh
-#
-# SPDX-License-Identifier: GPL-3.0-or-later
-
-exec midori -a 'https://archcraft.io/install'
