@@ -1,0 +1,7 @@
+polkit.addRule(function(action, subject) {
+    if (/^org\.freedesktop\.udisks\./.test(action.id)
+        && subject.isInGroup("wheel"))
+    {
+        return polkit.Result.YES;
+    }
+});
