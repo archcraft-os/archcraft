@@ -117,14 +117,6 @@ EOL
 
 ## -------------------------------------------------------------- ##
 
-## Lightdm config (Greeter, Autologin)
-lightdm_config='/etc/lightdm/lightdm.conf'
-sed -i -e 's|#greeter-session=.*|greeter-session=lightdm-webkit2-greeter|g' "$lightdm_config"
-sed -i -e 's|#autologin-user=.*|autologin-user=liveuser|g' "$lightdm_config"
-sed -i -e 's|#autologin-session=.*|autologin-session=openbox|g' "$lightdm_config"
-groupadd -r autologin
-gpasswd -a liveuser autologin
-
 ## Set `Qogirr` as default cursor theme
 sed -i -e 's|Inherits=.*|Inherits=Qogirr|g' /usr/share/icons/default/index.theme
 mkdir -p /etc/skel/.icons && cp -rf /usr/share/icons/default /etc/skel/.icons/default

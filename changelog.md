@@ -1,5 +1,16 @@
 <h2 align="center">Archcraft : Changelogs</h2>
 
+### October 2021
+**`Bug Fix Release for v21.09`**
+- Fixed `drivers getting removed via installer` bug (backlight, external monitor issues)
+- Removed support for `flatpak` as it caused issue with thunar and plank (and other gtk applications)
+- Removed support for `snaps` (Arch community really hated it)
+- Replaced `lightdm` with **`sddm`**, as webkit2-greeter was causing issues on older machines
+- Improved `openbox`, `bspwm`, `polybar` and other stuff
+- And... I learned that I don't ~~need to~~ have to add everything people suggest
+
+#
+
 ### September 2021
 - Created from scratch (for better updates and easy maintenance)
 - New **`base`**, **`logo`**, **`packages`**, **`repository`**, etc

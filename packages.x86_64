@@ -238,6 +238,7 @@ neovim
 
 ## Fonts -----
 noto-fonts
+noto-fonts-emoji
 terminus-font
 ttf-dejavu
 
@@ -293,11 +294,6 @@ slop
 xfce4-power-manager
 xfce4-settings
 
-## ADS -----
-flatpak
-snapd
-pamac-all
-
 ## QT Style -----
 kvantum-qt5
 qt5ct
@@ -326,9 +322,8 @@ plymouth
 archcraft-plymouth-theme
 
 ##-------- Display Manager ----------##
-lightdm
-lightdm-webkit2-greeter
-archcraft-lightdm-webkit2-theme
+sddm
+archcraft-sddm-theme-default
 
 ##-------- Archcraft Packages -------##
 archcraft-cursors
@@ -359,14 +354,15 @@ chaotic-keyring
 
 ##-------- AUR Packages -------------##
 betterlockscreen
-blight
 cava
 colorpicker
 downgrade
 i3lock-color
 ksuperkey
+light
 networkmanager-dmenu-git
 obmenu-generator
+pamac-aur
 perl-linux-desktopfiles
 picom-ibhagwan-git
 polybar

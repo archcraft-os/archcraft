@@ -1,1 +1,1 @@
-/usr/lib/systemd/system/lightdm-plymouth.service
+/usr/lib/systemd/system/sddm-plymouth.service
