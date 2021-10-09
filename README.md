@@ -36,13 +36,11 @@ Yet another minimal linux distribution, based on <a href="https://www.archlinux.
 
 ### From Archcraft Wiki
 
-- [Things To Do After Installing Archcraft OS](https://wiki.archcraft.io/installation/post_install)
-- [Build Archcraft ISO With Its Source](https://wiki.archcraft.io/misc/build_iso)
-- [Install Archcraft With Calamares (With Encryption)](https://wiki.archcraft.io/installation/calamares)
-- [Install Archcraft On UEFI System (With Encryption)](https://wiki.archcraft.io/installation/abif/uefi)
-- [Install Archcraft On BIOS System (With Encryption)](https://wiki.archcraft.io/installation/abif/bios)
-- [Create A Bootable USB With Archcraft](https://wiki.archcraft.io/installation/boot/usb)
-- [Boot Archcraft ISO With GRUB2 Bootloader](https://wiki.archcraft.io/installation/boot/grub)
+- [Things To Do After Installing Archcraft](https://wiki.archcraft.io/docs/install-archcraft/post-install)
+- [Install Archcraft With Calamares](https://wiki.archcraft.io/docs/install-archcraft/install-with-calamares)
+- [Install Archcraft With ABIF](https://wiki.archcraft.io/docs/install-archcraft/install-with-abif)
+- [Create A Bootable USB With Archcraft](https://wiki.archcraft.io/docs/boot-iso/boot-with-usb)
+- [Boot Archcraft ISO With GRUB2 Bootloader](https://wiki.archcraft.io/docs/boot-iso/boot-with-grub)
 
 ### Get The ISO
 
@@ -52,7 +50,6 @@ You can download latest release of `ISO` (see [`releases`](https://github.com/ar
   <a href="https://sourceforge.net/projects/archcraft/files/latest/download" target="_blank"><img alt="undefined" src="https://img.shields.io/badge/Download-Sourceforge-orange?style=for-the-badge&logo=sourceforge"></a>&nbsp;&nbsp;
   <a href="https://github.com/archcraft-os/releases/releases/download/v21.10/archcraft-2021.10.05-x86_64.iso.torrent" target="_blank"><img alt="undefined" src="https://img.shields.io/badge/Download-Torrent-magenta?style=for-the-badge&logo=discogs"></a>
 </p>
-
 
 > Default `username` and `password` is **liveuser**.
 
