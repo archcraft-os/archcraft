@@ -1,5 +1,15 @@
 <h2 align="center">Archcraft : Changelogs</h2>
 
+### February 2022
+**`Not a major Release, Just updated the ISO`**
+- Updated Alacritty Configs
+- Updated Dunst Configs
+- Updated Few Scripts
+- Updated the configs for all Window Managers
+- Screenshots in clipboard
+
+#
+
 ### October 2021
 **`Bug Fix Release for v21.09`**
 - Fixed `drivers getting removed via installer` bug (backlight, external monitor issues)

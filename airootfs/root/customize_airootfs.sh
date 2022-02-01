@@ -72,8 +72,8 @@ EOL
 
 ## Enable Chaotic AUR
 pacman-key --init
-pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com
-pacman-key --lsign-key 3056513887B78AEB
+pacman-key --recv-key FBA220DFC880C036 --keyserver keyserver.ubuntu.com
+pacman-key --lsign-key FBA220DFC880C036
 
 ## -------------------------------------------------------------- ##
 
