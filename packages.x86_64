@@ -267,6 +267,7 @@ patch
 pkg-config
 polkit
 powertop
+python2
 sshfs
 udisks2
 wmctrl
@@ -366,7 +367,7 @@ pamac-aur
 perl-linux-desktopfiles
 picom-ibhagwan-git
 polybar
-pyroom
+#pyroom
 timeshift
 toilet
 tty-clock
