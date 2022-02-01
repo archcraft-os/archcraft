@@ -77,6 +77,11 @@ pacman-key --lsign-key FBA220DFC880C036
 
 ## -------------------------------------------------------------- ##
 
+## Set zsh as default shell for new user
+sed -i -e 's#SHELL=.*#SHELL=/bin/zsh#g' /etc/default/useradd
+
+## -------------------------------------------------------------- ##
+
 ## Copy Few Configs Into Root Dir
 rdir="/root/.config"
 sdir="/etc/skel"
