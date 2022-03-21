@@ -135,6 +135,9 @@ xorg-xsetroot
 xorg-xinput
 xf86-input-libinput
 
+# enable NumLock (Num pad)
+numlockx
+
 ##-------- GPU Drivers (Intel/AMD/VM) --------##
 xf86-video-fbdev
 xf86-video-vesa
