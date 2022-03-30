@@ -1,7 +1,9 @@
-alsa-utils
+##-------- Base Packages ---------------------##
+
+#alsa-utils
 amd-ucode
-arch-install-scripts
-archinstall
+#arch-install-scripts
+#archinstall
 b43-fwcutter
 base
 bind-tools
@@ -33,8 +35,8 @@ gnu-netcat
 gpart
 gpm
 gptfdisk
-grml-zsh-config
-grub
+#grml-zsh-config
+#grub
 hdparm
 intel-ucode
 ipw2100-fw
@@ -52,7 +54,7 @@ linux
 linux-atm
 linux-firmware
 linux-firmware-marvell
-livecd-sounds
+#livecd-sounds
 lsscsi
 lvm2
 lynx
@@ -60,7 +62,7 @@ man-db
 man-pages
 mc
 mdadm
-memtest86+
+#memtest86+
 mkinitcpio
 mkinitcpio-archiso
 mkinitcpio-nfs-utils
@@ -84,7 +86,7 @@ pcsclite
 ppp
 pptpclient
 pv
-qemu-guest-agent
+#qemu-guest-agent
 refind
 reflector
 reiserfsprogs
@@ -110,7 +112,7 @@ usb_modeswitch
 usbmuxd
 usbutils
 vim
-virtualbox-guest-utils-nox
+#virtualbox-guest-utils-nox
 vpnc
 wireless-regdb
 wireless_tools
@@ -119,3 +121,242 @@ wvdial
 xfsprogs
 xl2tpd
 zsh
+
+##-------- Xorg Packages ---------------------##
+xorg-server
+xorg-xbacklight
+xorg-fonts-misc
+xorg-xfd
+xorg-xkill
+xorg-xrandr
+xorg-xrdb
+xorg-xset
+xorg-xev
+xorg-xmodmap
+xorg-xwininfo
+xorg-xsetroot
+
+##-------- Touchpad and Mouse ----------------##
+xorg-xinput
+xf86-input-libinput
+
+##-------- GPU Drivers (Intel/AMD/VM) --------##
+xf86-video-fbdev
+xf86-video-vesa
+xf86-video-intel
+xf86-video-amdgpu
+xf86-video-ati
+
+##-------- GPU Drivers (Nvidia) --------------##
+xf86-video-nouveau
+nvidia
+nvidia-utils
+nvidia-settings
+
+##-------- Programs --------------------------##
+
+## Networking / Internet -----
+inetutils
+firefox
+networkmanager
+networkmanager-openvpn
+nethogs
+nm-connection-editor
+
+## Bluetooth -----
+bluez
+bluez-utils
+blueman
+pulseaudio-bluetooth
+
+## Printers -----
+cups
+gutenprint
+
+## Sound -----
+alsa-plugins
+alsa-tools
+alsa-utils
+pavucontrol
+pulseaudio
+pulseaudio-alsa
+pulseaudio-equalizer-ladspa
+
+## Files -----
+ranger
+highlight
+trash-cli
+ueberzug
+thunar
+thunar-archive-plugin
+thunar-media-tags-plugin
+thunar-volman
+zip
+p7zip
+unzip
+unrar
+xarchiver
+xdg-user-dirs
+xdg-user-dirs-gtk
+
+## Images -----
+feh
+viewnior
+
+## Multimedia -----
+ffmpeg
+ffmpegthumbnailer
+mpc
+mpd
+mplayer
+ncmpcpp
+tumbler
+
+## Terminals -----
+alacritty
+xfce4-terminal
+
+## Docs / Editors -----
+atril
+geany
+geany-plugins
+vim
+
+## Fonts -----
+noto-fonts
+noto-fonts-emoji
+terminus-font
+ttf-dejavu
+
+## System -----
+acpi
+autoconf
+automake
+binutils
+bison
+calc
+fakeroot
+gcc
+gparted
+gtk-engine-murrine
+gvfs
+gvfs-mtp
+gvfs-afc
+gvfs-gphoto2
+gvfs-smb
+gvfs-google
+inotify-tools
+jq
+make
+patch
+pkg-config
+polkit
+powertop
+python2
+sshfs
+udisks2
+wmctrl
+xclip
+xdotool
+xmlstarlet
+yad
+
+## Utilities -----
+baobab
+dialog
+dunst
+gpick
+htop
+lxappearance
+meld
+ncdu
+nitrogen
+plank
+python-pywal
+rofi
+maim
+slop
+
+## XFCE tools -----
+xfce4-power-manager
+xfce4-settings
+xsettingsd
+
+## QT Style -----
+kvantum
+qt5ct
+
+##-------- Calamares ----------------##
+boost
+calamares
+calamares-config
+
+##-------- Hypervisors --------------##
+virtualbox-guest-utils
+qemu-guest-agent
+open-vm-tools
+xf86-input-vmmouse
+xf86-video-vmware
+
+##-------- Grub ---------------------##
+os-prober
+lsb-release
+archcraft/grub
+archcraft-grub-theme
+
+##-------- Plymouth -----------------##
+plymouth
+archcraft-plymouth-theme
+
+##-------- Display Manager ----------##
+sddm
+archcraft-sddm-theme-default
+
+##-------- Openbox ------------------##
+obconf
+openbox
+
+##-------- Bspwm --------------------##
+bspwm
+sxhkd
+
+##-------- Archcraft Packages -------##
+archcraft-cursors
+archcraft-icons
+archcraft-themes
+archcraft-wallpapers
+archcraft-fonts
+archcraft-skeleton
+archcraft-bspwm
+archcraft-openbox
+archcraft-music
+archcraft-vim
+archcraft-omz
+archcraft-scripts
+archcraft-pixmaps
+archcraft-artworks
+archcraft-about
+archcraft-help
+archcraft-welcome
+archcraft-hooks
+archcraft-installer
+archcraft-install-scripts
+
+archcraft-mirrorlist
+chaotic-mirrorlist
+chaotic-keyring
+
+##-------- AUR Packages -------------##
+betterlockscreen
+downgrade
+i3lock-color
+ksuperkey
+light
+networkmanager-dmenu-git
+obmenu-generator
+perl-linux-desktopfiles
+picom-ibhagwan-git
+polybar
+timeshift
+xfce-polkit
+yay
