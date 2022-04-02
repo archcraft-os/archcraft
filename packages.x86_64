@@ -312,14 +312,6 @@ archcraft-plymouth-theme
 sddm
 archcraft-sddm-theme-default
 
-##-------- Openbox ------------------##
-obconf
-openbox
-
-##-------- Bspwm --------------------##
-bspwm
-sxhkd
-
 ##-------- Archcraft Packages -------##
 archcraft-cursors
 archcraft-icons
