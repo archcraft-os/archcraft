@@ -2,8 +2,8 @@
 
 #alsa-utils
 amd-ucode
-#arch-install-scripts
-#archinstall
+arch-install-scripts
+archinstall
 b43-fwcutter
 base
 bind-tools
