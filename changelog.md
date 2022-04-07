@@ -1,5 +1,28 @@
 <h2 align="center">Archcraft : Changelogs</h2>
 
+### April 20222
+**`Just a regular ISO update`**
+- Removed a bunch of useless packages (`pamac`, `pcmanfm`, `leafpad`, `bmon`, `bashtop`, `neovim` and a lot more)
+- Updated all packages and window managers
+- Few minor changes in `Openbox`
+  - Updated style scripts (fixed dunst, added option for auto effects)
+  - Removed quick CMDs
+  - Removed extra polybars, rofi menus (launchers and powermenu)
+  - Removed pipemenus for launcher, powermenu, polybar, wallpaper generator
+- Few minor changes in `BSPWM`
+  - Using Thunar as default file manager
+  - Changed terminal fonts
+- Removed network applets from all window managers
+- Fixed network menu height and password visibility in all WMs
+- Fixed messed up dunst layout in all WMs
+- Updated ABIF installer to fix user creation
+- Removed neovim (Nvchad config, as it breaks very often)
+- Using a single lockscreen for all WMs
+- Removed few scripts such as `tasks`, `color-picker`, `wallpaper-generator`, etc.
+- And more..., Basically cleaned up the system and removed useless stuff.
+
+#
+
 ### February 2022
 **`Not a major Release, Just updated the ISO`**
 - Updated Alacritty Configs
