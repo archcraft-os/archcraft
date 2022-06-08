@@ -46,9 +46,9 @@ Yet another minimal linux distribution, based on <a href="https://www.archlinux.
 
 You can download latest release of `ISO` (see [`releases`](https://github.com/archcraft-os/releases)), Available options are...
 <p align="center">
-  <a href="https://github.com/archcraft-os/releases/releases/download/v22.04/archcraft-2022.04.07-x86_64.iso" target="_blank"><img alt="undefined" src="https://img.shields.io/badge/Download-Github-blue?style=for-the-badge&logo=github"></a>&nbsp;&nbsp;
+  <a href="https://github.com/archcraft-os/releases/releases/download/v22.06/archcraft-2022.06.08-x86_64.iso" target="_blank"><img alt="undefined" src="https://img.shields.io/badge/Download-Github-blue?style=for-the-badge&logo=github"></a>&nbsp;&nbsp;
   <a href="https://sourceforge.net/projects/archcraft/files/latest/download" target="_blank"><img alt="undefined" src="https://img.shields.io/badge/Download-Sourceforge-orange?style=for-the-badge&logo=sourceforge"></a>&nbsp;&nbsp;
-  <a href="https://github.com/archcraft-os/releases/releases/download/v22.04/archcraft-2022.04.07-x86_64.iso.torrent" target="_blank"><img alt="undefined" src="https://img.shields.io/badge/Download-Torrent-magenta?style=for-the-badge&logo=discogs"></a>
+  <a href="https://github.com/archcraft-os/releases/releases/download/v22.06/archcraft-2022.06.08-x86_64.iso.torrent" target="_blank"><img alt="undefined" src="https://img.shields.io/badge/Download-Torrent-magenta?style=for-the-badge&logo=discogs"></a>
 </p>
 
 > Default `username` and `password` is **liveuser**.
