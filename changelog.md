@@ -1,5 +1,16 @@
 <h2 align="center">Archcraft : Changelogs</h2>
 
+### June 2022
+**`Just a regular ISO update`**
+- Fixed plymouth theme issue
+- Updated default Kernel parameters for grub
+- Slime theme is back for both WMs
+- Updated neofetch Ascii
+- Updated the packages
+- Not much
+
+#
+
 ### April 20222
 **`Just a regular ISO update`**
 - Removed a bunch of useless packages (`pamac`, `pcmanfm`, `leafpad`, `bmon`, `bashtop`, `neovim` and a lot more)
