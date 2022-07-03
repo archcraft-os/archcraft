@@ -5,3 +5,5 @@
 #
 QT_QPA_PLATFORMTHEME=qt5ct
 PATH="/usr/share/archcraft/scripts"
+EDITOR=nano
+BROWSER=firefox
