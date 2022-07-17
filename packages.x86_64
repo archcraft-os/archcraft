@@ -6,19 +6,19 @@ arch-install-scripts
 archinstall
 b43-fwcutter
 base
-bind-tools
+bind
 brltty
 broadcom-wl
 btrfs-progs
 clonezilla
 cloud-init
-crda
 cryptsetup
 darkhttpd
 ddrescue
 dhclient
 dhcpcd
 diffutils
+dmidecode
 dmraid
 dnsmasq
 dosfstools
@@ -38,6 +38,7 @@ gptfdisk
 #grml-zsh-config
 #grub
 hdparm
+hyperv
 intel-ucode
 ipw2100-fw
 ipw2200-fw
@@ -66,6 +67,7 @@ mdadm
 mkinitcpio
 mkinitcpio-archiso
 mkinitcpio-nfs-utils
+mkinitcpio-firmware
 modemmanager
 mtools
 nano
@@ -76,6 +78,8 @@ nilfs-utils
 nmap
 ntfs-3g
 nvme-cli
+open-iscsi
+open-vm-tools
 openconnect
 openssh
 openvpn
@@ -123,18 +127,19 @@ xl2tpd
 zsh
 
 ##-------- Xorg Packages ---------------------##
-xorg-server
-xorg-xbacklight
-xorg-fonts-misc
-xorg-xfd
-xorg-xkill
-xorg-xrandr
-xorg-xrdb
-xorg-xset
-xorg-xev
-xorg-xmodmap
-xorg-xwininfo
-xorg-xsetroot
+xorg
+#xorg-server
+#xorg-xbacklight
+#xorg-fonts-misc
+#xorg-xfd
+#xorg-xkill
+#xorg-xrandr
+#xorg-xrdb
+#xorg-xset
+#xorg-xev
+#xorg-xmodmap
+#xorg-xwininfo
+#xorg-xsetroot
 
 ##-------- Touchpad and Mouse ----------------##
 xorg-xinput
