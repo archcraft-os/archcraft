@@ -1,5 +1,20 @@
 <h2 align="center">Archcraft : Changelogs</h2>
 
+### July 2022
+**`Just a regular ISO update`**
+- Updated the **ISO base** according to `archiso 65-1` (grub for UEFI boot)
+- Using `zstd` compression for mkinitcpio
+- Fixed `consolefont` and other warning on init generation
+- Updated **sddm config** files and naming convention
+- Updated users and groups related files
+- Fixed `openbox` as default session issue in sddm 
+- Updated all scripts and config files for all WMs
+- **`New BSPWM`** : Recreated base config, scripts and **New Theme Engine (Infinite Themes)** 
+- Added an **Easy Mode** in `openbox`, with bigger icons, fonts and UI elements.
+- Etc
+
+#
+
 ### June 2022
 **`Just a regular ISO update`**
 - Fixed plymouth theme issue
@@ -11,7 +26,7 @@
 
 #
 
-### April 20222
+### April 2022
 **`Just a regular ISO update`**
 - Removed a bunch of useless packages (`pamac`, `pcmanfm`, `leafpad`, `bmon`, `bashtop`, `neovim` and a lot more)
 - Updated all packages and window managers
