@@ -140,6 +140,11 @@ fi
 
 ## -------------------------------------------------------------- ##
 
+## Fix locale issue for calamares (glibc 2.36-4)
+mv /usr/share/i18n/SUPPORTED /usr/share/i18n/SUPPORTED.backup
+
+## -------------------------------------------------------------- ##
+
 ## Hide Unnecessary Apps
 adir="/usr/share/applications"
 apps=(avahi-discover.desktop bssh.desktop bvnc.desktop echomixer.desktop \
