@@ -1,5 +1,13 @@
 <h2 align="center">Archcraft : Changelogs</h2>
 
+### September 2022
+**`Just a regular ISO update`**
+- Updated the ISO with latest packages
+- Fixed Rofi menu and applets issue
+- Fixed Minor bugs, etc
+
+#
+
 ### July 2022
 **`Just a regular ISO update`**
 - Updated the **ISO base** according to `archiso 65-1` (grub for UEFI boot)
