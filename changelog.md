@@ -1,5 +1,24 @@
 <h2 align="center">Archcraft : Changelogs</h2>
 
+### January 2023
+**`Major Release`**
+- Created the ISO base from scratch
+- Better Network Manager Support, Various VPN plugins
+- Better Bluetooth Support
+- Pipewire For Sound/Audio (Systemwide, Bluetooth, Jack)
+- Better Printer Support
+- Almost All Audio, Video and Image Codecs
+- Better File manager functionality (Mounting, Networking, Archiving, etc)
+- Better multi-monitor support
+- CJK fonts pre-installed
+- New themes for both openbox and bspwm
+- Creating user themes are super easy now
+- So many minor changes, etc.
+
+> You need to re-install Archcraft for this update. After that, you can update to next release with `pacman`
+
+#
+
 ### September 2022
 **`Just a regular ISO update`**
 - Updated the ISO with latest packages

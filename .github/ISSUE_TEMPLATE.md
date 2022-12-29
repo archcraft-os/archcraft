@@ -3,7 +3,7 @@
 Please answer the following questions for yourself before submitting an issue.
 >**YOU MAY DELETE THE PREREQUISITES SECTION.**
 
-- [ ] I am using the [latest version](https://github.com/archcraft-os/releases/releases/tag/v21.10)
+- [ ] I am using the [latest version](https://github.com/archcraft-os/releases/releases)
 - [ ] I checked the [documentation](https://wiki.archcraft.io) and found no answer
 - [ ] I checked to make sure that this issue has not already been filed
 - [ ] I'm reporting the issue to the correct repository
