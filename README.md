@@ -3,14 +3,7 @@
 </p>
 
 <p align="center">
-  <a href="https://ko-fi.com/adi1090x"><img width="32px" src="https://raw.githubusercontent.com/archcraft-os/.github/main/profile/assets/1.png" alt="Donate for Archcraft on ko-fi"></a>&nbsp;
-  <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=6VETHHYHXESRN"><img width="32px" src="https://raw.githubusercontent.com/archcraft-os/.github/main/profile/assets/2.png" alt="Donate for Archcraft via Paypal"></a>&nbsp;
-  <a href="https://liberapay.com/adi1090x"><img width="32px" src="https://raw.githubusercontent.com/archcraft-os/.github/main/profile/assets/3.png" alt="Donate for Archcraft via Liberapay"></a>
-</p>
-
-<p align="center">
   <img src="https://img.shields.io/badge/Maintained%3F-Yes-green?style=flat-square">
-  <img src="https://img.shields.io/github/downloads/archcraft-os/releases/total?label=downloads&logo=github&color=blue&style=flat-square">
   <img src="https://img.shields.io/sourceforge/dt/archcraft.svg?label=downloads&logo=sourceforge&color=teal&style=flat-square">
   <img src="https://img.shields.io/github/stars/archcraft-os/archcraft?style=flat-square">
   <img src="https://img.shields.io/github/issues/archcraft-os/archcraft?color=violet&style=flat-square">
@@ -32,7 +25,11 @@ Yet another minimal linux distribution, based on <a href="https://www.archlinux.
 
 ![img](https://raw.githubusercontent.com/archcraft-os/core-packages/main/calamares-config/files/calamares/branding/archcraft/welcome.png)
 
----
+<p align="center">
+Archcraft is an <b>arch-based</b> rolling-release distribution aimed at users who cares more about <b><i>minimalism and aesthetics</i></b> of their desktop. It comes pre-configured with various lightweight applications which makes it super fast. It can run under 500Mb of memory. There are two window managers installed by default, <b>Openbox</b> and <b>Bspwm</b>.
+</p>
+
+#
 
 ### From Archcraft Wiki
 
@@ -41,16 +38,3 @@ Yet another minimal linux distribution, based on <a href="https://www.archlinux.
 - [Install Archcraft With ABIF](https://wiki.archcraft.io/docs/install-archcraft/install-with-abif)
 - [Create A Bootable USB With Archcraft](https://wiki.archcraft.io/docs/boot-iso/boot-with-usb)
 - [Boot Archcraft ISO With GRUB2 Bootloader](https://wiki.archcraft.io/docs/boot-iso/boot-with-grub)
-
-### Get The ISO
-
-You can download latest release of `ISO` (see [`releases`](https://github.com/archcraft-os/releases)), Available options are...
-<p align="center">
-  <a href="https://github.com/archcraft-os/releases/releases/download/v22.09/archcraft-2022.09.16-x86_64.iso" target="_blank"><img alt="undefined" src="https://img.shields.io/badge/Download-Github-blue?style=for-the-badge&logo=github"></a>&nbsp;&nbsp;
-  <a href="https://sourceforge.net/projects/archcraft/files/latest/download" target="_blank"><img alt="undefined" src="https://img.shields.io/badge/Download-Sourceforge-orange?style=for-the-badge&logo=sourceforge"></a>&nbsp;&nbsp;
-  <a href="https://github.com/archcraft-os/releases/releases/download/v22.09/archcraft-2022.09.16-x86_64.iso.torrent" target="_blank"><img alt="undefined" src="https://img.shields.io/badge/Download-Torrent-magenta?style=for-the-badge&logo=discogs"></a>
-</p>
-
-> Default `username` and `password` is **liveuser**.
-
-> Don't forget to hit the **`STAR`** if you love Archcraft.
