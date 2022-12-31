@@ -277,6 +277,7 @@ nitrogen
 pastel
 plank
 polkit
+polybar
 python2
 python-pywal
 rofi
@@ -399,7 +400,6 @@ networkmanager-dmenu-git
 obmenu-generator
 perl-linux-desktopfiles
 picom-ibhagwan-git
-polybar
 timeshift
 xfce-polkit
 yay
