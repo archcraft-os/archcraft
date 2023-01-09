@@ -166,9 +166,10 @@ _cleanup_pacstrap_dir() {
     [[ -d "${pacstrap_dir}/var/tmp" ]] && find "${pacstrap_dir}/var/tmp" -mindepth 1 -delete
     # Delete package pacman related files.
     find "${work_dir}" \( -name '*.pacnew' -o -name '*.pacsave' -o -name '*.pacorig' \) -delete
-    # Create an empty /etc/machine-id
+    # Create /etc/machine-id with special value 'uninitialized': the final id is
+    # generated on first boot, systemd's first-boot mechanism applies (see machine-id(5))
     rm -f -- "${pacstrap_dir}/etc/machine-id"
-    printf '' > "${pacstrap_dir}/etc/machine-id"
+    printf 'uninitialized\n' > "${pacstrap_dir}/etc/machine-id"
 
     _msg_info "Done!"
 }
@@ -338,16 +339,16 @@ _make_custom_airootfs() {
 _make_packages() {
     _msg_info "Installing packages to '${pacstrap_dir}/'..."
 
-    if [[ -n "${gpg_key}" ]]; then
-        exec {ARCHISO_GNUPG_FD}<>"${work_dir}/pubkey.gpg"
+    if [[ -v gpg_publickey ]]; then
+        exec {ARCHISO_GNUPG_FD}<"$gpg_publickey"
         export ARCHISO_GNUPG_FD
     fi
     if [[ -v cert_list[0] ]]; then
-        exec {ARCHISO_TLS_FD}<>"${cert_list[0]}"
+        exec {ARCHISO_TLS_FD}<"${cert_list[0]}"
         export ARCHISO_TLS_FD
     fi
     if [[ -v cert_list[2] ]]; then
-        exec {ARCHISO_TLSCA_FD}<>"${cert_list[2]}"
+        exec {ARCHISO_TLSCA_FD}<"${cert_list[2]}"
         export ARCHISO_TLSCA_FD
     fi
 
@@ -369,7 +370,7 @@ _make_packages() {
         exec {ARCHISO_TLSCA_FD}<&-
         unset ARCHISO_TLSCA_FD
     fi
-    if [[ -n "${gpg_key}" ]]; then
+    if [[ -v gpg_publickey ]]; then
         exec {ARCHISO_GNUPG_FD}<&-
         unset ARCHISO_GNUPG_FD
     fi
@@ -729,6 +730,14 @@ _make_bootmode_uefi-x64.grub.esp() {
         mcopy -i "${efibootimg}" "${pacstrap_dir}/usr/share/edk2-shell/x64/Shell_Full.efi" ::/shellx64.efi
     fi
 
+    # Add other aditional/extra files to ${install_dir}/boot/
+    if [[ -e "${pacstrap_dir}/boot/memtest86+/memtest.efi" ]]; then
+        install -m 0644 -- "${pacstrap_dir}/boot/memtest86+/memtest.efi" "${isofs_dir}/${install_dir}/boot/memtest.efi"
+        install -d -m 0755 -- "${isofs_dir}/${install_dir}/boot/licenses/memtest86+/"
+        install -m 0644 -- "${pacstrap_dir}/usr/share/licenses/common/GPL2/license.txt" \
+            "${isofs_dir}/${install_dir}/boot/licenses/memtest86+/"
+    fi
+
     _msg_info "Done! GRUB set up for UEFI booting successfully."
 }
 
@@ -1013,6 +1022,10 @@ _validate_requirements_bootmode_uefi-x64.grub.esp() {
     # shellcheck disable=SC2076
     if [[ ! " ${pkg_list[*]} " =~ ' edk2-shell ' ]]; then
         _msg_info "'edk2-shell' is not in the package list. The ISO will not contain a bootable UEFI shell."
+    fi
+    # shellcheck disable=SC2076
+    if [[ ! " ${pkg_list[*]} " =~ ' memtest86+-efi ' ]]; then
+        _msg_info "Validating '${bootmode}': 'memtest86+-efi' is not in the package list. Memory testing will not be available from GRUB."
     fi
 }
 
@@ -1527,7 +1540,7 @@ _read_profile() {
 
 # Validate set options
 _validate_options() {
-    local validation_error=0 _buildmode
+    local validation_error=0 _buildmode certfile
 
     _msg_info "Validating options..."
 
@@ -1536,6 +1549,14 @@ _validate_options() {
         (( validation_error=validation_error+1 ))
         _msg_error "File '${pacman_conf}' does not exist." 0
     fi
+
+    # Check if the code signing certificate files exist
+    for certfile in "${cert_list[@]}"; do
+        if [[ ! -e "$certfile" ]]; then
+            (( validation_error=validation_error+1 ))
+            _msg_error "Code signing certificate '${certfile}' does not exist." 0
+        fi
+    done
 
     # Check if the specified buildmodes are supported
     for _buildmode in "${buildmodes[@]}"; do
@@ -1619,8 +1640,10 @@ _set_overrides() {
 }
 
 _export_gpg_publickey() {
-    rm -f -- "${work_dir}/pubkey.gpg"
-    gpg --batch --no-armor --output "${work_dir}/pubkey.gpg" --export "${gpg_key}"
+    gpg_publickey="${work_dir}/pubkey.gpg"
+    rm -f -- "$gpg_publickey"
+    gpg --batch --no-armor --output "$gpg_publickey" --export "${gpg_key}"
+    [[ -s "$gpg_publickey" ]] || return
 }
 
 _make_version() {
