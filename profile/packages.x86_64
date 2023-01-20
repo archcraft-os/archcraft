@@ -188,6 +188,7 @@ pipewire-alsa
 pipewire-pulse
 pipewire-jack
 pulsemixer
+pavucontrol
 gst-plugin-pipewire
 
 ## Video

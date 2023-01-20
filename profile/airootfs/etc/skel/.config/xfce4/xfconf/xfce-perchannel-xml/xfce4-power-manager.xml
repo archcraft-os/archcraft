@@ -1,4 +1,4 @@
-<!-- Copyright (C) 2020-2022 Aditya Shakya <adi1090x@gmail.com> -->
+<!-- Copyright (C) 2020-2023 Aditya Shakya <adi1090x@gmail.com> -->
 <?xml version="1.0" encoding="UTF-8"?>
 
 <channel name="xfce4-power-manager" version="1.0">
@@ -23,10 +23,11 @@
     <property name="battery-button-action" type="uint" value="1"/>
     <property name="brightness-level-on-battery" type="uint" value="15"/>
     <property name="brightness-level-on-ac" type="uint" value="25"/>
-    <property name="brightness-on-battery" type="uint" value="30"/>
+    <property name="brightness-on-battery" type="uint" value="120"/>
     <property name="brightness-on-ac" type="uint" value="120"/>
-    <property name="dpms-on-battery-sleep" type="uint" value="3"/>
-    <property name="dpms-on-battery-off" type="uint" value="5"/>
-    <property name="blank-on-battery" type="int" value="1"/>
+    <property name="dpms-on-battery-sleep" type="uint" value="5"/>
+    <property name="dpms-on-battery-off" type="uint" value="10"/>
+    <property name="blank-on-battery" type="int" value="3"/>
+    <property name="presentation-mode" type="bool" value="false"/>
   </property>
 </channel>
