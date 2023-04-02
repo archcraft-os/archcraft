@@ -460,39 +460,38 @@ _make_boot_on_iso9660() {
 # Prepare syslinux for booting from MBR (isohybrid)
 _make_bootmode_bios.syslinux.mbr() {
     _msg_info "Setting up SYSLINUX for BIOS booting from a disk..."
-    install -d -m 0755 -- "${isofs_dir}/syslinux"
+    install -d -m 0755 -- "${isofs_dir}/boot/syslinux"
     for _cfg in "${profile}/syslinux/"*.cfg; do
         sed "s|%ARCHISO_LABEL%|${iso_label}|g;
              s|%INSTALL_DIR%|${install_dir}|g;
              s|%ARCH%|${arch}|g" \
-             "${_cfg}" > "${isofs_dir}/syslinux/${_cfg##*/}"
+             "${_cfg}" > "${isofs_dir}/boot/syslinux/${_cfg##*/}"
     done
     if [[ -e "${profile}/syslinux/splash.png" ]]; then
-        install -m 0644 -- "${profile}/syslinux/splash.png" "${isofs_dir}/syslinux/"
+        install -m 0644 -- "${profile}/syslinux/splash.png" "${isofs_dir}/boot/syslinux/"
     fi
-    install -m 0644 -- "${pacstrap_dir}/usr/lib/syslinux/bios/"*.c32 "${isofs_dir}/syslinux/"
-    install -m 0644 -- "${pacstrap_dir}/usr/lib/syslinux/bios/lpxelinux.0" "${isofs_dir}/syslinux/"
-    install -m 0644 -- "${pacstrap_dir}/usr/lib/syslinux/bios/memdisk" "${isofs_dir}/syslinux/"
+    install -m 0644 -- "${pacstrap_dir}/usr/lib/syslinux/bios/"*.c32 "${isofs_dir}/boot/syslinux/"
+    install -m 0644 -- "${pacstrap_dir}/usr/lib/syslinux/bios/lpxelinux.0" "${isofs_dir}/boot/syslinux/"
+    install -m 0644 -- "${pacstrap_dir}/usr/lib/syslinux/bios/memdisk" "${isofs_dir}/boot/syslinux/"
 
     _run_once _make_boot_on_iso9660
 
-    if [[ -e "${isofs_dir}/syslinux/hdt.c32" ]]; then
-        install -d -m 0755 -- "${isofs_dir}/syslinux/hdt"
+    if [[ -e "${isofs_dir}/boot/syslinux/hdt.c32" ]]; then
+        install -d -m 0755 -- "${isofs_dir}/boot/syslinux/hdt"
         if [[ -e "${pacstrap_dir}/usr/share/hwdata/pci.ids" ]]; then
             gzip -cn9 "${pacstrap_dir}/usr/share/hwdata/pci.ids" > \
-                "${isofs_dir}/syslinux/hdt/pciids.gz"
+                "${isofs_dir}/boot/syslinux/hdt/pciids.gz"
         fi
         find "${pacstrap_dir}/usr/lib/modules" -name 'modules.alias' -print -exec gzip -cn9 '{}' ';' -quit > \
-            "${isofs_dir}/syslinux/hdt/modalias.gz"
+            "${isofs_dir}/boot/syslinux/hdt/modalias.gz"
     fi
 
     # Add other aditional/extra files to ${install_dir}/boot/
     if [[ -e "${pacstrap_dir}/boot/memtest86+/memtest.bin" ]]; then
+        install -d -m 0755 -- "${isofs_dir}/boot/memtest86+/"
         # rename for PXE: https://wiki.archlinux.org/title/Syslinux#Using_memtest
-        install -m 0644 -- "${pacstrap_dir}/boot/memtest86+/memtest.bin" "${isofs_dir}/${install_dir}/boot/memtest"
-        install -d -m 0755 -- "${isofs_dir}/${install_dir}/boot/licenses/memtest86+/"
-        install -m 0644 -- "${pacstrap_dir}/usr/share/licenses/common/GPL2/license.txt" \
-            "${isofs_dir}/${install_dir}/boot/licenses/memtest86+/"
+        install -m 0644 -- "${pacstrap_dir}/boot/memtest86+/memtest.bin" "${isofs_dir}/boot/memtest86+/memtest"
+        install -m 0644 -- "${pacstrap_dir}/usr/share/licenses/common/GPL2/license.txt" "${isofs_dir}/boot/memtest86+/"
     fi
     _msg_info "Done! SYSLINUX set up for BIOS booting from a disk successfully."
 }
@@ -500,9 +499,9 @@ _make_bootmode_bios.syslinux.mbr() {
 # Prepare syslinux for El-Torito booting
 _make_bootmode_bios.syslinux.eltorito() {
     _msg_info "Setting up SYSLINUX for BIOS booting from an optical disc..."
-    install -d -m 0755 -- "${isofs_dir}/syslinux"
-    install -m 0644 -- "${pacstrap_dir}/usr/lib/syslinux/bios/isolinux.bin" "${isofs_dir}/syslinux/"
-    install -m 0644 -- "${pacstrap_dir}/usr/lib/syslinux/bios/isohdpfx.bin" "${isofs_dir}/syslinux/"
+    install -d -m 0755 -- "${isofs_dir}/boot/syslinux"
+    install -m 0644 -- "${pacstrap_dir}/usr/lib/syslinux/bios/isolinux.bin" "${isofs_dir}/boot/syslinux/"
+    install -m 0644 -- "${pacstrap_dir}/usr/lib/syslinux/bios/isohdpfx.bin" "${isofs_dir}/boot/syslinux/"
 
     # ISOLINUX and SYSLINUX installation is shared
     _run_once _make_bootmode_bios.syslinux.mbr
@@ -562,18 +561,7 @@ _make_efibootimg() {
     mmd -i "${efibootimg}" ::/EFI ::/EFI/BOOT
 }
 
-# Copy GRUB files to efiboot.img which is used by both IA32 UEFI and x64 UEFI.
-_make_common_bootmode_grub_copy_to_efibootimg() {
-    local files_to_copy=()
-
-    files_to_copy+=("${work_dir}/grub/"*)
-    if compgen -G "${profile}/grub/!(*.cfg)" &> /dev/null; then
-        files_to_copy+=("${profile}/grub/"!(*.cfg))
-    fi
-    mcopy -i "${efibootimg}" "${files_to_copy[@]}" ::/EFI/BOOT/
-}
-
-# Copy GRUB files to efiboot.img which is used by both IA32 UEFI and x64 UEFI.
+# Copy GRUB files to ISO 9660 which is used by both IA32 UEFI and x64 UEFI
 _make_common_bootmode_grub_copy_to_isofs() {
     local files_to_copy=()
 
@@ -581,37 +569,86 @@ _make_common_bootmode_grub_copy_to_isofs() {
     if compgen -G "${profile}/grub/!(*.cfg)" &> /dev/null; then
         files_to_copy+=("${profile}/grub/"!(*.cfg))
     fi
-    install -m 0644 -- "${files_to_copy[@]}" "${isofs_dir}/EFI/BOOT/"
+    install -d -m 0755 -- "${isofs_dir}/boot/grub"
+    install -m 0644 -- "${files_to_copy[@]}" "${isofs_dir}/boot/grub/"
 }
 
 # Prepare GRUB configuration files
 _make_common_bootmode_grub_cfg(){
-    local _cfg
+    local _cfg archiso_uuid search_filename
 
     install -d -- "${work_dir}/grub"
+
+    # Precalculate the ISO's modification date in UTC, i.e. its "UUID"
+    TZ=UTC printf -v archiso_uuid '%(%F-%H-%M-%S-00)T' "$SOURCE_DATE_EPOCH"
+    # Create a /boot/grub/YYYY-mm-dd-HH-MM-SS-00.uuid file on ISO 9660. GRUB will search for it to find the ISO
+    # volume. This is similar to what grub-mkrescue does, except it places the file in /.disk/, but we opt to use a
+    # directory that does not start with a dot to avoid it being accidentally missed when copying the ISO's contents.
+    : > "${work_dir}/grub/${archiso_uuid}.uuid"
+    search_filename="/boot/grub/${archiso_uuid}.uuid"
 
     # Fill GRUB configuration files
     for _cfg in "${profile}/grub/"*'.cfg'; do
         sed "s|%ARCHISO_LABEL%|${iso_label}|g;
              s|%INSTALL_DIR%|${install_dir}|g;
-             s|%ARCH%|${arch}|g" \
+             s|%ARCH%|${arch}|g;
+             s|%ARCHISO_SEARCH_FILENAME%|${search_filename}|g" \
              "${_cfg}" > "${work_dir}/grub/${_cfg##*/}"
     done
-    # Add all GRUB files to the list of files used to calculate the required FAT image size.
-    efiboot_files+=("${work_dir}/grub/"
-                    "${profile}/grub/"!(*.cfg))
 
+    # Prepare grub.cfg that will be embedded inside the GRUB binaries
     IFS='' read -r -d '' grubembedcfg <<'EOF' || true
 if ! [ -d "$cmdpath" ]; then
-    # On some firmware, GRUB has a wrong cmdpath when booted from an optical disc.
-    # https://gitlab.archlinux.org/archlinux/archiso/-/issues/183
-    if regexp --set=1:isodevice '^(\([^)]+\))\/?[Ee][Ff][Ii]\/[Bb][Oo][Oo][Tt]\/?$' "$cmdpath"; then
-        cmdpath="${isodevice}/EFI/BOOT"
+    # On some firmware, GRUB has a wrong cmdpath when booted from an optical disc. During El Torito boot, GRUB is
+    # launched from a case-insensitive FAT-formatted EFI system partition, but it seemingly cannot access that partition
+    # and sets cmdpath to the whole cd# device which has case-sensitive ISO 9660 + Rock Ridge + Joliet file systems.
+    # See https://gitlab.archlinux.org/archlinux/archiso/-/issues/183 and https://savannah.gnu.org/bugs/?62886
+    if regexp --set=1:archiso_bootdevice '^\(([^)]+)\)\/?[Ee][Ff][Ii]\/[Bb][Oo][Oo][Tt]\/?$' "${cmdpath}"; then
+        set cmdpath="(${archiso_bootdevice})/EFI/BOOT"
+        set ARCHISO_HINT="${archiso_bootdevice}"
     fi
 fi
-configfile "${cmdpath}/grub.cfg"
+
+# Prepare a hint for the search command using the device in cmdpath
+if [ -z "${ARCHISO_HINT}" ]; then
+    regexp --set=1:ARCHISO_HINT '^\(([^)]+)\)' "${cmdpath}"
+fi
+
+# Search for the ISO volume
+if search --no-floppy --set=archiso_device --file '%ARCHISO_SEARCH_FILENAME%' --hint "${ARCHISO_HINT}"; then
+    set ARCHISO_HINT="${archiso_device}"
+    if probe --set ARCHISO_UUID --fs-uuid "${ARCHISO_HINT}"; then
+        export ARCHISO_UUID
+    fi
+else
+    echo "Could not find a volume with a '%ARCHISO_SEARCH_FILENAME%' file on it!"
+fi
+
+# Load grub.cfg
+if [ "${ARCHISO_HINT}" == 'memdisk' -o -z "${ARCHISO_HINT}" ]; then
+    echo 'Could not find the ISO volume!'
+elif [ -e "(${ARCHISO_HINT})/boot/grub/grub.cfg" ]; then
+    export ARCHISO_HINT
+    set root="${ARCHISO_HINT}"
+    configfile "(${ARCHISO_HINT})/boot/grub/grub.cfg"
+else
+    echo "File '(${ARCHISO_HINT})/boot/grub/grub.cfg' not found!"
+fi
 EOF
+    grubembedcfg="${grubembedcfg//'%ARCHISO_SEARCH_FILENAME%'/"${search_filename}"}"
     printf '%s\n' "$grubembedcfg" > "${work_dir}/grub-embed.cfg"
+
+    # Write grubenv
+    printf '%.1024s' \
+        "$(printf '# GRUB Environment Block\nNAME=%s\nVERSION=%s\nARCHISO_LABEL=%s\nINSTALL_DIR=%s\nARCH=%s\nARCHISO_SEARCH_FILENAME=%s\n%s' \
+            "${iso_name}" \
+            "${iso_version}" \
+            "${iso_label}" \
+            "${install_dir}" \
+            "${arch}" \
+            "${search_filename}" \
+            "$(printf '%0.1s' "#"{1..1024})")" \
+        > "${work_dir}/grub/grubenv"
 }
 
 _make_bootmode_uefi-ia32.grub.esp() {
@@ -622,11 +659,11 @@ _make_bootmode_uefi-ia32.grub.esp() {
 
     # Create EFI binary
     # Module list from https://bugs.archlinux.org/task/71382#comment202911
-    grubmodules=(all_video at_keyboard boot btrfs cat chain configfile echo efifwsetup efinet ext2 f2fs fat font \
+    grubmodules=(all_video at_keyboard boot btrfs cat chain configfile echo efifwsetup efinet exfat ext2 f2fs fat font \
                  gfxmenu gfxterm gzio halt hfsplus iso9660 jpeg keylayouts linux loadenv loopback lsefi lsefimmap \
-                 minicmd normal part_apple part_gpt part_msdos png read reboot regexp search search_fs_file \
-                 search_fs_uuid search_label serial sleep tpm usb usbserial_common usbserial_ftdi usbserial_pl2303 \
-                 usbserial_usbdebug video xfs zstd)
+                 minicmd normal ntfs ntfscomp part_apple part_gpt part_msdos png read reboot regexp search \
+                 search_fs_file search_fs_uuid search_label serial sleep tpm udf usb usbserial_common usbserial_ftdi \
+                 usbserial_pl2303 usbserial_usbdebug video xfs zstd)
     grub-mkstandalone -O i386-efi \
                       --modules="${grubmodules[*]}" \
                       --locales="en@quot" \
@@ -653,7 +690,7 @@ _make_bootmode_uefi-ia32.grub.esp() {
     mcopy -i "${efibootimg}" "${work_dir}/BOOTIA32.EFI" ::/EFI/BOOT/BOOTIA32.EFI
 
     # Copy GRUB files
-    _run_once _make_common_bootmode_grub_copy_to_efibootimg
+    _run_once _make_common_bootmode_grub_copy_to_isofs
 
     if [[ -e "${pacstrap_dir}/usr/share/edk2-shell/ia32/Shell_Full.efi" ]]; then
         mcopy -i "${efibootimg}" "${pacstrap_dir}/usr/share/edk2-shell/ia32/Shell_Full.efi" ::/shellia32.efi
@@ -699,11 +736,11 @@ _make_bootmode_uefi-x64.grub.esp() {
 
     # Create EFI binary
     # Module list from https://bugs.archlinux.org/task/71382#comment202911
-    grubmodules=(all_video at_keyboard boot btrfs cat chain configfile echo efifwsetup efinet ext2 f2fs fat font \
+    grubmodules=(all_video at_keyboard boot btrfs cat chain configfile echo efifwsetup efinet exfat ext2 f2fs fat font \
                  gfxmenu gfxterm gzio halt hfsplus iso9660 jpeg keylayouts linux loadenv loopback lsefi lsefimmap \
-                 minicmd normal part_apple part_gpt part_msdos png read reboot regexp search search_fs_file \
-                 search_fs_uuid search_label serial sleep tpm usb usbserial_common usbserial_ftdi usbserial_pl2303 \
-                 usbserial_usbdebug video xfs zstd)
+                 minicmd normal ntfs ntfscomp part_apple part_gpt part_msdos png read reboot regexp search \
+                 search_fs_file search_fs_uuid search_label serial sleep tpm udf usb usbserial_common usbserial_ftdi \
+                 usbserial_pl2303 usbserial_usbdebug video xfs zstd)
     grub-mkstandalone -O x86_64-efi \
                       --modules="${grubmodules[*]}" \
                       --locales="en@quot" \
@@ -724,7 +761,7 @@ _make_bootmode_uefi-x64.grub.esp() {
     mcopy -i "${efibootimg}" "${work_dir}/BOOTx64.EFI" ::/EFI/BOOT/BOOTx64.EFI
 
     # Copy GRUB files
-    _run_once _make_common_bootmode_grub_copy_to_efibootimg
+    _run_once _make_common_bootmode_grub_copy_to_isofs
 
     if [[ -e "${pacstrap_dir}/usr/share/edk2-shell/x64/Shell_Full.efi" ]]; then
         mcopy -i "${efibootimg}" "${pacstrap_dir}/usr/share/edk2-shell/x64/Shell_Full.efi" ::/shellx64.efi
@@ -732,10 +769,9 @@ _make_bootmode_uefi-x64.grub.esp() {
 
     # Add other aditional/extra files to ${install_dir}/boot/
     if [[ -e "${pacstrap_dir}/boot/memtest86+/memtest.efi" ]]; then
-        install -m 0644 -- "${pacstrap_dir}/boot/memtest86+/memtest.efi" "${isofs_dir}/${install_dir}/boot/memtest.efi"
-        install -d -m 0755 -- "${isofs_dir}/${install_dir}/boot/licenses/memtest86+/"
-        install -m 0644 -- "${pacstrap_dir}/usr/share/licenses/common/GPL2/license.txt" \
-            "${isofs_dir}/${install_dir}/boot/licenses/memtest86+/"
+        install -d -m 0755 -- "${isofs_dir}/boot/memtest86+/"
+        install -m 0644 -- "${pacstrap_dir}/boot/memtest86+/memtest.efi" "${isofs_dir}/boot/memtest86+/memtest.efi"
+        install -m 0644 -- "${pacstrap_dir}/usr/share/licenses/common/GPL2/license.txt" "${isofs_dir}/boot/memtest86+/"
     fi
 
     _msg_info "Done! GRUB set up for UEFI booting successfully."
@@ -1062,6 +1098,10 @@ _export_netboot_artifacts() {
     _msg_info "Exporting netboot artifacts..."
     install -d -m 0755 "${out_dir}"
     cp -a -- "${isofs_dir}/${install_dir}/" "${out_dir}/"
+
+    # Remove grubenv since it serves no purpose in netboot artifacts
+    rm -f -- "${out_dir}/${install_dir}/grubenv"
+
     _msg_info "Done!"
     du -hs -- "${out_dir}/${install_dir}"
 }
@@ -1265,9 +1305,9 @@ _validate_requirements_buildmode_netboot() {
 _add_xorrisofs_options_bios.syslinux.eltorito() {
     xorrisofs_options+=(
         # El Torito boot image for x86 BIOS
-        '-eltorito-boot' 'syslinux/isolinux.bin'
+        '-eltorito-boot' 'boot/syslinux/isolinux.bin'
         # El Torito boot catalog file
-        '-eltorito-catalog' 'syslinux/boot.cat'
+        '-eltorito-catalog' 'boot/syslinux/boot.cat'
         # Required options to boot with ISOLINUX
         '-no-emul-boot' '-boot-load-size' '4' '-boot-info-table'
     )
@@ -1277,7 +1317,7 @@ _add_xorrisofs_options_bios.syslinux.eltorito() {
 _add_xorrisofs_options_bios.syslinux.mbr() {
     xorrisofs_options+=(
         # SYSLINUX MBR bootstrap code; does not work without "-eltorito-boot syslinux/isolinux.bin"
-        '-isohybrid-mbr' "${isofs_dir}/syslinux/isohdpfx.bin"
+        '-isohybrid-mbr' "${isofs_dir}/boot/syslinux/isohdpfx.bin"
         # When GPT is used, create an additional partition in the MBR (besides 0xEE) for sectors 0–1 (MBR
         # bootstrap code area) and mark it as bootable
         # May allow booting on some systems
@@ -1658,7 +1698,13 @@ _make_version() {
         install -d -m 0755 -- "${isofs_dir}/${install_dir}"
         # Write version file to ISO 9660
         printf '%s\n' "${iso_version}" > "${isofs_dir}/${install_dir}/version"
+
+    fi
+    if [[ "${buildmode}" == "iso" ]]; then
         # Write grubenv with version information to ISO 9660
+        # TODO: after sufficient time has passed, do not create this file anymore when GRUB boot modes are used.
+        #       _make_common_bootmode_grub_cfg already creates ${isofs_dir}/boot/grub/grubenv
+        rm -f -- "${isofs_dir}/${install_dir}/grubenv"
         printf '%.1024s' "$(printf '# GRUB Environment Block\nNAME=%s\nVERSION=%s\n%s' \
             "${iso_name}" "${iso_version}" "$(printf '%0.1s' "#"{1..1024})")" \
             > "${isofs_dir}/${install_dir}/grubenv"

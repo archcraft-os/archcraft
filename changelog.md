@@ -1,5 +1,21 @@
 <h2 align="center">Archcraft : Changelogs</h2>
 
+### April 2023
+**`Just a regular ISO update`**
+- Updated the ISO with latest packages
+- Enabled _single click activation_ on rofi menu and applets
+- Fixed _polybar sound/volume modules not updating_ issue
+- Replaced `picom-ibhagwan-git` with official `picom`, But...
+  - There are config files added for few forks of picom.
+  - You can install `picom-jonaburg-git` from AUR, config file is already added in Archcraft.
+  - You can install `picom-ibhagwan-git` from AUR, config file is already added in Archcraft.
+  - Whichever picom fork you use, make sure you use the config file added for that, Just rename it to `picom.conf`
+  - For ex: If using `picom-jonaburg-git`, copy **picom-jonaburg.conf** to **picom.conf**
+  - You can see which compositor is currently in use in openbox (Preferences > Compositor)
+- Fixed Minor bugs, etc
+
+#
+
 ### January 2023
 **`Major Release`**
 - Created the ISO base from scratch

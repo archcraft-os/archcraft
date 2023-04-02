@@ -274,6 +274,7 @@ light
 meld
 nitrogen
 pastel
+picom
 plank
 polkit
 polybar
@@ -398,7 +399,6 @@ mkinitcpio-firmware
 networkmanager-dmenu-git
 obmenu-generator
 perl-linux-desktopfiles
-picom-ibhagwan-git
 timeshift
 xfce-polkit
 yay

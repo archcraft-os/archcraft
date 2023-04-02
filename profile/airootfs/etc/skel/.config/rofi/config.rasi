@@ -89,6 +89,7 @@ configuration {
 	sort: false;
 	threads: 0;
 	click-to-exit: true;
+	hover-select: true;
 /*	ignored-prefixes: "";*/
 /*	pid: "/run/user/1000/rofi.pid";*/
 
@@ -172,12 +173,13 @@ configuration {
 	kb-select-8: "Super+8";
 	kb-select-9: "Super+9";
 	kb-select-10: "Super+0";
+*/
+	/*---------- Mouse ----------*/
 	ml-row-left: "ScrollLeft";
 	ml-row-right: "ScrollRight";
 	ml-row-up: "ScrollUp";
 	ml-row-down: "ScrollDown";
-	me-select-entry: "MousePrimary";
-	me-accept-entry: "MouseDPrimary";
+	me-select-entry: "";
+	me-accept-entry: "MousePrimary";
 	me-accept-custom: "Control+MouseDPrimary";
-*/
 }
