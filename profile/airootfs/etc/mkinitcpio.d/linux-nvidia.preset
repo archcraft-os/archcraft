@@ -1,0 +1,8 @@
+# mkinitcpio preset file for the 'linux' package (nvidia)
+
+PRESETS=('nvidia')
+
+ALL_kver="/boot/vmlinuz-linux"
+ALL_config="/etc/mkinitcpio-nvidia.conf"
+
+nvidia_image="/boot/initramfs-linux-nvidia.img"

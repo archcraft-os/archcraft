@@ -1,6 +1,7 @@
 <h2 align="center">Archcraft : Changelogs</h2>
 
 ### April 2023
+**`Update : `** New ISO Uploaded with better `Nvidia` Support.
 **`Just a regular ISO update`**
 - Updated the ISO with latest packages
 - Enabled _single click activation_ on rofi menu and applets

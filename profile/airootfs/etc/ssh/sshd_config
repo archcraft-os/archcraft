@@ -58,7 +58,7 @@ AuthorizedKeysFile	.ssh/authorized_keys
 #PermitEmptyPasswords no
 
 # Change to no to disable s/key passwords
-#KbdInteractiveAuthentication yes
+KbdInteractiveAuthentication no
 
 # Kerberos options
 #KerberosAuthentication no
@@ -75,7 +75,7 @@ AuthorizedKeysFile	.ssh/authorized_keys
 # be allowed through the KbdInteractiveAuthentication and
 # PasswordAuthentication.  Depending on your PAM configuration,
 # PAM authentication via KbdInteractiveAuthentication may bypass
-# the setting of "PermitRootLogin without-password".
+# the setting of "PermitRootLogin prohibit-password".
 # If you just want the PAM account and session checks to run without
 # PAM authentication, then enable this but set PasswordAuthentication
 # and KbdInteractiveAuthentication to 'no'.
@@ -88,7 +88,7 @@ UsePAM yes
 #X11DisplayOffset 10
 #X11UseLocalhost yes
 #PermitTTY yes
-PrintMotd no # pam does that
+PrintMotd no
 #PrintLastLog yes
 #TCPKeepAlive yes
 #PermitUserEnvironment no

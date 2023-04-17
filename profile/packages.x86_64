@@ -149,6 +149,8 @@ xf86-video-vesa
 xf86-video-intel
 xf86-video-amdgpu
 xf86-video-ati
+mesa
+mesa-utils
 
 ## GPU Drivers (Nvidia) ------------------------------
 xf86-video-nouveau
@@ -234,7 +236,7 @@ kvantum
 qt5ct
 
 ## Display Manager ------------------------------
-sddm
+sddm-git
 archcraft-sddm-theme
 
 ## Desktop ------------------------------
@@ -373,7 +375,9 @@ xarchiver
 ## Misc ------------------------------
 
 ## Package Tools
+bison
 fakeroot
+flex
 make
 automake
 autoconf
