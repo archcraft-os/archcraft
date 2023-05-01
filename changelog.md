@@ -1,7 +1,11 @@
 <h2 align="center">Archcraft : Changelogs</h2>
 
 ### April 2023
-**`Update : `** New ISO Uploaded with better `Nvidia` Support.<br>
+**`Update (1st May): `** 
+- Fixed `pacman-init` issue in last ISO.
+- Fixed Auto-login issue.
+- Added ability to choose Desktop/WM in calamares installer.
+**`Update (17th April): `** New ISO Uploaded with better `Nvidia` Support.<br>
 **`Just a regular ISO update`**
 - Updated the ISO with latest packages
 - Enabled _single click activation_ on rofi menu and applets
