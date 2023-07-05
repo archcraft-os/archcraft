@@ -29,6 +29,7 @@ gpg_key=""
 gpg_sender=""
 iso_name=""
 iso_label=""
+iso_uuid=""
 iso_publisher=""
 iso_application=""
 iso_version=""
@@ -38,6 +39,7 @@ pacman_conf=""
 packages=""
 bootstrap_packages=""
 pacstrap_dir=""
+declare -i rm_work_dir=0
 buildmodes=()
 bootmodes=()
 airootfs_image_type=""
@@ -86,7 +88,7 @@ usage: ${app_name} [options] <profile_dir>
                       Default: '${iso_application}'
      -C <file>        pacman configuration file.
                       Default: '${pacman_conf}'
-     -D <install_dir> Set an install_dir. All files will by located here.
+     -D <install_dir> Set an install_dir. All files will be located here.
                       Default: '${install_dir}'
                       NOTE: Max 8 characters, use only [a-z0-9]
      -L <label>       Set the ISO volume label
@@ -109,6 +111,7 @@ usage: ${app_name} [options] <profile_dir>
                       Default: '${out_dir}'
      -p [package ..]  Package(s) to install.
                       Multiple packages are provided as quoted, space delimited list.
+     -r               Delete the working directory at the end.
      -v               Enable verbose output
      -w <work_dir>    Set the working directory
                       Default: '${work_dir}'
@@ -395,7 +398,7 @@ _make_customize_airootfs() {
                 if [[ ! -d "${pacstrap_dir}${passwd[5]}" ]]; then
                     install -d -m 0750 -o "${passwd[2]}" -g "${passwd[3]}" -- "${pacstrap_dir}${passwd[5]}"
                 fi
-                cp -dnRT --preserve=mode,timestamps,links -- "${pacstrap_dir}/etc/skel/." "${pacstrap_dir}${passwd[5]}"
+                cp -dRT --update=none --preserve=mode,timestamps,links -- "${pacstrap_dir}/etc/skel/." "${pacstrap_dir}${passwd[5]}"
                 chmod -f 0750 -- "${pacstrap_dir}${passwd[5]}"
                 chown -hR -- "${passwd[2]}:${passwd[3]}" "${pacstrap_dir}${passwd[5]}"
             else
@@ -463,6 +466,7 @@ _make_bootmode_bios.syslinux.mbr() {
     install -d -m 0755 -- "${isofs_dir}/boot/syslinux"
     for _cfg in "${profile}/syslinux/"*.cfg; do
         sed "s|%ARCHISO_LABEL%|${iso_label}|g;
+             s|%ARCHISO_UUID%|${iso_uuid}|g;
              s|%INSTALL_DIR%|${install_dir}|g;
              s|%ARCH%|${arch}|g" \
              "${_cfg}" > "${isofs_dir}/boot/syslinux/${_cfg##*/}"
@@ -570,26 +574,25 @@ _make_common_bootmode_grub_copy_to_isofs() {
         files_to_copy+=("${profile}/grub/"!(*.cfg))
     fi
     install -d -m 0755 -- "${isofs_dir}/boot/grub"
-    install -m 0644 -- "${files_to_copy[@]}" "${isofs_dir}/boot/grub/"
+    cp -r --remove-destination -- "${files_to_copy[@]}" "${isofs_dir}/boot/grub/"
 }
 
 # Prepare GRUB configuration files
 _make_common_bootmode_grub_cfg(){
-    local _cfg archiso_uuid search_filename
+    local _cfg search_filename
 
     install -d -- "${work_dir}/grub"
 
-    # Precalculate the ISO's modification date in UTC, i.e. its "UUID"
-    TZ=UTC printf -v archiso_uuid '%(%F-%H-%M-%S-00)T' "$SOURCE_DATE_EPOCH"
     # Create a /boot/grub/YYYY-mm-dd-HH-MM-SS-00.uuid file on ISO 9660. GRUB will search for it to find the ISO
     # volume. This is similar to what grub-mkrescue does, except it places the file in /.disk/, but we opt to use a
     # directory that does not start with a dot to avoid it being accidentally missed when copying the ISO's contents.
-    : > "${work_dir}/grub/${archiso_uuid}.uuid"
-    search_filename="/boot/grub/${archiso_uuid}.uuid"
+    : > "${work_dir}/grub/${iso_uuid}.uuid"
+    search_filename="/boot/grub/${iso_uuid}.uuid"
 
     # Fill GRUB configuration files
     for _cfg in "${profile}/grub/"*'.cfg'; do
         sed "s|%ARCHISO_LABEL%|${iso_label}|g;
+             s|%ARCHISO_UUID%|${iso_uuid}|g;
              s|%INSTALL_DIR%|${install_dir}|g;
              s|%ARCH%|${arch}|g;
              s|%ARCHISO_SEARCH_FILENAME%|${search_filename}|g" \
@@ -838,6 +841,7 @@ _make_bootmode_uefi-x64.systemd-boot.esp() {
     mcopy -i "${efibootimg}" "${profile}/efiboot/loader/loader.conf" ::/loader/
     for _conf in "${profile}/efiboot/loader/entries/"*".conf"; do
         sed "s|%ARCHISO_LABEL%|${iso_label}|g;
+             s|%ARCHISO_UUID%|${iso_uuid}|g;
              s|%INSTALL_DIR%|${install_dir}|g;
              s|%ARCH%|${arch}|g" \
             "${_conf}" | mcopy -i "${efibootimg}" - "::/loader/entries/${_conf##*/}"
@@ -1673,10 +1677,15 @@ _set_overrides() {
     elif [[ -z "$quiet" ]]; then
         quiet="y"
     fi
+    if [[ -v override_rm_work_dir ]]; then
+        rm_work_dir="$override_rm_work_dir"
+    fi
 
     # Set variables that do not have overrides
     [[ -n "$airootfs_image_type" ]] || airootfs_image_type="squashfs"
     [[ -n "$iso_name" ]] || iso_name="${app_name}"
+    # Precalculate the ISO's modification date in UTC, i.e. its "UUID"
+    TZ=UTC printf -v iso_uuid '%(%F-%H-%M-%S-00)T' "$SOURCE_DATE_EPOCH"
 }
 
 _export_gpg_publickey() {
@@ -1743,6 +1752,16 @@ _make_pkglist() {
     _msg_info "Done!"
 }
 
+# Create working directory
+_make_work_dir() {
+    if [[ ! -d "${work_dir}" ]]; then
+        install -d -- "${work_dir}"
+    elif (( rm_work_dir )); then
+        rm_work_dir=0
+        _msg_warning "Working directory removal requested, but '${work_dir}' already exists. It will not be removed!" 0
+    fi
+}
+
 # build the base for an ISO and/or a netboot target
 _build_iso_base() {
     local run_once_mode="base"
@@ -1754,13 +1773,9 @@ _build_iso_base() {
     isofs_dir="${work_dir}/iso"
 
     # Create working directory
-    [[ -d "${work_dir}" ]] || install -d -- "${work_dir}"
-    # Write build date to file or if the file exists, read it from there
-    if [[ -e "${work_dir}/build_date" ]]; then
-        SOURCE_DATE_EPOCH="$(<"${work_dir}/build_date")"
-    else
-        printf '%s\n' "$SOURCE_DATE_EPOCH" > "${work_dir}/build_date"
-    fi
+    _run_once _make_work_dir
+    # Write build date to file if it does not exist already
+    [[ -e "${work_dir}/build_date" ]] || printf '%s\n' "$SOURCE_DATE_EPOCH" > "${work_dir}/build_date"
 
     [[ "${quiet}" == "y" ]] || _show_config
     _run_once _make_pacman_conf
@@ -1837,9 +1852,14 @@ _build() {
     for buildmode in "${buildmodes[@]}"; do
         _run_once "_build_buildmode_${buildmode}"
     done
+    if (( rm_work_dir )); then
+        _msg_info 'Removing the working directory...'
+        rm -rf -- "${work_dir:?}/"
+        _msg_info 'Done!'
+    fi
 }
 
-while getopts 'c:p:C:L:P:A:D:w:m:o:g:G:vh?' arg; do
+while getopts 'c:p:C:L:P:A:D:w:m:o:g:G:vrh?' arg; do
     case "${arg}" in
         p) read -r -a override_pkg_list <<< "${OPTARG}" ;;
         C) override_pacman_conf="${OPTARG}" ;;
@@ -1854,6 +1874,7 @@ while getopts 'c:p:C:L:P:A:D:w:m:o:g:G:vh?' arg; do
         g) override_gpg_key="${OPTARG}" ;;
         G) override_gpg_sender="${OPTARG}" ;;
         v) override_quiet="n" ;;
+        r) declare -i override_rm_work_dir=1 ;;
         h|?) _usage 0 ;;
         *)
             _msg_error "Invalid argument '${arg}'" 0
@@ -1875,6 +1896,13 @@ fi
 
 # get the absolute path representation of the first non-option argument
 profile="$(realpath -- "${1}")"
+
+# Read SOURCE_DATE_EPOCH from file early
+build_date_file="$(realpath -q -- "${override_work_dir:-./work}/build_date")" || :
+if [[ -f "$build_date_file" ]]; then
+    SOURCE_DATE_EPOCH="$(<"$build_date_file")"
+fi
+unset build_date_file
 
 _read_profile
 _set_overrides

@@ -28,7 +28,7 @@ _EOF_
 
 ## Enable Parallel Downloads
 sed -i -e 's|#ParallelDownloads.*|ParallelDownloads = 5|g' /etc/pacman.conf
-sed -i -e '/#\[testing\]/Q' /etc/pacman.conf
+sed -i -e '/#\[core-testing\]/Q' /etc/pacman.conf
 
 ## Append archcraft repository to pacman.conf
 cat >> "/etc/pacman.conf" <<- EOL
@@ -36,19 +36,16 @@ cat >> "/etc/pacman.conf" <<- EOL
 	SigLevel = Optional TrustAll
 	Include = /etc/pacman.d/archcraft-mirrorlist
 
-	#[testing]
+	#[core-testing]
 	#Include = /etc/pacman.d/mirrorlist
 
 	[core]
 	Include = /etc/pacman.d/mirrorlist
 
-	[extra]
-	Include = /etc/pacman.d/mirrorlist
-
-	#[community-testing]
+	#[extra-testing]
 	#Include = /etc/pacman.d/mirrorlist
 
-	[community]
+	[extra]
 	Include = /etc/pacman.d/mirrorlist
 
 	# If you want to run 32 bit applications on your x86_64 system,

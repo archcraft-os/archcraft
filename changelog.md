@@ -1,5 +1,26 @@
 <h2 align="center">Archcraft : Changelogs</h2>
 
+### July 2023
+- Updated ISO profile with latest archiso
+- Latest base with new packages
+- Fixed `xfce-power-manager` issue (not locking the screen on lid close)
+- Fixed sddm not saving the last used session issue
+- Added a calculator app
+- **`Openbox WM`**
+  - Added `tint2` as alternate panel (in all themes)
+  - Ability to switch between panels
+  - Added `bluetooth` module on both panels
+  - Added a rofi `bluetooth` applet
+  - Fixed window resizing issue via each side of window
+  - etc
+- **`BSPWM`**
+  - Added `bluetooth` module on polybar (in all themes)
+  - Added a rofi `bluetooth` applet
+  - etc
+- Many small bugs fixed.
+
+#
+
 ### April 2023
 **`Update (1st May): `** 
 - Fixed `pacman-init` issue in last ISO.

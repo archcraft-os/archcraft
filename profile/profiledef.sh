@@ -2,10 +2,10 @@
 # shellcheck disable=SC2034
 
 iso_name="archcraft"
-iso_label="ARCHCRAFT_$(date +%Y%m)"
+iso_label="ARCHCRAFT_$(date --date="@${SOURCE_DATE_EPOCH:-$(date +%s)}" +%Y%m)"
 iso_publisher="Aditya Shakya <http://www.github.com/adi1090x>"
 iso_application="Archcraft Live/Installation/Rescue CD"
-iso_version="$(date +%Y.%m.%d)"
+iso_version="$(date --date="@${SOURCE_DATE_EPOCH:-$(date +%s)}" +%Y.%m.%d)"
 install_dir="arch"
 buildmodes=('iso')
 bootmodes=('bios.syslinux.mbr' 'bios.syslinux.eltorito'
