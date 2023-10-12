@@ -267,7 +267,6 @@ mplayer
 
 # Utilities
 acpi
-arandr
 dialog
 dunst
 galculator
@@ -285,7 +284,6 @@ picom
 plank
 polkit
 polybar
-python2
 python-pywal
 rofi
 maim
@@ -322,6 +320,7 @@ archcraft-neofetch
 archcraft-welcome
 archcraft-music
 archcraft-omz
+archcraft-randr
 archcraft-ranger
 archcraft-vim
 archcraft-config-geany
@@ -339,6 +338,7 @@ noto-fonts-cjk
 terminus-font
 
 ## Multimedia
+ffmpeg
 ffmpegthumbnailer
 tumbler
 

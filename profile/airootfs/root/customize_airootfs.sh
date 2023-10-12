@@ -98,17 +98,21 @@ done
 sed -i -e '/## Welcome-App-Run-Once/Q' /etc/skel/.config/openbox/autostart
 cat >> "/etc/skel/.config/openbox/autostart" <<- EOL
 	## Help-App-Run-Once
-	help-and-tips &
+	archcraft-help &
 	sed -i -e '/## Help-App-Run-Once/Q' "\$HOME"/.config/openbox/autostart
 EOL
 
 sed -i -e '/## Welcome-App-Run-Once/Q' /etc/skel/.config/bspwm/bspwmrc
 cat >> "/etc/skel/.config/bspwm/bspwmrc" <<- EOL
 	## Help-App-Run-Once
-	help-and-tips &
+	archcraft-help &
 	sed -i -e '/## Help-App-Run-Once/Q' "\$HOME"/.config/bspwm/bspwmrc
 EOL
 
+## -------------------------------------------------------------- ##
+
+## Fix grub theme path, issue with ABIF LUKS installation
+sed -i -e 's#GRUB_THEME=.*#GRUB_THEME="/boot/grub/themes/archcraft/theme.txt"#g' /etc/default/grub
 
 ## -------------------------------------------------------------- ##
 

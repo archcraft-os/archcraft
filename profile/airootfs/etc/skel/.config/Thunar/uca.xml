@@ -15,7 +15,7 @@
 	<icon>go-parent-folder</icon>
 	<name>Open as root</name>
 	<unique-id>1622790717174452-1</unique-id>
-	<command>~/.config/openbox-themes/scripts/asroot &apos;dbus-run-session thunar&apos;</command>
+	<command>~/.config/openbox/scripts/ob-asroot &apos;dbus-run-session thunar&apos;</command>
 	<description>Open directory as root</description>
 	<patterns>*</patterns>
 	<directories/>
@@ -24,7 +24,7 @@
 	<icon>document-edit-sign</icon>
 	<name>Edit as root</name>
 	<unique-id>1622790919788057-2</unique-id>
-	<command>~/.config/openbox-themes/scripts/asroot &apos;geany %f&apos;</command>
+	<command>~/.config/openbox/scripts/ob-asroot &apos;geany %f&apos;</command>
 	<description>Edit file as root</description>
 	<patterns>*</patterns>
 	<text-files/>

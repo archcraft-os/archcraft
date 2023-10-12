@@ -1,8 +1,9 @@
 5 archcraft-welcome.desktop
 5 calamares.desktop
 5 abif.desktop
-5 help-and-tips.desktop
-5 about.desktop
+5 archcraft-help.desktop
+5 archcraft-about.desktop
+5 archcraft-arandr.desktop
 5 Alacritty.desktop
 5 firefox.desktop
 5 thunar.desktop
