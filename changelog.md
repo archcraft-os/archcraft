@@ -1,5 +1,26 @@
 <h2 align="center">Archcraft : Changelogs</h2>
 
+### October 2023
+- Updated ISO profile
+- Latest base with new packages
+- Added `archcraft-randr` app to manager display and monitors
+- Updated all window managers
+  - Clean PKGBUILDs (`with only needed deps`) and updated code
+  - Directory **openbox-themes** now merged into **openbox**, new config structure for openbox
+  - Added **example layouts** for multi-monitors in `bspwmrc` (single, two-monitors, three-monitors layouts)
+  - Added multi-monitor support in all available WMs (use `archcraft-randr`)
+  - And, more...
+- Added `wipe` ability in ABIF
+- Fixed issue with `help and tips` app
+- Removed `python2` as it's not needed anymore
+- Small improvements and bugs fixed.
+
+> **`Info`** : Now, package update for WMs will not replace your modified configs (previously, backing-up your configs in `~/.config`).
+> Instead, It'll install new updates in separate directory (eg: `~/.config/openbox_pacnew_12-10-23`), It'll be your choice to use your current config or updated one.
+> You can use `meld` to merge updates in your current modified configs.
+
+#
+
 ### July 2023
 - Updated ISO profile with latest archiso
 - Latest base with new packages
