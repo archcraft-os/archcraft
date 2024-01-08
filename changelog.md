@@ -1,5 +1,16 @@
 <h2 align="center">Archcraft : Changelogs</h2>
 
+### January 2024
+- Updated ISO profile
+- Latest base with new packages
+- Update all Archcraft and AUR packages
+- Migrated `alacritty` to its new config (`yml` to `toml`)
+- Updated **all scripts** related to alacritty
+- Added `tray` module in **polybar** and fixed issue with fonts
+- Small improvements and bugs fixed.
+
+#
+
 ### October 2023
 - Updated ISO profile
 - Latest base with new packages
@@ -16,7 +27,7 @@
 - Small improvements and bugs fixed.
 
 > **`Info`** : Now, package update for WMs will not replace your modified configs (previously, backing-up your configs in `~/.config`).
-> Instead, It'll install new updates in separate directory (eg: `~/.config/openbox_pacnew_12-10-23`), It'll be your choice to use your current config or updated one.
+> Instead, It'll install new updates in separate directory (eg: `~/.config/openbox_pacnew_2023-10-12`), It'll be your choice to use your current config or updated one.
 > You can use `meld` to merge updates in your current modified configs.
 
 #
