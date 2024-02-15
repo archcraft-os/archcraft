@@ -2,7 +2,7 @@
 Description=Temporary /etc/pacman.d/gnupg directory
 
 [Mount]
-What=ramfs
+What=tmpfs
 Where=/etc/pacman.d/gnupg
-Type=ramfs
-Options=mode=0755
+Type=tmpfs
+Options=mode=0755,noswap

@@ -6,3 +6,4 @@
 QT_QPA_PLATFORMTHEME=qt5ct
 EDITOR=nano
 BROWSER=firefox
+TERMINAL=alacritty

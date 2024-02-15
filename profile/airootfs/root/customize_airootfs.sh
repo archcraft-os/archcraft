@@ -6,6 +6,11 @@ set -e -u
 
 ## -------------------------------------------------------------- ##
 
+## Modify /etc/mkinitcpio.conf file
+sed -i '/etc/mkinitcpio.conf' \
+	-e "s/base udev/base udev plymouth/g" \
+	-e "s/#COMPRESSION=\"zstd\"/COMPRESSION=\"zstd\"/g"
+
 ## Fix Initrd Generation in Installed System
 cat > "/etc/mkinitcpio.d/linux.preset" <<- _EOF_
 	# mkinitcpio preset file for the 'linux' package
@@ -23,6 +28,10 @@ cat > "/etc/mkinitcpio.d/linux.preset" <<- _EOF_
 	fallback_image="/boot/initramfs-linux-fallback.img"
 	fallback_options="-S autodetect"    
 _EOF_
+
+## Delete ISO specific init files
+rm -rf /etc/mkinitcpio.conf.d
+rm -rf /etc/mkinitcpio.d/linux-nvidia.preset
 
 ## -------------------------------------------------------------- ##
 
@@ -112,7 +121,7 @@ EOL
 ## -------------------------------------------------------------- ##
 
 ## Fix grub theme path, issue with ABIF LUKS installation
-sed -i -e 's#GRUB_THEME=.*#GRUB_THEME="/boot/grub/themes/archcraft/theme.txt"#g' /etc/default/grub
+#sed -i -e 's#GRUB_THEME=.*#GRUB_THEME="/boot/grub/themes/archcraft/theme.txt"#g' /etc/default/grub
 
 ## -------------------------------------------------------------- ##
 

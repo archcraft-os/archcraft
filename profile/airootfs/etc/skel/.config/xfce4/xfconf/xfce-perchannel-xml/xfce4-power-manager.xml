@@ -10,7 +10,7 @@
     <property name="inactivity-sleep-mode-on-battery" type="uint" value="1"/>
     <property name="inactivity-on-battery" type="uint" value="15"/>
     <property name="critical-power-level" type="uint" value="20"/>
-    <property name="show-tray-icon" type="bool" value="false"/>
+    <property name="show-tray-icon" type="bool" value="true"/>
     <property name="sleep-button-action" type="uint" value="1"/>
     <property name="hibernate-button-action" type="uint" value="2"/>
     <property name="lid-action-on-battery" type="uint" value="3"/>

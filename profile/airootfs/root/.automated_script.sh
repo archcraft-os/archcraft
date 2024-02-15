@@ -1,21 +1,22 @@
 #!/usr/bin/env bash
 
-script_cmdline ()
-{
+script_cmdline() {
     local param
-    for param in $(< /proc/cmdline); do
+    for param in $(</proc/cmdline); do
         case "${param}" in
-            script=*) echo "${param#*=}" ; return 0 ;;
+            script=*)
+                echo "${param#*=}"
+                return 0
+                ;;
         esac
     done
 }
 
-automated_script ()
-{
+automated_script() {
     local script rt
     script="$(script_cmdline)"
     if [[ -n "${script}" && ! -x /tmp/startup_script ]]; then
-        if [[ "${script}" =~ ^((http|https|ftp)://) ]]; then
+        if [[ "${script}" =~ ^((http|https|ftp|tftp)://) ]]; then
             # there's no synchronization for network availability before executing this script
             printf '%s: waiting for network-online.target\n' "$0"
             until systemctl --quiet is-active network-online.target; do

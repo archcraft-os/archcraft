@@ -5,7 +5,9 @@ arch-install-scripts
 archinstall
 b43-fwcutter
 base
+bcachefs-tools
 bind
+bolt
 brltty
 broadcom-wl
 btrfs-progs
@@ -45,6 +47,7 @@ iw
 iwd
 jfsutils
 kitty-terminfo
+ldns
 less
 lftp
 libfido2
@@ -61,8 +64,8 @@ man-db
 man-pages
 mc
 mdadm
-#memtest86+
-#memtest86+-efi
+memtest86+
+memtest86+-efi
 mkinitcpio
 mkinitcpio-archiso
 mkinitcpio-nfs-utils
@@ -79,6 +82,7 @@ nvme-cli
 open-iscsi
 open-vm-tools
 openconnect
+openpgp-card-tools
 openssh
 openvpn
 partclone
@@ -97,6 +101,7 @@ rsync
 rxvt-unicode-terminfo
 screen
 sdparm
+sequoia-sq
 sg3_utils
 smartmontools
 sof-firmware
@@ -108,6 +113,7 @@ tcpdump
 terminus-font
 testdisk
 tmux
+tpm2-tools
 tpm2-tss
 udftools
 usb_modeswitch
