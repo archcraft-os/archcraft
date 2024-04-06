@@ -87,14 +87,14 @@ if [[ ! -d "$rdir" ]]; then
 	mkdir "$rdir"
 fi
 
-rconfig=(alacritty bspwm geany gtk-3.0 Kvantum neofetch qt5ct ranger Thunar xfce4)
+rconfig=(geany gtk-3.0 Kvantum neofetch qt5ct qt6ct ranger Thunar xfce4)
 for cfg in "${rconfig[@]}"; do
 	if [[ -e "$sdir/.config/$cfg" ]]; then
 		cp -rf "$sdir"/.config/"$cfg" "$rdir"
 	fi
 done
 
-rcfg=('.oh-my-zsh' '.gtkrc-2.0' '.vim_runtime' '.vimrc' '.zshrc')
+rcfg=('.gtkrc-2.0' '.oh-my-zsh' '.vim_runtime' '.vimrc' '.zshrc')
 for cfile in "${rcfg[@]}"; do
 	if [[ -e "$sdir/$cfile" ]]; then
 		cp -rf "$sdir"/"$cfile" /root
@@ -120,10 +120,8 @@ EOL
 
 ## -------------------------------------------------------------- ##
 
-## Fix grub theme path, issue with ABIF LUKS installation
-#sed -i -e 's#GRUB_THEME=.*#GRUB_THEME="/boot/grub/themes/archcraft/theme.txt"#g' /etc/default/grub
-
-## -------------------------------------------------------------- ##
+## Make it executable
+chmod +x /etc/skel/.screenlayout/my-layout.sh
 
 ## Fix cursor theme
 rm -rf /usr/share/icons/default

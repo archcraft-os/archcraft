@@ -3,7 +3,7 @@
 5 abif.desktop
 5 archcraft-help.desktop
 5 archcraft-about.desktop
-5 archcraft-arandr.desktop
+5 arandr.desktop
 5 Alacritty.desktop
 5 firefox.desktop
 5 thunar.desktop
@@ -12,6 +12,7 @@
 1 vim.desktop
 1 ranger.desktop
 1 viewnior.desktop
+1 archcraft-randr.desktop
 1 xfce-settings-manager.desktop
 1 xfce4-settings-editor.desktop
 1 xfce4-power-manager-settings.desktop

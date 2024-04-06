@@ -135,6 +135,7 @@ zsh
 os-prober
 lsb-release
 archcraft/grub
+archcraft-hooks-grub
 archcraft-grub-theme
 
 ## Splash Screen ------------------------------
@@ -241,8 +242,10 @@ archcraft-installer
 archcraft-install-scripts
 
 ## QT Style
-kvantum
+qt6ct
 qt5ct
+kvantum
+kvantum-qt5
 
 ## Display Manager ------------------------------
 sddm-git
@@ -295,6 +298,7 @@ rofi
 maim
 simplescreenrecorder
 slop
+timeshift
 udisks2
 wmctrl
 wmname
@@ -326,7 +330,9 @@ archcraft-neofetch
 archcraft-welcome
 archcraft-music
 archcraft-omz
+archcraft-arandr
 archcraft-randr
+archcraft-scripts
 archcraft-ranger
 archcraft-vim
 archcraft-config-geany
@@ -414,7 +420,6 @@ mkinitcpio-firmware
 networkmanager-dmenu-git
 obmenu-generator
 perl-linux-desktopfiles
-timeshift
 xfce-polkit
 yay
 

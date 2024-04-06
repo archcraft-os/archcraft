@@ -5,18 +5,17 @@
 	<icon>open-terminal</icon>
 	<name>Open Terminal Here</name>
 	<unique-id>1581593230771688-1</unique-id>
-	<command>/usr/bin/alacritty</command>
-	<description>Example for a custom action</description>
+	<command>/usr/bin/archcraft-tcma --terminal</command>
+	<description>Open terminal in current directory</description>
 	<patterns>*</patterns>
-	<startup-notify/>
 	<directories/>
 </action>
 <action>
 	<icon>go-parent-folder</icon>
 	<name>Open as root</name>
 	<unique-id>1622790717174452-1</unique-id>
-	<command>~/.config/openbox/scripts/ob-asroot &apos;dbus-run-session thunar&apos;</command>
-	<description>Open directory as root</description>
+	<command>/usr/bin/archcraft-tcma --asroot &apos;dbus-run-session thunar&apos;</command>
+	<description>Open current directory as root</description>
 	<patterns>*</patterns>
 	<directories/>
 </action>
@@ -24,7 +23,7 @@
 	<icon>document-edit-sign</icon>
 	<name>Edit as root</name>
 	<unique-id>1622790919788057-2</unique-id>
-	<command>~/.config/openbox/scripts/ob-asroot &apos;geany %f&apos;</command>
+	<command>/usr/bin/archcraft-tcma --asroot &apos;geany %f&apos;</command>
 	<description>Edit file as root</description>
 	<patterns>*</patterns>
 	<text-files/>
@@ -43,8 +42,8 @@
 	<icon>view-preview</icon>
 	<name>Set as wallpaper</name>
 	<unique-id>1622798756568291-1</unique-id>
-	<command>nitrogen --save --set-zoom-fill %f</command>
-	<description>Set wallpaper with nitrogen in openbox</description>
+	<command>/usr/bin/archcraft-tcma --wallpaper %f</command>
+	<description>Set wallpaper according to session</description>
 	<patterns>*</patterns>
 	<image-files/>
 </action>

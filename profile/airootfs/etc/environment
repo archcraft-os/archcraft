@@ -3,7 +3,11 @@
 #
 # Syntax: simple "KEY=VAL" pairs on separate lines
 #
-QT_QPA_PLATFORMTHEME=qt5ct
+QT_QPA_PLATFORMTHEME=qt6ct
 EDITOR=nano
 BROWSER=firefox
 TERMINAL=alacritty
+PATH="/usr/share/archcraft/scripts"
+
+# uncomment only if cursor is not visible in wayland sessions
+#WLR_NO_HARDWARE_CURSORS=1
