@@ -51,7 +51,7 @@
 	<icon>rotation-locked-landscape</icon>
 	<name>Set as lockscreen</name>
 	<unique-id>1622799434407260-2</unique-id>
-	<command>notify-send &apos;Please wait...&apos; &amp;&amp; betterlockscreen -u %f</command>
+	<command>/usr/bin/archcraft-tcma --lockscreen %f</command>
 	<description>Set image as lockscreen background</description>
 	<patterns>*</patterns>
 	<image-files/>
