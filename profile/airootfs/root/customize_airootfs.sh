@@ -8,7 +8,7 @@ set -e -u
 
 ## Modify /etc/mkinitcpio.conf file
 sed -i '/etc/mkinitcpio.conf' \
-	-e "s/base udev/base udev plymouth/g" \
+	-e "s/microcode/microcode plymouth/g" \
 	-e "s/#COMPRESSION=\"zstd\"/COMPRESSION=\"zstd\"/g"
 
 ## Fix Initrd Generation in Installed System
@@ -77,6 +77,11 @@ EOL
 
 ## Set zsh as default shell for new user
 sed -i -e 's#SHELL=.*#SHELL=/bin/zsh#g' /etc/default/useradd
+
+## -------------------------------------------------------------- ##
+
+## Enable apparmor on boot
+sed -i -e 's/vt.global_cursor_default=0/vt.global_cursor_default=0 lsm=landlock,lockdown,yama,integrity,apparmor,bpf/g' /etc/default/grub
 
 ## -------------------------------------------------------------- ##
 

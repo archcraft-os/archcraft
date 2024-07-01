@@ -8,11 +8,6 @@ shopt -s extglob
 # Control the environment
 umask 0022
 export LC_ALL="C.UTF-8"
-if [[ -v LANGUAGE ]]; then
-    # LC_ALL=C.UTF-8, unlike LC_ALL=C, does not override LANGUAGE.
-    # See https://sourceware.org/bugzilla/show_bug.cgi?id=16621 and https://savannah.gnu.org/bugs/?62815
-    unset LANGUAGE
-fi
 [[ -v SOURCE_DATE_EPOCH ]] || printf -v SOURCE_DATE_EPOCH '%(%s)T' -1
 export SOURCE_DATE_EPOCH
 
@@ -38,18 +33,22 @@ arch=""
 pacman_conf=""
 packages=""
 bootstrap_packages=""
+bootstrap_parent=""
 pacstrap_dir=""
+search_filename=""
 declare -i rm_work_dir=0
 buildmodes=()
 bootmodes=()
 airootfs_image_type=""
 airootfs_image_tool_options=()
+bootstrap_tarball_compression=""
 cert_list=()
 declare -A file_permissions=()
 efibootimg=""
 efiboot_files=()
 # adapted from GRUB_EARLY_INITRD_LINUX_STOCK in https://git.savannah.gnu.org/cgit/grub.git/tree/util/grub-mkconfig.in
 readonly ucodes=('intel-uc.img' 'intel-ucode.img' 'amd-uc.img' 'amd-ucode.img' 'early_ucode.cpio' 'microcode.cpio')
+declare -i need_external_ucodes=0
 
 
 # Show an INFO message
@@ -156,7 +155,6 @@ _cleanup_pacstrap_dir() {
     [[ -d "${pacstrap_dir}/boot" ]] && find "${pacstrap_dir}/boot" -mindepth 1 -delete
     # Delete pacman database sync cache files (*.tar.gz)
     [[ -d "${pacstrap_dir}/var/lib/pacman" ]] && find "${pacstrap_dir}/var/lib/pacman" -maxdepth 1 -type f -delete
-
     # Delete pacman database sync cache
     # Archcraft Change [Do not delete pkg DB] (CUSTOM)
     #[[ -d "${pacstrap_dir}/var/lib/pacman/sync" ]] && find "${pacstrap_dir}/var/lib/pacman/sync" -delete
@@ -357,7 +355,6 @@ _make_packages() {
 
 
     # Unset TMPDIR to work around https://bugs.archlinux.org/task/70580
-
     # Archcraft Change [-i] (CUSTOM)
     if [[ "${quiet}" = "y" ]]; then
         env -u TMPDIR pacstrap -C "${work_dir}/${buildmode}.pacman.conf" -i -c -G -M -- "${pacstrap_dir}" "${buildmode_pkg_list[@]}" &>/dev/null
@@ -451,16 +448,18 @@ _make_boot_on_iso9660() {
     install -m 0644 -- "${pacstrap_dir}/boot/initramfs-"*".img" "${isofs_dir}/${install_dir}/boot/${arch}/"
     install -m 0644 -- "${pacstrap_dir}/boot/vmlinuz-"* "${isofs_dir}/${install_dir}/boot/${arch}/"
 
-    for ucode_image in "${ucodes[@]}"; do
-        if [[ -e "${pacstrap_dir}/boot/${ucode_image}" ]]; then
-            install -m 0644 -- "${pacstrap_dir}/boot/${ucode_image}" "${isofs_dir}/${install_dir}/boot/"
-            if [[ -e "${pacstrap_dir}/usr/share/licenses/${ucode_image%.*}/" ]]; then
-                install -d -m 0755 -- "${isofs_dir}/${install_dir}/boot/licenses/${ucode_image%.*}/"
-                install -m 0644 -- "${pacstrap_dir}/usr/share/licenses/${ucode_image%.*}/"* \
-                    "${isofs_dir}/${install_dir}/boot/licenses/${ucode_image%.*}/"
+    if (( need_external_ucodes )); then
+        for ucode_image in "${ucodes[@]}"; do
+            if [[ -e "${pacstrap_dir}/boot/${ucode_image}" ]]; then
+                install -m 0644 -- "${pacstrap_dir}/boot/${ucode_image}" "${isofs_dir}/${install_dir}/boot/"
+                if [[ -e "${pacstrap_dir}/usr/share/licenses/${ucode_image%.*}/" ]]; then
+                    install -d -m 0755 -- "${isofs_dir}/${install_dir}/boot/licenses/${ucode_image%.*}/"
+                    install -m 0644 -- "${pacstrap_dir}/usr/share/licenses/${ucode_image%.*}/"* \
+                        "${isofs_dir}/${install_dir}/boot/licenses/${ucode_image%.*}/"
+                fi
             fi
-        fi
-    done
+        done
+    fi
     _msg_info "Done!"
 }
 
@@ -525,13 +524,15 @@ _make_boot_on_fat() {
         "::/${install_dir}" "::/${install_dir}/boot" "::/${install_dir}/boot/${arch}"
     mcopy -i "${efibootimg}" "${pacstrap_dir}/boot/vmlinuz-"* \
         "${pacstrap_dir}/boot/initramfs-"*".img" "::/${install_dir}/boot/${arch}/"
-    for ucode_image in "${ucodes[@]}"; do
-        if [[ -e "${pacstrap_dir}/boot/${ucode_image}" ]]; then
-            all_ucode_images+=("${pacstrap_dir}/boot/${ucode_image}")
+    if (( need_external_ucodes )); then
+        for ucode_image in "${ucodes[@]}"; do
+            if [[ -e "${pacstrap_dir}/boot/${ucode_image}" ]]; then
+                all_ucode_images+=("${pacstrap_dir}/boot/${ucode_image}")
+            fi
+        done
+        if (( ${#all_ucode_images[@]} )); then
+            mcopy -i "${efibootimg}" "${all_ucode_images[@]}" "::/${install_dir}/boot/"
         fi
-    done
-    if (( ${#all_ucode_images[@]} )); then
-        mcopy -i "${efibootimg}" "${all_ucode_images[@]}" "::/${install_dir}/boot/"
     fi
     _msg_info "Done!"
 }
@@ -541,19 +542,23 @@ _make_boot_on_fat() {
 _make_efibootimg() {
     local imgsize_kib="0"
     local imgsize_bytes=${1}
+    local mkfs_fat_opts=(-C -n ARCHISO_EFI)
 
-    if (( imgsize_bytes < 2*1024*1024 )); then
-        _msg_info "Validating '${bootmode}': efiboot.img size is ${imgsize_bytes} bytes is less than 2 MiB! Bumping up to 2 MiB"
-        imgsize_bytes=$((2*1024*1024))
-    fi
-
-    # Convert from bytes to KiB and round up to the next full MiB with an additional MiB for reserved sectors.
+    # Convert from bytes to KiB and round up to the next full MiB with an additional 8 MiB for reserved sectors, file
+    # and directory entries and to allow adding custom files when repacking the ISO.
     imgsize_kib="$(
         awk 'function ceil(x){return int(x)+(x>int(x))}
             function byte_to_kib(x){return x/1024}
             function mib_to_kib(x){return x*1024}
-            END {print mib_to_kib(ceil((byte_to_kib($1)+1024)/1024))}' <<<"${imgsize_bytes}"
+            END {print mib_to_kib(ceil((byte_to_kib($1)+8192)/1024))}' <<<"${imgsize_bytes}"
     )"
+
+    # Use FAT32 as early as possible. mkfs.fat selects FAT32 if the size ≥ 512 MiB, but a FAT32 file system can already
+    # be created at 36 MiB size (assuming 512 byte logical sector size).
+    if (( imgsize_kib >= 36864 )); then
+        mkfs_fat_opts+=(-F 32)
+    fi
+
     # The FAT image must be created with mkfs.fat not mformat, as some systems have issues with mformat made images:
     # https://lists.gnu.org/archive/html/grub-devel/2019-04/msg00099.html
     rm -f -- "${efibootimg}"
@@ -561,13 +566,26 @@ _make_efibootimg() {
     if [[ "${quiet}" == "y" ]]; then
         # mkfs.fat does not have a -q/--quiet option, so redirect stdout to /dev/null instead
         # https://github.com/dosfstools/dosfstools/issues/103
-        mkfs.fat -C -n ARCHISO_EFI "${efibootimg}" "${imgsize_kib}" >/dev/null
+        mkfs.fat "${mkfs_fat_opts[@]}" "${efibootimg}" "${imgsize_kib}" >/dev/null
     else
-        mkfs.fat -C -n ARCHISO_EFI "${efibootimg}" "${imgsize_kib}"
+        mkfs.fat "${mkfs_fat_opts[@]}" "${efibootimg}" "${imgsize_kib}"
     fi
 
     # Create the default/fallback boot path in which a boot loaders will be placed later.
     mmd -i "${efibootimg}" ::/EFI ::/EFI/BOOT
+}
+
+# Check if initramfs files contain microcode update files
+_check_if_initramfs_has_ucode() {
+    local initrd
+
+    for initrd in $(compgen -G "${pacstrap_dir}"'/boot/initramfs-*.img'); do
+        if ! bsdtar -tf "$initrd" 'early_cpio' 'kernel/x86/microcode/*.bin' &>/dev/null; then
+            need_external_ucodes=1
+            _msg_info "Initramfs file does not contain microcode update files. External microcode initramfs images will be copied."
+            return
+        fi
+    done
 }
 
 # Copy GRUB files to ISO 9660 which is used by both IA32 UEFI and x64 UEFI
@@ -584,15 +602,9 @@ _make_common_bootmode_grub_copy_to_isofs() {
 
 # Prepare GRUB configuration files
 _make_common_bootmode_grub_cfg() {
-    local _cfg search_filename
+    local _cfg
 
     install -d -- "${work_dir}/grub"
-
-    # Create a /boot/grub/YYYY-mm-dd-HH-MM-SS-00.uuid file on ISO 9660. GRUB will search for it to find the ISO
-    # volume. This is similar to what grub-mkrescue does, except it places the file in /.disk/, but we opt to use a
-    # directory that does not start with a dot to avoid it being accidentally missed when copying the ISO's contents.
-    : >"${work_dir}/grub/${iso_uuid}.uuid"
-    search_filename="/boot/grub/${iso_uuid}.uuid"
 
     # Fill GRUB configuration files
     for _cfg in "${profile}/grub/"*'.cfg'; do
@@ -661,15 +673,8 @@ EOF
 
 # Create GRUB specific configuration files when GRUB is not used as a boot loader
 _make_common_grubenv_and_loopbackcfg() {
-    local search_filename
 
     install -d -m 0755 -- "${isofs_dir}/boot/grub"
-    # Create a /boot/grub/YYYY-mm-dd-HH-MM-SS-00.uuid file on ISO 9660. GRUB will search for it to find the ISO
-    # volume. This is similar to what grub-mkrescue does, except it places the file in /.disk/, but we opt to use a
-    # directory that does not start with a dot to avoid it being accidentally missed when copying the ISO's contents.
-    search_filename="/boot/grub/${iso_uuid}.uuid"
-    : >"${isofs_dir}/${search_filename}"
-
     # Write grubenv
     printf '%.1024s' \
         "$(printf '# GRUB Environment Block\nNAME=%s\nVERSION=%s\nARCHISO_LABEL=%s\nINSTALL_DIR=%s\nARCH=%s\nARCHISO_SEARCH_FILENAME=%s\n%s' \
@@ -852,22 +857,27 @@ _make_common_bootmode_systemd-boot() {
     local _file efiboot_imgsize
     local _available_ucodes=()
 
-    for _file in "${ucodes[@]}"; do
-        if [[ -e "${pacstrap_dir}/boot/${_file}" ]]; then
-            _available_ucodes+=("${pacstrap_dir}/boot/${_file}")
-        fi
-    done
+    if (( need_external_ucodes )); then
+        for _file in "${ucodes[@]}"; do
+            if [[ -e "${pacstrap_dir}/boot/${_file}" ]]; then
+                _available_ucodes+=("${pacstrap_dir}/boot/${_file}")
+            fi
+        done
+    fi
     # Calculate the required FAT image size in bytes
     # shellcheck disable=SC2076
     if [[ " ${bootmodes[*]} " =~ ' uefi-x64.systemd-boot.esp ' || " ${bootmodes[*]} " =~ ' uefi-x64.systemd-boot.eltorito ' ]]; then
         efiboot_files+=("${pacstrap_dir}/usr/lib/systemd/boot/efi/systemd-bootx64.efi"
-                        "${pacstrap_dir}/usr/share/edk2-shell/x64/Shell_Full.efi")
+                        "${pacstrap_dir}/usr/share/edk2-shell/x64/Shell_Full.efi"
+                        "${pacstrap_dir}/boot/memtest86+/memtest.efi"
+                        "${pacstrap_dir}/usr/share/licenses/spdx/GPL-2.0-only.txt")
     fi
     # shellcheck disable=SC2076
     if [[ " ${bootmodes[*]} " =~ ' uefi-ia32.systemd-boot.esp ' || " ${bootmodes[*]} " =~ ' uefi-ia32.systemd-boot.eltorito ' ]]; then
         efiboot_files+=("${pacstrap_dir}/usr/lib/systemd/boot/efi/systemd-bootia32.efi"
                         "${pacstrap_dir}/usr/share/edk2-shell/ia32/Shell_Full.efi")
     fi
+
     efiboot_files+=("${work_dir}/loader/"
                     "${pacstrap_dir}/boot/vmlinuz-"*
                     "${pacstrap_dir}/boot/initramfs-"*".img"
@@ -925,6 +935,15 @@ _make_bootmode_uefi-x64.systemd-boot.esp() {
             "${pacstrap_dir}/usr/share/edk2-shell/x64/Shell_Full.efi" ::/shellx64.efi
     fi
 
+    # Copy Memtest86+
+    if [[ -e "${pacstrap_dir}/boot/memtest86+/memtest.efi" ]]; then
+        mmd -i "${efibootimg}" ::/boot ::/boot/memtest86+
+        mcopy -i "${efibootimg}" \
+            "${pacstrap_dir}/boot/memtest86+/memtest.efi" ::/boot/memtest86+/
+        mcopy -i "${efibootimg}" \
+            "${pacstrap_dir}/usr/share/licenses/spdx/GPL-2.0-only.txt" ::/boot/memtest86+/LICENSE
+    fi
+
     # Copy kernel and initramfs to FAT image.
     # systemd-boot can only access files from the EFI system partition it was launched from.
     _run_once _make_boot_on_fat
@@ -958,6 +977,13 @@ _make_bootmode_uefi-x64.systemd-boot.eltorito() {
     # shellx64.efi is picked up automatically when on /
     if [[ -e "${pacstrap_dir}/usr/share/edk2-shell/x64/Shell_Full.efi" ]]; then
         install -m 0644 -- "${pacstrap_dir}/usr/share/edk2-shell/x64/Shell_Full.efi" "${isofs_dir}/shellx64.efi"
+    fi
+
+    # Copy Memtest86+
+    if [[ -e "${pacstrap_dir}/boot/memtest86+/memtest.efi" ]]; then
+        install -d -m 0755 -- "${isofs_dir}/boot/memtest86+/"
+        install -m 0644 -- "${pacstrap_dir}/boot/memtest86+/memtest.efi" "${isofs_dir}/boot/memtest86+/memtest.efi"
+        install -m 0644 -- "${pacstrap_dir}/usr/share/licenses/spdx/GPL-2.0-only.txt" "${isofs_dir}/boot/memtest86+/LICENSE"
     fi
 
     _msg_info "Done!"
@@ -1111,6 +1137,11 @@ _validate_requirements_bootmode_uefi-x64.systemd-boot.esp() {
         _msg_error "Validating '${bootmode}': cannot be used with bootmode uefi-x64.grub.esp!" 0
     fi
     _validate_requirements_common_systemd-boot
+
+    # shellcheck disable=SC2076
+    if [[ ! " ${pkg_list[*]} " =~ ' memtest86+-efi ' ]]; then
+        _msg_info "Validating '${bootmode}': 'memtest86+-efi' is not in the package list. Memory testing will not be available from systemd-boot."
+    fi
 }
 
 _validate_requirements_bootmode_uefi-x64.systemd-boot.eltorito() {
@@ -1139,7 +1170,7 @@ _validate_requirements_bootmode_uefi-ia32.systemd-boot.eltorito() {
     fi
 
     # uefi-ia32.systemd-boot.eltorito has the exact same requirements as uefi-ia32.systemd-boot.esp
-    _validate_requirements_bootmode_uefi-x64.systemd-boot.esp
+    _validate_requirements_bootmode_uefi-ia32.systemd-boot.esp
 }
 
 _validate_requirements_bootmode_uefi-ia32.grub.esp() {
@@ -1369,6 +1400,32 @@ _validate_requirements_buildmode_bootstrap() {
     if ! command -v bsdtar &>/dev/null; then
         (( validation_error=validation_error+1 ))
         _msg_error "Validating build mode '${_buildmode}': bsdtar is not available on this host. Install 'libarchive'!" 0
+    fi
+
+    # Check if the compressor is installed
+    if (( ${#bootstrap_tarball_compression[@]} )); then
+        case "${bootstrap_tarball_compression[0]}" in
+            'bzip'|'gzip'|'lrzip'|'lzip'|'lzop'|'zstd'|'zstdmt')
+                if ! command -v "${bootstrap_tarball_compression[0]}" &>/dev/null; then
+                    (( validation_error=validation_error+1 ))
+                    _msg_error "Validating build mode '${_buildmode}': '${bootstrap_tarball_compression[0]}' is not available on this host. Install '${bootstrap_tarball_compression[0]/zstdmt/zstd}'!" 0
+                fi
+                ;;
+            'cat')
+                if ! command -v cat &>/dev/null; then
+                    (( validation_error=validation_error+1 ))
+                    _msg_error "Validating build mode '${_buildmode}': 'cat' is not available on this host. Install 'coreutils'!" 0
+                fi
+                if (( ${#bootstrap_tarball_compression[@]} > 1 )); then
+                    (( validation_error=validation_error+1 ))
+                    _msg_error "Validating build mode '${_buildmode}': 'cat' compression does not accept arguments!" 0
+                fi
+                ;;
+            *)
+                (( validation_error=validation_error+1 ))
+                _msg_error "Validating build mode '${_buildmode}': '${bootstrap_tarball_compression[0]}' is not a supported compression method!" 0
+                ;;
+        esac
     fi
 }
 
@@ -1646,17 +1703,34 @@ _add_xorrisofs_options_uefi-x64.grub.eltorito() {
 
 # Build bootstrap image
 _build_bootstrap_image() {
-    local _bootstrap_parent
-    _bootstrap_parent="$(dirname -- "${pacstrap_dir}")"
+    local tarball_ext
+
+    # Set default tarball compression to uncompressed
+    if (( ! "${#bootstrap_tarball_compression[@]}" )); then
+        bootstrap_tarball_compression=('cat')
+    fi
+
+    # Set tarball extension
+    case "${bootstrap_tarball_compression[0]}" in
+        'cat') tarball_ext='' ;;
+        'bzip') tarball_ext='.b2z' ;;
+        'gzip') tarball_ext='.gz' ;;
+        'lrzip') tarball_ext='.lrz' ;;
+        'lzip') tarball_ext='.lz' ;;
+        'lzop') tarball_ext='.lzo' ;;
+        'zstd'|'zstdmt') tarball_ext='.zst' ;;
+        *) _msg_error 'Unsupported compression!' 1 ;;
+    esac
 
     [[ -d "${out_dir}" ]] || install -d -- "${out_dir}"
 
-    cd -- "${_bootstrap_parent}"
+    cd -- "${bootstrap_parent}"
 
     _msg_info "Creating bootstrap image..."
-    bsdtar -cf - "root.${arch}" | gzip -cn9 >"${out_dir}/${image_name}"
+    rm -f -- "${out_dir:?}/${image_name:?}${tarball_ext}"
+    bsdtar -cf - "root.${arch}" "pkglist.${arch}.txt" | "${bootstrap_tarball_compression[@]}" >"${out_dir}/${image_name}${tarball_ext}"
     _msg_info "Done!"
-    du -h -- "${out_dir}/${image_name}"
+    du -h -- "${out_dir}/${image_name}${tarball_ext}"
     cd -- "${OLDPWD}"
 }
 
@@ -1683,6 +1757,11 @@ _build_iso_image() {
     for bootmode in "${bootmodes[@]}"; do
         typeset -f "_add_xorrisofs_options_${bootmode}" &>/dev/null && "_add_xorrisofs_options_${bootmode}"
     done
+
+    # Remove 300 KiB padding needed for CDs if the ISO exceeds the max size of a CD
+    if (( $(du -s --apparent-size -B1M "${isofs_dir}/" | awk '{ print $1 }') > 900 )); then
+        xorrisofs_options+=('-no-pad')
+    fi
 
     rm -f -- "${out_dir}/${image_name}"
     _msg_info "Creating ISO image..."
@@ -1872,6 +1951,13 @@ _make_version() {
         printf '%.1024s' "$(printf '# GRUB Environment Block\nNAME=%s\nVERSION=%s\n%s' \
             "${iso_name}" "${iso_version}" "$(printf '%0.1s' "#"{1..1024})")" \
             >"${isofs_dir}/${install_dir}/grubenv"
+
+        # Create a /boot/YYYY-mm-dd-HH-MM-SS-00.uuid file on ISO 9660. GRUB will search for it to find the ISO
+        # volume. This is similar to what grub-mkrescue does, except it places the file in /.disk/, but we opt to use a
+        # directory that does not start with a dot to avoid it being accidentally missed when copying the ISO's contents.
+        search_filename="/boot/${iso_uuid}.uuid"
+        install -d -m 755 -- "${isofs_dir}/boot"
+        : >"${isofs_dir}${search_filename}"
     fi
 
     # Append IMAGE_ID & IMAGE_VERSION to os-release
@@ -1897,7 +1983,7 @@ _make_pkglist() {
     _msg_info "Creating a list of installed packages on live-enviroment..."
     case "${buildmode}" in
         "bootstrap")
-            pacman -Q --sysroot "${pacstrap_dir}" >"${pacstrap_dir}/pkglist.${arch}.txt"
+            pacman -Q --sysroot "${pacstrap_dir}" >"${bootstrap_parent}/pkglist.${arch}.txt"
             ;;
         "iso"|"netboot")
             install -d -m 0755 -- "${isofs_dir}/${install_dir}"
@@ -1940,6 +2026,7 @@ _build_iso_base() {
     _run_once _make_version
     _run_once _make_customize_airootfs
     _run_once _make_pkglist
+    _run_once _check_if_initramfs_has_ucode
     if [[ "${buildmode}" == 'netboot' ]]; then
         _run_once _make_boot_on_iso9660
     else
@@ -1951,7 +2038,7 @@ _build_iso_base() {
 
 # Build the bootstrap buildmode
 _build_buildmode_bootstrap() {
-    local image_name="${iso_name}-bootstrap-${iso_version}-${arch}.tar.gz"
+    local image_name="${iso_name}-bootstrap-${iso_version}-${arch}.tar"
     local run_once_mode="${buildmode}"
     local buildmode_packages="${bootstrap_packages}"
     # Set the package list to use
@@ -1959,6 +2046,7 @@ _build_buildmode_bootstrap() {
 
     # Set up essential directory paths
     pacstrap_dir="${work_dir}/${arch}/bootstrap/root.${arch}"
+    bootstrap_parent="$(dirname -- "${pacstrap_dir}")"
     [[ -d "${work_dir}" ]] || install -d -- "${work_dir}"
     install -d -m 0755 -o 0 -g 0 -- "${pacstrap_dir}"
 

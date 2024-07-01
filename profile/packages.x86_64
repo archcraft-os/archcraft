@@ -122,7 +122,6 @@ usbutils
 vim
 #virtualbox-guest-utils-nox
 vpnc
-wezterm-terminfo
 wireless-regdb
 wireless_tools
 wpa_supplicant
@@ -187,6 +186,8 @@ networkmanager-vpnc
 network-manager-sstp
 nm-connection-editor
 network-manager-applet
+ufw
+gufw
 
 ## Bluetooth
 bluez
@@ -276,6 +277,7 @@ mplayer
 
 # Utilities
 acpi
+dbus-broker-units
 dialog
 dunst
 galculator
@@ -294,7 +296,7 @@ plank
 polkit
 polybar
 python-pywal
-rofi
+#rofi
 maim
 simplescreenrecorder
 slop
@@ -391,6 +393,9 @@ xarchiver
 
 ## Misc ------------------------------
 
+## MAC
+apparmor
+
 ## Package Tools
 bison
 fakeroot
@@ -420,6 +425,7 @@ mkinitcpio-firmware
 networkmanager-dmenu-git
 obmenu-generator
 perl-linux-desktopfiles
+rofi-lbonn-wayland-git
 xfce-polkit
 yay
 
