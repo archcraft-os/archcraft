@@ -1,5 +1,17 @@
 <h2 align="center">Archcraft : Changelogs</h2>
 
+### July 2024
+- Updated ISO profile
+- Latest base with new packages
+- Update all Archcraft and AUR packages
+- Update Openbox Configs
+- Added Firewall (`ufw`) with GUI (`gufw`)
+- Added `apparmor` for MAC (_mandatory access control_)
+- Replaced rofi with ibonn's rofi fork, fixed focusing issue in wayland compositors
+- Small improvements and bugs fixed.
+
+#
+
 ### April 2024
 - Updated ISO profile
 - Latest base with new packages
