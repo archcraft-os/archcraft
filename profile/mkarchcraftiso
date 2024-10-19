@@ -204,8 +204,7 @@ _mkairootfs_ext4+squashfs() {
     )
     [[ ! "${quiet}" == "y" ]] || mkfs_ext4_options+=('-q')
     rm -f -- "${pacstrap_dir}.img"
-    E2FSPROGS_FAKE_TIME="${SOURCE_DATE_EPOCH}" mkfs.ext4 "${mkfs_ext4_options[@]}" -- "${pacstrap_dir}.img" 32G
-    tune2fs -c 0 -i 0 -- "${pacstrap_dir}.img" >/dev/null
+    mkfs.ext4 "${mkfs_ext4_options[@]}" -- "${pacstrap_dir}.img" 32G
     _msg_info "Done!"
 
     install -d -m 0755 -- "${isofs_dir}/${install_dir}/${arch}"
@@ -226,16 +225,14 @@ _mkairootfs_squashfs() {
 
 # Create an EROFS image containing the root file system and saves it on the ISO 9660 file system.
 _mkairootfs_erofs() {
-    local fsuuid mkfs_erofs_options=()
+    local mkfs_erofs_options=()
     [[ -e "${pacstrap_dir}" ]] || _msg_error "The path '${pacstrap_dir}' does not exist" 1
 
     install -d -m 0755 -- "${isofs_dir}/${install_dir}/${arch}"
     local image_path="${isofs_dir}/${install_dir}/${arch}/airootfs.erofs"
     rm -f -- "${image_path}"
     [[ ! "${quiet}" == "y" ]] || mkfs_erofs_options+=('--quiet')
-    # Generate reproducible file system UUID from SOURCE_DATE_EPOCH
-    fsuuid="$(uuidgen --sha1 --namespace 93a870ff-8565-4cf3-a67b-f47299271a96 --name "${SOURCE_DATE_EPOCH}")"
-    mkfs_erofs_options+=('-U' "${fsuuid}" "${airootfs_image_tool_options[@]}")
+    mkfs_erofs_options+=('-U' '00000000-0000-0000-0000-000000000000' "${airootfs_image_tool_options[@]}")
     _msg_info "Creating EROFS image, this may take some time..."
     mkfs.erofs "${mkfs_erofs_options[@]}" -- "${image_path}" "${pacstrap_dir}"
     _msg_info "Done!"
@@ -1405,7 +1402,7 @@ _validate_requirements_buildmode_bootstrap() {
     # Check if the compressor is installed
     if (( ${#bootstrap_tarball_compression[@]} )); then
         case "${bootstrap_tarball_compression[0]}" in
-            'bzip'|'gzip'|'lrzip'|'lzip'|'lzop'|'zstd'|'zstdmt')
+            'bzip'|'gzip'|'lrzip'|'lzip'|'lzop'|'xz'|'zstd'|'zstdmt')
                 if ! command -v "${bootstrap_tarball_compression[0]}" &>/dev/null; then
                     (( validation_error=validation_error+1 ))
                     _msg_error "Validating build mode '${_buildmode}': '${bootstrap_tarball_compression[0]}' is not available on this host. Install '${bootstrap_tarball_compression[0]/zstdmt/zstd}'!" 0
@@ -1703,34 +1700,20 @@ _add_xorrisofs_options_uefi-x64.grub.eltorito() {
 
 # Build bootstrap image
 _build_bootstrap_image() {
-    local tarball_ext
-
     # Set default tarball compression to uncompressed
     if (( ! "${#bootstrap_tarball_compression[@]}" )); then
         bootstrap_tarball_compression=('cat')
     fi
-
-    # Set tarball extension
-    case "${bootstrap_tarball_compression[0]}" in
-        'cat') tarball_ext='' ;;
-        'bzip') tarball_ext='.b2z' ;;
-        'gzip') tarball_ext='.gz' ;;
-        'lrzip') tarball_ext='.lrz' ;;
-        'lzip') tarball_ext='.lz' ;;
-        'lzop') tarball_ext='.lzo' ;;
-        'zstd'|'zstdmt') tarball_ext='.zst' ;;
-        *) _msg_error 'Unsupported compression!' 1 ;;
-    esac
 
     [[ -d "${out_dir}" ]] || install -d -- "${out_dir}"
 
     cd -- "${bootstrap_parent}"
 
     _msg_info "Creating bootstrap image..."
-    rm -f -- "${out_dir:?}/${image_name:?}${tarball_ext}"
-    bsdtar -cf - "root.${arch}" "pkglist.${arch}.txt" | "${bootstrap_tarball_compression[@]}" >"${out_dir}/${image_name}${tarball_ext}"
+    rm -f -- "${out_dir:?}/${image_name:?}"
+    bsdtar -cf - "root.${arch}" "pkglist.${arch}.txt" | "${bootstrap_tarball_compression[@]}" >"${out_dir}/${image_name}"
     _msg_info "Done!"
-    du -h -- "${out_dir}/${image_name}${tarball_ext}"
+    du -h -- "${out_dir}/${image_name}"
     cd -- "${OLDPWD}"
 }
 
@@ -2049,6 +2032,17 @@ _build_buildmode_bootstrap() {
     bootstrap_parent="$(dirname -- "${pacstrap_dir}")"
     [[ -d "${work_dir}" ]] || install -d -- "${work_dir}"
     install -d -m 0755 -o 0 -g 0 -- "${pacstrap_dir}"
+
+    # Set tarball extension
+    case "${bootstrap_tarball_compression[0]}" in
+        'bzip') image_name="${image_name}.b2z" ;;
+        'gzip') image_name="${image_name}.gz" ;;
+        'lrzip') image_name="${image_name}.lrz" ;;
+        'lzip') image_name="${image_name}.lz" ;;
+        'lzop') image_name="${image_name}.lzo" ;;
+        'xz') image_name="${image_name}.xz" ;;
+        'zstd'|'zstdmt') image_name="${image_name}.zst" ;;
+    esac
 
     [[ "${quiet}" == "y" ]] || _show_config
     _run_once _make_pacman_conf

@@ -23,7 +23,7 @@ automated_script() {
                 sleep 1
             done
             printf '%s: downloading %s\n' "$0" "${script}"
-            curl "${script}" --location --retry-connrefused --retry 10 -s -o /tmp/startup_script
+            curl "${script}" --location --retry-connrefused --retry 10 --fail -s -o /tmp/startup_script
             rt=$?
         else
             cp "${script}" /tmp/startup_script
