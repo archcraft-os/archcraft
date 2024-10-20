@@ -1,8 +1,0 @@
-<!-- Copyright (C) 2020-2024 Aditya Shakya <adi1090x@gmail.com> -->
-<?xml version="1.0" encoding="UTF-8"?>
-
-<channel name="xfce4-session" version="1.0">
-  <property name="general" type="empty">
-    <property name="LockCommand" type="string" value="xflock4"/>
-  </property>
-</channel>
