@@ -256,6 +256,7 @@ archcraft-sddm-theme
 # Terminal
 alacritty
 xfce4-terminal
+kitty
 
 # Apps
 firefox
@@ -320,8 +321,10 @@ archcraft-bspwm
 archcraft-cursors
 archcraft-icons
 archcraft-themes
+archcraft-openbox-themes
 archcraft-wallpapers
 archcraft-fonts
+archcraft-skeleton
 archcraft-about
 archcraft-artworks
 archcraft-dunst-icons
