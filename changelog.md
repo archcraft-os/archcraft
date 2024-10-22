@@ -1,5 +1,24 @@
 <h2 align="center">Archcraft : Changelogs</h2>
 
+### October 2024
+- Updated ISO profile
+- Latest base with new packages
+- Update all Archcraft and AUR packages
+- Added **new cursor, icon, and GTK themes** (along with updates to existing ones)
+- Added **new openbox wm themes** (existing ones updated as well)
+- Added **new icon and nerd fonts** (existing ones updated as well)
+- Theme updates across both WMs (Polybar, Rofi, etc.)
+- Added **5 new styles/themes** for openbox
+- Added **4 new icon sets** for the openbox menu
+- Added `kitty` terminal support to both WMs
+- Updated `alacritty` configurations
+- Added new `neofetch` configuration
+- Updated `zsh` theme
+- Added new `picom` configuration
+- Various bug fixes, and more!
+
+#
+
 ### July 2024
 - Updated ISO profile
 - Latest base with new packages
