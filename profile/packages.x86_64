@@ -33,7 +33,7 @@ f2fs-tools
 fatresize
 foot-terminfo
 fsarchiver
-#gnu-netcat
+gnu-netcat
 gpart
 gpm
 gptfdisk
