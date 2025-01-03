@@ -1,5 +1,13 @@
 <h2 align="center">Archcraft : Changelogs</h2>
 
+### January 2025
+- Updated ISO profile to `archiso 82-1`
+- Latest base with new packages
+- Update all Archcraft and AUR packages
+- Small improvements and bugs fixed.
+
+#
+
 ### October 2024
 - Updated ISO profile
 - Latest base with new packages
