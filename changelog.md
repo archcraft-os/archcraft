@@ -1,5 +1,16 @@
 <h2 align="center">Archcraft : Changelogs</h2>
 
+### April 2025
+- Updated ISO profile to `archiso 83-1`
+- Latest base with new packages
+- Update all Archcraft and AUR packages
+- Updated Openbox and Bspwm Configs
+- Fixed issues with rofi menu layouts
+- Fixed Polybar crashes
+- Small improvements and bugs fixed.
+
+#
+
 ### January 2025
 - Updated ISO profile to `archiso 82-1`
 - Latest base with new packages
