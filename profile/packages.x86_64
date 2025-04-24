@@ -16,7 +16,7 @@ cloud-init
 cryptsetup
 darkhttpd
 ddrescue
-dhclient
+#dhclient
 dhcpcd
 diffutils
 dmidecode
