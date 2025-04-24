@@ -1719,6 +1719,13 @@ _build_bootstrap_image() {
 
 # Build ISO
 _build_iso_image() {
+    # Remove the pacstrap directory early to lower the maximum size of the working directory.
+    # The creation of the airootfs image has already been completed.
+    if (( rm_work_dir )); then
+        _msg_info 'Removing pacstrap directory...'
+        rm -rf -- "${work_dir:?}/${arch}/airootfs"
+    fi
+
     local xorriso_options=() xorrisofs_options=()
     local bootmode
 
