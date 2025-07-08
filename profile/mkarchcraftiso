@@ -1933,10 +1933,8 @@ _make_version() {
 
     fi
     if [[ "${buildmode}" == "iso" ]]; then
-        # Write grubenv with version information to ISO 9660
-        # TODO: after sufficient time has passed, do not create this file anymore.
-        #       _make_common_bootmode_grub_cfg and _make_common_grubenv_and_loopbackcfg already create a
-        #       ${isofs_dir}/boot/grub/grubenv file
+        # Write a limited grubenv with version information to install_dir on ISO 9660 for use cases where only the
+        # install_dir is used.
         rm -f -- "${isofs_dir}/${install_dir}/grubenv"
         printf '%.1024s' "$(printf '# GRUB Environment Block\nNAME=%s\nVERSION=%s\n%s' \
             "${iso_name}" "${iso_version}" "$(printf '%0.1s' "#"{1..1024})")" \
