@@ -1,5 +1,16 @@
 <h2 align="center">Archcraft : Changelogs</h2>
 
+### July 2025
+- Support for `btrfs` has been temporarily removed due to a bug with grub+btrfs, which makes installed system unbootable 
+- Support for `jfs` has been removed due to bugs, again... unbootable system
+- Updated ISO profile to `archiso 84-1`
+- Latest base with new packages
+- Update all Archcraft and AUR packages
+- Fixed issues with rofi
+- Small improvements and bugs fixed.
+
+#
+
 ### April 2025
 - Updated ISO profile to `archiso 83-1`
 - Latest base with new packages
