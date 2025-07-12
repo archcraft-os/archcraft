@@ -173,7 +173,7 @@ virtualbox-guest-utils
 qemu-guest-agent
 open-vm-tools
 xf86-input-vmmouse
-xf86-video-vmware
+#xf86-video-vmware
 
 ## System ------------------------------
 
@@ -288,6 +288,7 @@ gtk-engine-murrine
 gnome-keyring
 inetutils
 inotify-tools
+iptables
 jq
 light
 meld
