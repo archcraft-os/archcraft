@@ -7,3 +7,10 @@ QT_QPA_PLATFORMTHEME=qt6ct
 EDITOR=nano
 BROWSER=firefox
 TERMINAL=alacritty
+PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/usr/share/archcraft/scripts"
+
+# uncomment only if cursor is not visible in wayland sessions
+#WLR_NO_HARDWARE_CURSORS=1
+
+# disable csd
+LD_PRELOAD=/usr/lib/libgtk-nocsd.so
